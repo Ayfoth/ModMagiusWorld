@@ -1,6 +1,10 @@
 package com.magius.world.mod;
 
+import com.magius.world.mod.block.ModBlocks;
+import com.magius.world.mod.item.ModCreativeModTabs;
+import com.magius.world.mod.item.ModItems;
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -28,6 +32,11 @@ public class MagiusWorldMod
     {
         IEventBus modEventBus = context.getModEventBus();
 
+        ModCreativeModTabs.register(modEventBus);
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -48,8 +57,11 @@ public class MagiusWorldMod
     }
 
     // Add the example block item to the building blocks tab
-    private void addCreative(BuildCreativeModeTabContentsEvent event)
-    {
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.SAPPHIRE);
+            event.accept(ModItems.RAW_SAPPHIRE);
+        }
 
     }
 

@@ -1,0 +1,14 @@
+{
+  "item.magiusworldmod.sapphire": "Sapphire",
+  "item.magiusworldmod.raw_sapphire": "Raw Sapphire",
+  "item.magiusworldmod.piece_mg": "MG Coin",
+  "item.magiusworldmod.wither": "Wither Dust",
+
+  "block.magiusworldmod.sapphire_block": "Block of Sapphire",
+  "block.magiusworldmod.wither_block": "Block of Wither",
+
+  "creativetab.tutorial_tab": "Sapphire Tutorial Tab",
+  "creativetab.monnaie": "Coin",
+  "creativetab.item_magius": "Item of Magius",
+  "creativetab.block_magius": "Block of Magius"
+}
