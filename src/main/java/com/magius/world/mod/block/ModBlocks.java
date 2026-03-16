@@ -328,6 +328,12 @@ public class ModBlocks {
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
                     .strength(2.5f)
                     .sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> RUBY_FIRE_CORE = registerBlock("ruby_fire_core",
+            () -> new RubyFireCoreBlock(BlockBehaviour.Properties.copy(Blocks.GLOWSTONE)
+                    .strength(3f)
+                    .lightLevel(state -> 15)
+                    .sound(SoundType.GLASS)
+                    .noOcclusion()));
 
 
 

@@ -189,6 +189,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 models().cubeColumn("charred_ruby_beam",
                         modLoc("block/charred_ruby_beam_side"),
                         modLoc("block/charred_ruby_beam_top")));
+        simpleBlockWithItem(ModBlocks.RUBY_FIRE_CORE.get(),
+                cubeAll(ModBlocks.RUBY_FIRE_CORE.get()));
     }
     private void rubyDoorBlock(RegistryObject<Block> block, ResourceLocation bottom, ResourceLocation top) {
         doorBlockWithRenderType(

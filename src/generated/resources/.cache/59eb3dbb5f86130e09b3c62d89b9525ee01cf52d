@@ -1,4 +1,4 @@
-// 1.20.1	2026-03-16T18:55:23.5265145	Loot Tables
+// 1.20.1	2026-03-16T19:18:44.6956614	Loot Tables
 b5c9a6ce89dabe40c60afe7d24b34aa32f176ff6 data/magiusworldmod/loot_tables/blocks/blackwood_log.json
 e031d5f871467b4b9eb8a3c77472f61dc81ad68e data/magiusworldmod/loot_tables/blocks/catmint.json
 47dbba944fa172effa27ebbc8d13ab425a3526f5 data/magiusworldmod/loot_tables/blocks/charred_ruby_beam.json
@@ -31,6 +31,7 @@ f362f14bba25ca82332453bddde1f7eab7df65ac data/magiusworldmod/loot_tables/blocks/
 e681ed993cdbee119b7c6e8428e5d4137a1cb20c data/magiusworldmod/loot_tables/blocks/ruby_door.json
 4aab990018c6ae694651e137cdfa77aee74c562f data/magiusworldmod/loot_tables/blocks/ruby_fence.json
 b4a32ffdbf47b8fcb09da25542eaebb6a3ef2ed7 data/magiusworldmod/loot_tables/blocks/ruby_fence_gate.json
+37106fdac14bc048d28be1b3219ef51cbd554061 data/magiusworldmod/loot_tables/blocks/ruby_fire_core.json
 d86877d252ba4e3d564272d85123124f1bcdddc6 data/magiusworldmod/loot_tables/blocks/ruby_flower.json
 a37bc21b03df9f855eccd7a880608e9e46709fdb data/magiusworldmod/loot_tables/blocks/ruby_hanging_sign.json
 1aed9fed84ba0f6617e156ac8c97d1202c065b57 data/magiusworldmod/loot_tables/blocks/ruby_lamp.json

@@ -1,4 +1,4 @@
-// 1.20.1	2026-03-16T18:55:23.5434686	Tags for minecraft:block mod id magiusworldmod
+// 1.20.1	2026-03-16T19:18:45.2816661	Tags for minecraft:block mod id magiusworldmod
 434c8dc8a4ddab637b7d8bf726ba7b73f4768a6c data/forge/tags/blocks/needs_netherite_tool.json
 2f5e61bfca29ac970175bfeb32dee4106c1ff744 data/magiusworldmod/tags/blocks/metal_detector_valuables.json
 10b2d7d8928741909fd6c9861a689ba28ca68aaa data/magiusworldmod/tags/blocks/needs_rubis_tool.json
@@ -9,7 +9,7 @@ aee47becb51d58faf71d71f94e89a2e741ad0239 data/minecraft/tags/blocks/fences.json
 74d02000a2222eac21b157a843e9b371cd17ab6e data/minecraft/tags/blocks/fence_gates.json
 73f22c6cc4823e7eda7fc4498fda0c6c18055068 data/minecraft/tags/blocks/logs_that_burn.json
 591da956cc1a4f8b84a62de71692a100f7191f90 data/minecraft/tags/blocks/mineable/axe.json
-df3ac0ac3b66a2ab2fcbf14900c601a22b05ac63 data/minecraft/tags/blocks/mineable/pickaxe.json
+35bc493a8a7683c2eee3bb78cfc505e8a5ad2a8a data/minecraft/tags/blocks/mineable/pickaxe.json
 631e8b81b2bf6065cde9db8d82fca26b95d478b9 data/minecraft/tags/blocks/needs_diamond_tool.json
 dee835bc6dd3f096f714b5bf33e9e3124f32725f data/minecraft/tags/blocks/needs_iron_tool.json
 4d0f7bd1fd6b8a07f6b55298a85fc335b43c893e data/minecraft/tags/blocks/planks.json
