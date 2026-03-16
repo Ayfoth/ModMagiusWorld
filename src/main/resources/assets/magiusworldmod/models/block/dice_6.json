@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "up": "magiusworldmod:block/dice_6",
+    "down": "magiusworldmod:block/dice_1",
+    "north": "magiusworldmod:block/dice_2",
+    "east": "magiusworldmod:block/dice_4",
+    "south": "magiusworldmod:block/dice_5",
+    "west": "magiusworldmod:block/dice_3",
+    "particle": "magiusworldmod:block/dice_6"
+  }
+}

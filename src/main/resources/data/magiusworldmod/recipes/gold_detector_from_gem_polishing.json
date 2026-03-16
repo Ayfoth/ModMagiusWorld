@@ -1,0 +1,12 @@
+{
+  "type": "magiusworldmod:gem_polishing",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_block"
+    }
+  ],
+  "output": {
+    "count": 1,
+    "item": "magiusworldmod:gold_detector"
+  }
+}

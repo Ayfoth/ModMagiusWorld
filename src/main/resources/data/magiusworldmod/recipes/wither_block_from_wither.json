@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "magiusworldmod:wither"
+    }
+  },
+  "result": {
+    "item": "magiusworldmod:wither_block"
+  }
+}

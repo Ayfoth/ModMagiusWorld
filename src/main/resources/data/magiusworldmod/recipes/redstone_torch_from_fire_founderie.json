@@ -1,0 +1,12 @@
+{
+  "type": "magiusworldmod:fire_founderie",
+  "ingredients": [
+    {
+      "item": "minecraft:redstone"
+    }
+  ],
+  "output": {
+    "count": 4,
+    "item": "minecraft:redstone_torch"
+  }
+}
