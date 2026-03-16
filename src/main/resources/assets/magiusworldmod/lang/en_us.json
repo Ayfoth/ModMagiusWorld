@@ -138,6 +138,13 @@
   "block.magiusworldmod.ruby_wall_hanging_sign": "Ruby Wall Hanging Sign",
   "item.magiusworldmod.ruby_sign": "Ruby Sign",
   "item.magiusworldmod.ruby_hanging_sign": "Ruby Hanging Sign",
+  "item.magiusworldmod.ruby_boat": "Ruby Boat",
+  "item.magiusworldmod.ruby_chest_boat": "Ruby Chest Boat",
+  "block.magiusworldmod.ruby_tile": "Ruby Tile",
+  "block.magiusworldmod.ruby_pillar": "Ruby Pillar",
+  "block.magiusworldmod.ruby_lamp": "Ruby Lamp",
+  "block.magiusworldmod.ruby_brazier": "Ruby Brazier",
+  "block.magiusworldmod.charred_ruby_beam": "Charred Ruby Beam",
 
 
   "entity.minecraft.villager.magiusworldmod.soundmaster": "Sound Master",

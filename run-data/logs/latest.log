@@ -1,45 +1,45 @@
-[16mars2026 14:30:06.947] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\Seusyn\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.4.13, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, magiusworldmod, --all, --output, C:\Users\Seusyn\Documents\Magius World\src\generated\resources, --existing, C:\Users\Seusyn\Documents\Magius World\src\main\resources]
-[16mars2026 14:30:06.962] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.17 by Eclipse Adoptium; OS Windows 10 arch amd64 version 10.0
-[16mars2026 14:30:07.296] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
-[16mars2026 14:30:07.535] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/Seusyn/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
-[16mars2026 14:30:08.769] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Seusyn\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.4.13\cf01e2179f72bd2829c65f5226d7dd0cfb6c686\javafmllanguage-1.20.1-47.4.13.jar is missing mods.toml file
-[16mars2026 14:30:08.778] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Seusyn\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.4.13\e3f96129ea14eba84316f2d69816253e228e6e4c\lowcodelanguage-1.20.1-47.4.13.jar is missing mods.toml file
-[16mars2026 14:30:08.795] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Seusyn\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.4.13\85796906112d9b621a7b2996f8bfda49da991ef0\mclanguage-1.20.1-47.4.13.jar is missing mods.toml file
-[16mars2026 14:30:08.803] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Seusyn\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.4.13\f77e3021d1eb31d61f8d1b92d18ed4fb3c2806e5\fmlcore-1.20.1-47.4.13.jar is missing mods.toml file
-[16mars2026 14:30:09.051] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[16mars2026 14:30:13.387] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
-[16mars2026 14:30:13.403] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\Seusyn\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, magiusworldmod, --all, --output, C:\Users\Seusyn\Documents\Magius World\src\generated\resources, --existing, C:\Users\Seusyn\Documents\Magius World\src\main\resources]
-[16mars2026 14:30:14.605] [main/INFO] [mixin/]: Remapping refMap terrablender.refmap.json using C:\Users\Seusyn\Documents\Magius World\build\createSrgToMcp\output.srg
-[16mars2026 14:30:14.612] [main/INFO] [mixin/]: Remapping refMap terrablender.refmap.json using C:\Users\Seusyn\Documents\Magius World\build\createSrgToMcp\output.srg
-[16mars2026 14:30:15.385] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [magiusworldmod]
-[16mars2026 14:30:26.493] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.13, for MC 1.20.1 with MCP 20230612.114412
-[16mars2026 14:30:26.495] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.4.13 Initialized
-[16mars2026 14:30:26.978] [modloading-worker-0/INFO] [terrablender/]: Registered region minecraft:overworld to index 0 for type OVERWORLD
-[16mars2026 14:30:26.978] [modloading-worker-0/INFO] [terrablender/]: Registered region minecraft:nether to index 0 for type NETHER
-[16mars2026 14:30:26.979] [modloading-worker-0/INFO] [terrablender/]: Registered region magiusworldmod:overworld to index 1 for type OVERWORLD
-[16mars2026 14:30:29.412] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
-[16mars2026 14:30:29.422] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 8.246 ms
-[16mars2026 14:30:30.489] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Seusyn/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.13_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.4.13_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
-[16mars2026 14:30:30.489] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Seusyn/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.13_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.4.13_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
-[16mars2026 14:30:31.034] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
-[16mars2026 14:30:31.346] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 311 ms
-[16mars2026 14:30:31.346] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
-[16mars2026 14:30:31.657] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 310 ms
-[16mars2026 14:30:31.658] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: magiusworldmod
-[16mars2026 14:30:32.259] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: magiusworldmod finished after 601 ms
-[16mars2026 14:30:32.260] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: magiusworldmod
-[16mars2026 14:30:32.417] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: magiusworldmod finished after 156 ms
-[16mars2026 14:30:32.417] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id magiusworldmod
-[16mars2026 14:30:32.442] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id magiusworldmod finished after 24 ms
-[16mars2026 14:30:32.442] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id magiusworldmod
-[16mars2026 14:30:32.446] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id magiusworldmod finished after 3 ms
-[16mars2026 14:30:32.446] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Global Loot Modifiers : magiusworldmod
-[16mars2026 14:30:32.459] [main/INFO] [net.minecraft.data.DataGenerator/]: Global Loot Modifiers : magiusworldmod finished after 9 ms
-[16mars2026 14:30:32.459] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Advancements
-[16mars2026 14:30:32.486] [main/INFO] [net.minecraft.data.DataGenerator/]: Advancements finished after 26 ms
-[16mars2026 14:30:32.486] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:point_of_interest_type mod id magiusworldmod
-[16mars2026 14:30:32.490] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:point_of_interest_type mod id magiusworldmod finished after 2 ms
-[16mars2026 14:30:32.490] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
-[16mars2026 14:30:32.553] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 62 ms
-[16mars2026 14:30:32.553] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 1519 ms
-[16mars2026 14:30:32.628] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 662, old count: 669, new count: 663, removed stale: 0, written: 0
+[16mars2026 18:54:54.626] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\Seusyn\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.4.13, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, magiusworldmod, --all, --output, C:\Users\Seusyn\Documents\Magius World\src\generated\resources, --existing, C:\Users\Seusyn\Documents\Magius World\src\main\resources]
+[16mars2026 18:54:54.643] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.17 by Eclipse Adoptium; OS Windows 10 arch amd64 version 10.0
+[16mars2026 18:54:55.128] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[16mars2026 18:54:55.352] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/Seusyn/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[16mars2026 18:54:56.358] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Seusyn\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.4.13\cf01e2179f72bd2829c65f5226d7dd0cfb6c686\javafmllanguage-1.20.1-47.4.13.jar is missing mods.toml file
+[16mars2026 18:54:56.365] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Seusyn\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.4.13\e3f96129ea14eba84316f2d69816253e228e6e4c\lowcodelanguage-1.20.1-47.4.13.jar is missing mods.toml file
+[16mars2026 18:54:56.375] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Seusyn\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.4.13\85796906112d9b621a7b2996f8bfda49da991ef0\mclanguage-1.20.1-47.4.13.jar is missing mods.toml file
+[16mars2026 18:54:56.383] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Seusyn\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.4.13\f77e3021d1eb31d61f8d1b92d18ed4fb3c2806e5\fmlcore-1.20.1-47.4.13.jar is missing mods.toml file
+[16mars2026 18:54:56.761] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[16mars2026 18:55:02.401] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[16mars2026 18:55:02.459] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\Seusyn\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, magiusworldmod, --all, --output, C:\Users\Seusyn\Documents\Magius World\src\generated\resources, --existing, C:\Users\Seusyn\Documents\Magius World\src\main\resources]
+[16mars2026 18:55:03.506] [main/INFO] [mixin/]: Remapping refMap terrablender.refmap.json using C:\Users\Seusyn\Documents\Magius World\build\createSrgToMcp\output.srg
+[16mars2026 18:55:03.512] [main/INFO] [mixin/]: Remapping refMap terrablender.refmap.json using C:\Users\Seusyn\Documents\Magius World\build\createSrgToMcp\output.srg
+[16mars2026 18:55:04.924] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [magiusworldmod]
+[16mars2026 18:55:17.328] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.13, for MC 1.20.1 with MCP 20230612.114412
+[16mars2026 18:55:17.338] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.4.13 Initialized
+[16mars2026 18:55:17.787] [modloading-worker-0/INFO] [terrablender/]: Registered region minecraft:overworld to index 0 for type OVERWORLD
+[16mars2026 18:55:17.788] [modloading-worker-0/INFO] [terrablender/]: Registered region minecraft:nether to index 0 for type NETHER
+[16mars2026 18:55:18.165] [modloading-worker-0/INFO] [terrablender/]: Registered region magiusworldmod:overworld to index 1 for type OVERWORLD
+[16mars2026 18:55:20.254] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
+[16mars2026 18:55:20.274] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 7.288 ms
+[16mars2026 18:55:21.179] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Seusyn/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.13_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.4.13_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[16mars2026 18:55:21.179] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Seusyn/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.13_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.4.13_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[16mars2026 18:55:21.683] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[16mars2026 18:55:22.159] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 475 ms
+[16mars2026 18:55:22.159] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
+[16mars2026 18:55:22.570] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 411 ms
+[16mars2026 18:55:22.571] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: magiusworldmod
+[16mars2026 18:55:23.208] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: magiusworldmod finished after 637 ms
+[16mars2026 18:55:23.208] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: magiusworldmod
+[16mars2026 18:55:23.354] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: magiusworldmod finished after 144 ms
+[16mars2026 18:55:23.354] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id magiusworldmod
+[16mars2026 18:55:23.389] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id magiusworldmod finished after 34 ms
+[16mars2026 18:55:23.389] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id magiusworldmod
+[16mars2026 18:55:23.394] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id magiusworldmod finished after 3 ms
+[16mars2026 18:55:23.394] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Global Loot Modifiers : magiusworldmod
+[16mars2026 18:55:23.403] [main/INFO] [net.minecraft.data.DataGenerator/]: Global Loot Modifiers : magiusworldmod finished after 9 ms
+[16mars2026 18:55:23.404] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Advancements
+[16mars2026 18:55:23.435] [main/INFO] [net.minecraft.data.DataGenerator/]: Advancements finished after 31 ms
+[16mars2026 18:55:23.436] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:point_of_interest_type mod id magiusworldmod
+[16mars2026 18:55:23.441] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:point_of_interest_type mod id magiusworldmod finished after 5 ms
+[16mars2026 18:55:23.442] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
+[16mars2026 18:55:23.523] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 81 ms
+[16mars2026 18:55:23.523] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 1841 ms
+[16mars2026 18:55:23.619] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 688, old count: 686, new count: 689, removed stale: 0, written: 11

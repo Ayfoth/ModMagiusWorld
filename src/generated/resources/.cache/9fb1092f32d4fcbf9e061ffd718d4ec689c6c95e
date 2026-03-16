@@ -1,4 +1,4 @@
-// 1.20.1	2026-03-16T11:05:19.878194	Recipes
+// 1.20.1	2026-03-16T15:05:53.341078	Recipes
 7aa52c80a3b70a21763db7f05460bb7cd1430af1 data/magiusworldmod/advancements/recipes/building_blocks/ruby_planks.json
 7dad583db6d755c0626632d92f311b001b636466 data/magiusworldmod/advancements/recipes/building_blocks/ruby_planks_from_stripped_log.json
 8aa0285d1cb0aefbbeeb671ae0f520701fc92258 data/magiusworldmod/advancements/recipes/building_blocks/ruby_slab.json
@@ -50,6 +50,8 @@ ba667d91afcdc26c95ca05b8e833d4137857e97e data/magiusworldmod/advancements/recipe
 00099809cfc157905a9b3f4888084aee9b57f8be data/magiusworldmod/advancements/recipes/redstone/ruby_fence_gate.json
 937d0ec9feae2497a0493e06282da9d469798550 data/magiusworldmod/advancements/recipes/redstone/ruby_pressure_plate.json
 38cc16d0d61be3d54ce999d6fa67f2a97175e4c4 data/magiusworldmod/advancements/recipes/redstone/ruby_trapdoor.json
+a4c6a57369cd4bfc7c6eaec59486184775199839 data/magiusworldmod/advancements/recipes/transportation/ruby_boat.json
+6892648bbf13dfad4a369028dbde4133da335a3a data/magiusworldmod/advancements/recipes/transportation/ruby_chest_boat.json
 3dfc9a8175a3df58ceb9d4b15b337179458b0067 data/magiusworldmod/recipes/fire_founderie.json
 4b9f5a36dad8d120d266c046d5b55ca321813e16 data/magiusworldmod/recipes/gem_polishing_station.json
 f4e954e00e0aae311501672a7192a6f24a091060 data/magiusworldmod/recipes/rubis.json
@@ -74,7 +76,9 @@ ddb1aa4705a9c5c16de7d5ba97abf221f2f059e2 data/magiusworldmod/recipes/rubis_picka
 37e2059a695f0d25a6e4845666ffb29d22699b9e data/magiusworldmod/recipes/rubis_shovel.json
 878e49b5c78a71041b435126be29ba9b1e3a1b35 data/magiusworldmod/recipes/rubis_sword.json
 273902d925ca5c833078359ebff11387e792811c data/magiusworldmod/recipes/rubis_wand.json
+5dd0301126a7fa1bf2b2841325aa616ab789a256 data/magiusworldmod/recipes/ruby_boat.json
 bbbec39db1eb73cd9f5fccf1c00e8f1d309a9a45 data/magiusworldmod/recipes/ruby_button.json
+0807e48a8efaed008400d18f8166736cca522552 data/magiusworldmod/recipes/ruby_chest_boat.json
 9e7c1db1e93d49e17862a15d0d2113b3670f730a data/magiusworldmod/recipes/ruby_door.json
 20986741b68ef95cd5f4071fd141553c76f2e0d6 data/magiusworldmod/recipes/ruby_fence.json
 4ee66cf7c09e8c73b8fd8b40489a57a3acc7e562 data/magiusworldmod/recipes/ruby_fence_gate.json
