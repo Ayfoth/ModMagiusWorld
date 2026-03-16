@@ -182,6 +182,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.RUBY_LAMP.get());
         dropSelf(ModBlocks.RUBY_BRAZIER.get());
         dropSelf(ModBlocks.CHARRED_RUBY_BEAM.get());
+        dropSelf(ModBlocks.RUBY_FIRE_CORE.get());
 
 
     }

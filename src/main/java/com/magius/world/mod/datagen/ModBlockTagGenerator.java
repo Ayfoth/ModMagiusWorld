@@ -94,6 +94,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.RUBY_BRAZIER.get());
         tag(BlockTags.MINEABLE_WITH_AXE).add(ModBlocks.CHARRED_RUBY_BEAM.get());
+        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.RUBY_FIRE_CORE.get());
 
 
     }

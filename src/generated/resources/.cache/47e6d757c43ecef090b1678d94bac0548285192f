@@ -1,4 +1,4 @@
-// 1.20.1	2026-03-16T18:55:23.5384827	Block States: magiusworldmod
+// 1.20.1	2026-03-16T19:18:44.8296736	Block States: magiusworldmod
 cdfa58f233795baa35b348351bbbef02ea45549c assets/magiusworldmod/blockstates/blackwood_log.json
 ca904cb56476f569779fb9050abe23470d1f2e69 assets/magiusworldmod/blockstates/catmint.json
 819c1ffbfc5cba888ca7e1f8b24b516c3b8fcb1a assets/magiusworldmod/blockstates/charred_ruby_beam.json
@@ -32,6 +32,7 @@ eb0163f450744b036894c0beb41e972f4b321c09 assets/magiusworldmod/blockstates/rubis
 0ff0e42af8789b6f1988b3a3a3a9d745eea9f7cc assets/magiusworldmod/blockstates/ruby_door.json
 22ae1daac0cccaddd92cf3fc48e4eec799c4ac7d assets/magiusworldmod/blockstates/ruby_fence.json
 2300a7801465ea093120e96342e1bf384cb0bc9e assets/magiusworldmod/blockstates/ruby_fence_gate.json
+0839b57149dbb8e9b109798d5356bcd5545e5a40 assets/magiusworldmod/blockstates/ruby_fire_core.json
 ba4d65bb158a35b32a09a274860b69c13870012f assets/magiusworldmod/blockstates/ruby_flower.json
 280f56d8ab5d9828a0c8600fb3cb235d2f693188 assets/magiusworldmod/blockstates/ruby_hanging_sign.json
 a0a8c259240b7dda7b6528f71611c2250cf2c476 assets/magiusworldmod/blockstates/ruby_lamp.json
@@ -128,6 +129,7 @@ e607bd124439e9c77a7eb098e6319490527fe512 assets/magiusworldmod/models/block/ruby
 20bb678ab60a29a56d828a69c84535703579ca18 assets/magiusworldmod/models/block/ruby_fence_inventory.json
 2e46fc1fe22eecde08cb0561fc72adec835d9f41 assets/magiusworldmod/models/block/ruby_fence_post.json
 2c2bede1b4eaba36ad9543a51f166bf49da8a309 assets/magiusworldmod/models/block/ruby_fence_side.json
+73543a733a9fa73527533376c1701aa266b96304 assets/magiusworldmod/models/block/ruby_fire_core.json
 38ce3040e0d4fdd6fd457c09521e6dbefc09dcb0 assets/magiusworldmod/models/block/ruby_flower.json
 92e0a9cf940f49196eedaabd47c2fdd09ebaa810 assets/magiusworldmod/models/block/ruby_hanging_sign.json
 38c68774ec9d43175c71f3188a65426eb33e64cd assets/magiusworldmod/models/block/ruby_lamp.json
@@ -225,6 +227,7 @@ b4b3038607be0a8b4a9b6dc60da7b1b4248f9aa2 assets/magiusworldmod/models/item/rubis
 64a64a33fa800c5b16fbbb596dcdbb14daccf27e assets/magiusworldmod/models/item/ruby_door.json
 d281609c48fb8cf3687b980899f5245d8ee06812 assets/magiusworldmod/models/item/ruby_fence.json
 57930fe9a48dcd51d7f90492478154fcd84782b5 assets/magiusworldmod/models/item/ruby_fence_gate.json
+9373e226766bbee1fe71ad8a598a4f11b73c3f4a assets/magiusworldmod/models/item/ruby_fire_core.json
 b93075971120c18c557491bf921c66625f765f25 assets/magiusworldmod/models/item/ruby_flower.json
 ba6773a5e5a087d379f2397ee647ed87cb6329d4 assets/magiusworldmod/models/item/ruby_lamp.json
 257ef3284714d082d67a6cead4b0abe416f14494 assets/magiusworldmod/models/item/ruby_leaves.json
