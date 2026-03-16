@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "magiusworldmod:white_legendary_block"
+    },
+    "L": {
+      "item": "magiusworldmod:sapphire_door"
+    },
+    "R": {
+      "item": "magiusworldmod:rubis_block"
+    }
+  },
+  "pattern": [
+    "RLR",
+    "RRR",
+    "B B"
+  ],
+  "result": {
+    "item": "magiusworldmod:gem_polishing_station"
+  },
+  "show_notification": true
+}

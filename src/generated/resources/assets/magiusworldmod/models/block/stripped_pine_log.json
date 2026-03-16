@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "magiusworldmod:block/stripped_pine_log_top",
+    "side": "magiusworldmod:block/stripped_pine_log"
+  }
+}

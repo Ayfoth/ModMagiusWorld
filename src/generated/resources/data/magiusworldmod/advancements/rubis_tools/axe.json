@@ -1,0 +1,39 @@
+{
+  "parent": "magiusworldmod:rubis_tools/root",
+  "criteria": {
+    "has_tool": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "magiusworldmod:rubis_axe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.magiusworldmod.rubis_tools.axe.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "magiusworldmod:rubis_axe",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.magiusworldmod.rubis_tools.axe.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_tool"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

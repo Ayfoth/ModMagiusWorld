@@ -1,0 +1,5 @@
+// 1.20.1	2026-02-10T07:31:23.4538081	Global Loot Modifiers : magiusworldmod
+997c1340b765a6f022144975c6cb056048501b0c data/forge/loot_modifiers/global_loot_modifiers.json
+d03a66d177000ca512d1621a68b442d96b6344e4 data/magiusworldmod/loot_modifiers/piece_mg_from_suspicious_sand.json
+7b558e74a41cd57c66142a8d9b64d1c33e474929 data/magiusworldmod/loot_modifiers/pine_cone_from_creeper.json
+db15d9ccf4d40e2b6e0d6d4bcd7b4bf76df8f268 data/magiusworldmod/loot_modifiers/pine_cone_from_grass.json

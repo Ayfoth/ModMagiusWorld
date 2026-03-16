@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:stick"
+    },
+    "R": {
+      "item": "magiusworldmod:rubis"
+    }
+  },
+  "pattern": [
+    "RR ",
+    " B ",
+    " B "
+  ],
+  "result": {
+    "item": "magiusworldmod:rubis_hoe"
+  },
+  "show_notification": true
+}

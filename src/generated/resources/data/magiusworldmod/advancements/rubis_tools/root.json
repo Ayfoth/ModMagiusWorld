@@ -1,0 +1,39 @@
+{
+  "parent": "magiusworldmod:get_ruby",
+  "criteria": {
+    "has_rubis": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "magiusworldmod:rubis"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.magiusworldmod.rubis_tools.root.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "magiusworldmod:rubis_pickaxe",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.magiusworldmod.rubis_tools.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_rubis"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

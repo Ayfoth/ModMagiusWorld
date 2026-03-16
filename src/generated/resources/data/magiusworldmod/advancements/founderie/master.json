@@ -1,0 +1,47 @@
+{
+  "parent": "magiusworldmod:founderie/root",
+  "criteria": {
+    "crafted_lava_bucket": {
+      "trigger": "minecraft:impossible"
+    },
+    "crafted_magma_block": {
+      "trigger": "minecraft:impossible"
+    },
+    "crafted_redstone_torch": {
+      "trigger": "minecraft:impossible"
+    },
+    "crafted_torch": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.magiusworldmod.founderie.master.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:blaze_powder"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.magiusworldmod.founderie.master.title"
+    }
+  },
+  "requirements": [
+    [
+      "crafted_torch"
+    ],
+    [
+      "crafted_redstone_torch"
+    ],
+    [
+      "crafted_magma_block"
+    ],
+    [
+      "crafted_lava_bucket"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

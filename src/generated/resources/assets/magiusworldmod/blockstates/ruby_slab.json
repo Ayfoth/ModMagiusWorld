@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "magiusworldmod:block/ruby_slab"
+    },
+    "type=double": {
+      "model": "magiusworldmod:block/ruby_planks"
+    },
+    "type=top": {
+      "model": "magiusworldmod:block/ruby_slab_top"
+    }
+  }
+}
