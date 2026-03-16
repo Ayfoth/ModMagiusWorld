@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "magiusworldmod:ruby_planks"
+    }
+  ],
+  "result": {
+    "item": "magiusworldmod:ruby_button"
+  }
+}

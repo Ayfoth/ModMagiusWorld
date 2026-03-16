@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:stick"
+    },
+    "R": {
+      "item": "magiusworldmod:rubis"
+    }
+  },
+  "pattern": [
+    " R ",
+    " B ",
+    " B "
+  ],
+  "result": {
+    "item": "magiusworldmod:rubis_shovel"
+  },
+  "show_notification": true
+}

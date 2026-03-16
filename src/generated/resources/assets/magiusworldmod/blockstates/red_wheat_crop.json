@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "magiusworldmod:block/redwheat_stage0"
+    },
+    "age=1": {
+      "model": "magiusworldmod:block/redwheat_stage1"
+    },
+    "age=2": {
+      "model": "magiusworldmod:block/redwheat_stage2"
+    },
+    "age=3": {
+      "model": "magiusworldmod:block/redwheat_stage3"
+    },
+    "age=4": {
+      "model": "magiusworldmod:block/redwheat_stage4"
+    },
+    "age=5": {
+      "model": "magiusworldmod:block/redwheat_stage5"
+    },
+    "age=6": {
+      "model": "magiusworldmod:block/redwheat_stage6"
+    },
+    "age=7": {
+      "model": "magiusworldmod:block/redwheat_stage7"
+    }
+  }
+}

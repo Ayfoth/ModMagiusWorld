@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "magiusworldmod:block/wither_block",
+    "side": "magiusworldmod:block/wither_block",
+    "top": "magiusworldmod:block/wither_block"
+  }
+}

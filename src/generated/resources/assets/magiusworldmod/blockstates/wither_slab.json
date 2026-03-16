@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "magiusworldmod:block/wither_slab"
+    },
+    "type=double": {
+      "model": "magiusworldmod:block/wither_block"
+    },
+    "type=top": {
+      "model": "magiusworldmod:block/wither_slab_top"
+    }
+  }
+}

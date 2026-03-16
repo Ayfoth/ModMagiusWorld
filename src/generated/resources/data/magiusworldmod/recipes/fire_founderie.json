@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "R": {
+      "item": "magiusworldmod:rubis_block"
+    }
+  },
+  "pattern": [
+    "RRR",
+    "ROR",
+    "O O"
+  ],
+  "result": {
+    "item": "magiusworldmod:fire_founderie"
+  },
+  "show_notification": true
+}

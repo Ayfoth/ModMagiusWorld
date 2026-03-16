@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "W": {
+      "item": "magiusworldmod:rubis"
+    }
+  },
+  "pattern": [
+    "   ",
+    "WWW",
+    "W W"
+  ],
+  "result": {
+    "item": "magiusworldmod:rubis_helmet"
+  },
+  "show_notification": true
+}

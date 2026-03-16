@@ -1,0 +1,29 @@
+{
+  "parent": "magiusworldmod:founderie/root",
+  "criteria": {
+    "crafted_in_founderie": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.magiusworldmod.founderie.redstone_torch.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:redstone_torch"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.magiusworldmod.founderie.redstone_torch.title"
+    }
+  },
+  "requirements": [
+    [
+      "crafted_in_founderie"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

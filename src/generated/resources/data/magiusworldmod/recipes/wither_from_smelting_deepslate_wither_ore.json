@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "wither",
+  "ingredient": {
+    "item": "magiusworldmod:deepslate_wither_ore"
+  },
+  "result": "magiusworldmod:wither"
+}

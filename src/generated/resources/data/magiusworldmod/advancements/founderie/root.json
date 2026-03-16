@@ -1,0 +1,38 @@
+{
+  "parent": "magiusworldmod:get_ruby",
+  "criteria": {
+    "has_fire_founderie": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "magiusworldmod:fire_founderie"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.magiusworldmod.founderie.root.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "magiusworldmod:fire_founderie"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.magiusworldmod.founderie.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_fire_founderie"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

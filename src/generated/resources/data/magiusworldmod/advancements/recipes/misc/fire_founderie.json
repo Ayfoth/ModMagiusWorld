@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_fire_founderie": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "magiusworldmod:fire_founderie"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "magiusworldmod:fire_founderie"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_fire_founderie",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "magiusworldmod:fire_founderie"
+    ]
+  },
+  "sends_telemetry_event": false
+}

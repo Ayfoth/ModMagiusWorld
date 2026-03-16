@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rubis_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "magiusworldmod:rubis_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "magiusworldmod:rubis_from_smelting_rubis_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_rubis_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "magiusworldmod:rubis_from_smelting_rubis_ore"
+    ]
+  },
+  "sends_telemetry_event": false
+}

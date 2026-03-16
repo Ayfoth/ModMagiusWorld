@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "W": {
+      "item": "magiusworldmod:wither"
+    }
+  },
+  "pattern": [
+    "   ",
+    "W W",
+    "W W"
+  ],
+  "result": {
+    "item": "magiusworldmod:wither_boots"
+  },
+  "show_notification": true
+}

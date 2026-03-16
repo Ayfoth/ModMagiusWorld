@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "number=up": {
+      "model": "magiusworldmod:block/dice_1"
+    },
+    "number=north": {
+      "model": "magiusworldmod:block/dice_2"
+    },
+    "number=east": {
+      "model": "magiusworldmod:block/dice_3"
+    },
+    "number=south": {
+      "model": "magiusworldmod:block/dice_5"
+    },
+    "number=west": {
+      "model": "magiusworldmod:block/dice_4"
+    },
+    "number=down": {
+      "model": "magiusworldmod:block/dice_6"
+    }
+  }
+}

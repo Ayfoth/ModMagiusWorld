@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bottom": "magiusworldmod:block/sapphire_door_bottom",
+    "top": "magiusworldmod:block/sapphire_door_top"
+  }
+}

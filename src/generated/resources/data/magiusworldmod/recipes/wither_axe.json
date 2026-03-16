@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "magiusworldmod:wither_block"
+    }
+  },
+  "pattern": [
+    "WW ",
+    "WB ",
+    " B "
+  ],
+  "result": {
+    "item": "magiusworldmod:wither_axe"
+  },
+  "show_notification": true
+}

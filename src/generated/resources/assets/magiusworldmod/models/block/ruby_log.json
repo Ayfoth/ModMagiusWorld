@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "magiusworldmod:block/ruby_log_top",
+    "side": "magiusworldmod:block/ruby_log"
+  }
+}

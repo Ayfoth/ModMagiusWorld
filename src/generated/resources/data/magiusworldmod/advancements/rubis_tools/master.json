@@ -1,0 +1,84 @@
+{
+  "parent": "magiusworldmod:rubis_tools/root",
+  "criteria": {
+    "has_axe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "magiusworldmod:rubis_axe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_pickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "magiusworldmod:rubis_pickaxe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_shovel": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "magiusworldmod:rubis_shovel"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "magiusworldmod:rubis_sword"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.magiusworldmod.rubis_tools.master.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "magiusworldmod:rubis_sword",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.magiusworldmod.rubis_tools.master.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_pickaxe"
+    ],
+    [
+      "has_axe"
+    ],
+    [
+      "has_shovel"
+    ],
+    [
+      "has_sword"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
