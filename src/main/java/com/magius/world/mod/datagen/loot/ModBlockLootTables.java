@@ -168,6 +168,15 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.RUBY_FENCE_GATE.get());
         add(ModBlocks.RUBY_DOOR.get(), createDoorTable(ModBlocks.RUBY_DOOR.get()));
         dropSelf(ModBlocks.RUBY_TRAPDOOR.get());
+        this.add(ModBlocks.RUBY_SIGN.get(), block ->
+                createSingleItemTable(ModItems.RUBY_SIGN.get()));
+        this.add(ModBlocks.RUBY_WALL_SIGN.get(), block ->
+                createSingleItemTable(ModItems.RUBY_SIGN.get()));
+
+        this.add(ModBlocks.RUBY_HANGING_SIGN.get(), block ->
+                createSingleItemTable(ModItems.RUBY_HANGING_SIGN.get()));
+        this.add(ModBlocks.RUBY_WALL_HANGING_SIGN.get(), block ->
+                createSingleItemTable(ModItems.RUBY_HANGING_SIGN.get()));
 
 
     }

@@ -132,6 +132,12 @@
 
   "block.magiusworldmod.ruby_door": "Ruby Door",
   "block.magiusworldmod.ruby_trapdoor": "Ruby Trapdoor",
+  "block.magiusworldmod.ruby_sign": "Ruby Sign",
+  "block.magiusworldmod.ruby_wall_sign": "Ruby Wall Sign",
+  "block.magiusworldmod.ruby_hanging_sign": "Ruby Hanging Sign",
+  "block.magiusworldmod.ruby_wall_hanging_sign": "Ruby Wall Hanging Sign",
+  "item.magiusworldmod.ruby_sign": "Ruby Sign",
+  "item.magiusworldmod.ruby_hanging_sign": "Ruby Hanging Sign",
 
 
   "entity.minecraft.villager.magiusworldmod.soundmaster": "Sound Master",

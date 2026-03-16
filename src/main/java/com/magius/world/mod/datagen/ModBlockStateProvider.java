@@ -162,6 +162,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 models().fenceGate("ruby_fence_gate", blockTexture(ModBlocks.RUBY_PLANKS.get())));
         rubyDoorBlock(ModBlocks.RUBY_DOOR, modLoc("block/ruby_door_bottom"), modLoc("block/ruby_door_top"));
         rubyTrapdoorBlock(ModBlocks.RUBY_TRAPDOOR, modLoc("block/ruby_trapdoor"));
+        signBlock(((StandingSignBlock) ModBlocks.RUBY_SIGN.get()),
+                ((WallSignBlock) ModBlocks.RUBY_WALL_SIGN.get()),
+                blockTexture(ModBlocks.RUBY_PLANKS.get()));
+
+        hangingSignBlock(ModBlocks.RUBY_HANGING_SIGN.get(),
+                ModBlocks.RUBY_WALL_HANGING_SIGN.get(),
+                blockTexture(ModBlocks.RUBY_PLANKS.get()));
     }
     private void rubyDoorBlock(RegistryObject<Block> block, ResourceLocation bottom, ResourceLocation top) {
         doorBlockWithRenderType(

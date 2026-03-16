@@ -137,6 +137,17 @@ public class ModItems {
     public static final RegistryObject<Item> RUBY_MUSHROOM = ITEMS.register("ruby_mushroom",
             () -> new BlockItem(ModBlocks.RUBY_MUSHROOM.get(),
                     new Item.Properties().food(ModFoods.RUBY_MUSHROOM)));
+    public static final RegistryObject<Item> RUBY_SIGN = ITEMS.register("ruby_sign",
+            () -> new SignItem(new Item.Properties().stacksTo(16),
+                    ModBlocks.RUBY_SIGN.get(),
+                    ModBlocks.RUBY_WALL_SIGN.get()));
+
+    public static final RegistryObject<Item> RUBY_HANGING_SIGN = ITEMS.register("ruby_hanging_sign",
+            () -> new HangingSignItem(
+                    ModBlocks.RUBY_HANGING_SIGN.get(),
+                    ModBlocks.RUBY_WALL_HANGING_SIGN.get(),
+                    new Item.Properties().stacksTo(16)
+            ));
 
 
 

@@ -125,7 +125,13 @@
   "block.magiusworldmod.ruby_fence_gate": "Portillon en rubis",
 
   "block.magiusworldmod.ruby_door": "Porte en bois rubis",
-  "block.magiusworldmod.ruby_trapdoor": "Trappe en bois rubis"
+  "block.magiusworldmod.ruby_trapdoor": "Trappe en bois rubis",
+  "block.magiusworldmod.ruby_sign": "Panneau en bois rubis",
+  "block.magiusworldmod.ruby_wall_sign": "Panneau mural en bois rubis",
+  "block.magiusworldmod.ruby_hanging_sign": "Panneau suspendu en bois rubis",
+  "block.magiusworldmod.ruby_wall_hanging_sign": "Panneau mural suspendu en bois rubis",
+  "item.magiusworldmod.ruby_sign": "Panneau en bois rubis",
+  "item.magiusworldmod.ruby_hanging_sign": "Panneau suspendu en bois rubis",
 
 
   "tooltip.magiusworldmod.metal_detector": "Localise les §lminerais de Fer",

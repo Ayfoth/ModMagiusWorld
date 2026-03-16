@@ -286,6 +286,21 @@ public class ModBlocks {
                             .sound(SoundType.WOOD),
                     BlockSetType.OAK
             ));
+    public static final RegistryObject<Block> RUBY_SIGN = BLOCKS.register("ruby_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN),
+                    ModWoodTypes.RUBY));
+
+    public static final RegistryObject<Block> RUBY_WALL_SIGN = BLOCKS.register("ruby_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN),
+                    ModWoodTypes.RUBY));
+
+    public static final RegistryObject<Block> RUBY_HANGING_SIGN = BLOCKS.register("ruby_hanging_sign",
+            () -> new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN),
+                    ModWoodTypes.RUBY));
+
+    public static final RegistryObject<Block> RUBY_WALL_HANGING_SIGN = BLOCKS.register("ruby_wall_hanging_sign",
+            () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN),
+                    ModWoodTypes.RUBY));
 
 
 
