@@ -123,6 +123,7 @@ public class MagiusWorldMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             Sheets.addWoodType(ModWoodTypes.PINE);
+            Sheets.addWoodType(ModWoodTypes.RUBY);
             EntityRenderers.register(ModEntities.RHINO.get(), RhinoRenderer::new);
             EntityRenderers.register(ModEntities.MOD_BOAT.get(), pContext -> new ModBoatRenderer(pContext,
                     false));
