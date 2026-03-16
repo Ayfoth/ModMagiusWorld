@@ -294,6 +294,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('#', ModBlocks.RUBY_PLANKS.get())
                 .unlockedBy(getHasName(ModBlocks.RUBY_PLANKS.get()), has(ModBlocks.RUBY_PLANKS.get()))
                 .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TRANSPORTATION, ModItems.RUBY_BOAT.get())
+                .pattern("# #")
+                .pattern("###")
+                .define('#', ModBlocks.RUBY_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.RUBY_PLANKS.get()), has(ModBlocks.RUBY_PLANKS.get()))
+                .save(pWriter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.TRANSPORTATION, ModItems.RUBY_CHEST_BOAT.get())
+                .requires(ModItems.RUBY_BOAT.get())
+                .requires(Items.CHEST)
+                .unlockedBy(getHasName(ModItems.RUBY_BOAT.get()), has(ModItems.RUBY_BOAT.get()))
+                .save(pWriter);
     }
         protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List< ItemLike > pIngredients, RecipeCategory
         pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {

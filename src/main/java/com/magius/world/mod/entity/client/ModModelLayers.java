@@ -11,5 +11,10 @@ public class ModModelLayers {
             ResourceLocation.fromNamespaceAndPath(MagiusWorldMod.MOD_ID, "boat/pine"), "main");
     public static final ModelLayerLocation PINE_CHEST_BOAT_LAYER = new ModelLayerLocation(
             ResourceLocation.fromNamespaceAndPath(MagiusWorldMod.MOD_ID, "chest_boat/pine"), "main");
+    public static final ModelLayerLocation RUBY_BOAT_LAYER = new ModelLayerLocation(
+            ResourceLocation.fromNamespaceAndPath(MagiusWorldMod.MOD_ID, "boat/ruby"), "main");
+
+    public static final ModelLayerLocation RUBY_CHEST_BOAT_LAYER = new ModelLayerLocation(
+            ResourceLocation.fromNamespaceAndPath(MagiusWorldMod.MOD_ID, "chest_boat/ruby"), "main");
 
 }
