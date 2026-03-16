@@ -148,6 +148,11 @@ public class ModItems {
                     ModBlocks.RUBY_WALL_HANGING_SIGN.get(),
                     new Item.Properties().stacksTo(16)
             ));
+    public static final RegistryObject<Item> RUBY_BOAT = ITEMS.register("ruby_boat",
+            () -> new ModBoatItem(false, ModBoatEntity.Type.RUBY, new Item.Properties()));
+
+    public static final RegistryObject<Item> RUBY_CHEST_BOAT = ITEMS.register("ruby_chest_boat",
+            () -> new ModBoatItem(true, ModBoatEntity.Type.RUBY, new Item.Properties()));
 
 
 

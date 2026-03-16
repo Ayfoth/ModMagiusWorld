@@ -40,6 +40,7 @@ public class ModBoatEntity extends Boat {
     public Item getDropItem() {
         return switch (getModVariant()){
             case PINE -> ModItems.PINE_BOAT.get();
+            case RUBY -> ModItems.RUBY_BOAT.get();
         };
     }
 
@@ -72,7 +73,8 @@ public class ModBoatEntity extends Boat {
 
 
     public static enum Type implements StringRepresentable {
-        PINE(ModBlocks.PINE_PLANKS.get(), "pine");
+        PINE(ModBlocks.PINE_PLANKS.get(), "pine"),
+        RUBY(ModBlocks.RUBY_PLANKS.get(), "ruby");
 
 
         private final String name;
