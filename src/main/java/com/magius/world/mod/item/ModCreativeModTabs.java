@@ -167,6 +167,8 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModBlocks.RUBY_TRAPDOOR.get());
                         pOutput.accept(ModBlocks.RUBY_SIGN.get());
                         pOutput.accept(ModBlocks.RUBY_HANGING_SIGN.get());
+                        pOutput.accept(ModItems.RUBY_BOAT.get());
+                        pOutput.accept(ModItems.RUBY_CHEST_BOAT.get());
 //
 //                        // items rubis
                         pOutput.accept(ModItems.RED_WHEAT_SEEDS.get());
