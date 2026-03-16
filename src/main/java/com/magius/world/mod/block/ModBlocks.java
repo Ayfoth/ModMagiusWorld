@@ -301,6 +301,33 @@ public class ModBlocks {
     public static final RegistryObject<Block> RUBY_WALL_HANGING_SIGN = BLOCKS.register("ruby_wall_hanging_sign",
             () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN),
                     ModWoodTypes.RUBY));
+    public static final RegistryObject<Block> RUBY_TILE = registerBlock("ruby_tile",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
+                    .strength(3f)
+                    .sound(SoundType.STONE)
+            ));
+    public static final RegistryObject<Block> RUBY_PILLAR = registerBlock("ruby_pillar",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.QUARTZ_PILLAR)
+                    .strength(3f)
+                    .sound(SoundType.STONE)
+            ));
+    public static final RegistryObject<Block> RUBY_LAMP = registerBlock("ruby_lamp",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.REDSTONE_LAMP)
+                    .lightLevel(state -> 12)
+                    .strength(2f)
+                    .sound(SoundType.GLASS)
+            ));
+    public static final RegistryObject<Block> RUBY_BRAZIER = registerBlock("ruby_brazier",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.LANTERN)
+                    .strength(2.0f)
+                    .lightLevel(state -> 13)
+                    .sound(SoundType.LANTERN)
+                    .noOcclusion()));
+
+    public static final RegistryObject<Block> CHARRED_RUBY_BEAM = registerBlock("charred_ruby_beam",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
+                    .strength(2.5f)
+                    .sound(SoundType.WOOD)));
 
 
 

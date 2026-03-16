@@ -169,6 +169,26 @@ public class ModBlockStateProvider extends BlockStateProvider {
         hangingSignBlock(ModBlocks.RUBY_HANGING_SIGN.get(),
                 ModBlocks.RUBY_WALL_HANGING_SIGN.get(),
                 blockTexture(ModBlocks.RUBY_PLANKS.get()));
+        simpleBlockWithItem(ModBlocks.RUBY_TILE.get(), cubeAll(ModBlocks.RUBY_TILE.get()));
+
+        axisBlock((RotatedPillarBlock) ModBlocks.RUBY_PILLAR.get(),
+                modLoc("block/ruby_pillar_side"),
+                modLoc("block/ruby_pillar_top"));
+        simpleBlockItem(ModBlocks.RUBY_PILLAR.get(),
+                models().cubeColumn("ruby_pillar",
+                        modLoc("block/ruby_pillar_side"),
+                        modLoc("block/ruby_pillar_top")));
+
+        simpleBlockWithItem(ModBlocks.RUBY_LAMP.get(), cubeAll(ModBlocks.RUBY_LAMP.get()));
+        simpleBlockWithItem(ModBlocks.RUBY_BRAZIER.get(), cubeAll(ModBlocks.RUBY_BRAZIER.get()));
+
+        axisBlock((RotatedPillarBlock) ModBlocks.CHARRED_RUBY_BEAM.get(),
+                modLoc("block/charred_ruby_beam_side"),
+                modLoc("block/charred_ruby_beam_top"));
+        simpleBlockItem(ModBlocks.CHARRED_RUBY_BEAM.get(),
+                models().cubeColumn("charred_ruby_beam",
+                        modLoc("block/charred_ruby_beam_side"),
+                        modLoc("block/charred_ruby_beam_top")));
     }
     private void rubyDoorBlock(RegistryObject<Block> block, ResourceLocation bottom, ResourceLocation top) {
         doorBlockWithRenderType(

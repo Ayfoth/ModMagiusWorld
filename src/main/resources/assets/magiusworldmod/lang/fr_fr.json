@@ -134,6 +134,11 @@
   "item.magiusworldmod.ruby_hanging_sign": "Panneau suspendu en bois rubis",
   "item.magiusworldmod.ruby_boat": "Bateau rubis",
   "item.magiusworldmod.ruby_chest_boat": "Bateau coffre rubis",
+  "block.magiusworldmod.ruby_tile": "Dalle rubis",
+  "block.magiusworldmod.ruby_pillar": "Pilier rubis",
+  "block.magiusworldmod.ruby_lamp": "Lampe rubis",
+  "block.magiusworldmod.ruby_brazier": "Brasero rubis",
+  "block.magiusworldmod.charred_ruby_beam": "Poutre rubis calcinée",
 
 
   "tooltip.magiusworldmod.metal_detector": "Localise les §lminerais de Fer",

@@ -177,6 +177,11 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 createSingleItemTable(ModItems.RUBY_HANGING_SIGN.get()));
         this.add(ModBlocks.RUBY_WALL_HANGING_SIGN.get(), block ->
                 createSingleItemTable(ModItems.RUBY_HANGING_SIGN.get()));
+        dropSelf(ModBlocks.RUBY_TILE.get());
+        dropSelf(ModBlocks.RUBY_PILLAR.get());
+        dropSelf(ModBlocks.RUBY_LAMP.get());
+        dropSelf(ModBlocks.RUBY_BRAZIER.get());
+        dropSelf(ModBlocks.CHARRED_RUBY_BEAM.get());
 
 
     }

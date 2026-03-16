@@ -92,6 +92,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         this.tag(BlockTags.WOODEN_DOORS).add(ModBlocks.RUBY_DOOR.get());
         this.tag(BlockTags.WOODEN_TRAPDOORS).add(ModBlocks.RUBY_TRAPDOOR.get());
 
+        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.RUBY_BRAZIER.get());
+        tag(BlockTags.MINEABLE_WITH_AXE).add(ModBlocks.CHARRED_RUBY_BEAM.get());
+
 
     }
 }
