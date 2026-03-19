@@ -140,6 +140,8 @@
   "block.magiusworldmod.ruby_brazier": "Brasero rubis",
   "block.magiusworldmod.charred_ruby_beam": "Poutre rubis calcinée",
   "block.magiusworldmod.ruby_fire_core": "Cœur de feu rubis",
+  "item.magiusworldmod.ruby_shard": "Éclat de rubis",
+  "item.magiusworldmod.ruby_essence": "Essence de rubis",
 
 
   "tooltip.magiusworldmod.metal_detector": "Localise les §lminerais de Fer",

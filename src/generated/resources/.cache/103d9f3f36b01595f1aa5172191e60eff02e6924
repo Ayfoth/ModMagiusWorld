@@ -1,7 +1,7 @@
-// 1.20.1	2026-03-15T11:02:33.8931796	Registries
+// 1.20.1	2026-03-17T19:42:09.1118035	Registries
 c8caeaee3a75068ef1ff6404e3efcc974473d0cc data/magiusworldmod/dimension/testdim.json
 e241e971aacde6f4d0236c622c99d6c9caeb981e data/magiusworldmod/dimension_type/testdim_type.json
-6db3fb50075782707f5e8b78a2ab5504654f8d11 data/magiusworldmod/worldgen/biome/ruby_biome.json
+b882adba387a5d985ff7965f0c1d60e08ab0fa02 data/magiusworldmod/worldgen/biome/ruby_biome.json
 b591d69c3543e1dbcaf8d7bdf51b2e1d09fcc08b data/magiusworldmod/worldgen/biome/test_biome.json
 077f88a04a54be7aebe4f5ddbfb84a06a68eeafc data/magiusworldmod/worldgen/configured_feature/crystal_shard.json
 36866e763de163e8462441991edc047b94caf173 data/magiusworldmod/worldgen/configured_feature/dark_red_grass.json

@@ -81,7 +81,20 @@ public class ModBiomes {
     }
     public static Biome rubyBiome(BootstapContext<Biome> context) {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
-        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+        spawnBuilder.addSpawn(MobCategory.CREATURE,
+                new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 6, 2, 3));
+
+        spawnBuilder.addSpawn(MobCategory.CREATURE,
+                new MobSpawnSettings.SpawnerData(ModEntities.RHINO.get(), 2, 1, 2));
+
+        spawnBuilder.addSpawn(MobCategory.CREATURE,
+                new MobSpawnSettings.SpawnerData(ModEntities.RUBY_SHEEP.get(), 10, 2, 4));
+
+        spawnBuilder.addSpawn(MobCategory.CREATURE,
+                new MobSpawnSettings.SpawnerData(ModEntities.RUBY_BOAR.get(), 7, 1, 3));
+
+        spawnBuilder.addSpawn(MobCategory.MONSTER,
+                new MobSpawnSettings.SpawnerData(ModEntities.RUBY_WISP.get(), 8, 1, 2));
 
         BiomeGenerationSettings.Builder biomeBuilder =
                 new BiomeGenerationSettings.Builder(

@@ -175,6 +175,10 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModBlocks.RUBY_BRAZIER.get());
                         pOutput.accept(ModBlocks.CHARRED_RUBY_BEAM.get());
                         pOutput.accept(ModBlocks.RUBY_FIRE_CORE.get());
+                        pOutput.accept(ModItems.RUBY_BOAR_SPAWN_EGG.get());
+                        pOutput.accept(ModItems.RUBY_WISP_SPAWN_EGG.get());
+                        pOutput.accept(ModItems.RUBY_SHARD.get());
+                        pOutput.accept(ModItems.RUBY_ESSENCE.get());
 
 //
 //                        // items rubis

@@ -41,6 +41,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import net.minecraft.client.renderer.entity.SheepRenderer;
+import com.magius.world.mod.entity.client.RubyBoarRenderer;
+import com.magius.world.mod.entity.client.RubyWispRenderer;
 import terrablender.api.SurfaceRuleManager;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -125,10 +128,13 @@ public class MagiusWorldMod
             Sheets.addWoodType(ModWoodTypes.PINE);
             Sheets.addWoodType(ModWoodTypes.RUBY);
             EntityRenderers.register(ModEntities.RHINO.get(), RhinoRenderer::new);
+            EntityRenderers.register(ModEntities.RUBY_SHEEP.get(), SheepRenderer::new);
             EntityRenderers.register(ModEntities.MOD_BOAT.get(), pContext -> new ModBoatRenderer(pContext,
                     false));
             EntityRenderers.register(ModEntities.MOD_CHEST_BOAT.get(), pContext -> new ModBoatRenderer(pContext,
                     true));
+            EntityRenderers.register(ModEntities.RUBY_BOAR.get(), RubyBoarRenderer::new);
+            EntityRenderers.register(ModEntities.RUBY_WISP.get(), RubyWispRenderer::new);
 
             EntityRenderers.register(ModEntities.DICE_PROJECTILE.get(), ThrownItemRenderer::new);
 
