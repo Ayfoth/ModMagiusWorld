@@ -1,4 +1,4 @@
-// 1.20.1	2026-03-16T07:54:21.3236549	Item Models: magiusworldmod
+// 1.20.1	2026-03-18T07:00:11.5795165	Item Models: magiusworldmod
 8cb32d54c73609d84d3aad18f922d659d2a6cf78 assets/magiusworldmod/models/item/bar_brawl_music_disc.json
 c8feae8a7801151fe81624ad00fcb00df333b906 assets/magiusworldmod/models/item/blackwood_block.json
 3bf0cf0707cea8a5208cad012c0bedf5a712a11e assets/magiusworldmod/models/item/catmint.json
@@ -72,12 +72,15 @@ ae6b15f8d6f16f4a8f4c1486f638566d7ea90e2a assets/magiusworldmod/models/item/rubis
 78b8d25c8839a552d7ab5d8b26a0163df4eb1493 assets/magiusworldmod/models/item/rubis_pickaxe.json
 9d07c77ad61d83fa3f1821ab9b4b79ece9173e5f assets/magiusworldmod/models/item/rubis_shovel.json
 1d92e4ba92db643f65fe9e3adbc3664a51733276 assets/magiusworldmod/models/item/rubis_sword.json
+83b270e9fb1dd0091c59ff895a34efc3a76a9a22 assets/magiusworldmod/models/item/ruby_bolt_item.json
 9af5403858dcf326a031754dfb259d70caa74d0a assets/magiusworldmod/models/item/ruby_bush.json
 4160283e9fcb6a5db98a71527a002a2103873e88 assets/magiusworldmod/models/item/ruby_button.json
+df3d15b62454097397174fc1def91527fa07614d assets/magiusworldmod/models/item/ruby_essence.json
 20bb678ab60a29a56d828a69c84535703579ca18 assets/magiusworldmod/models/item/ruby_fence.json
 57930fe9a48dcd51d7f90492478154fcd84782b5 assets/magiusworldmod/models/item/ruby_fence_gate.json
 116f6cd674d64b8ab7a1d2214b6408e289ca4bd5 assets/magiusworldmod/models/item/ruby_mushroom.json
 69ef84ae330b70f2118fce62933a146120c642d0 assets/magiusworldmod/models/item/ruby_pressure_plate.json
+0bc56252e8181b51a85405d323b68fc7823d31bf assets/magiusworldmod/models/item/ruby_shard.json
 b6aa2e5eef394a8dc72558195e5a818cc7ff2878 assets/magiusworldmod/models/item/sapphire.json
 3d5278465e26eef2cb2e62383840e1cad93e1281 assets/magiusworldmod/models/item/sapphire_axe.json
 1e247c72a8b1a89531b23d8d8c7db27db791133d assets/magiusworldmod/models/item/sapphire_boots.json

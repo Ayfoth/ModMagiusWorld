@@ -4,8 +4,13 @@ import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.block.entity.ModBlockEntities;
 import com.magius.world.mod.block.entity.renderer.FireFounderieBlockEntityRenderer;
 import com.magius.world.mod.block.entity.renderer.GemPolishingBlockEntityRenderer;
+import com.magius.world.mod.entity.ModEntities;
 import com.magius.world.mod.entity.client.ModModelLayers;
 import com.magius.world.mod.entity.client.RhinoModel;
+import com.magius.world.mod.entity.client.RubyBoarModel;
+import com.magius.world.mod.entity.client.RubyWispModel;
+import com.magius.world.mod.entity.custom.RubyBoarEntity;
+import com.magius.world.mod.entity.custom.RubyWispEntity;
 import com.magius.world.mod.util.ModWoodTypes;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
@@ -14,6 +19,7 @@ import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -36,6 +42,8 @@ public class ModEventBusClientEvents {
         event.registerLayerDefinition(ModModelLayers.PINE_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
         event.registerLayerDefinition(ModModelLayers.RUBY_BOAT_LAYER, BoatModel::createBodyModel);
         event.registerLayerDefinition(ModModelLayers.RUBY_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
+        event.registerLayerDefinition(RubyBoarModel.LAYER_LOCATION, RubyBoarModel::createBodyLayer);
+        event.registerLayerDefinition(RubyWispModel.LAYER_LOCATION, RubyWispModel::createBodyLayer);
     }
 
     @SubscribeEvent
@@ -45,4 +53,5 @@ public class ModEventBusClientEvents {
         event.registerBlockEntityRenderer(ModBlockEntities.MOD_SIGN.get(), SignRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.MOD_HANGING_SIGN.get(), HangingSignRenderer::new);
     }
+
 }

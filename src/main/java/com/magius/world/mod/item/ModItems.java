@@ -153,6 +153,31 @@ public class ModItems {
 
     public static final RegistryObject<Item> RUBY_CHEST_BOAT = ITEMS.register("ruby_chest_boat",
             () -> new ModBoatItem(true, ModBoatEntity.Type.RUBY, new Item.Properties()));
+    public static final RegistryObject<Item> RUBY_BOAR_SPAWN_EGG =
+            ITEMS.register("ruby_boar_spawn_egg", () ->
+                    new ForgeSpawnEggItem(
+                            ModEntities.RUBY_BOAR,
+                            0x8F1D2C, // couleur principale
+                            0xC92F45, // taches
+                            new Item.Properties()
+                    ));
+
+    public static final RegistryObject<Item> RUBY_WISP_SPAWN_EGG =
+            ITEMS.register("ruby_wisp_spawn_egg", () ->
+                    new ForgeSpawnEggItem(
+                            ModEntities.RUBY_WISP,
+                            0x7A0015,
+                            0xFF4D6D,
+                            new Item.Properties()
+                    ));
+    public static final RegistryObject<Item> RUBY_SHARD = ITEMS.register("ruby_shard",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> RUBY_ESSENCE = ITEMS.register("ruby_essence",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RUBY_BOLT_ITEM =
+            ITEMS.register("ruby_bolt_item",
+                    () -> new Item(new Item.Properties()));
 
 
 

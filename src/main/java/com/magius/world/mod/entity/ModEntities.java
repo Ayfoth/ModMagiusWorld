@@ -1,10 +1,7 @@
 package com.magius.world.mod.entity;
 
 import com.magius.world.mod.MagiusWorldMod;
-import com.magius.world.mod.entity.custom.DiceProjectileEntity;
-import com.magius.world.mod.entity.custom.ModBoatEntity;
-import com.magius.world.mod.entity.custom.ModChestBoatEntity;
-import com.magius.world.mod.entity.custom.RhinoEntity;
+import com.magius.world.mod.entity.custom.*;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -31,6 +28,30 @@ public class ModEntities {
     public static final RegistryObject<EntityType<DiceProjectileEntity>> DICE_PROJECTILE =
             ENTITY_TYPES.register("dice_projectile", () -> EntityType.Builder.<DiceProjectileEntity>of(DiceProjectileEntity::new, MobCategory.MISC)
                     .sized(0.5f, 0.5f).build("dice_projectile"));
+    public static final RegistryObject<EntityType<RubySheepEntity>> RUBY_SHEEP =
+            ENTITY_TYPES.register("ruby_sheep", () ->
+                    EntityType.Builder.of(RubySheepEntity::new, MobCategory.CREATURE)
+                            .sized(0.9f, 1.3f)
+                            .build("ruby_sheep"));
+    public static final RegistryObject<EntityType<RubyBoarEntity>> RUBY_BOAR =
+            ENTITY_TYPES.register("ruby_boar", () ->
+                    EntityType.Builder.of(RubyBoarEntity::new, MobCategory.CREATURE)
+                            .sized(0.9f, 0.9f)
+                            .build("ruby_boar"));
+
+    public static final RegistryObject<EntityType<RubyWispEntity>> RUBY_WISP =
+            ENTITY_TYPES.register("ruby_wisp", () ->
+                    EntityType.Builder.of(RubyWispEntity::new, MobCategory.MONSTER)
+                            .sized(0.6f, 1.8f)
+                            .build("ruby_wisp"));
+
+    public static final RegistryObject<EntityType<RubyBoltEntity>> RUBY_BOLT =
+            ENTITY_TYPES.register("ruby_bolt", () ->
+                    EntityType.Builder.<RubyBoltEntity>of(RubyBoltEntity::new, MobCategory.MISC)
+                            .sized(0.25f, 0.25f)
+                            .clientTrackingRange(4)
+                            .updateInterval(10)
+                            .build("ruby_bolt"));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

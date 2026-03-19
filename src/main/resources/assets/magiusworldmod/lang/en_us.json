@@ -146,6 +146,10 @@
   "block.magiusworldmod.ruby_brazier": "Ruby Brazier",
   "block.magiusworldmod.charred_ruby_beam": "Charred Ruby Beam",
   "block.magiusworldmod.ruby_fire_core": "Ruby Fire Core",
+  "item.magiusworldmod.ruby_boar_spawn_egg": "Ruby Boar Spawn Egg",
+  "item.magiusworldmod.ruby_wisp_spawn_egg": "Ruby Wisp Spawn Egg",
+  "item.magiusworldmod.ruby_shard": "Ruby Shard",
+  "item.magiusworldmod.ruby_essence": "Ruby Essence",
 
 
   "entity.minecraft.villager.magiusworldmod.soundmaster": "Sound Master",

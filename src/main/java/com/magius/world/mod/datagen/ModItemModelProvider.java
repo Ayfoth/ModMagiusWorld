@@ -121,6 +121,13 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.DICE);
         saplingItem(ModBlocks.PINE_SAPLING);
+        withExistingParent("ruby_shard", mcLoc("item/generated"))
+                .texture("layer0", modLoc("item/ruby_shard"));
+
+        withExistingParent("ruby_essence", mcLoc("item/generated"))
+                .texture("layer0", modLoc("item/ruby_essence"));
+        withExistingParent("ruby_bolt_item", mcLoc("item/generated"))
+                .texture("layer0", modLoc("item/ruby_bolt_item"));
 
     }
     // Shoutout to El_Redstoniano for making this
