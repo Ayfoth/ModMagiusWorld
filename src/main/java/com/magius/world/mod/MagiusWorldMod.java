@@ -1,6 +1,7 @@
 package com.magius.world.mod;
 
 import com.magius.world.mod.block.ModBlocks;
+import com.magius.world.mod.particle.ModParticles;
 import com.magius.world.mod.block.entity.ModBlockEntities;
 import com.magius.world.mod.entity.ModEntities;
 import com.magius.world.mod.entity.client.ModBoatRenderer;
@@ -79,7 +80,8 @@ public class MagiusWorldMod
         ModTrunkPlacerTypes.register(modEventBus);
         ModFoliagePlacer.register(modEventBus);
        ModTerrablender.registerBiomes();
-        ModParticles.PARTICLES.register(modEventBus);
+       // ModParticles.PARTICLES.register(modEventBus);
+        ModParticles.register(modEventBus);
         ModFeatures.FEATURES.register(modEventBus);
 
         // Register the commonSetup method for modloading
