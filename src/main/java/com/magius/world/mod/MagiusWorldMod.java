@@ -9,6 +9,7 @@ import com.magius.world.mod.entity.custom.ModChestBoatEntity;
 import com.magius.world.mod.item.ModCreativeModTabs;
 import com.magius.world.mod.item.ModItems;
 import com.magius.world.mod.loot.ModLootModifiers;
+import com.magius.world.mod.particle.ModParticles;
 import com.magius.world.mod.recipe.ModRecipes;
 import com.magius.world.mod.screen.FireFounderieScreen;
 import com.magius.world.mod.screen.GemPolishingStationScreen;
@@ -78,6 +79,7 @@ public class MagiusWorldMod
         ModTrunkPlacerTypes.register(modEventBus);
         ModFoliagePlacer.register(modEventBus);
        ModTerrablender.registerBiomes();
+        ModParticles.PARTICLES.register(modEventBus);
         ModFeatures.FEATURES.register(modEventBus);
 
         // Register the commonSetup method for modloading

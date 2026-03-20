@@ -11,6 +11,8 @@ import com.magius.world.mod.entity.client.RubyBoarModel;
 import com.magius.world.mod.entity.client.RubyWispModel;
 import com.magius.world.mod.entity.custom.RubyBoarEntity;
 import com.magius.world.mod.entity.custom.RubyWispEntity;
+import com.magius.world.mod.particle.ModParticles;
+import com.magius.world.mod.particle.custom.CrystalFragmentParticle;
 import com.magius.world.mod.util.ModWoodTypes;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
@@ -19,6 +21,7 @@ import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -26,6 +29,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 @Mod.EventBusSubscriber(modid = MagiusWorldMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModEventBusClientEvents {
+
 
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
