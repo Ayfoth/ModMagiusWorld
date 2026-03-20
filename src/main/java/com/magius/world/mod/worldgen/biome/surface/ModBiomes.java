@@ -4,6 +4,8 @@ import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.entity.ModEntities;
 import com.magius.world.mod.sound.ModSounds;
 import com.magius.world.mod.worldgen.ModPlacedFeatures;
+import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -15,6 +17,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import org.joml.Vector3f;
 
 public class ModBiomes {
     public static final ResourceKey<Biome> TEST_BIOME = ResourceKey.create(Registries.BIOME,
@@ -198,6 +201,10 @@ public class ModBiomes {
                         .fogColor(0x3a0d0d)
                         .grassColorOverride(0x5c1a1a)
                         .foliageColorOverride(0x7a2222)
+                        .ambientParticle(new AmbientParticleSettings(
+                                new DustParticleOptions(new Vector3f(0.85f, 0.05f, 0.08f), 1.2f),
+                                0.008f
+                        ))
                         .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                         .build())
                 .build();
