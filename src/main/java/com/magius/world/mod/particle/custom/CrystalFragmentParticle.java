@@ -10,40 +10,30 @@ public class CrystalFragmentParticle extends TextureSheetParticle {
                                       double xd, double yd, double zd) {
         super(level, x, y, z, xd, yd, zd);
 
-        this.friction = 0.98f;
-        this.gravity = 0.0f;
-
         this.xd = xd;
         this.yd = yd;
         this.zd = zd;
 
-        this.lifetime = 40;
+        this.gravity = -0.001f; // très légère montée
+        this.friction = 0.98f;
+        this.lifetime = 50 + this.random.nextInt(20);
 
-        this.quadSize = 0.8f; // très grand pour test
+        this.quadSize = 0.25f + this.random.nextFloat() * 0.15f;
+        this.alpha = 0.9f;
 
         this.rCol = 1.0f;
         this.gCol = 1.0f;
         this.bCol = 1.0f;
-
-        this.alpha = 1.0f;
-    }
-    @Override
-    public int getLightColor(float partialTick) {
-        return 240;
-    }
-
-    @Override
-    public void tick() {
-        super.tick();
-
-        if (this.age > this.lifetime / 2) {
-            this.alpha = 1.0f - ((float)(this.age - this.lifetime / 2) / (this.lifetime / 2));
-        }
     }
 
     @Override
     public ParticleRenderType getRenderType() {
         return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
+    }
+
+    @Override
+    public int getLightColor(float partialTick) {
+        return 240;
     }
 
     public static class Provider implements ParticleProvider<SimpleParticleType> {
