@@ -3,6 +3,7 @@ package com.magius.world.mod.datagen;
 import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.block.ModBlocks;
 import com.magius.world.mod.item.ModItems;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
@@ -307,19 +308,28 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ModItems.RUBY_SHARD.get())
                 .unlockedBy(getHasName(ModItems.RUBY_SHARD.get()), has(ModItems.RUBY_SHARD.get()))
                 .save(pWriter, modLoc("rubis_from_shards"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.RUBY_FIRE_CORE.get())
+                .pattern("RRR")
+                .pattern("RSR")
+                .pattern("RRR")
+                .define('S', ModItems.RUBY_ESSENCE.get())
+                .define('R', ModBlocks.RUBIS_BLOCK.get())
+                .unlockedBy(getHasName(ModBlocks.RUBY_FIRE_CORE.get()), has(ModBlocks.RUBY_FIRE_CORE.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.RUBY_BRAZIER.get())
+                .pattern("RRR")
+                .pattern("RBR")
+                .pattern("RRR")
+                .define('B', ModBlocks.RUBIS_BLOCK.get())
+                .define('R', Items.REDSTONE)
+                .unlockedBy(getHasName(ModBlocks.RUBY_BRAZIER.get()), has(ModBlocks.RUBY_BRAZIER.get()))
+                .save(pWriter);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RUBY_SHARD.get(), 9)
                 .requires(ModItems.RUBIS.get())
                 .unlockedBy(getHasName(ModItems.RUBIS.get()), has(ModItems.RUBIS.get()))
                 .save(pWriter, modLoc("shards_from_rubis"));
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.RUBY_FIRE_CORE.get())
-                .pattern(" E ")
-                .pattern("ERE")
-                .pattern(" E ")
-                .define('E', ModItems.RUBY_ESSENCE.get())
-                .define('R', ModItems.RUBIS.get())
-                .unlockedBy(getHasName(ModItems.RUBY_ESSENCE.get()), has(ModItems.RUBY_ESSENCE.get()))
-                .save(pWriter);
+
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.TRANSPORTATION, ModItems.RUBY_CHEST_BOAT.get())
                 .requires(ModItems.RUBY_BOAT.get())

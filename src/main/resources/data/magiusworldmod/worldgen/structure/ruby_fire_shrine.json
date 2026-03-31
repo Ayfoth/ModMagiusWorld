@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:jigsaw",
+  "biomes": "#magiusworldmod:has_structure/ruby_fire_shrine",
+  "spawn_overrides": {},
+  "step": "surface_structures",
+  "terrain_adaptation": "beard_thin",
+  "start_pool": "magiusworldmod:ruby_fire_shrine/start",
+  "size": 1,
+  "start_height": {
+    "absolute": 0
+  },
+  "max_distance_from_center": 48,
+  "project_start_to_heightmap": "WORLD_SURFACE_WG",
+  "use_expansion_hack": false
+}

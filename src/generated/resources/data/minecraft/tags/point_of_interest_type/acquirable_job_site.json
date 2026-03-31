@@ -3,6 +3,10 @@
     {
       "id": "magiusworldmod:sound_poi",
       "required": false
+    },
+    {
+      "id": "magiusworldmod:ruby_altar_poi",
+      "required": false
     }
   ]
 }

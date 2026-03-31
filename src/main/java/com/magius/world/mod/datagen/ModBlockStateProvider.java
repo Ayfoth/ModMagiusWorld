@@ -5,6 +5,7 @@ import com.magius.world.mod.block.ModBlocks;
 import com.magius.world.mod.block.custom.CornCropBlock;
 import com.magius.world.mod.block.custom.RedWheatCropBlock;
 import com.magius.world.mod.block.custom.StrawberryCropBlock;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
@@ -180,6 +181,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                         modLoc("block/ruby_pillar_top")));
 
         simpleBlockWithItem(ModBlocks.RUBY_LAMP.get(), cubeAll(ModBlocks.RUBY_LAMP.get()));
+        simpleBlockWithItem(ModBlocks.RUBY_ALTAR.get(), cubeAll(ModBlocks.RUBY_ALTAR.get()));
         simpleBlockWithItem(ModBlocks.RUBY_BRAZIER.get(), cubeAll(ModBlocks.RUBY_BRAZIER.get()));
 
         axisBlock((RotatedPillarBlock) ModBlocks.CHARRED_RUBY_BEAM.get(),
@@ -191,7 +193,23 @@ public class ModBlockStateProvider extends BlockStateProvider {
                         modLoc("block/charred_ruby_beam_top")));
         simpleBlockWithItem(ModBlocks.RUBY_FIRE_CORE.get(),
                 cubeAll(ModBlocks.RUBY_FIRE_CORE.get()));
+        horizontalBlock(ModBlocks.RUBY_CACHE.get(),
+                models().orientable(
+                        blockName(ModBlocks.RUBY_CACHE.get()),
+                        modLoc("block/ruby_cache_side"),
+                        modLoc("block/ruby_cache_front"),
+                        modLoc("block/ruby_cache_top")
+                )
+        );
+
+        simpleBlockItem(ModBlocks.RUBY_CACHE.get(),
+                models().getExistingFile(modLoc("block/" + blockName(ModBlocks.RUBY_CACHE.get()))));
+        simpleBlockWithItem(ModBlocks.BOSS_RUBY_DOOR.get(), cubeAll(ModBlocks.BOSS_RUBY_DOOR.get()));
+
     }
+private String blockName(Block block) {
+    return BuiltInRegistries.BLOCK.getKey(block).getPath();
+}
     private void rubyDoorBlock(RegistryObject<Block> block, ResourceLocation bottom, ResourceLocation top) {
         doorBlockWithRenderType(
                 (net.minecraft.world.level.block.DoorBlock) block.get(),

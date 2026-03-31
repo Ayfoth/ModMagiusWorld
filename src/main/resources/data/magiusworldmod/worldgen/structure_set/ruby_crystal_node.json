@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "magiusworldmod:ruby_crystal_node",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 18,
+    "separation": 8,
+    "salt": 246813579
+  }
+}

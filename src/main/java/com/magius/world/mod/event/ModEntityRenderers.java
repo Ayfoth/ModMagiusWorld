@@ -3,6 +3,7 @@ package com.magius.world.mod.event;
 import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.entity.ModEntities;
 import com.magius.world.mod.entity.client.RubyBoarRenderer;
+import com.magius.world.mod.entity.client.RubyBossRenderer;
 import com.magius.world.mod.entity.client.RubyWispRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -16,5 +17,6 @@ public class ModEntityRenderers {
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntities.RUBY_BOAR.get(), RubyBoarRenderer::new);
         event.registerEntityRenderer(ModEntities.RUBY_WISP.get(), RubyWispRenderer::new);
+        event.registerEntityRenderer(ModEntities.RUBY_BOSS.get(), RubyBossRenderer::new);
     }
 }

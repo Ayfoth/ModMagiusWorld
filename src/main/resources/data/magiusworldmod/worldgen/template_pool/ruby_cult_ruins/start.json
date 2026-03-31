@@ -1,0 +1,15 @@
+{
+  "name": "magiusworldmod:ruby_cult_ruins/start",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "magiusworldmod:ruby_cult_ruins",
+        "processors": "minecraft:empty",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

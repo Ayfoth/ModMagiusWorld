@@ -2,7 +2,7 @@ package com.magius.world.mod.entity;
 
 import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.entity.custom.*;
-import net.minecraft.world.entity.Entity;
+
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -52,6 +52,11 @@ public class ModEntities {
                             .clientTrackingRange(4)
                             .updateInterval(10)
                             .build("ruby_bolt"));
+    public static final RegistryObject<EntityType<RubyBossEntity>> RUBY_BOSS =
+            ENTITY_TYPES.register("ruby_boss",
+                    () -> EntityType.Builder.<RubyBossEntity>of(RubyBossEntity::new, MobCategory.MONSTER)
+                            .sized(0.9F, 2.8F)
+                            .build("ruby_boss"));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

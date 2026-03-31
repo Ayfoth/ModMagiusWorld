@@ -5,10 +5,7 @@ import com.magius.world.mod.block.entity.ModBlockEntities;
 import com.magius.world.mod.block.entity.renderer.FireFounderieBlockEntityRenderer;
 import com.magius.world.mod.block.entity.renderer.GemPolishingBlockEntityRenderer;
 import com.magius.world.mod.entity.ModEntities;
-import com.magius.world.mod.entity.client.ModModelLayers;
-import com.magius.world.mod.entity.client.RhinoModel;
-import com.magius.world.mod.entity.client.RubyBoarModel;
-import com.magius.world.mod.entity.client.RubyWispModel;
+import com.magius.world.mod.entity.client.*;
 import com.magius.world.mod.entity.custom.RubyBoarEntity;
 import com.magius.world.mod.entity.custom.RubyWispEntity;
 import com.magius.world.mod.particle.ModParticles;
@@ -48,6 +45,7 @@ public class ModEventBusClientEvents {
         event.registerLayerDefinition(ModModelLayers.RUBY_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
         event.registerLayerDefinition(RubyBoarModel.LAYER_LOCATION, RubyBoarModel::createBodyLayer);
         event.registerLayerDefinition(RubyWispModel.LAYER_LOCATION, RubyWispModel::createBodyLayer);
+        event.registerLayerDefinition(RubyBossModel.LAYER_LOCATION, RubyBossModel::createBodyLayer);
     }
 
     @SubscribeEvent

@@ -17,6 +17,7 @@ import com.magius.world.mod.screen.GemPolishingStationScreen;
 import com.magius.world.mod.screen.ModMenuTypes;
 import com.magius.world.mod.sound.ModSounds;
 import com.magius.world.mod.util.ModWoodTypes;
+import com.magius.world.mod.villager.ModPoiTypes;
 import com.magius.world.mod.villager.ModVillagers;
 import com.magius.world.mod.worldgen.biome.surface.ModSurfaceRules;
 import com.magius.world.mod.worldgen.biome.surface.ModTerrablender;
@@ -69,7 +70,8 @@ public class MagiusWorldMod
 
         ModLootModifiers.register(modEventBus);
 
-        ModVillagers.register(modEventBus);
+        ModPoiTypes.POI_TYPES.register(modEventBus);
+        ModVillagers.VILLAGER_PROFESSIONS.register(modEventBus);
 
         ModSounds.register(modEventBus);
         ModEntities.register(modEventBus);

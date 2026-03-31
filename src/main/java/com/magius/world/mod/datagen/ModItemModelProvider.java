@@ -108,10 +108,15 @@ public class ModItemModelProvider extends ItemModelProvider {
        withExistingParent("ruby_pressure_plate", modLoc("block/ruby_pressure_plate"));
 
        withExistingParent("ruby_fence_gate", modLoc("block/ruby_fence_gate"));
+        basicItem(ModItems.BOSS_RUBY_KEY.get());
+        basicItem(ModItems.RUBY_HORSE_ARMOR.get());
+        basicItem(ModItems.CORRUPTED_RUBY.get());
 
 
 
         withExistingParent(ModItems.RHINO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.RUBY_BOAR_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.RUBY_WISP_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
         simpleItem(ModItems.PINE_SIGN);
         simpleItem(ModItems.PINE_HANGING_SIGN);
@@ -128,6 +133,7 @@ public class ModItemModelProvider extends ItemModelProvider {
                 .texture("layer0", modLoc("item/ruby_essence"));
         withExistingParent("ruby_bolt_item", mcLoc("item/generated"))
                 .texture("layer0", modLoc("item/ruby_bolt_item"));
+        basicItem(ModItems.RUBY_KEY.get());
 
     }
     // Shoutout to El_Redstoniano for making this
