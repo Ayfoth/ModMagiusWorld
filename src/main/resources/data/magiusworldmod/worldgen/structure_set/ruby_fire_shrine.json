@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "magiusworldmod:ruby_fire_shrine",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 8,
+    "separation": 3,
+    "salt": 123456789
+  }
+}

@@ -183,6 +183,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.RUBY_BRAZIER.get());
         dropSelf(ModBlocks.CHARRED_RUBY_BEAM.get());
         dropSelf(ModBlocks.RUBY_FIRE_CORE.get());
+        //this.add(ModBlocks.RUBY_CACHE.get(), noDrop());
+       // this.add(ModBlocks.BOSS_RUBY_DOOR.get(), noDrop());
 
 
     }
@@ -203,9 +205,15 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                               .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
    }
 
+
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
-
+        return ModBlocks.BLOCKS.getEntries().stream()
+                .map(RegistryObject::get)
+                .filter(block -> block != ModBlocks.BOSS_RUBY_DOOR.get())
+                .filter(block -> block != ModBlocks.RUBY_CACHE.get())
+                .filter(block -> block != ModBlocks.BOSS_ARENA_TRIGGER.get())
+                .filter(block -> block != ModBlocks.RUBY_ALTAR.get())
+                .toList();
     }
 }

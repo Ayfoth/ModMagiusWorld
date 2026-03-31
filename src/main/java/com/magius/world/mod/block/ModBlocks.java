@@ -334,6 +334,25 @@ public class ModBlocks {
                     .lightLevel(state -> 15)
                     .sound(SoundType.GLASS)
                     .noOcclusion()));
+    public static final RegistryObject<Block> RUBY_CACHE = registerBlock("ruby_cache",
+            () -> new RubyCacheBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_RED)
+                    .strength(-1.0F, 3600000.0F)
+                    .sound(SoundType.STONE)
+                    .noLootTable()));
+    public static final RegistryObject<Block> BOSS_RUBY_DOOR = BLOCKS.register("boss_ruby_door",
+            () -> new BossRubyDoorBlock(Block.Properties.of()
+                    .strength(-1.0F, 3600000.0F)
+                    .noLootTable()));
+    public static final RegistryObject<Block> BOSS_ARENA_TRIGGER = BLOCKS.register("boss_arena_trigger",
+            () -> new BossArenaTriggerBlock(Block.Properties.of()
+                    .noCollission()
+                    .strength(-1.0F, 3600000.0F)
+                    .noLootTable()));
+    public static final RegistryObject<Block> RUBY_ALTAR = BLOCKS.register("ruby_altar",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.LECTERN)));
+
+
 
 
 

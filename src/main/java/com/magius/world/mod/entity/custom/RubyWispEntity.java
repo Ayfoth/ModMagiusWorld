@@ -81,6 +81,7 @@ public class RubyWispEntity extends Blaze {
         if (!this.level().isClientSide) {
             int count = 1 + this.random.nextInt(2 + looting);
             this.spawnAtLocation(ModItems.RUBY_ESSENCE.get(), count);
+            this.spawnAtLocation(ModItems.RUBY_KEY.get(), 1);
         }
     }
 

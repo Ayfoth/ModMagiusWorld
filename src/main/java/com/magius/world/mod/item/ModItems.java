@@ -178,6 +178,18 @@ public class ModItems {
     public static final RegistryObject<Item> RUBY_BOLT_ITEM =
             ITEMS.register("ruby_bolt_item",
                     () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RUBY_KEY = ITEMS.register("ruby_key",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> BOSS_RUBY_KEY = ITEMS.register("boss_ruby_key",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> BOSS_RUBY_DOOR_ITEM = ITEMS.register("boss_ruby_door",
+            () -> new BlockItem(ModBlocks.BOSS_RUBY_DOOR.get(), new Item.Properties()));
+    public static final RegistryObject<Item> RUBY_HORSE_ARMOR = ITEMS.register("ruby_horse_armor",
+            () -> new HorseArmorItem(11, "ruby", new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> CORRUPTED_RUBY = ITEMS.register("corrupted_ruby",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+//    public static final RegistryObject<Item> RUBY_ALTAR_ITEM = ITEMS.register("ruby_altar",
+//            () -> new BlockItem(ModBlocks.RUBY_ALTAR.get(), new Item.Properties()));
 
 
 

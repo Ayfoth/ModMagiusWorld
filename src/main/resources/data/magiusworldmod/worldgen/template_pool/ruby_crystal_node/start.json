@@ -1,0 +1,15 @@
+{
+  "name": "magiusworldmod:ruby_crystal_node/start",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "magiusworldmod:ruby_crystal_node",
+        "processors": "minecraft:empty",
+        "projection": "rigid"
+      }
+    }
+  ]
+}
