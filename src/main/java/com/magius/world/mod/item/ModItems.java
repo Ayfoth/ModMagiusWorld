@@ -6,6 +6,7 @@ import com.magius.world.mod.entity.ModEntities;
 import com.magius.world.mod.entity.custom.ModBoatEntity;
 import com.magius.world.mod.item.custom.*;
 import com.magius.world.mod.sound.ModSounds;
+import net.minecraft.ChatFormatting;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -190,6 +191,45 @@ public class ModItems {
             () -> new Item(new Item.Properties().stacksTo(16)));
 //    public static final RegistryObject<Item> RUBY_ALTAR_ITEM = ITEMS.register("ruby_altar",
 //            () -> new BlockItem(ModBlocks.RUBY_ALTAR.get(), new Item.Properties()));
+public static final RegistryObject<Item> RUBY_FIRE_CORE_PLAN = ITEMS.register("ruby_fire_core_plan",
+        () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> RUBY_WAND_PLAN = ITEMS.register("ruby_wand_plan",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> EYE_OF_CORRUPTION = ITEMS.register("eye_of_corruption",
+            () -> new EyeOfCorruptionItem(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC)));
+
+
+    public static final RegistryObject<Item> RUBY_HEART = ITEMS.register("ruby_heart",
+            () -> new RubyRelicItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE),
+                    "item.magiusworldmod.ruby_heart.desc",
+                    "item.magiusworldmod.ruby_heart.lore",
+                    ChatFormatting.RED));
+
+    public static final RegistryObject<Item> RUBY_EYE = ITEMS.register("ruby_eye",
+            () -> new RubyRelicItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE),
+                    "item.magiusworldmod.ruby_eye.desc",
+                    "item.magiusworldmod.ruby_eye.lore",
+                    ChatFormatting.LIGHT_PURPLE));
+
+    public static final RegistryObject<Item> RUBY_BLOOD = ITEMS.register("ruby_blood",
+            () -> new RubyRelicItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE),
+                    "item.magiusworldmod.ruby_blood.desc",
+                    "item.magiusworldmod.ruby_blood.lore",
+                    ChatFormatting.DARK_RED));
+
+    public static final RegistryObject<Item> RUBY_CORE_RELIC = ITEMS.register("ruby_core_relic",
+            () -> new RubyRelicItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE),
+                    "item.magiusworldmod.ruby_core_relic.desc",
+                    "item.magiusworldmod.ruby_core_relic.lore",
+                    ChatFormatting.GOLD));
+
+    public static final RegistryObject<Item> RUBY_RELIC_ARMOR = ITEMS.register("ruby_relic_armor",
+            () -> new RubyRelicArmorItem(
+                    ModArmorMaterials.RUBY_RELIC,
+                    ArmorItem.Type.CHESTPLATE,
+                    new Item.Properties().stacksTo(1).rarity(Rarity.EPIC)
+            ));
 
 
 

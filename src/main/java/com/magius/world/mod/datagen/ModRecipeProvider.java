@@ -71,11 +71,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RUBIS_WAND.get())
                 .pattern("  R")
-                .pattern(" B ")
-                .pattern("B  ")
+                .pattern(" S ")
+                .pattern("P  ")
                 .define('R', ModItems.RUBIS.get())
-                .define('B', Items.STICK)
-                .unlockedBy(getHasName(ModItems.RUBIS.get()), has(ModItems.RUBIS.get()))
+                .define('S', Items.STICK)
+                .define('P', ModItems.RUBY_WAND_PLAN.get())
+                .unlockedBy(getHasName(ModItems.RUBY_WAND_PLAN.get()), has(ModItems.RUBY_WAND_PLAN.get()))
                 .save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RUBIS_PICKAXE.get())
                 .pattern("RRR")
@@ -309,12 +310,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.RUBY_SHARD.get()), has(ModItems.RUBY_SHARD.get()))
                 .save(pWriter, modLoc("rubis_from_shards"));
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.RUBY_FIRE_CORE.get())
-                .pattern("RRR")
-                .pattern("RSR")
-                .pattern("RRR")
-                .define('S', ModItems.RUBY_ESSENCE.get())
+                .pattern(" R ")
+                .pattern("PEP")
+                .pattern(" O ")
                 .define('R', ModBlocks.RUBIS_BLOCK.get())
-                .unlockedBy(getHasName(ModBlocks.RUBY_FIRE_CORE.get()), has(ModBlocks.RUBY_FIRE_CORE.get()))
+                .define('P', ModItems.RUBY_FIRE_CORE_PLAN.get())
+                .define('E', ModItems.RUBY_ESSENCE.get())
+                .define('O', Items.BLAZE_POWDER)
+                .unlockedBy(getHasName(ModItems.RUBY_FIRE_CORE_PLAN.get()), has(ModItems.RUBY_FIRE_CORE_PLAN.get()))
                 .save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.RUBY_BRAZIER.get())
                 .pattern("RRR")
@@ -323,6 +326,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('B', ModBlocks.RUBIS_BLOCK.get())
                 .define('R', Items.REDSTONE)
                 .unlockedBy(getHasName(ModBlocks.RUBY_BRAZIER.get()), has(ModBlocks.RUBY_BRAZIER.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RUBY_RELIC_ARMOR.get())
+                .pattern(" H ")
+                .pattern("ECE")
+                .pattern(" B ")
+                .define('H', ModItems.RUBY_HEART.get())
+                .define('E', ModItems.RUBY_EYE.get())
+                .define('C', ModItems.RUBY_CORE_RELIC.get())
+                .define('B', ModItems.RUBY_BLOOD.get())
+                .unlockedBy(getHasName(ModItems.RUBY_EYE.get()), has(ModItems.RUBY_EYE.get()))
                 .save(pWriter);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RUBY_SHARD.get(), 9)

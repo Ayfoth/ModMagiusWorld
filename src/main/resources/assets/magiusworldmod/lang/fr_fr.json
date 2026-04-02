@@ -159,7 +159,52 @@
   "entity.name.ruby_boss" : "Gardien Rubis",
   "entity.bar.ruby_boss": "Guardien Rubis",
   "block.magiusworldmod.ruby_altar": "Autel rubis",
-  "entity.minecraft.villager.ruby_scholar": "Érudit rubis",
+  "item.magiusworldmod.ruby_fire_core_plan": "Plan du Cœur de Feu Rubis",
+  "item.magiusworldmod.ruby_wand_plan": "Plan de Baguette Rubis",
+  "entity.minecraft.villager.magiusworldmod.ruby_scholar": "Érudit rubis",
+  "block.magiusworldmod.corrupted_lectern": "Lutrin corrompu",
+  "entity.minecraft.villager.magiusworldmod.corrupted_priest": "Prêtre corrompu",
+  "item.magiusworldmod.eye_of_corruption": "Œil de corruption",
+  "item.magiusworldmod.eye_of_corruption.desc_1": "Active la Vision corrompue",
+  "item.magiusworldmod.eye_of_corruption.desc_2": "Révèle les blocs spéciaux et les créatures hostiles",
+  "item.magiusworldmod.eye_of_corruption.desc_3": "Toute vision a toujours un prix...",
+  "item.magiusworldmod.eye_of_corruption.uses": "Utilisations restantes : %s",
+  "block.magiusworldmod.ruby_pedestal": "Piédestal de rubis",
+  "entity.minecraft.villager.magiusworldmod.ruby_keeper": "Gardien rubis",
+
+  "item.magiusworldmod.ruby_heart": "Cœur de rubis",
+  "item.magiusworldmod.ruby_eye": "Œil de rubis",
+  "item.magiusworldmod.ruby_blood": "Sang de rubis",
+  "item.magiusworldmod.ruby_core_relic": "Noyau de rubis",
+
+  "item.magiusworldmod.ruby_heart.desc": "Accorde régénération lorsqu'il est porté sur soi",
+  "item.magiusworldmod.ruby_heart.lore": "Un fragment dont on dit qu'il pulse d'une vie ancienne.",
+
+  "item.magiusworldmod.ruby_eye.desc": "Accorde vision nocturne lorsqu'il est porté sur soi",
+  "item.magiusworldmod.ruby_eye.lore": "Il voit ce que la vue ordinaire ne peut percevoir.",
+
+  "item.magiusworldmod.ruby_blood.desc": "Accorde force lorsqu'il est porté sur soi",
+  "item.magiusworldmod.ruby_blood.lore": "Sa chaleur réveille une puissance violente.",
+
+  "item.magiusworldmod.ruby_core_relic.desc": "Accorde résistance lorsqu'il est porté sur soi",
+  "item.magiusworldmod.ruby_core_relic.lore": "Le noyau silencieux d'une relique intemporelle.",
+
+  "item.magiusworldmod.relic": "Relique ancienne de rubis",
+
+
+  "item.magiusworldmod.ruby_relic_armor": "Armure relique de rubis",
+  "item.magiusworldmod.ruby_relic_armor.desc_1": "Une relique forgée à partir de quatre fragments anciens de rubis",
+  "item.magiusworldmod.ruby_relic_armor.desc_2": "Accorde résistance et protection contre le feu lorsqu'elle est portée",
+  "item.magiusworldmod.ruby_relic_armor.set_bonus": "Bonus d'ensemble : Éveil du rubis",
+  "item.magiusworldmod.ruby_relic_armor.set_bonus_condition": "Nécessite les 4 reliques de rubis dans l'inventaire",
+  "item.magiusworldmod.ruby_relic_armor.progress": "%s / %s reliques collectées",
+  "item.magiusworldmod.ruby_relic_armor.activate": "Activation : S'accroupir + sauter en la portant",
+
+
+
+
+
+
 
 
   "tooltip.magiusworldmod.metal_detector": "Localise les §lminerais de Fer",

@@ -183,6 +183,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(ModBlocks.RUBY_LAMP.get(), cubeAll(ModBlocks.RUBY_LAMP.get()));
         simpleBlockWithItem(ModBlocks.RUBY_ALTAR.get(), cubeAll(ModBlocks.RUBY_ALTAR.get()));
         simpleBlockWithItem(ModBlocks.RUBY_BRAZIER.get(), cubeAll(ModBlocks.RUBY_BRAZIER.get()));
+        simpleBlockWithItem(ModBlocks.CORRUPTED_LECTERN.get(), cubeAll(ModBlocks.CORRUPTED_LECTERN.get()));
+        simpleBlockWithItem(ModBlocks.RUBY_PEDESTAL.get(), cubeAll(ModBlocks.RUBY_PEDESTAL.get()));
 
         axisBlock((RotatedPillarBlock) ModBlocks.CHARRED_RUBY_BEAM.get(),
                 modLoc("block/charred_ruby_beam_side"),

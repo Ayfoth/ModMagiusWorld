@@ -20,6 +20,10 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
+        this.tag(ModTags.Blocks.EYE_OF_CORRUPTION_DETECTABLE)
+                .add(ModBlocks.RUBIS_ORE.get())
+                .add(ModBlocks.RUBY_CACHE.get())
+                .add(ModBlocks.RUBY_FIRE_CORE.get());
         this.tag(ModTags.Blocks.METAL_DETECTOR_VALUABLES)
                 .add(ModBlocks.WITHER_ORE.get()).add(ModBlocks.DEEPSLATE_WITHER_ORE.get()).addTag(Tags.Blocks.ORES);
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)

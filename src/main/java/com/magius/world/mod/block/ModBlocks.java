@@ -351,6 +351,15 @@ public class ModBlocks {
                     .noLootTable()));
     public static final RegistryObject<Block> RUBY_ALTAR = BLOCKS.register("ruby_altar",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.LECTERN)));
+    public static final RegistryObject<Block> CORRUPTED_LECTERN = BLOCKS.register("corrupted_lectern",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.LECTERN)
+                    .strength(2.5F)
+                    .sound(SoundType.WOOD)
+            ));
+    public static final RegistryObject<Block> RUBY_PEDESTAL = registerBlock("ruby_pedestal",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.QUARTZ_BLOCK)
+                    .strength(3.0F)
+                    .sound(SoundType.STONE)));
 
 
 

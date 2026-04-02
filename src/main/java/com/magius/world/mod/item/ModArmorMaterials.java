@@ -1,7 +1,5 @@
 package com.magius.world.mod.item;
 
-
-
 import com.magius.world.mod.MagiusWorldMod;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -14,10 +12,15 @@ import java.util.function.Supplier;
 public enum ModArmorMaterials implements ArmorMaterial {
     SAPPHIRE("sapphire", 26, new int[]{ 5, 7, 5, 4 }, 25,
             SoundEvents.ARMOR_EQUIP_GOLD, 1f, 0f, () -> Ingredient.of(ModItems.SAPPHIRE.get())),
+
     WITHER("wither", 26, new int[]{ 5, 7, 5, 4 }, 25,
-    SoundEvents.ARMOR_EQUIP_GOLD, 1f, 0f, () -> Ingredient.of(ModItems.SAPPHIRE.get())),
+            SoundEvents.ARMOR_EQUIP_GOLD, 1f, 0f, () -> Ingredient.of(ModItems.SAPPHIRE.get())),
+
     RUBIS("rubis", 36, new int[]{ 3, 8, 6, 3 }, 10,
-    SoundEvents.ARMOR_EQUIP_DIAMOND, 2f, 0f, () -> Ingredient.of(ModItems.RUBIS.get()));
+            SoundEvents.ARMOR_EQUIP_DIAMOND, 2f, 0f, () -> Ingredient.of(ModItems.RUBIS.get())),
+
+    RUBY_RELIC("ruby_relic", 40, new int[]{ 4, 9, 7, 4 }, 18,
+            SoundEvents.ARMOR_EQUIP_DIAMOND, 3f, 0.1f, () -> Ingredient.of(ModItems.RUBIS.get()));
 
     private final String name;
     private final int durabilityMultiplier;
@@ -80,4 +83,5 @@ public enum ModArmorMaterials implements ArmorMaterial {
     @Override
     public float getKnockbackResistance() {
         return this.knockbackResistance;
-    }}
+    }
+}

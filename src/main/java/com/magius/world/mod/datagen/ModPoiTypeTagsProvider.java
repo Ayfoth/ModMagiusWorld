@@ -21,6 +21,8 @@ public class ModPoiTypeTagsProvider extends PoiTypeTagsProvider {
         tag(PoiTypeTags.ACQUIRABLE_JOB_SITE)
                 .addOptional(ResourceLocation.fromNamespaceAndPath(MagiusWorldMod.MOD_ID, "sound_poi"))
                 .addOptional(ResourceLocation.fromNamespaceAndPath(MagiusWorldMod.MOD_ID,"ruby_altar_poi"))
+                .addOptional(ResourceLocation.fromNamespaceAndPath(MagiusWorldMod.MOD_ID,"corrupted_lectern_poi"))
+                .addOptional(ResourceLocation.fromNamespaceAndPath(MagiusWorldMod.MOD_ID,"ruby_pedestal_poi"))
         ;
     }
 }

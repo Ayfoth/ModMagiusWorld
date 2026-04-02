@@ -18,6 +18,7 @@ public class ModTags {
         public static final TagKey<Block> NEEDS_SAPPHIRE_TOOL = tag("needs_sapphire_tool");
         public static final TagKey<Block> NEEDS_WITHER_TOOL = tag("needs_wither_tool");
         public static final TagKey<Block> NEEDS_RUBIS_TOOL = tag("needs_rubis_tool");
+        public static final TagKey<Block> EYE_OF_CORRUPTION_DETECTABLE = tag("eye_of_corruption_detectable");
 
 
         private static TagKey<Block> tag(String name){

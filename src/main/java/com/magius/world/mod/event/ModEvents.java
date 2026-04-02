@@ -42,6 +42,7 @@ import java.util.List;
 
 @Mod.EventBusSubscriber(modid = MagiusWorldMod.MOD_ID)
 public class ModEvents {
+
     @SubscribeEvent
     public static void onToolModification(BlockEvent.BlockToolModificationEvent event) {
         if (event.getToolAction() != ToolActions.AXE_STRIP) {
