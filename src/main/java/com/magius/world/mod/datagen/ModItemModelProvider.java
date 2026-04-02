@@ -111,6 +111,14 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.BOSS_RUBY_KEY.get());
         basicItem(ModItems.RUBY_HORSE_ARMOR.get());
         basicItem(ModItems.CORRUPTED_RUBY.get());
+        basicItem(ModItems.RUBY_FIRE_CORE_PLAN.get());
+        basicItem(ModItems.RUBY_WAND_PLAN.get());
+        basicItem(ModItems.EYE_OF_CORRUPTION.get());
+        basicItem(ModItems.RUBY_HEART.get());
+        basicItem(ModItems.RUBY_EYE.get());
+        basicItem(ModItems.RUBY_BLOOD.get());
+        basicItem(ModItems.RUBY_CORE_RELIC.get());
+        basicItem(ModItems.RUBY_RELIC_ARMOR.get());
 
 
 

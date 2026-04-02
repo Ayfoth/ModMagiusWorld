@@ -7,6 +7,14 @@
     {
       "id": "magiusworldmod:ruby_altar_poi",
       "required": false
+    },
+    {
+      "id": "magiusworldmod:corrupted_lectern_poi",
+      "required": false
+    },
+    {
+      "id": "magiusworldmod:ruby_pedestal_poi",
+      "required": false
     }
   ]
 }

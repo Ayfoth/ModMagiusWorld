@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_rubis": {
+    "has_ruby_wand_plan": {
       "conditions": {
         "items": [
           {
             "items": [
-              "magiusworldmod:rubis"
+              "magiusworldmod:ruby_wand_plan"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_rubis",
+      "has_ruby_wand_plan",
       "has_the_recipe"
     ]
   ],

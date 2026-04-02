@@ -1,4 +1,4 @@
-// 1.20.1	2026-03-22T11:36:08.163791	Loot Tables
+// 1.20.1	2026-03-31T11:08:42.5109745	Loot Tables
 b5c9a6ce89dabe40c60afe7d24b34aa32f176ff6 data/magiusworldmod/loot_tables/blocks/blackwood_log.json
 e031d5f871467b4b9eb8a3c77472f61dc81ad68e data/magiusworldmod/loot_tables/blocks/catmint.json
 47dbba944fa172effa27ebbc8d13ab425a3526f5 data/magiusworldmod/loot_tables/blocks/charred_ruby_beam.json
@@ -68,4 +68,4 @@ d497c5e2677f5950f2e81fd897080f63ea0b8199 data/magiusworldmod/loot_tables/blocks/
 32e717e311f6552c9361eb3e3a8a311a5908fd15 data/magiusworldmod/loot_tables/blocks/wither_slab.json
 45b6f071817493801a6cf4cdb88fb69e6e03524c data/magiusworldmod/loot_tables/blocks/wither_stairs.json
 816ca930b2e34ac4d25b4944f31a0c4621d67793 data/magiusworldmod/loot_tables/blocks/wither_wall.json
-cb679d2adc7300bee766fc300cc399df1df693b4 data/magiusworldmod/loot_tables/gameplay/ruby_cache.json
+fd94d95124c060e98bcbac9445187ec015c5f3ec data/magiusworldmod/loot_tables/gameplay/ruby_cache.json

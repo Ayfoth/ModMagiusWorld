@@ -24,4 +24,16 @@ public class ModPoiTypes {
                     1,
                     1
             ));
+    public static final RegistryObject<PoiType> CORRUPTED_LECTERN_POI = POI_TYPES.register("corrupted_lectern_poi",
+            () -> new PoiType(
+                    ImmutableSet.copyOf(ModBlocks.CORRUPTED_LECTERN.get().getStateDefinition().getPossibleStates()),
+                    1,
+                    1
+            ));
+    public static final RegistryObject<PoiType> RUBY_PEDESTAL_POI = POI_TYPES.register("ruby_pedestal_poi",
+            () -> new PoiType(
+                    ImmutableSet.copyOf(ModBlocks.RUBY_PEDESTAL.get().getStateDefinition().getPossibleStates()),
+                    1,
+                    1
+            ));
 }

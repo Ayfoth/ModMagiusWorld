@@ -33,6 +33,24 @@ public class ModVillagers {
                     ImmutableSet.of(),
                     SoundEvents.VILLAGER_WORK_CLERIC
             ));
+    public static final RegistryObject<VillagerProfession> CORRUPTED_PRIEST =
+            VILLAGER_PROFESSIONS.register("corrupted_priest", () -> new VillagerProfession(
+                    "corrupted_priest",
+                    holder -> holder.get() == ModPoiTypes.CORRUPTED_LECTERN_POI.get(),
+                    holder -> holder.get() == ModPoiTypes.CORRUPTED_LECTERN_POI.get(),
+                    ImmutableSet.of(),
+                    ImmutableSet.of(),
+                    SoundEvents.VILLAGER_WORK_CLERIC
+            ));
+    public static final RegistryObject<VillagerProfession> RUBY_KEEPER =
+            VILLAGER_PROFESSIONS.register("ruby_keeper", () -> new VillagerProfession(
+                    "ruby_keeper",
+                    holder -> holder.get() == ModPoiTypes.RUBY_PEDESTAL_POI.get(),
+                    holder -> holder.get() == ModPoiTypes.RUBY_PEDESTAL_POI.get(),
+                    ImmutableSet.of(),
+                    ImmutableSet.of(),
+                    SoundEvents.VILLAGER_WORK_MASON
+            ));
 
 //    public static void register(IEventBus eventBus){
 //        POI_TYPES.register(eventBus);

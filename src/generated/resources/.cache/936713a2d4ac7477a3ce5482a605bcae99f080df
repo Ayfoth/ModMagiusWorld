@@ -1,5 +1,6 @@
-// 1.20.1	2026-03-16T19:18:45.2816661	Tags for minecraft:block mod id magiusworldmod
+// 1.20.1	2026-03-31T12:03:12.1440274	Tags for minecraft:block mod id magiusworldmod
 434c8dc8a4ddab637b7d8bf726ba7b73f4768a6c data/forge/tags/blocks/needs_netherite_tool.json
+73bb43f82a2c6e78c1df863dba9c501d8f44dced data/magiusworldmod/tags/blocks/eye_of_corruption_detectable.json
 2f5e61bfca29ac970175bfeb32dee4106c1ff744 data/magiusworldmod/tags/blocks/metal_detector_valuables.json
 10b2d7d8928741909fd6c9861a689ba28ca68aaa data/magiusworldmod/tags/blocks/needs_rubis_tool.json
 8db57bff0206e4f196eb2f8790da3dc2ad0ad702 data/magiusworldmod/tags/blocks/needs_sapphire_tool.json

@@ -167,7 +167,48 @@
   "entity.name.ruby_boss" : "Ruby Guardian",
   "entity.bar.ruby_boss": "Ruby Guardian",
   "block.magiusworldmod.ruby_altar": "Ruby Altar",
-  "entity.minecraft.villager.ruby_scholar": "Ruby Scholar",
+  "entity.minecraft.villager.magiusworldmod.ruby_scholar": "Ruby Scholar",
+  "item.magiusworldmod.ruby_fire_core_plan": "Ruby Fire Core Plan",
+  "item.magiusworldmod.ruby_wand_plan": "Ruby Wand Plan",
+  "block.magiusworldmod.corrupted_lectern": "Corrupted Lectern",
+  "entity.minecraft.villager.magiusworldmod.corrupted_priest": "Corrupted Priest",
+  "item.magiusworldmod.eye_of_corruption": "Eye of Corruption",
+  "item.magiusworldmod.eye_of_corruption.desc_1": "Activates Corrupted Sight",
+  "item.magiusworldmod.eye_of_corruption.desc_2": "Reveals special blocks and hostile creatures",
+  "item.magiusworldmod.eye_of_corruption.desc_3": "The vision always demands a price...",
+  "item.magiusworldmod.eye_of_corruption.uses": "Uses remaining: %s",
+  "block.magiusworldmod.ruby_pedestal": "Ruby Pedestal",
+  "entity.minecraft.villager.magiusworldmod.ruby_keeper": "Ruby Keeper",
+
+  "item.magiusworldmod.ruby_heart": "Ruby Heart",
+  "item.magiusworldmod.ruby_eye": "Ruby Eye",
+  "item.magiusworldmod.ruby_blood": "Ruby Blood",
+  "item.magiusworldmod.ruby_core_relic": "Ruby Core",
+
+  "item.magiusworldmod.ruby_heart.desc": "Grants regeneration while carried",
+  "item.magiusworldmod.ruby_heart.lore": "A fragment said to pulse with ancient life.",
+
+  "item.magiusworldmod.ruby_eye.desc": "Grants night vision while carried",
+  "item.magiusworldmod.ruby_eye.lore": "It sees what ordinary sight cannot.",
+
+  "item.magiusworldmod.ruby_blood.desc": "Grants strength while carried",
+  "item.magiusworldmod.ruby_blood.lore": "Its warmth awakens a violent power.",
+
+  "item.magiusworldmod.ruby_core_relic.desc": "Grants resistance while carried",
+  "item.magiusworldmod.ruby_core_relic.lore": "The silent core of an enduring relic.",
+
+  "item.magiusworldmod.relic": "Ancient Ruby Relic",
+
+  "item.magiusworldmod.ruby_relic_armor": "Ruby Relic Armor",
+  "item.magiusworldmod.ruby_relic_armor.desc_1": "A relic forged from four ancient ruby fragments",
+  "item.magiusworldmod.ruby_relic_armor.desc_2": "Grants resistance and fire protection while worn",
+  "item.magiusworldmod.ruby_relic_armor.set_bonus": "Set Bonus: Ruby Awakening",
+  "item.magiusworldmod.ruby_relic_armor.set_bonus_condition": "Requires all 4 Ruby Relics in inventory",
+  "item.magiusworldmod.ruby_relic_armor.progress": "%s / %s relics collected",
+  "item.magiusworldmod.ruby_relic_armor.activate": "Activation: Sneak + Jump while wearing",
+
+
+
 
 
   "entity.minecraft.villager.magiusworldmod.soundmaster": "Sound Master",

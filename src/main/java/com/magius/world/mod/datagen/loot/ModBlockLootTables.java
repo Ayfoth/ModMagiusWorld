@@ -214,6 +214,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 .filter(block -> block != ModBlocks.RUBY_CACHE.get())
                 .filter(block -> block != ModBlocks.BOSS_ARENA_TRIGGER.get())
                 .filter(block -> block != ModBlocks.RUBY_ALTAR.get())
+                .filter(block -> block != ModBlocks.CORRUPTED_LECTERN.get())
+                .filter(block -> block != ModBlocks.RUBY_PEDESTAL.get())
                 .toList();
     }
 }

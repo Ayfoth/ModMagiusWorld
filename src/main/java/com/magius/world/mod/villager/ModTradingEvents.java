@@ -100,23 +100,225 @@ public class ModTradingEvents {
 
 
         if (event.getType() == ModVillagers.RUBY_SCHOLAR.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
 
-            event.getTrades().get(1).add((trader, random) ->
-                    new MerchantOffer(
-                            new ItemStack(Items.EMERALD, 4),
-                            new ItemStack(ModItems.CORRUPTED_RUBY.get(), 1),
-                            8, 2, 0.05F
-                    )
-            );
+            // Niveau 1 - blocs simples
+            trades.get(1).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBIS.get(), 2),
+                    new ItemStack(ModBlocks.RUBY_TILE.get(), 2),
+                    16, 2, 0.05F
+            ));
 
-            event.getTrades().get(2).add((trader, random) ->
-                    new MerchantOffer(
-                            new ItemStack(ModItems.CORRUPTED_RUBY.get(), 1),
-                            new ItemStack(Items.EMERALD, 12),
-                            new ItemStack(ModItems.BOSS_RUBY_KEY.get(), 1),
-                            3, 5, 0.2F
-                    )
-            );
+            trades.get(1).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBIS.get(), 3),
+                    new ItemStack(ModBlocks.CHARRED_RUBY_BEAM.get(), 4),
+                    16, 2, 0.05F
+            ));
+
+            // Niveau 2 - déco / utilitaire
+            trades.get(2).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBIS.get(), 4),
+                    new ItemStack(ModBlocks.RUBY_PILLAR.get(), 2),
+                    12, 10, 0.05F
+            ));
+
+            trades.get(2).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBIS.get(), 5),
+                    new ItemStack(ModBlocks.RUBY_LAMP.get(), 1),
+                    10, 10, 0.05F
+            ));
+
+            // Niveau 3 - composants
+            trades.get(3).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBIS.get(), 6),
+                    new ItemStack(ModItems.RUBY_ESSENCE.get(), 1),
+                    8, 20, 0.05F
+            ));
+
+            trades.get(3).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBIS.get(), 7),
+                    new ItemStack(ModItems.CORRUPTED_RUBY.get(), 1),
+                    8, 20, 0.05F
+            ));
+
+            // Niveau 4 - plans
+            trades.get(4).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBIS.get(), 10),
+                    new ItemStack(ModItems.RUBY_FIRE_CORE_PLAN.get(), 1),
+                    4, 15, 0.2F
+            ));
+
+            trades.get(4).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBIS.get(), 12),
+                    new ItemStack(ModItems.RUBY_WAND_PLAN.get(), 1),
+                    3, 15, 0.2F
+            ));
+
+            // Niveau 5 - rare
+            trades.get(5).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBIS.get(), 14),
+                    new ItemStack(ModItems.RUBY_KEY.get(), 1),
+                    2, 30, 0.2F
+            ));
+        }
+        if (event.getType() == ModVillagers.CORRUPTED_PRIEST.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+
+            // Niveau 1 - Novice
+            trades.get(1).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.CORRUPTED_RUBY.get(), 2),
+                    new ItemStack(Items.SOUL_TORCH, 4),
+                    16, 2, 0.05F
+            ));
+
+            trades.get(1).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.CORRUPTED_RUBY.get(), 3),
+                    new ItemStack(Items.ROTTEN_FLESH, 12),
+                    16, 2, 0.05F
+            ));
+
+            // Niveau 2 - Apprenti
+            trades.get(2).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.CORRUPTED_RUBY.get(), 4),
+                    new ItemStack(Items.BONE, 8),
+                    12, 10, 0.05F
+            ));
+
+            trades.get(2).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.CORRUPTED_RUBY.get(), 5),
+                    new ItemStack(Items.FERMENTED_SPIDER_EYE, 2),
+                    10, 10, 0.05F
+            ));
+
+            // Niveau 3 - Compagnon
+            trades.get(3).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.CORRUPTED_RUBY.get(), 6),
+                    new ItemStack(Items.SOUL_LANTERN, 1),
+                    8, 20, 0.05F
+            ));
+
+            trades.get(3).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.CORRUPTED_RUBY.get(), 7),
+                    new ItemStack(Items.WITHER_ROSE, 1),
+                    6, 20, 0.05F
+            ));
+
+            // Niveau 4 - Expert
+            trades.get(4).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.CORRUPTED_RUBY.get(), 9),
+                    new ItemStack(Items.NETHER_WART, 8),
+                    4, 15, 0.2F
+            ));
+
+            trades.get(4).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.CORRUPTED_RUBY.get(), 10),
+                    new ItemStack(Items.BLAZE_POWDER, 4),
+                    4, 15, 0.2F
+            ));
+
+            // Niveau 5 - Maître
+            trades.get(5).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.CORRUPTED_RUBY.get(), 12),
+                    new ItemStack(Items.ENCHANTED_BOOK),
+                    2, 30, 0.2F
+            ));
+            trades.get(5).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.CORRUPTED_RUBY.get(), 12),
+                    new ItemStack(ModItems.RUBIS.get(), 4),
+                    new ItemStack(ModItems.EYE_OF_CORRUPTION.get(), 1),
+                    2, 30, 0.2F
+            ));
+        }
+        if (event.getType() == ModVillagers.RUBY_KEEPER.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+
+            // Niveau 1 - Novice
+            trades.get(1).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBIS.get(), 2),
+                    new ItemStack(ModBlocks.RUBY_TILE.get(), 4),
+                    16, 2, 0.05F
+            ));
+
+            trades.get(1).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBIS.get(), 3),
+                    new ItemStack(ModBlocks.RUBY_PILLAR.get(), 2),
+                    16, 2, 0.05F
+            ));
+
+            // Niveau 2 - Apprenti
+            trades.get(2).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBIS.get(), 4),
+                    new ItemStack(ModBlocks.RUBY_LAMP.get(), 1),
+                    12, 10, 0.05F
+            ));
+
+            trades.get(2).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBIS.get(), 5),
+                    new ItemStack(ModBlocks.RUBY_BRAZIER.get(), 1),
+                    10, 10, 0.05F
+            ));
+
+            // Niveau 3 - Compagnon
+            trades.get(3).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBIS.get(), 6),
+                    new ItemStack(ModItems.RUBY_ESSENCE.get(), 1),
+                    8, 20, 0.05F
+            ));
+
+            trades.get(3).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBIS.get(), 7),
+                    new ItemStack(ModBlocks.CHARRED_RUBY_BEAM.get(), 4),
+                    8, 20, 0.05F
+            ));
+
+            // Niveau 4 - Expert
+            trades.get(4).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBIS.get(), 9),
+                    new ItemStack(ModItems.RUBY_FIRE_CORE_PLAN.get(), 1),
+                    4, 15, 0.2F
+            ));
+
+            trades.get(4).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBIS.get(), 10),
+                    new ItemStack(ModItems.RUBY_WAND_PLAN.get(), 1),
+                    4, 15, 0.2F
+            ));
+
+            // Niveau 5 - Maître
+            trades.get(5).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBIS.get(), 12),
+                    new ItemStack(ModItems.RUBY_KEY.get(), 1),
+                    2, 30, 0.2F
+            ));
+
+            trades.get(5).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBIS.get(), 14),
+                    new ItemStack(ModItems.RUBY_HORSE_ARMOR.get(), 1),
+                    2, 30, 0.2F
+            ));
+            trades.get(5).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBIS.get(), 12),
+                    new ItemStack(ModItems.RUBY_HEART.get(), 1),
+                    2, 30, 0.2F
+            ));
+
+            trades.get(5).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBIS.get(), 12),
+                    new ItemStack(ModItems.RUBY_EYE.get(), 1),
+                    2, 30, 0.2F
+            ));
+
+            trades.get(5).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBIS.get(), 12),
+                    new ItemStack(ModItems.RUBY_BLOOD.get(), 1),
+                    2, 30, 0.2F
+            ));
+
+            trades.get(5).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.RUBIS.get(), 12),
+                    new ItemStack(ModItems.RUBY_CORE_RELIC.get(), 1),
+                    2, 30, 0.2F
+            ));
         }
     }
 }
