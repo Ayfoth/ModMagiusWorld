@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "magiusworldmod:block/ruby_cache",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "magiusworldmod:block/ruby_cache"
+    },
+    "facing=south": {
+      "model": "magiusworldmod:block/ruby_cache",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "magiusworldmod:block/ruby_cache",
+      "y": 270
+    }
+  }
+}

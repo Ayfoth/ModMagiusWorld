@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "magiusworldmod:ruby_blood"
+    },
+    "C": {
+      "item": "magiusworldmod:ruby_core_relic"
+    },
+    "E": {
+      "item": "magiusworldmod:ruby_eye"
+    },
+    "H": {
+      "item": "magiusworldmod:ruby_heart"
+    }
+  },
+  "pattern": [
+    " H ",
+    "ECE",
+    " B "
+  ],
+  "result": {
+    "item": "magiusworldmod:ruby_relic_armor"
+  },
+  "show_notification": true
+}
