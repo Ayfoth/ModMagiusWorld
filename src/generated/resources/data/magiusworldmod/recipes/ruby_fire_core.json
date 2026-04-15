@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "magiusworldmod:ruby_essence"
+    },
+    "O": {
+      "item": "minecraft:blaze_powder"
+    },
+    "P": {
+      "item": "magiusworldmod:ruby_fire_core_plan"
+    },
+    "R": {
+      "item": "magiusworldmod:rubis_block"
+    }
+  },
+  "pattern": [
+    " R ",
+    "PEP",
+    " O "
+  ],
+  "result": {
+    "item": "magiusworldmod:ruby_fire_core"
+  },
+  "show_notification": true
+}

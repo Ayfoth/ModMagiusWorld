@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "magiusworldmod:block/ruby_cache_front",
+    "side": "magiusworldmod:block/ruby_cache_side",
+    "top": "magiusworldmod:block/ruby_cache_top"
+  }
+}

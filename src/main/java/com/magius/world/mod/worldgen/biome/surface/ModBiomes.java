@@ -87,8 +87,7 @@ public class ModBiomes {
         spawnBuilder.addSpawn(MobCategory.CREATURE,
                 new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 6, 2, 3));
 
-        spawnBuilder.addSpawn(MobCategory.CREATURE,
-                new MobSpawnSettings.SpawnerData(ModEntities.RHINO.get(), 2, 1, 2));
+
 
         spawnBuilder.addSpawn(MobCategory.CREATURE,
                 new MobSpawnSettings.SpawnerData(ModEntities.RUBY_SHEEP.get(), 10, 2, 4));
@@ -131,42 +130,42 @@ public class ModBiomes {
                 ModPlacedFeatures.RUBY_BUSH_PLACED_KEY
         );
 
-        biomeBuilder.addFeature(
-                GenerationStep.Decoration.VEGETAL_DECORATION,
-                ModPlacedFeatures.WILD_RED_WHEAT_PLACED_KEY
-        );
+//        biomeBuilder.addFeature(
+//                GenerationStep.Decoration.VEGETAL_DECORATION,
+//                ModPlacedFeatures.WILD_RED_WHEAT_PLACED_KEY
+//        );
 //        biomeBuilder.addFeature(
 //                GenerationStep.Decoration.VEGETAL_DECORATION,
 //                ModPlacedFeatures.RUBY_MUSHROOM_PLACED_KEY
 //        );
-//        biomeBuilder.addFeature(
-//                GenerationStep.Decoration.VEGETAL_DECORATION,
-//                ModPlacedFeatures.RUBY_FLOWER_PLACED_KEY
-//        );
+        biomeBuilder.addFeature(
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                ModPlacedFeatures.RUBY_FLOWER_PLACED_KEY
+        );
 //        biomeBuilder.addFeature(
 //                GenerationStep.Decoration.VEGETAL_DECORATION,
 //                ModPlacedFeatures.CRYSTAL_SHARD_PLACED_KEY
 //        );
-//        biomeBuilder.addFeature(
-//                GenerationStep.Decoration.VEGETAL_DECORATION,
-//                ModPlacedFeatures.RUBY_SHRUB_PLACED_KEY
-//        );
-//        biomeBuilder.addFeature(
-//                GenerationStep.Decoration.VEGETAL_DECORATION,
-//                ModPlacedFeatures.DARK_RED_GRASS_PLACED_KEY
-//        );
-//        biomeBuilder.addFeature(
-//                GenerationStep.Decoration.VEGETAL_DECORATION,
-//                ModPlacedFeatures.RUBY_GRASS_PATCH_PLACED_KEY
-//        );
-//        biomeBuilder.addFeature(
-//                GenerationStep.Decoration.VEGETAL_DECORATION,
-//                ModPlacedFeatures.RUBY_VEGETATION_PATCH_PLACED_KEY
-//        );
-//        biomeBuilder.addFeature(
-//                GenerationStep.Decoration.VEGETAL_DECORATION,
-//                ModPlacedFeatures.RUBY_NATURAL_TREE_PLACED_KEY
-//        );
+        biomeBuilder.addFeature(
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                ModPlacedFeatures.RUBY_SHRUB_PLACED_KEY
+        );
+        biomeBuilder.addFeature(
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                ModPlacedFeatures.DARK_RED_GRASS_PLACED_KEY
+        );
+        biomeBuilder.addFeature(
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                ModPlacedFeatures.RUBY_GRASS_PATCH_PLACED_KEY
+        );
+        biomeBuilder.addFeature(
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                ModPlacedFeatures.RUBY_VEGETATION_PATCH_PLACED_KEY
+        );
+        biomeBuilder.addFeature(
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                ModPlacedFeatures.RUBY_NATURAL_TREE_PLACED_KEY
+        );
 
 //        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
 //        BiomeDefaultFeatures.addDefaultSprings(biomeBuilder);
