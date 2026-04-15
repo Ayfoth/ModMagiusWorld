@@ -39,6 +39,9 @@ public class ModPlacedFeatures {
             registerKey("ruby_vegetation_patch_placed");
     public static final ResourceKey<PlacedFeature> RUBY_NATURAL_TREE_PLACED_KEY =
             registerKey("ruby_natural_tree_placed");
+    public static final ResourceKey<PlacedFeature> RUBY_VILLAGE_PLACED_KEY =
+            registerKey("ruby_village");
+
 
 
     public static final ResourceKey<PlacedFeature> PINE_PLACED_KEY = registerKey("pine_placed");
@@ -204,6 +207,16 @@ public class ModPlacedFeatures {
                         HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
                         BiomeFilter.biome()
                 ));
+        register(context, RUBY_VILLAGE_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.RUBY_VILLAGE_KEY),
+                List.of(
+                        RarityFilter.onAverageOnceEvery(48),
+                        InSquarePlacement.spread(),
+                        HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                        BiomeFilter.biome()
+                )
+        );
+
 
 
 

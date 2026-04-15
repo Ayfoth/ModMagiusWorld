@@ -180,32 +180,35 @@
   "block.magiusworldmod.ruby_pedestal": "Ruby Pedestal",
   "entity.minecraft.villager.magiusworldmod.ruby_keeper": "Ruby Keeper",
 
+  "item.magiusworldmod.relic": "Ruby Relic",
+  "curios.identifier.relic_ruby": "Ruby Relic",
+
   "item.magiusworldmod.ruby_heart": "Ruby Heart",
   "item.magiusworldmod.ruby_eye": "Ruby Eye",
   "item.magiusworldmod.ruby_blood": "Ruby Blood",
   "item.magiusworldmod.ruby_core_relic": "Ruby Core",
+  "item.magiusworldmod.ruby_relic_armor": "Ruby Relic Chestplate",
 
-  "item.magiusworldmod.ruby_heart.desc": "Grants regeneration while carried",
-  "item.magiusworldmod.ruby_heart.lore": "A fragment said to pulse with ancient life.",
+  "tooltip.magiusworldmod.ruby_heart.effect": "Grants regeneration while equipped.",
+  "tooltip.magiusworldmod.ruby_heart.lore": "An ancient heart, warm like an eternal ember.",
 
-  "item.magiusworldmod.ruby_eye.desc": "Grants night vision while carried",
-  "item.magiusworldmod.ruby_eye.lore": "It sees what ordinary sight cannot.",
+  "tooltip.magiusworldmod.ruby_eye.effect": "Grants night vision while equipped.",
+  "tooltip.magiusworldmod.ruby_eye.lore": "Its gaze pierces the dark and reveals the hidden flame.",
 
-  "item.magiusworldmod.ruby_blood.desc": "Grants strength while carried",
-  "item.magiusworldmod.ruby_blood.lore": "Its warmth awakens a violent power.",
+  "tooltip.magiusworldmod.ruby_blood.effect": "Grants a strength bonus while equipped.",
+  "tooltip.magiusworldmod.ruby_blood.lore": "Ruby blood burns with wild power.",
 
-  "item.magiusworldmod.ruby_core_relic.desc": "Grants resistance while carried",
-  "item.magiusworldmod.ruby_core_relic.lore": "The silent core of an enduring relic.",
+  "tooltip.magiusworldmod.ruby_core_relic.effect": "Grants a speed bonus while equipped.",
+  "tooltip.magiusworldmod.ruby_core_relic.lore": "The core pulses with blazing and unstable energy.",
 
-  "item.magiusworldmod.relic": "Ancient Ruby Relic",
+  "item.magiusworldmod.ruby_relic_armor.desc_1": "An ancient armor fueled by ruby flames.",
+  "item.magiusworldmod.ruby_relic_armor.desc_2": "Equip a ruby relic to receive its power.",
 
-  "item.magiusworldmod.ruby_relic_armor": "Ruby Relic Armor",
-  "item.magiusworldmod.ruby_relic_armor.desc_1": "A relic forged from four ancient ruby fragments",
-  "item.magiusworldmod.ruby_relic_armor.desc_2": "Grants resistance and fire protection while worn",
-  "item.magiusworldmod.ruby_relic_armor.set_bonus": "Set Bonus: Ruby Awakening",
-  "item.magiusworldmod.ruby_relic_armor.set_bonus_condition": "Requires all 4 Ruby Relics in inventory",
-  "item.magiusworldmod.ruby_relic_armor.progress": "%s / %s relics collected",
-  "item.magiusworldmod.ruby_relic_armor.activate": "Activation: Sneak + Jump while wearing",
+  "item.magiusworldmod.ruby_relic_armor.set_bonus": "Set Bonus:",
+  "item.magiusworldmod.ruby_relic_armor.progress": "Owned relics: %s/%s",
+  "item.magiusworldmod.ruby_relic_armor.activate": "Own all 4 ruby relics to unlock the armor's full power.",
+  "item.magiusworldmod.ruby_relic_armor.set_bonus_condition": "Own all 4 ruby relics to activate the set bonus.",
+
 
 
 
@@ -263,5 +266,7 @@
   "advancement.magiusworldmod.rubis_tools.sword.description": "Obtain a ruby sword",
 
   "advancement.magiusworldmod.rubis_tools.master.title": "Master of Ruby Tools",
-  "advancement.magiusworldmod.rubis_tools.master.description": "Obtain all ruby tools"
+  "advancement.magiusworldmod.rubis_tools.master.description": "Obtain all ruby tools",
+
+
 }

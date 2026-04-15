@@ -172,10 +172,7 @@
   "block.magiusworldmod.ruby_pedestal": "Piédestal de rubis",
   "entity.minecraft.villager.magiusworldmod.ruby_keeper": "Gardien rubis",
 
-  "item.magiusworldmod.ruby_heart": "Cœur de rubis",
-  "item.magiusworldmod.ruby_eye": "Œil de rubis",
-  "item.magiusworldmod.ruby_blood": "Sang de rubis",
-  "item.magiusworldmod.ruby_core_relic": "Noyau de rubis",
+
 
   "item.magiusworldmod.ruby_heart.desc": "Accorde régénération lorsqu'il est porté sur soi",
   "item.magiusworldmod.ruby_heart.lore": "Un fragment dont on dit qu'il pulse d'une vie ancienne.",
@@ -189,16 +186,38 @@
   "item.magiusworldmod.ruby_core_relic.desc": "Accorde résistance lorsqu'il est porté sur soi",
   "item.magiusworldmod.ruby_core_relic.lore": "Le noyau silencieux d'une relique intemporelle.",
 
-  "item.magiusworldmod.relic": "Relique ancienne de rubis",
+  "item.magiusworldmod.relic": "Relique rubis",
+  "curios.identifier.relic_ruby": "Relique rubis",
+
+  "item.magiusworldmod.ruby_heart": "Cœur de Rubis",
+  "item.magiusworldmod.ruby_eye": "Œil de Rubis",
+  "item.magiusworldmod.ruby_blood": "Sang de Rubis",
+  "item.magiusworldmod.ruby_core_relic": "Noyau de Rubis",
+  "item.magiusworldmod.ruby_relic_armor": "Plastron des Reliques Rubis",
+
+  "tooltip.magiusworldmod.ruby_heart.effect": "Accorde une régénération tant qu'il est équipé.",
+  "tooltip.magiusworldmod.ruby_heart.lore": "Un cœur ancien, chaud comme une braise éternelle.",
+
+  "tooltip.magiusworldmod.ruby_eye.effect": "Accorde une vision nocturne tant qu'il est équipé.",
+  "tooltip.magiusworldmod.ruby_eye.lore": "Son regard perce les ténèbres et révèle la flamme cachée.",
+
+  "tooltip.magiusworldmod.ruby_blood.effect": "Accorde un bonus de force tant qu'il est équipé.",
+  "tooltip.magiusworldmod.ruby_blood.lore": "Le sang du rubis brûle avec une puissance sauvage.",
+
+  "tooltip.magiusworldmod.ruby_core_relic.effect": "Accorde un bonus de vitesse tant qu'il est équipé.",
+  "tooltip.magiusworldmod.ruby_core_relic.lore": "Le noyau palpite d'une énergie ardente et instable.",
+
+  "item.magiusworldmod.ruby_relic_armor.desc_1": "Une armure ancienne nourrie par les flammes du rubis.",
+  "item.magiusworldmod.ruby_relic_armor.desc_2": "Portez une relique rubis pour en recevoir le pouvoir.",
+
+  "item.magiusworldmod.ruby_relic_armor.set_bonus": "Bonus d'ensemble :",
+  "item.magiusworldmod.ruby_relic_armor.progress": "Reliques possédées : %s/%s",
+  "item.magiusworldmod.ruby_relic_armor.activate": "Possédez les 4 reliques rubis pour activer le pouvoir complet de l'armure.",
+  "item.magiusworldmod.ruby_relic_armor.set_bonus_condition": "Possédez les 4 reliques rubis pour activer le bonus d'ensemble.",
 
 
-  "item.magiusworldmod.ruby_relic_armor": "Armure relique de rubis",
-  "item.magiusworldmod.ruby_relic_armor.desc_1": "Une relique forgée à partir de quatre fragments anciens de rubis",
-  "item.magiusworldmod.ruby_relic_armor.desc_2": "Accorde résistance et protection contre le feu lorsqu'elle est portée",
-  "item.magiusworldmod.ruby_relic_armor.set_bonus": "Bonus d'ensemble : Éveil du rubis",
-  "item.magiusworldmod.ruby_relic_armor.set_bonus_condition": "Nécessite les 4 reliques de rubis dans l'inventaire",
-  "item.magiusworldmod.ruby_relic_armor.progress": "%s / %s reliques collectées",
-  "item.magiusworldmod.ruby_relic_armor.activate": "Activation : S'accroupir + sauter en la portant",
+
+
 
 
 

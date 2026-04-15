@@ -60,4 +60,9 @@ public class ModFeatures {
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> RUBY_NATURAL_TREE =
             FEATURES.register("ruby_natural_tree",
                     () -> new RubyNaturalTreeFeature(NoneFeatureConfiguration.CODEC));
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> RUBY_VILLAGE =
+            FEATURES.register("ruby_village",
+                    RubyVillageFeature::new);
+
+
 }

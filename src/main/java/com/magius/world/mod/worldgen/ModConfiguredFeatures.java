@@ -47,6 +47,10 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> DARK_RED_GRASS_KEY = registerKey("dark_red_grass");
     public static final ResourceKey<ConfiguredFeature<?, ?>> RUBY_VEGETATION_PATCH_KEY = registerKey("ruby_vegetation_patch");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> RUBY_VILLAGE_KEY =
+            registerKey("ruby_village");
+
+
     public static final ResourceKey<ConfiguredFeature<?, ?>> PINE_KEY = registerKey("pine");
     public static final ResourceKey<ConfiguredFeature<?, ?>> RUBY_TREE_KEY = registerKey("ruby_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> RUBY_GRASS_PATCH_KEY = registerKey("ruby_grass_patch");
@@ -105,6 +109,8 @@ public class ModConfiguredFeatures {
         register(context, RUBY_CRYSTAL_CLUSTER_KEY, ModFeatures.RUBY_CRYSTAL_CLUSTER.get(), NoneFeatureConfiguration.INSTANCE);
         register(context, RUBY_CLIFF_ORE_KEY, ModFeatures.RUBY_CLIFF_ORE.get(), NoneFeatureConfiguration.INSTANCE);
         register(context, RUBY_NATURAL_TREE_KEY, ModFeatures.RUBY_NATURAL_TREE.get(), NoneFeatureConfiguration.INSTANCE);
+        register(context, RUBY_VILLAGE_KEY, ModFeatures.RUBY_VILLAGE.get(), NoneFeatureConfiguration.INSTANCE);
+
 
     }
 
