@@ -19,6 +19,7 @@ public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_RUBIS_ORE = registerKey("add_rubis_ore");
     public static final ResourceKey<BiomeModifier> ADD_NETHER_RUBIS_ORE = registerKey("add_nether_rubis_ore");
     public static final ResourceKey<BiomeModifier> ADD_END_RUBIS_ORE = registerKey("add_end_rubis_ore");
+
 //    public static final ResourceKey<BiomeModifier> ADD_RUBIS_ORE_TO_RUBY_BIOME = registerKey("add_rubis_ore_to_ruby_biome");
 //    public static final ResourceKey<BiomeModifier> ADD_RUBY_SPIKE = registerKey("add_ruby_spike");
 //    public static final ResourceKey<BiomeModifier> ADD_RUBY_TREE = registerKey("add_ruby_tree");
@@ -29,6 +30,8 @@ public class ModBiomeModifiers {
     public static void bootstrap(BootstapContext<BiomeModifier> context){
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
+
+
 
 
 //        context.register(ADD_WITHER_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(

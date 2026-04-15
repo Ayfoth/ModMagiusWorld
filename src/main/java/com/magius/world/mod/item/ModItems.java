@@ -202,26 +202,26 @@ public static final RegistryObject<Item> RUBY_FIRE_CORE_PLAN = ITEMS.register("r
 
     public static final RegistryObject<Item> RUBY_HEART = ITEMS.register("ruby_heart",
             () -> new RubyRelicItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE),
-                    "item.magiusworldmod.ruby_heart.desc",
-                    "item.magiusworldmod.ruby_heart.lore",
+                    "tooltip.magiusworldmod.ruby_heart.effect",
+                    "tooltip.magiusworldmod.ruby_heart.lore",
                     ChatFormatting.RED));
 
     public static final RegistryObject<Item> RUBY_EYE = ITEMS.register("ruby_eye",
             () -> new RubyRelicItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE),
-                    "item.magiusworldmod.ruby_eye.desc",
-                    "item.magiusworldmod.ruby_eye.lore",
+                    "tooltip.magiusworldmod.ruby_eye.effect",
+                    "tooltip.magiusworldmod.ruby_eye.lore",
                     ChatFormatting.LIGHT_PURPLE));
 
     public static final RegistryObject<Item> RUBY_BLOOD = ITEMS.register("ruby_blood",
             () -> new RubyRelicItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE),
-                    "item.magiusworldmod.ruby_blood.desc",
-                    "item.magiusworldmod.ruby_blood.lore",
+                    "tooltip.magiusworldmod.ruby_blood.effect",
+                    "tooltip.magiusworldmod.ruby_blood.lore",
                     ChatFormatting.DARK_RED));
 
     public static final RegistryObject<Item> RUBY_CORE_RELIC = ITEMS.register("ruby_core_relic",
             () -> new RubyRelicItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE),
-                    "item.magiusworldmod.ruby_core_relic.desc",
-                    "item.magiusworldmod.ruby_core_relic.lore",
+                    "tooltip.magiusworldmod.ruby_core_relic.effect",
+                    "tooltip.magiusworldmod.ruby_core_relic.lore",
                     ChatFormatting.GOLD));
 
     public static final RegistryObject<Item> RUBY_RELIC_ARMOR = ITEMS.register("ruby_relic_armor",

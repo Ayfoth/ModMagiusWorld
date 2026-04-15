@@ -24,7 +24,7 @@ public class ModOverworldRegion extends Region {
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint,
             ResourceKey<Biome>>> mapper) {
        this.addModifiedVanillaOverworldBiomes(mapper, modifiedVanillaOverworldBuilder -> {
-           modifiedVanillaOverworldBuilder.replaceBiome(Biomes.BADLANDS, ModBiomes.RUBY_BIOME);
+           modifiedVanillaOverworldBuilder.replaceBiome(Biomes.PLAINS, ModBiomes.RUBY_BIOME);
 //           VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
 //           // Overlap Vanilla's parameters with our own for our TEST BIOME
 //           // The parameters for this biome are chosen arbitrarily.
