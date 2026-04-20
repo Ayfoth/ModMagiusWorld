@@ -119,6 +119,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.RUBY_BLOOD.get());
         basicItem(ModItems.RUBY_CORE_RELIC.get());
         basicItem(ModItems.RUBY_RELIC_ARMOR.get());
+        basicItem(ModItems.SCARLET_NETWORK_CONTRACT.get());
+        basicItem(ModItems.RUBY_LOCATOR.get());
+        basicItem(ModItems.RED_KEY.get());
 
 
 

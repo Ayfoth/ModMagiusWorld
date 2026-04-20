@@ -1,6 +1,7 @@
 package com.magius.world.mod;
 
 import com.magius.world.mod.block.ModBlocks;
+import com.magius.world.mod.network.ModMessages;
 import com.magius.world.mod.particle.ModParticles;
 import com.magius.world.mod.block.entity.ModBlockEntities;
 import com.magius.world.mod.entity.ModEntities;
@@ -75,6 +76,7 @@ public class MagiusWorldMod
 
         ModSounds.register(modEventBus);
         ModEntities.register(modEventBus);
+        ModMessages.register();
 
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);

@@ -25,7 +25,7 @@
   "item.magiusworldmod.wither_axe": "Hache de Wither",
   "item.magiusworldmod.rubis_pickaxe": "Pioche de Rubis",
   "item.magiusworldmod.rubis_axe": "Hache de Rubis",
-  "item.magiusworldmod.rubis_hoe": "Houx de Rubis",
+  "item.magiusworldmod.rubis_hoe": "Houe de Rubis",
   "item.magiusworldmod.rubis_shovel": "Pelle de Rubis",
   "item.magiusworldmod.rubis_sword": "Épée de Rubis",
   "item.magiusworldmod.rubis_wand": "Baguette de Rubis",
@@ -194,6 +194,10 @@
   "item.magiusworldmod.ruby_blood": "Sang de Rubis",
   "item.magiusworldmod.ruby_core_relic": "Noyau de Rubis",
   "item.magiusworldmod.ruby_relic_armor": "Plastron des Reliques Rubis",
+
+  "item.magiusworldmod.scarlet_network_contract": "Contrat du Réseau Écarlate",
+  "item.magiusworldmod.ruby_locator": "Boussole des Terres Rubis",
+  "item.magiusworldmod.red_key": "Clé Rouge",
 
   "tooltip.magiusworldmod.ruby_heart.effect": "Accorde une régénération tant qu'il est équipé.",
   "tooltip.magiusworldmod.ruby_heart.lore": "Un cœur ancien, chaud comme une braise éternelle.",

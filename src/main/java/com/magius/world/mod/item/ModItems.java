@@ -191,7 +191,8 @@ public class ModItems {
             () -> new Item(new Item.Properties().stacksTo(16)));
 //    public static final RegistryObject<Item> RUBY_ALTAR_ITEM = ITEMS.register("ruby_altar",
 //            () -> new BlockItem(ModBlocks.RUBY_ALTAR.get(), new Item.Properties()));
-public static final RegistryObject<Item> RUBY_FIRE_CORE_PLAN = ITEMS.register("ruby_fire_core_plan",
+
+    public static final RegistryObject<Item> RUBY_FIRE_CORE_PLAN = ITEMS.register("ruby_fire_core_plan",
         () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> RUBY_WAND_PLAN = ITEMS.register("ruby_wand_plan",
@@ -230,6 +231,21 @@ public static final RegistryObject<Item> RUBY_FIRE_CORE_PLAN = ITEMS.register("r
                     ArmorItem.Type.CHESTPLATE,
                     new Item.Properties().stacksTo(1).rarity(Rarity.EPIC)
             ));
+    public static final RegistryObject<Item> SCARLET_NETWORK_CONTRACT = ITEMS.register(
+            "scarlet_network_contract",
+            () -> new ScarletNetworkContractItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE))
+    );
+    public static final RegistryObject<Item> RUBY_LOCATOR = ITEMS.register(
+            "ruby_locator",
+            () -> new RubyLocatorItem(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON))
+    );
+    public static final RegistryObject<Item> RED_KEY = ITEMS.register(
+            "red_key",
+            () -> new RedKeyItem(new Item.Properties()
+                    .stacksTo(1)
+                    .rarity(Rarity.RARE)
+                    .fireResistant())
+    );
 
 
 
