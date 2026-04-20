@@ -40,18 +40,13 @@
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode",
-      "magiusworldmod:ruby_spike_placed",
-      "magiusworldmod:ruby_rock_placed",
-      "magiusworldmod:ruby_cliff_ore_placed"
+      "minecraft:amethyst_geode"
     ],
     [
       "minecraft:monster_room",
       "minecraft:monster_room_deep"
     ],
-    [
-      "magiusworldmod:ruby_village"
-    ],
+    [],
     [],
     [
       "minecraft:ore_dirt",
@@ -63,22 +58,6 @@
       "minecraft:ore_andesite_upper",
       "minecraft:ore_andesite_lower",
       "minecraft:ore_tuff",
-      "minecraft:ore_coal_upper",
-      "minecraft:ore_coal_lower",
-      "minecraft:ore_iron_upper",
-      "minecraft:ore_iron_middle",
-      "minecraft:ore_iron_small",
-      "minecraft:ore_gold",
-      "minecraft:ore_gold_lower",
-      "minecraft:ore_redstone",
-      "minecraft:ore_redstone_lower",
-      "minecraft:ore_diamond",
-      "minecraft:ore_diamond_large",
-      "minecraft:ore_diamond_buried",
-      "minecraft:ore_lapis",
-      "minecraft:ore_lapis_buried",
-      "minecraft:ore_copper",
-      "minecraft:underwater_magma",
       "magiusworldmod:rubis_ore_placed"
     ],
     [],
@@ -90,7 +69,9 @@
       "minecraft:glow_lichen",
       "magiusworldmod:ruby_tree_placed",
       "magiusworldmod:ruby_bush_placed",
-      "magiusworldmod:wild_red_wheat_placed"
+      "magiusworldmod:ruby_flower_placed",
+      "magiusworldmod:dark_red_grass_placed",
+      "magiusworldmod:ruby_grass_patch_placed"
     ],
     [
       "minecraft:freeze_top_layer"
@@ -107,12 +88,6 @@
         "maxCount": 3,
         "minCount": 2,
         "weight": 6
-      },
-      {
-        "type": "magiusworldmod:rhino",
-        "maxCount": 2,
-        "minCount": 1,
-        "weight": 2
       },
       {
         "type": "magiusworldmod:ruby_sheep",

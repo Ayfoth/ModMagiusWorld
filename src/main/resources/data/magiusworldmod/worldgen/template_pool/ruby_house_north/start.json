@@ -1,0 +1,15 @@
+{
+  "name": "magiusworldmod:ruby_house_north/start",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "magiusworldmod:ruby_house_north",
+        "processors": "minecraft:empty",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

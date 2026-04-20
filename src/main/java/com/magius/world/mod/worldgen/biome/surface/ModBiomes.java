@@ -106,7 +106,7 @@ public class ModBiomes {
         globalOverworldGeneration(biomeBuilder);
 
         // minerais normaux + rubis
-        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        //BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
 
         biomeBuilder.addFeature(
                 GenerationStep.Decoration.UNDERGROUND_ORES,
@@ -114,10 +114,10 @@ public class ModBiomes {
         );
 
         // pics de rubis
-        biomeBuilder.addFeature(
-                GenerationStep.Decoration.LOCAL_MODIFICATIONS,
-                ModPlacedFeatures.RUBY_SPIKE_PLACED_KEY
-        );
+//        biomeBuilder.addFeature(
+//                GenerationStep.Decoration.LOCAL_MODIFICATIONS,
+//                ModPlacedFeatures.RUBY_SPIKE_PLACED_KEY
+//        );
 
         // arbres cristallisés
         biomeBuilder.addFeature(
@@ -146,10 +146,10 @@ public class ModBiomes {
 //                GenerationStep.Decoration.VEGETAL_DECORATION,
 //                ModPlacedFeatures.CRYSTAL_SHARD_PLACED_KEY
 //        );
-        biomeBuilder.addFeature(
-                GenerationStep.Decoration.VEGETAL_DECORATION,
-                ModPlacedFeatures.RUBY_SHRUB_PLACED_KEY
-        );
+//        biomeBuilder.addFeature(
+//                GenerationStep.Decoration.VEGETAL_DECORATION,
+//                ModPlacedFeatures.RUBY_SHRUB_PLACED_KEY
+//        );
         biomeBuilder.addFeature(
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 ModPlacedFeatures.DARK_RED_GRASS_PLACED_KEY
@@ -158,36 +158,36 @@ public class ModBiomes {
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 ModPlacedFeatures.RUBY_GRASS_PATCH_PLACED_KEY
         );
-        biomeBuilder.addFeature(
-                GenerationStep.Decoration.VEGETAL_DECORATION,
-                ModPlacedFeatures.RUBY_VEGETATION_PATCH_PLACED_KEY
-        );
-        biomeBuilder.addFeature(
-                GenerationStep.Decoration.VEGETAL_DECORATION,
-                ModPlacedFeatures.RUBY_NATURAL_TREE_PLACED_KEY
-        );
+//        biomeBuilder.addFeature(
+//                GenerationStep.Decoration.VEGETAL_DECORATION,
+//                ModPlacedFeatures.RUBY_VEGETATION_PATCH_PLACED_KEY
+//        );
+//        biomeBuilder.addFeature(
+//                GenerationStep.Decoration.VEGETAL_DECORATION,
+//                ModPlacedFeatures.RUBY_NATURAL_TREE_PLACED_KEY
+//        );
 
 //        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
 //        BiomeDefaultFeatures.addDefaultSprings(biomeBuilder);
 
-        biomeBuilder.addFeature(
-                GenerationStep.Decoration.SURFACE_STRUCTURES,
-                ModPlacedFeatures.RUBY_VILLAGE_PLACED_KEY
-        );
+//        biomeBuilder.addFeature(
+//                GenerationStep.Decoration.SURFACE_STRUCTURES,
+//                ModPlacedFeatures.RUBY_VILLAGE_PLACED_KEY
+//        );
 
-        biomeBuilder.addFeature(
-                GenerationStep.Decoration.LOCAL_MODIFICATIONS,
-                ModPlacedFeatures.RUBY_ROCK_PLACED_KEY
-        );
+//        biomeBuilder.addFeature(
+//                GenerationStep.Decoration.LOCAL_MODIFICATIONS,
+//                ModPlacedFeatures.RUBY_ROCK_PLACED_KEY
+//        );
 //        biomeBuilder.addFeature(
 //                GenerationStep.Decoration.LOCAL_MODIFICATIONS,
 //                ModPlacedFeatures.RUBY_CRYSTAL_CLUSTER_PLACED_KEY
 //        );
 
-        biomeBuilder.addFeature(
-                GenerationStep.Decoration.LOCAL_MODIFICATIONS,
-                ModPlacedFeatures.RUBY_CLIFF_ORE_PLACED_KEY
-        );
+//        biomeBuilder.addFeature(
+//                GenerationStep.Decoration.LOCAL_MODIFICATIONS,
+//                ModPlacedFeatures.RUBY_CLIFF_ORE_PLACED_KEY
+//        );
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(false)
