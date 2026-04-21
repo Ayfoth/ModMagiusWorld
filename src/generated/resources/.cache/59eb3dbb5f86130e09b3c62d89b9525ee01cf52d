@@ -1,4 +1,4 @@
-// 1.20.1	2026-03-31T11:08:42.5109745	Loot Tables
+// 1.20.1	2026-04-21T16:45:02.257207	Loot Tables
 b5c9a6ce89dabe40c60afe7d24b34aa32f176ff6 data/magiusworldmod/loot_tables/blocks/blackwood_log.json
 e031d5f871467b4b9eb8a3c77472f61dc81ad68e data/magiusworldmod/loot_tables/blocks/catmint.json
 47dbba944fa172effa27ebbc8d13ab425a3526f5 data/magiusworldmod/loot_tables/blocks/charred_ruby_beam.json
@@ -10,6 +10,7 @@ ec263b14c6ff90e6f75c8304f05295ffc2eaa034 data/magiusworldmod/loot_tables/blocks/
 d9e5292fe8360bbf36953c906d2ae8db8e2bdca2 data/magiusworldmod/loot_tables/blocks/end_stone_rubis_ore.json
 27641b0874f34a2bfac64a703f58d712677f4142 data/magiusworldmod/loot_tables/blocks/fire_founderie.json
 82012941a3378e1524ea8abfc514b3fa269fa8aa data/magiusworldmod/loot_tables/blocks/gem_polishing_station.json
+fd4f94fd6e3d88d1fab257cb46fc007cd196d055 data/magiusworldmod/loot_tables/blocks/necro_stone.json
 77e65714466998f559f3948009e1acedf0e7e5b3 data/magiusworldmod/loot_tables/blocks/nether_rubis_ore.json
 ff5a9cccf420d6a9d51f72fccc1b1e0f47b4feb9 data/magiusworldmod/loot_tables/blocks/pine_hanging_sign.json
 65608772c065323da57bf56697c09d0f58b1a894 data/magiusworldmod/loot_tables/blocks/pine_leaves.json

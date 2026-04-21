@@ -69,9 +69,11 @@
       "minecraft:glow_lichen",
       "magiusworldmod:ruby_tree_placed",
       "magiusworldmod:ruby_bush_placed",
+      "magiusworldmod:wild_red_wheat_placed",
       "magiusworldmod:ruby_flower_placed",
       "magiusworldmod:dark_red_grass_placed",
-      "magiusworldmod:ruby_grass_patch_placed"
+      "magiusworldmod:ruby_grass_patch_placed",
+      "magiusworldmod:ruby_vegetation_patch_placed"
     ],
     [
       "minecraft:freeze_top_layer"

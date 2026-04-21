@@ -5,6 +5,7 @@ import com.magius.world.mod.block.ModBlocks;
 import com.magius.world.mod.entity.ModEntities;
 import com.magius.world.mod.entity.custom.ModBoatEntity;
 import com.magius.world.mod.item.custom.*;
+import com.magius.world.mod.item.echo.CorruptionTesterItem;
 import com.magius.world.mod.sound.ModSounds;
 import net.minecraft.ChatFormatting;
 import net.minecraft.world.item.*;
@@ -246,6 +247,13 @@ public class ModItems {
                     .rarity(Rarity.RARE)
                     .fireResistant())
     );
+
+
+    // Mod Echo du Premier
+    public static final RegistryObject<Item> CORRUPTION_TESTER = ITEMS.register("corruption_tester",
+            () -> new CorruptionTesterItem(new Item.Properties()));
+    public static final RegistryObject<Item> ESSENCE_WITHER = ITEMS.register("essence_wither",
+            () -> new Item(new Item.Properties()));
 
 
 

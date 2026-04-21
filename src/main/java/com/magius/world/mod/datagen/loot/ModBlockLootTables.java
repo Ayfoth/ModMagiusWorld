@@ -187,6 +187,10 @@ public class ModBlockLootTables extends BlockLootSubProvider {
        // this.add(ModBlocks.BOSS_RUBY_DOOR.get(), noDrop());
 
 
+        // Mod Echo
+        this.dropSelf(ModBlocks.NECRO_STONE.get());
+
+
     }
 
 
