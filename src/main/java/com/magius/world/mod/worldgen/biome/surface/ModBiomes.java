@@ -130,10 +130,10 @@ public class ModBiomes {
                 ModPlacedFeatures.RUBY_BUSH_PLACED_KEY
         );
 
-//        biomeBuilder.addFeature(
-//                GenerationStep.Decoration.VEGETAL_DECORATION,
-//                ModPlacedFeatures.WILD_RED_WHEAT_PLACED_KEY
-//        );
+        biomeBuilder.addFeature(
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                ModPlacedFeatures.WILD_RED_WHEAT_PLACED_KEY
+        );
 //        biomeBuilder.addFeature(
 //                GenerationStep.Decoration.VEGETAL_DECORATION,
 //                ModPlacedFeatures.RUBY_MUSHROOM_PLACED_KEY
@@ -158,10 +158,10 @@ public class ModBiomes {
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 ModPlacedFeatures.RUBY_GRASS_PATCH_PLACED_KEY
         );
-//        biomeBuilder.addFeature(
-//                GenerationStep.Decoration.VEGETAL_DECORATION,
-//                ModPlacedFeatures.RUBY_VEGETATION_PATCH_PLACED_KEY
-//        );
+        biomeBuilder.addFeature(
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                ModPlacedFeatures.RUBY_VEGETATION_PATCH_PLACED_KEY
+        );
 //        biomeBuilder.addFeature(
 //                GenerationStep.Decoration.VEGETAL_DECORATION,
 //                ModPlacedFeatures.RUBY_NATURAL_TREE_PLACED_KEY
