@@ -1,0 +1,26 @@
+{
+  "structures": [
+    {
+      "structure": "magiusworldmod:ruby_village_center",
+      "weight": 1
+    },
+    {
+      "structure": "magiusworldmod:ruby_house_north",
+      "weight": 1
+    },
+    {
+      "structure": "magiusworldmod:ruby_house_east",
+      "weight": 1
+    },
+    {
+      "structure": "magiusworldmod:ruby_house_west",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 90,
+    "separation": 45,
+    "salt": 246813579
+  }
+}
