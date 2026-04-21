@@ -208,6 +208,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 models().getExistingFile(modLoc("block/" + blockName(ModBlocks.RUBY_CACHE.get()))));
         simpleBlockWithItem(ModBlocks.BOSS_RUBY_DOOR.get(), cubeAll(ModBlocks.BOSS_RUBY_DOOR.get()));
 
+        // Mod Echo
+        blockWithItem(ModBlocks.NECRO_STONE);
+
     }
 private String blockName(Block block) {
     return BuiltInRegistries.BLOCK.getKey(block).getPath();

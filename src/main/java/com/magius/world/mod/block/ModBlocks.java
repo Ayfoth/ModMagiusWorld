@@ -362,6 +362,13 @@ public class ModBlocks {
                     .sound(SoundType.STONE)));
 
 
+    // Mod Echo du Premier
+
+    public static final RegistryObject<Block> NECRO_STONE = registerBlock("necro_stone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
+                    .strength(1.8f,6.0f)));
+
+
 
 
 

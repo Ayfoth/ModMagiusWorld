@@ -146,6 +146,11 @@ public class ModItemModelProvider extends ItemModelProvider {
                 .texture("layer0", modLoc("item/ruby_bolt_item"));
         basicItem(ModItems.RUBY_KEY.get());
 
+        // Mod Echo
+
+        simpleItem(ModItems.CORRUPTION_TESTER);
+        simpleItem(ModItems.ESSENCE_WITHER);
+
     }
     // Shoutout to El_Redstoniano for making this
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {

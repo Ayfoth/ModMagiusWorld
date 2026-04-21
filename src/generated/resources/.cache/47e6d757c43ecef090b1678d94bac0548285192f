@@ -1,4 +1,4 @@
-// 1.20.1	2026-03-31T12:44:39.6241698	Block States: magiusworldmod
+// 1.20.1	2026-04-21T16:45:02.3070733	Block States: magiusworldmod
 cdfa58f233795baa35b348351bbbef02ea45549c assets/magiusworldmod/blockstates/blackwood_log.json
 dfae6f438a0212bbfe9073b92f894a274b4f3464 assets/magiusworldmod/blockstates/boss_ruby_door.json
 ca904cb56476f569779fb9050abe23470d1f2e69 assets/magiusworldmod/blockstates/catmint.json
@@ -13,6 +13,7 @@ c49e0348c9c222df266f485b796901fb8c36fe95 assets/magiusworldmod/blockstates/deeps
 533bbcdf58378f5c2775f5ba17e9b6b2ade80df6 assets/magiusworldmod/blockstates/fire_founderie.json
 802a12065ca9aeb39c1ced45754e3a902b705520 assets/magiusworldmod/blockstates/gem_polishing_station.json
 5603bd0229da22536ae2e46704fed10ef19b0026 assets/magiusworldmod/blockstates/mod_portal.json
+21fa8675e139c0d7d22584a67be3f3959551f918 assets/magiusworldmod/blockstates/necro_stone.json
 98e6bf0fc303f9546fca139eacdd2e3b565451e2 assets/magiusworldmod/blockstates/nether_rubis_ore.json
 6f2aa41c3a7daba19b5a5d05229e2e4d47abdedf assets/magiusworldmod/blockstates/pine_hanging_sign.json
 2ff90aec8ac9bfc741a0a06f0713b3045c9b45ae assets/magiusworldmod/blockstates/pine_leaves.json
@@ -95,6 +96,7 @@ d6a5bd1b4a9532c555856edac696e6bef892307b assets/magiusworldmod/models/block/dark
 31f16576dff3d92e3a2d346daa5228893bef21ef assets/magiusworldmod/models/block/deepslate_wither_ore.json
 a2cc863df222601a6eaab4c225e03040f5f2b8cd assets/magiusworldmod/models/block/end_stone_rubis_ore.json
 8fea4a64d2ddcef729e48bd3433b22592a3b5e92 assets/magiusworldmod/models/block/mod_portal.json
+aac89434a9d34ccb3623f59ee6ab5c5d377466b0 assets/magiusworldmod/models/block/necro_stone.json
 d0181c49f1d085a49a3952358b1ff8f91d067a51 assets/magiusworldmod/models/block/nether_rubis_ore.json
 b8c6ec073c5f070f7b14701b966d75c7266bd3f7 assets/magiusworldmod/models/block/pine_hanging_sign.json
 cd8f51ba62a0def79d8afd3579cc045d813f49aa assets/magiusworldmod/models/block/pine_leaves.json
@@ -225,6 +227,7 @@ d9052219eb00b6eb551fe795769ce840fa49a3ab assets/magiusworldmod/models/item/deeps
 60f65bf90bec9ad9b42ec39f55d4e6df2690f98d assets/magiusworldmod/models/item/fire_founderie.json
 cb04d19ad2aebebde4f97e10b0613190cb311097 assets/magiusworldmod/models/item/gem_polishing_station.json
 136d02f10f104f810e5ad08035dbe5de8a88ebfb assets/magiusworldmod/models/item/mod_portal.json
+72b8fd9f990175ca5b6cb8b81c81a9864435dd7a assets/magiusworldmod/models/item/necro_stone.json
 ecca3a313c44803614476198441ba8d003eff643 assets/magiusworldmod/models/item/nether_rubis_ore.json
 2656f551f7a1e804d7560f2c05bdfa03b368b326 assets/magiusworldmod/models/item/pine_leaves.json
 8911ceb29c6e951990461d1b583c9259056c6a7d assets/magiusworldmod/models/item/pine_log.json

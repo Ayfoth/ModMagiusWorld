@@ -24,8 +24,10 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.RUBIS_ORE.get())
                 .add(ModBlocks.RUBY_CACHE.get())
                 .add(ModBlocks.RUBY_FIRE_CORE.get());
+
         this.tag(ModTags.Blocks.METAL_DETECTOR_VALUABLES)
                 .add(ModBlocks.WITHER_ORE.get()).add(ModBlocks.DEEPSLATE_WITHER_ORE.get()).addTag(Tags.Blocks.ORES);
+
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.WITHER_ORE.get(),
                         ModBlocks.DEEPSLATE_WITHER_ORE.get(),
@@ -34,12 +36,16 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.NETHER_RUBIS_ORE.get(),
                         ModBlocks.END_STONE_RUBIS_ORE.get(),
                         ModBlocks.RUBIS_BLOCK.get(),
+                        ModBlocks.NECRO_STONE.get(),
                         ModBlocks.WHITE_LEGENDARY_BLOCK.get())
                 ;
         this.tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks.BLACKWOOD_LOG.get(),
                         ModBlocks.RUBY_DOOR.get(),
                         ModBlocks.RUBY_TRAPDOOR.get());
+
+        this.tag(BlockTags.NEEDS_STONE_TOOL)
+                .add(ModBlocks.NECRO_STONE.get());
 
 
         this.tag(BlockTags.NEEDS_IRON_TOOL)
