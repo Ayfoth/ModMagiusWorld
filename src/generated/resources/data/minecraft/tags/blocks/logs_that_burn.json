@@ -3,6 +3,8 @@
     "magiusworldmod:pine_log",
     "magiusworldmod:pine_wood",
     "magiusworldmod:stripped_pine_log",
-    "magiusworldmod:stripped_pine_wood"
+    "magiusworldmod:stripped_pine_wood",
+    "magiusworldmod:withered_log",
+    "magiusworldmod:stripped_withered_log"
   ]
 }

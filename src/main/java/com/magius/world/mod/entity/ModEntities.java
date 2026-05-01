@@ -3,6 +3,7 @@ package com.magius.world.mod.entity;
 import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.entity.custom.*;
 
+import com.magius.world.mod.entity.echo.TempestBlaze;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -13,6 +14,18 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
             DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, MagiusWorldMod.MOD_ID);
+
+    public static final RegistryObject<EntityType<WitheredHusk>> WITHERED_HUSK =
+            ENTITY_TYPES.register("withered_husk",
+                    () -> EntityType.Builder.of(WitheredHusk::new, MobCategory.MONSTER)
+                            .sized(0.6f, 1.95f)
+                            .build("withered_husk"));
+    public static final RegistryObject<EntityType<TempestBlaze>> TEMPEST_BLAZE =
+            ENTITY_TYPES.register("tempest_blaze",
+                    () -> EntityType.Builder.of(TempestBlaze::new, MobCategory.MONSTER)
+                            .sized(0.6f, 1.8f)
+                            .clientTrackingRange(8)
+                            .build("tempest_blaze"));
 
     public static final RegistryObject<EntityType<RhinoEntity>> RHINO =
             ENTITY_TYPES.register("rhino", () -> EntityType.Builder.of(RhinoEntity::new, MobCategory.CREATURE)

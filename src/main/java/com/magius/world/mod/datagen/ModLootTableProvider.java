@@ -1,6 +1,7 @@
 package com.magius.world.mod.datagen;
 
 import com.magius.world.mod.datagen.loot.ModBlockLootTables;
+import com.magius.world.mod.datagen.loot.ModEntityLootTables;
 import com.magius.world.mod.datagen.loot.ModGameplayLootTables;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
@@ -13,7 +14,12 @@ public class ModLootTableProvider {
     public static LootTableProvider create(PackOutput output) {
         return new LootTableProvider(output, Set.of(), List.of(
                 new LootTableProvider.SubProviderEntry(ModBlockLootTables::new, LootContextParamSets.BLOCK),
-                new LootTableProvider.SubProviderEntry(ModGameplayLootTables::new, LootContextParamSets.CHEST)
+                new LootTableProvider.SubProviderEntry(ModEntityLootTables::new, LootContextParamSets.ENTITY),
+                new LootTableProvider.SubProviderEntry(ModGameplayLootTables::new, LootContextParamSets.CHEST),
+                new LootTableProvider.SubProviderEntry(
+                        ModChestLootTables::new,
+                        LootContextParamSets.CHEST
+                )
         ));
     }
 }

@@ -1,7 +1,9 @@
 package com.magius.world.mod.datagen;
 
 import com.magius.world.mod.MagiusWorldMod;
+
 import net.minecraft.core.HolderLookup;
+
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -39,6 +41,9 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new ModPoiTypeTagsProvider(packOutput, lookupProvider, existingFileHelper));
 
         generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));
+
+
+
 
     }
 }

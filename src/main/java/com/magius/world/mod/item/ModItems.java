@@ -5,7 +5,10 @@ import com.magius.world.mod.block.ModBlocks;
 import com.magius.world.mod.entity.ModEntities;
 import com.magius.world.mod.entity.custom.ModBoatEntity;
 import com.magius.world.mod.item.custom.*;
+import com.magius.world.mod.item.echo.CorruptedPickaxeItem;
 import com.magius.world.mod.item.echo.CorruptionTesterItem;
+import com.magius.world.mod.item.echo.PurifyingHeartItem;
+import com.magius.world.mod.item.echo.WitherEssenceItem;
 import com.magius.world.mod.sound.ModSounds;
 import net.minecraft.ChatFormatting;
 import net.minecraft.world.item.*;
@@ -18,6 +21,30 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, MagiusWorldMod.MOD_ID);
+
+    // Mod Echo du Premier
+    public static final RegistryObject<Item> CORRUPTION_TESTER = ITEMS.register("corruption_tester",
+            () -> new CorruptionTesterItem(new Item.Properties()));
+    public static final RegistryObject<Item> ESSENCE_WITHER =
+            ITEMS.register("essence_wither",
+                    () -> new WitherEssenceItem(
+                            new Item.Properties().stacksTo(16)
+                    ));
+    public static final RegistryObject<Item> PURIFYING_HEART = ITEMS.register("purifying_heart",
+            () -> new PurifyingHeartItem(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> STORM_FRAGMENT = ITEMS.register("storm_fragment",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CORRUPTED_PICKAXE = ITEMS.register("corrupted_pickaxe",
+            () -> new CorruptedPickaxeItem(
+                    Tiers.IRON,
+                    1,
+                    -2.8f,
+                    new Item.Properties().durability(420)
+            ));
+
+
+
+    // *******
 
     public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",
             () -> new Item(new Item.Properties()));
@@ -249,11 +276,7 @@ public class ModItems {
     );
 
 
-    // Mod Echo du Premier
-    public static final RegistryObject<Item> CORRUPTION_TESTER = ITEMS.register("corruption_tester",
-            () -> new CorruptionTesterItem(new Item.Properties()));
-    public static final RegistryObject<Item> ESSENCE_WITHER = ITEMS.register("essence_wither",
-            () -> new Item(new Item.Properties()));
+
 
 
 

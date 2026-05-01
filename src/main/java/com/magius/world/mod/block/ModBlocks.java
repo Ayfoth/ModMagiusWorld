@@ -2,19 +2,28 @@ package com.magius.world.mod.block;
 
 import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.block.custom.*;
+import com.magius.world.mod.block.echo.CorruptedSoilBlock;
+import com.magius.world.mod.block.echo.PurifyingCoreBlock;
+import com.magius.world.mod.block.echo.UnstableNecroStoneBlock;
+import com.magius.world.mod.item.CorruptionTooltipBlockItem;
 import com.magius.world.mod.item.ModItems;
 import com.magius.world.mod.item.custom.FuelItem;
 import com.magius.world.mod.sound.ModSounds;
 import com.magius.world.mod.util.ModWoodTypes;
 import com.magius.world.mod.worldgen.tree.PineTreeGrower;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -26,11 +35,127 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, MagiusWorldMod.MOD_ID);
+
+    // Mod Echo du Premier
+
+    public static final RegistryObject<Block> NECRO_STONE = registerBlock("necro_stone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
+                    .strength(1.8f,6.0f)));
+    public static final RegistryObject<Block> CORRUPTED_SOIL = registerBlock("corrupted_soil",
+            () -> new CorruptedSoilBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).randomTicks()));
+    public static final RegistryObject<Block> PURIFYING_CORE = registerBlock("purifying_core",
+            () -> new PurifyingCoreBlock(
+                    BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK)
+                            .strength(2.0f, 6.0f)
+                            .lightLevel(state -> 8)
+                            .randomTicks()
+            ));
+    public static final RegistryObject<Block> POLISHED_NECRO_STONE = registerBlock("polished_necro_stone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
+                    .strength(2.0f, 6.0f)));
+    public static final RegistryObject<Block> CUT_NECRO_STONE = registerBlock("cut_necro_stone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
+                    .strength(2.0f, 6.0f)));
+    public static final RegistryObject<Block> NECRO_STONE_BRICKS = registerBlock("necro_stone_bricks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)
+                    .strength(2.0f, 6.0f)));
+    public static final RegistryObject<Block> CRACKED_NECRO_STONE_BRICKS = registerBlock("cracked_necro_stone_bricks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRACKED_STONE_BRICKS)
+                    .strength(2.0f, 6.0f)));
+    public static final RegistryObject<Block> BLACK_MOSSY_NECRO_STONE_BRICKS = registerBlock("black_mossy_necro_stone_bricks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS)
+                    .strength(2.0f, 6.0f)));
+    public static final RegistryObject<Block> CHISELED_NECRO_STONE_BRICKS = registerBlock("chiseled_necro_stone_bricks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.CHISELED_STONE_BRICKS)
+                    .strength(2.0f, 6.0f)));
+    public static final RegistryObject<Block> NECRO_STONE_PILLAR = registerBlock("necro_stone_pillar",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
+                    .strength(2.0f, 6.0f)));
+    public static final RegistryObject<Block> NECRO_STONE_STAIRS = registerBlock("necro_stone_stairs",
+            () -> new StairBlock(() -> ModBlocks.NECRO_STONE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistryObject<Block> NECRO_STONE_SLAB = registerBlock("necro_stone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistryObject<Block> NECRO_STONE_WALL = registerBlock("necro_stone_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)));
+    public static final RegistryObject<Block> CHISELED_NECRO_STONE_STAIRS = registerBlock("chiseled_necro_stone_stairs",
+            () -> new StairBlock(() -> ModBlocks.CHISELED_NECRO_STONE_BRICKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistryObject<Block> CHISELED_NECRO_STONE_SLAB = registerBlock("chiseled_necro_stone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistryObject<Block> COMPACT_NECRO_STONE = registerBlock("compact_necro_stone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
+                    .requiresCorrectToolForDrops()
+                    .strength(2.5f, 7.0f)));
+    public static final RegistryObject<Block> INFUSED_NECRO_STONE = registerBlock("infused_necro_stone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
+                    .strength(2.0f, 6.0f)
+                    .requiresCorrectToolForDrops()
+                    .lightLevel(state -> 4)));
+    public static final RegistryObject<Block> UNSTABLE_NECRO_STONE = registerBlock("unstable_necro_stone",
+            () -> new UnstableNecroStoneBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
+                    .strength(1.5f, 4.0f)
+                    .requiresCorrectToolForDrops()
+                    .lightLevel(state -> 6)
+                    .randomTicks()));
+    public static final RegistryObject<Block> LIVING_ROCK = registerBlock("living_rock",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
+                    .requiresCorrectToolForDrops()
+                    .strength(2.0f, 6.0f)));
+    public static final RegistryObject<Block> VEINED_ROCK = registerBlock("veined_rock",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
+                    .requiresCorrectToolForDrops()
+                    .strength(2.0f, 6.0f)));
+    public static final RegistryObject<Block> BROKEN_ROCK = registerBlock("broken_rock",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.2f, 3.0f)));
+    public static final RegistryObject<Block> ENGRAVED_ROCK = registerBlock("engraved_rock",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
+                    .requiresCorrectToolForDrops()
+                    .strength(2.0f, 6.0f)));
+
+    public static final RegistryObject<Block> WITHERED_LOG = registerBlock("withered_log",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
+                    .strength(2.0f)));
+    public static final RegistryObject<Block> STRIPPED_WITHERED_LOG = registerBlock("stripped_withered_log",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)
+                    .strength(2.0f)));
+    public static final RegistryObject<Block> WITHERED_PLANKS = registerBlock("withered_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> VEINED_WITHERED_PLANKS = registerBlock("veined_withered_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> REINFORCED_WITHERED_PLANKS = registerBlock("reinforced_withered_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(3.0f, 6.0f)));
+    public static final RegistryObject<Block> WITHERED_STAIRS = registerBlock("withered_stairs",
+            () -> new StairBlock(() -> WITHERED_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)));
+    public static final RegistryObject<Block> WITHERED_SLAB = registerBlock("withered_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)));
+    public static final RegistryObject<Block> WITHERED_FENCE = registerBlock("withered_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
+    public static final RegistryObject<Block> WITHERED_FENCE_GATE = registerBlock("withered_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE), WoodType.OAK));
+    public static final RegistryObject<Block> WITHERED_DOOR = registerBlock("withered_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion(), BlockSetType.OAK));
+    public static final RegistryObject<Block> WITHERED_TRAPDOOR = registerBlock("withered_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion(), BlockSetType.OAK));
+    public static final RegistryObject<Block> WITHERED_BUTTON = registerBlock("withered_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), BlockSetType.OAK, 30, true));
+    public static final RegistryObject<Block> WITHERED_PRESSURE_PLATE = registerBlock("withered_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,
+                    BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
+    public static final RegistryObject<Block> WITHERED_BEAM = registerBlock("withered_beam",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
+                    .strength(2.5f)));
+    public static final RegistryObject<Block> CRACKED_WITHERED_BEAM = registerBlock("cracked_withered_beam",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
+                    .strength(2.0f)));
 
 
     public static final RegistryObject<Block> WITHER_BLOCK = registerBlock("wither_block",
@@ -362,11 +487,7 @@ public class ModBlocks {
                     .sound(SoundType.STONE)));
 
 
-    // Mod Echo du Premier
 
-    public static final RegistryObject<Block> NECRO_STONE = registerBlock("necro_stone",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
-                    .strength(1.8f,6.0f)));
 
 
 
@@ -377,13 +498,46 @@ public class ModBlocks {
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
+
         registerBlockItem(name, toReturn);
+
         return toReturn;
     }
 
-    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
-        return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block) {
+
+        int corruptionLevel = getCorruptionLevelForBlock(name);
+
+        ModItems.ITEMS.register(name, () ->
+                new CorruptionTooltipBlockItem(
+                        block.get(),
+                        new Item.Properties(),
+                        corruptionLevel
+                )
+        );
     }
+    private static int getCorruptionLevelForBlock(String name) {
+
+        return switch (name) {
+
+            // Niveau 2
+            case "necro_stone",
+                 "necro_stone_bricks",
+                 "infused_necro_stone" -> 2;
+
+            // Niveau 3
+            case "unstable_necro_stone",
+                 "living_rock",
+                 "veined_rock" -> 3;
+
+            // Niveau 4
+            case "chiseled_necro_stone_bricks",
+                 "engraved_rock" -> 4;
+
+            default -> 0;
+        };
+    }
+
 
 
     public static void register(IEventBus eventBus){

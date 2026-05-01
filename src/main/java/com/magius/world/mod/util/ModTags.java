@@ -19,6 +19,9 @@ public class ModTags {
         public static final TagKey<Block> NEEDS_WITHER_TOOL = tag("needs_wither_tool");
         public static final TagKey<Block> NEEDS_RUBIS_TOOL = tag("needs_rubis_tool");
         public static final TagKey<Block> EYE_OF_CORRUPTION_DETECTABLE = tag("eye_of_corruption_detectable");
+        public static final TagKey<Block> FAST_CORRUPTED_PICKAXE_BLOCKS = tag( "fast_corrupted_pickaxe_blocks");
+        public static final TagKey<Block> MINEABLE_WITH_CORRUPTED_PICKAXE = tag("mineable_with_corrupted_pickaxe");
+
 
 
         private static TagKey<Block> tag(String name){

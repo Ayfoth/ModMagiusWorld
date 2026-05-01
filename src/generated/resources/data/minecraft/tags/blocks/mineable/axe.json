@@ -3,6 +3,10 @@
     "magiusworldmod:blackwood_log",
     "magiusworldmod:ruby_door",
     "magiusworldmod:ruby_trapdoor",
+    "magiusworldmod:withered_log",
+    "magiusworldmod:stripped_withered_log",
+    "magiusworldmod:withered_beam",
+    "magiusworldmod:cracked_withered_beam",
     "magiusworldmod:charred_ruby_beam"
   ]
 }

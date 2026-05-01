@@ -3,6 +3,9 @@ package com.magius.world.mod.corruption;
 import net.minecraft.nbt.CompoundTag;
 
 public class PlayerCorruption {
+    public static final int MIN_CORRUPTION = 0;
+    public static final int MAX_CORRUPTION = 100;
+
     private int corruption = 0;
 
     public int getCorruption() {
@@ -10,7 +13,7 @@ public class PlayerCorruption {
     }
 
     public void setCorruption(int corruption) {
-        this.corruption = Math.max(0, Math.min(5, corruption));
+        this.corruption = Math.max(MIN_CORRUPTION, Math.min(MAX_CORRUPTION, corruption));
     }
 
     public void addCorruption(int amount) {
@@ -22,7 +25,7 @@ public class PlayerCorruption {
     }
 
     public CorruptionLevel getLevel() {
-        return CorruptionLevel.fromInt(corruption);
+        return CorruptionLevel.fromValue(corruption);
     }
 
     public void saveNBTData(CompoundTag tag) {

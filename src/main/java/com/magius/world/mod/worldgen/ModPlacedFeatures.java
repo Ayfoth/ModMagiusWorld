@@ -18,6 +18,15 @@ import net.minecraft.world.level.levelgen.placement.*;
 import java.util.List;
 
 public class ModPlacedFeatures {
+    public static final ResourceKey<PlacedFeature> NECRO_STONE_ORE_PLACED_KEY =
+            registerKey("necro_stone_ore_placed");
+    public static final ResourceKey<PlacedFeature> NECRO_CAVE_PLACED_KEY =
+            registerKey("necro_cave_placed");
+    public static final ResourceKey<PlacedFeature> NECRO_CAVE_FEATURE_PLACED_KEY =
+            registerKey("necro_cave_feature_placed");
+    public static final ResourceKey<PlacedFeature> WITHERED_TREE_PLACED_KEY =
+            registerKey("withered_tree_placed");
+
     public static final ResourceKey<PlacedFeature> WITHER_ORE_PLACED_KEY = registerKey("wither_ore_placed");
     public static final ResourceKey<PlacedFeature> RARE_WITHER_ORE_PLACED_KEY = registerKey("rare_wither_ore_placed");
     public static final ResourceKey<PlacedFeature> RUBIS_ORE_PLACED_KEY = registerKey("rubis_ore_placed");
@@ -42,6 +51,9 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> RUBY_VILLAGE_PLACED_KEY =
             registerKey("ruby_village");
 
+    public static final ResourceKey<PlacedFeature> CORRUPTED_SOIL_PATCH_PLACED_KEY =
+            registerKey("corrupted_soil_patch_placed");
+
 
 
     public static final ResourceKey<PlacedFeature> PINE_PLACED_KEY = registerKey("pine_placed");
@@ -53,6 +65,60 @@ public class ModPlacedFeatures {
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
+
+        register(context, CORRUPTED_SOIL_PATCH_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.CORRUPTED_SOIL_PATCH_KEY),
+                List.of(
+                        CountPlacement.of(2),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                        BiomeFilter.biome()
+                ));
+        register(context, NECRO_STONE_ORE_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_NECRO_STONE_ORE_KEY),
+                List.of(
+                        CountPlacement.of(12),
+                        InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(
+                                VerticalAnchor.absolute(-32),
+                                VerticalAnchor.absolute(80)
+                        ),
+                        BiomeFilter.biome()
+                ));
+        register(context, NECRO_CAVE_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.NECRO_CAVE_KEY),
+                List.of(
+                        CountPlacement.of(2), // 👈 rare
+                        InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(
+                                VerticalAnchor.absolute(-40),
+                                VerticalAnchor.absolute(40)
+                        ),
+                        BiomeFilter.biome()
+                ));
+        register(context, NECRO_CAVE_FEATURE_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.NECRO_CAVE_FEATURE_KEY),
+                List.of(
+                        CountPlacement.of(1),
+                        InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(
+                                VerticalAnchor.absolute(-32),
+                                VerticalAnchor.absolute(40)
+                        ),
+                        BiomeFilter.biome()
+                ));
+        register(context, WITHERED_TREE_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.WITHERED_TREE_KEY),
+                List.of(
+                        CountPlacement.of(3),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP,
+                        BiomeFilter.biome()
+                ));
+
+
+
+
 
         register(context, WITHER_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_WITHER_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(4,

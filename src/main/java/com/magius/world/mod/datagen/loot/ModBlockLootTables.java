@@ -9,9 +9,11 @@ import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -35,6 +37,50 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+        // Mod Echo
+        this.dropSelf(ModBlocks.NECRO_STONE.get());
+        this.dropSelf(ModBlocks.POLISHED_NECRO_STONE.get());
+        this.dropSelf(ModBlocks.CUT_NECRO_STONE.get());
+        this.dropSelf(ModBlocks.NECRO_STONE_BRICKS.get());
+        this.dropSelf(ModBlocks.CRACKED_NECRO_STONE_BRICKS.get());
+        this.dropSelf(ModBlocks.BLACK_MOSSY_NECRO_STONE_BRICKS.get());
+        this.dropSelf(ModBlocks.CHISELED_NECRO_STONE_BRICKS.get());
+        this.dropSelf(ModBlocks.NECRO_STONE_PILLAR.get());
+        this.dropSelf(ModBlocks.NECRO_STONE_STAIRS.get());
+        this.dropSelf(ModBlocks.NECRO_STONE_SLAB.get());
+        this.dropSelf(ModBlocks.NECRO_STONE_WALL.get());
+        this.dropSelf(ModBlocks.CHISELED_NECRO_STONE_STAIRS.get());
+        this.dropSelf(ModBlocks.CHISELED_NECRO_STONE_SLAB.get());
+        this.dropSelf(ModBlocks.COMPACT_NECRO_STONE.get());
+        this.dropSelf(ModBlocks.INFUSED_NECRO_STONE.get());
+        this.dropSelf(ModBlocks.UNSTABLE_NECRO_STONE.get());
+        this.dropSelf(ModBlocks.LIVING_ROCK.get());
+        this.dropSelf(ModBlocks.VEINED_ROCK.get());
+        this.dropSelf(ModBlocks.BROKEN_ROCK.get());
+        this.dropSelf(ModBlocks.ENGRAVED_ROCK.get());
+        this.add(ModBlocks.CORRUPTED_SOIL.get(),
+                block -> createSilkTouchDispatchTable(
+                        block,
+                        LootItem.lootTableItem(Blocks.DIRT)
+                ));
+        this.dropSelf(ModBlocks.PURIFYING_CORE.get());
+        this.dropSelf(ModBlocks.WITHERED_LOG.get());
+        this.dropSelf(ModBlocks.STRIPPED_WITHERED_LOG.get());
+        this.dropSelf(ModBlocks.WITHERED_PLANKS.get());
+        this.dropSelf(ModBlocks.VEINED_WITHERED_PLANKS.get());
+        this.dropSelf(ModBlocks.REINFORCED_WITHERED_PLANKS.get());
+        this.dropSelf(ModBlocks.WITHERED_STAIRS.get());
+        this.dropSelf(ModBlocks.WITHERED_SLAB.get());
+        this.dropSelf(ModBlocks.WITHERED_FENCE.get());
+        this.dropSelf(ModBlocks.WITHERED_FENCE_GATE.get());
+        this.add(ModBlocks.WITHERED_DOOR.get(), block -> createDoorTable(ModBlocks.WITHERED_DOOR.get()));
+        this.dropSelf(ModBlocks.WITHERED_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.WITHERED_BUTTON.get());
+        this.dropSelf(ModBlocks.WITHERED_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.WITHERED_BEAM.get());
+        dropSelf(ModBlocks.CRACKED_WITHERED_BEAM.get());
+
+
        this.dropSelf(ModBlocks.SOUND_BLOCK.get());
         this.dropSelf(ModBlocks.WITHER_BLOCK.get());
         this.dropSelf(ModBlocks.RUBIS_BLOCK.get());
@@ -187,8 +233,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
        // this.add(ModBlocks.BOSS_RUBY_DOOR.get(), noDrop());
 
 
-        // Mod Echo
-        this.dropSelf(ModBlocks.NECRO_STONE.get());
+
 
 
     }
