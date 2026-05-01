@@ -4,6 +4,8 @@ import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.entity.ModEntities;
 import com.magius.world.mod.entity.custom.*;
 import net.minecraft.world.entity.animal.Sheep;
+import net.minecraft.world.entity.monster.Blaze;
+import net.minecraft.world.entity.monster.Husk;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -18,5 +20,7 @@ public class ModEventBusEvents {
         event.put(ModEntities.RUBY_WISP.get(), RubyWispEntity.createAttributes().build());
         event.put(ModEntities.RUBY_SHEEP.get(), RubySheepEntity.createAttributes().build());
         event.put(ModEntities.RUBY_BOSS.get(), RubyBossEntity.createAttributes().build());
+        event.put(ModEntities.WITHERED_HUSK.get(), Husk.createAttributes().build());
+        event.put(ModEntities.TEMPEST_BLAZE.get(), Blaze.createAttributes().build());
     }
 }

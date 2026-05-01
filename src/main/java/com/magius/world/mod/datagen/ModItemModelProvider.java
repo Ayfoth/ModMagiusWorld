@@ -42,6 +42,16 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        // Mod Echo
+
+        simpleItem(ModItems.CORRUPTION_TESTER);
+        simpleItem(ModItems.ESSENCE_WITHER);
+        simpleItem(ModItems.PURIFYING_HEART);
+        simpleItem(ModItems.STORM_FRAGMENT);
+        handheldItem(ModItems.CORRUPTED_PICKAXE);
+
+
+
         simpleItem(ModItems.METAL_DETECTOR);
         simpleItem(ModItems.GOLD_DETECTOR);
         simpleItem(ModItems.LAPIS_DETECTOR);
@@ -146,10 +156,7 @@ public class ModItemModelProvider extends ItemModelProvider {
                 .texture("layer0", modLoc("item/ruby_bolt_item"));
         basicItem(ModItems.RUBY_KEY.get());
 
-        // Mod Echo
 
-        simpleItem(ModItems.CORRUPTION_TESTER);
-        simpleItem(ModItems.ESSENCE_WITHER);
 
     }
     // Shoutout to El_Redstoniano for making this

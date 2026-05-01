@@ -192,6 +192,65 @@ public class ModCreativeModTabs {
 
                     }).build());
 
+    public static final RegistryObject<CreativeModeTab> ECHO_TAB = CREATIVE_MOD_TABS.register("echo_du_premier",
+            () -> CreativeModeTab.builder()
+                    .icon(() -> new ItemStack(ModItems.ESSENCE_WITHER.get()))
+                    .title(Component.translatable("creativetab.echo_du_premier"))
+                    .displayItems((itemDisplayParameters, pOutput) -> {
+
+                        //Outils
+                        pOutput.accept(ModItems.CORRUPTED_PICKAXE.get());
+
+                        // Corruption
+                        pOutput.accept(ModItems.ESSENCE_WITHER.get());
+                        pOutput.accept(ModBlocks.CORRUPTED_SOIL.get());
+
+                        // Purification
+                        pOutput.accept(ModItems.PURIFYING_HEART.get());
+                        pOutput.accept(ModItems.STORM_FRAGMENT.get());
+                        pOutput.accept(ModBlocks.PURIFYING_CORE.get());
+
+                        // Blocs Echo
+                        pOutput.accept(ModBlocks.NECRO_STONE.get());
+                        pOutput.accept(ModBlocks.POLISHED_NECRO_STONE.get());
+                        pOutput.accept(ModBlocks.CUT_NECRO_STONE.get());
+                        pOutput.accept(ModBlocks.NECRO_STONE_BRICKS.get());
+                        pOutput.accept(ModBlocks.CRACKED_NECRO_STONE_BRICKS.get());
+                        pOutput.accept(ModBlocks.BLACK_MOSSY_NECRO_STONE_BRICKS.get());
+                        pOutput.accept(ModBlocks.CHISELED_NECRO_STONE_BRICKS.get());
+                        pOutput.accept(ModBlocks.NECRO_STONE_PILLAR.get());
+                        pOutput.accept(ModBlocks.NECRO_STONE_STAIRS.get());
+                        pOutput.accept(ModBlocks.NECRO_STONE_SLAB.get());
+                        pOutput.accept(ModBlocks.NECRO_STONE_WALL.get());
+                        pOutput.accept(ModBlocks.CHISELED_NECRO_STONE_STAIRS.get());
+                        pOutput.accept(ModBlocks.CHISELED_NECRO_STONE_SLAB.get());
+                        pOutput.accept(ModBlocks.COMPACT_NECRO_STONE.get());
+                        pOutput.accept(ModBlocks.INFUSED_NECRO_STONE.get());
+                        pOutput.accept(ModBlocks.UNSTABLE_NECRO_STONE.get());
+                        pOutput.accept(ModBlocks.LIVING_ROCK.get());
+                        pOutput.accept(ModBlocks.VEINED_ROCK.get());
+                        pOutput.accept(ModBlocks.BROKEN_ROCK.get());
+                        pOutput.accept(ModBlocks.ENGRAVED_ROCK.get());
+                        pOutput.accept(ModBlocks.WITHERED_LOG.get());
+                        pOutput.accept(ModBlocks.STRIPPED_WITHERED_LOG.get());
+                        pOutput.accept(ModBlocks.WITHERED_PLANKS.get());
+                        pOutput.accept(ModBlocks.VEINED_WITHERED_PLANKS.get());
+                        pOutput.accept(ModBlocks.REINFORCED_WITHERED_PLANKS.get());
+                        pOutput.accept(ModBlocks.WITHERED_STAIRS.get());
+                        pOutput.accept(ModBlocks.WITHERED_SLAB.get());
+                        pOutput.accept(ModBlocks.WITHERED_FENCE.get());
+                        pOutput.accept(ModBlocks.WITHERED_FENCE_GATE.get());
+                        pOutput.accept(ModBlocks.WITHERED_DOOR.get());
+                        pOutput.accept(ModBlocks.WITHERED_TRAPDOOR.get());
+                        pOutput.accept(ModBlocks.WITHERED_BUTTON.get());
+                        pOutput.accept(ModBlocks.WITHERED_PRESSURE_PLATE.get());
+                        pOutput.accept(ModBlocks.WITHERED_BEAM.get());
+                        pOutput.accept(ModBlocks.CRACKED_WITHERED_BEAM.get());
+
+
+                    })
+                    .build());
+
 
     public static void register(IEventBus eventBus) {
         CREATIVE_MOD_TABS.register(eventBus);

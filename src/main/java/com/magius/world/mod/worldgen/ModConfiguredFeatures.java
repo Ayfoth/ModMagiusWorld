@@ -7,30 +7,46 @@ import com.magius.world.mod.worldgen.tree.custom.PineFoliagePlacer;
 import com.magius.world.mod.worldgen.tree.custom.PineTrunkPlacer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
+
+
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.util.valueproviders.UniformInt;
+
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockState;
+
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+
+
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedBlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 
+import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+
+
 import java.util.List;
 
 public class ModConfiguredFeatures {
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_NECRO_STONE_ORE_KEY =
+            registerKey("necro_stone_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> NECRO_CAVE_KEY =
+            registerKey("necro_cave");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> NECRO_CAVE_FEATURE_KEY =
+            registerKey("necro_cave_feature");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> WITHERED_TREE_KEY =
+            registerKey("withered_tree");
+
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_WITHER_ORE_KEY = registerKey("wither_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_RUBIS_ORE_KEY = registerKey("rubis_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_RUBIS_ORE_KEY = registerKey("nether_rubis_ore");
@@ -59,6 +75,9 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> RUBY_CLIFF_ORE_KEY = registerKey("ruby_cliff_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> RUBY_NATURAL_TREE_KEY = registerKey("ruby_natural_tree");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CORRUPTED_SOIL_PATCH_KEY =
+            registerKey("corrupted_soil_patch");
+
 
 
     public static void boostrap(BootstapContext<ConfiguredFeature<?, ?>> context){
@@ -74,6 +93,63 @@ public class ModConfiguredFeatures {
         List<OreConfiguration.TargetBlockState> overworldRubisOres = List.of(OreConfiguration.target(stoneReplaceable,
                         ModBlocks.RUBIS_ORE.get().defaultBlockState()),
                 OreConfiguration.target(deepslateReplaceable, ModBlocks.DEEPSLATE_RUBIS_ORE.get().defaultBlockState()));
+
+
+        register(context, CORRUPTED_SOIL_PATCH_KEY, Feature.DISK,
+                new DiskConfiguration(
+                        new RuleBasedBlockStateProvider(
+                                BlockStateProvider.simple(ModBlocks.CORRUPTED_SOIL.get()),
+                                java.util.List.of()
+                        ),
+                        BlockPredicate.matchesBlocks(Blocks.GRASS_BLOCK, Blocks.DIRT),
+                        UniformInt.of(2, 4),
+                        1
+                ));
+        register(context, OVERWORLD_NECRO_STONE_ORE_KEY, Feature.ORE,
+                new OreConfiguration(
+                        List.of(
+                                OreConfiguration.target(
+                                        stoneReplaceable,
+                                        ModBlocks.NECRO_STONE.get().defaultBlockState()
+                                )
+                        ),
+                        24
+                ));
+        register(context, NECRO_CAVE_KEY, Feature.ORE,
+                new OreConfiguration(
+                        List.of(
+                                OreConfiguration.target(
+                                        stoneReplaceable,
+                                        ModBlocks.NECRO_STONE.get().defaultBlockState()
+                                ),
+                                OreConfiguration.target(
+                                        stoneReplaceable,
+                                        ModBlocks.VEINED_ROCK.get().defaultBlockState()
+                                ),
+                                OreConfiguration.target(
+                                        stoneReplaceable,
+                                        ModBlocks.LIVING_ROCK.get().defaultBlockState()
+                                ),
+                                OreConfiguration.target(
+                                        stoneReplaceable,
+                                        ModBlocks.UNSTABLE_NECRO_STONE.get().defaultBlockState()
+                                )
+                        ),
+                        64 // 👈 GROSSE veine
+                ));
+        register(context, NECRO_CAVE_FEATURE_KEY, ModFeatures.NECRO_CAVE.get(),
+                NoneFeatureConfiguration.INSTANCE);
+        register(context, WITHERED_TREE_KEY, Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(ModBlocks.WITHERED_LOG.get()),
+                        new StraightTrunkPlacer(4, 2, 0),
+
+                        BlockStateProvider.simple(Blocks.DARK_OAK_LEAVES),
+                        new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2),
+
+                        new TwoLayersFeatureSize(1, 0, 1)
+                ).build());
+
 
         register(context, OVERWORLD_WITHER_ORE_KEY, Feature.ORE, new OreConfiguration(overworldWitherOres, 8));
         register(context, OVERWORLD_RUBIS_ORE_KEY, Feature.ORE, new OreConfiguration(overworldRubisOres, 5));

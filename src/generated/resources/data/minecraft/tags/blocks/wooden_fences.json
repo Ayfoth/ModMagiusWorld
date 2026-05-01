@@ -1,6 +1,8 @@
 {
   "values": [
     "magiusworldmod:ruby_fence",
-    "magiusworldmod:ruby_fence_gate"
+    "magiusworldmod:withered_fence",
+    "magiusworldmod:ruby_fence_gate",
+    "magiusworldmod:withered_fence_gate"
   ]
 }

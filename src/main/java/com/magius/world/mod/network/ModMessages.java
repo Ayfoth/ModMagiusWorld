@@ -1,6 +1,7 @@
 package com.magius.world.mod.network;
 
 import com.magius.world.mod.MagiusWorldMod;
+import com.magius.world.mod.network.echo.SyncCorruptionS2CPacket;
 import com.magius.world.mod.network.packet.C2SRequestFactionProgressPacket;
 import com.magius.world.mod.network.packet.S2CFactionProgressDataPacket;
 import net.minecraft.resources.ResourceLocation;
@@ -35,6 +36,14 @@ public class ModMessages {
                 .encoder(S2CFactionProgressDataPacket::encode)
                 .decoder(S2CFactionProgressDataPacket::new)
                 .consumerMainThread(S2CFactionProgressDataPacket::handle)
+                .add();
+
+        int id = 0;
+
+        INSTANCE.messageBuilder(SyncCorruptionS2CPacket.class, id++)
+                .encoder(SyncCorruptionS2CPacket::toBytes)
+                .decoder(SyncCorruptionS2CPacket::new)
+                .consumerMainThread(SyncCorruptionS2CPacket::handle)
                 .add();
     }
 

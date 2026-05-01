@@ -37,15 +37,66 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.END_STONE_RUBIS_ORE.get(),
                         ModBlocks.RUBIS_BLOCK.get(),
                         ModBlocks.NECRO_STONE.get(),
+                        ModBlocks.POLISHED_NECRO_STONE.get(),
+                        ModBlocks.CUT_NECRO_STONE.get(),
+                        ModBlocks.NECRO_STONE_BRICKS.get(),
+                        ModBlocks.CRACKED_NECRO_STONE_BRICKS.get(),
+                        ModBlocks.BLACK_MOSSY_NECRO_STONE_BRICKS.get(),
+                        ModBlocks.CHISELED_NECRO_STONE_BRICKS.get(),
+                        ModBlocks.NECRO_STONE_PILLAR.get(),
+                        ModBlocks.NECRO_STONE_STAIRS.get(),
+                        ModBlocks.NECRO_STONE_SLAB.get(),
+                        ModBlocks.NECRO_STONE_WALL.get(),
+                        ModBlocks.CHISELED_NECRO_STONE_STAIRS.get(),
+                        ModBlocks.CHISELED_NECRO_STONE_SLAB.get(),
                         ModBlocks.WHITE_LEGENDARY_BLOCK.get())
                 ;
         this.tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks.BLACKWOOD_LOG.get(),
                         ModBlocks.RUBY_DOOR.get(),
-                        ModBlocks.RUBY_TRAPDOOR.get());
+                        ModBlocks.RUBY_TRAPDOOR.get(),
+                        ModBlocks.WITHERED_LOG.get(),
+                        ModBlocks.STRIPPED_WITHERED_LOG.get());
 
         this.tag(BlockTags.NEEDS_STONE_TOOL)
-                .add(ModBlocks.NECRO_STONE.get());
+                .add(ModBlocks.NECRO_STONE.get(),
+                        ModBlocks.POLISHED_NECRO_STONE.get(),
+                        ModBlocks.CUT_NECRO_STONE.get(),
+                        ModBlocks.NECRO_STONE_BRICKS.get(),
+                        ModBlocks.CRACKED_NECRO_STONE_BRICKS.get(),
+                        ModBlocks.BLACK_MOSSY_NECRO_STONE_BRICKS.get(),
+                        ModBlocks.CHISELED_NECRO_STONE_BRICKS.get(),
+                        ModBlocks.NECRO_STONE_PILLAR.get(),
+                        ModBlocks.NECRO_STONE_STAIRS.get(),
+                        ModBlocks.NECRO_STONE_SLAB.get(),
+                        ModBlocks.NECRO_STONE_WALL.get(),
+                        ModBlocks.CHISELED_NECRO_STONE_STAIRS.get(),
+                        ModBlocks.CHISELED_NECRO_STONE_SLAB.get());
+        this.tag(ModTags.Blocks.FAST_CORRUPTED_PICKAXE_BLOCKS).add(
+                ModBlocks.NECRO_STONE.get(),
+                ModBlocks.POLISHED_NECRO_STONE.get(),
+                ModBlocks.CUT_NECRO_STONE.get(),
+                ModBlocks.NECRO_STONE_BRICKS.get(),
+                ModBlocks.CRACKED_NECRO_STONE_BRICKS.get(),
+                ModBlocks.BLACK_MOSSY_NECRO_STONE_BRICKS.get(),
+                ModBlocks.CHISELED_NECRO_STONE_BRICKS.get(),
+                ModBlocks.NECRO_STONE_PILLAR.get()
+        );
+
+        this.tag(ModTags.Blocks.MINEABLE_WITH_CORRUPTED_PICKAXE).add(
+                ModBlocks.COMPACT_NECRO_STONE.get(),
+                ModBlocks.INFUSED_NECRO_STONE.get(),
+                ModBlocks.UNSTABLE_NECRO_STONE.get(),
+                ModBlocks.LIVING_ROCK.get(),
+                ModBlocks.VEINED_ROCK.get(),
+                ModBlocks.BROKEN_ROCK.get(),
+                ModBlocks.ENGRAVED_ROCK.get()
+        );
+
+        this.tag(BlockTags.LOGS).add(
+                ModBlocks.WITHERED_LOG.get(),
+                ModBlocks.STRIPPED_WITHERED_LOG.get()
+        );
 
 
         this.tag(BlockTags.NEEDS_IRON_TOOL)
@@ -73,34 +124,57 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
 
         this.tag(BlockTags.FENCES)
                 .add(ModBlocks.WITHER_FENCE.get(),
-                ModBlocks.RUBY_FENCE.get());
+                ModBlocks.RUBY_FENCE.get(),
+                        ModBlocks.WITHERED_FENCE.get());
         this.tag(BlockTags.WOODEN_FENCES)
-                .add(ModBlocks.RUBY_FENCE.get());
+                .add(ModBlocks.RUBY_FENCE.get(),
+                        ModBlocks.WITHERED_FENCE.get());
 
 
         this.tag(BlockTags.FENCE_GATES)
                 .add(ModBlocks.WITHER_FENCE_GATE.get(),
-                        ModBlocks.RUBY_FENCE_GATE.get());
+                        ModBlocks.RUBY_FENCE_GATE.get(),
+                        ModBlocks.WITHERED_FENCE_GATE.get());
         this.tag(BlockTags.WOODEN_FENCES)
-                .add(ModBlocks.RUBY_FENCE_GATE.get());
+                .add(ModBlocks.RUBY_FENCE_GATE.get(),
+                        ModBlocks.WITHERED_FENCE_GATE.get());
 
         this.tag(BlockTags.WALLS)
-                .add(ModBlocks.WITHER_WALL.get());
+                .add(ModBlocks.WITHER_WALL.get(),
+                        ModBlocks.NECRO_STONE_WALL.get());
 
         this.tag(BlockTags.LOGS_THAT_BURN)
                 .add(ModBlocks.PINE_LOG.get())
                 .add(ModBlocks.PINE_WOOD.get())
                 .add(ModBlocks.STRIPPED_PINE_LOG.get())
-                .add(ModBlocks.STRIPPED_PINE_WOOD.get());
+                .add(ModBlocks.STRIPPED_PINE_WOOD.get())
+                .add(ModBlocks.WITHERED_LOG.get())
+                .add(ModBlocks.STRIPPED_WITHERED_LOG.get());
         this.tag(BlockTags.PLANKS)
-                .add(ModBlocks.PINE_PLANKS.get());
+                .add(ModBlocks.PINE_PLANKS.get())
+                .add(ModBlocks.WITHERED_PLANKS.get())
+                .add(ModBlocks.VEINED_WITHERED_PLANKS.get())
+                .add(ModBlocks.REINFORCED_WITHERED_PLANKS.get());
 
-        this.tag(BlockTags.DOORS).add(ModBlocks.RUBY_DOOR.get());
-        this.tag(BlockTags.TRAPDOORS).add(ModBlocks.RUBY_TRAPDOOR.get());
+        this.tag(BlockTags.DOORS)
+                .add(ModBlocks.RUBY_DOOR.get())
+                .add(ModBlocks.WITHERED_DOOR.get());
+        this.tag(BlockTags.TRAPDOORS)
+                .add(ModBlocks.RUBY_TRAPDOOR.get())
+                .add(ModBlocks.WITHERED_TRAPDOOR.get());
 
         // utile si tu veux qu’elle puisse être ouverte par les villageois, pathfinding, etc.
-        this.tag(BlockTags.WOODEN_DOORS).add(ModBlocks.RUBY_DOOR.get());
-        this.tag(BlockTags.WOODEN_TRAPDOORS).add(ModBlocks.RUBY_TRAPDOOR.get());
+        this.tag(BlockTags.WOODEN_DOORS)
+                .add(ModBlocks.RUBY_DOOR.get())
+                .add(ModBlocks.WITHERED_DOOR.get());
+        this.tag(BlockTags.WOODEN_TRAPDOORS)
+                .add(ModBlocks.RUBY_TRAPDOOR.get())
+                .add(ModBlocks.WITHERED_TRAPDOOR.get());
+
+        this.tag(BlockTags.MINEABLE_WITH_AXE).add(
+                ModBlocks.WITHERED_BEAM.get(),
+                ModBlocks.CRACKED_WITHERED_BEAM.get()
+        );
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.RUBY_BRAZIER.get());
         tag(BlockTags.MINEABLE_WITH_AXE).add(ModBlocks.CHARRED_RUBY_BEAM.get());

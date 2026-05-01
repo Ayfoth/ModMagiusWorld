@@ -4,6 +4,7 @@ import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.block.entity.ModBlockEntities;
 import com.magius.world.mod.block.entity.renderer.FireFounderieBlockEntityRenderer;
 import com.magius.world.mod.block.entity.renderer.GemPolishingBlockEntityRenderer;
+import com.magius.world.mod.client.hud.CorruptionHudOverlay;
 import com.magius.world.mod.entity.ModEntities;
 import com.magius.world.mod.entity.client.*;
 import com.magius.world.mod.entity.custom.RubyBoarEntity;
@@ -18,6 +19,7 @@ import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -34,6 +36,13 @@ public class ModEventBusClientEvents {
             Sheets.addWoodType(ModWoodTypes.PINE);
             Sheets.addWoodType(ModWoodTypes.RUBY);
         });
+    }
+    @SubscribeEvent
+    public static void registerGuiOverlays(RegisterGuiOverlaysEvent event) {
+        event.registerAboveAll(
+                "corruption_hud",
+                CorruptionHudOverlay.HUD_CORRUPTION
+        );
     }
 
     @SubscribeEvent

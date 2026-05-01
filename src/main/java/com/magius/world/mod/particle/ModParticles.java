@@ -14,6 +14,9 @@ public class ModParticles {
 
     public static final RegistryObject<SimpleParticleType> CRYSTAL_FRAGMENT =
             PARTICLES.register("crystal_fragment", () -> new SimpleParticleType(true));
+    public static final RegistryObject<SimpleParticleType> UNSTABLE_NECRO_PARTICLE =
+            PARTICLES.register("unstable_necro_particle",
+                    () -> new SimpleParticleType(true));
 
     public static void register(IEventBus eventBus) {
         PARTICLES.register(eventBus);

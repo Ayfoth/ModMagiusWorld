@@ -20,6 +20,9 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
+
+
+
     private static final List<ItemLike> WITHER_SMELTABLES = List.of(ModItems.WITHER.get(),
             ModBlocks.WITHER_ORE.get(), ModBlocks.DEEPSLATE_WITHER_ORE.get());
     private static final List<ItemLike> RUBIS_SMELTABLES = List.of(ModItems.RUBIS.get(),
@@ -31,6 +34,224 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
+        // Echo du Premier
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Blocks.STONE)
+                .requires(ModBlocks.NECRO_STONE.get())
+                .requires(ModItems.PURIFYING_HEART.get())
+                .unlockedBy(getHasName(ModItems.PURIFYING_HEART.get()), has(ModItems.PURIFYING_HEART.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.NECRO_STONE.get())
+                .requires(Items.STONE)
+                .requires(ModItems.ESSENCE_WITHER.get())
+                .unlockedBy(getHasName(ModItems.ESSENCE_WITHER.get()), has(ModItems.ESSENCE_WITHER.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.NECRO_STONE_BRICKS.get(), 4)
+                .pattern("NN")
+                .pattern("NN")
+                .define('N', ModBlocks.NECRO_STONE.get())
+                .unlockedBy(getHasName(ModBlocks.NECRO_STONE.get()), has(ModBlocks.NECRO_STONE.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_NECRO_STONE.get(), 4)
+                .pattern("NN")
+                .pattern("NN")
+                .define('N', ModBlocks.NECRO_STONE.get())
+                .unlockedBy(getHasName(ModBlocks.NECRO_STONE.get()), has(ModBlocks.NECRO_STONE.get()))
+                .save(pWriter);
+
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CUT_NECRO_STONE.get(), 4)
+                .pattern("PP")
+                .pattern("PP")
+                .define('P', ModBlocks.POLISHED_NECRO_STONE.get())
+                .unlockedBy(getHasName(ModBlocks.POLISHED_NECRO_STONE.get()), has(ModBlocks.POLISHED_NECRO_STONE.get()))
+                .save(pWriter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLACK_MOSSY_NECRO_STONE_BRICKS.get())
+                .requires(ModBlocks.NECRO_STONE_BRICKS.get())
+                .requires(ModBlocks.CORRUPTED_SOIL.get())
+                .unlockedBy(getHasName(ModBlocks.NECRO_STONE_BRICKS.get()), has(ModBlocks.NECRO_STONE_BRICKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.NECRO_STONE_PILLAR.get(), 2)
+                .pattern("N")
+                .pattern("N")
+                .define('N', ModBlocks.NECRO_STONE.get())
+                .unlockedBy(getHasName(ModBlocks.NECRO_STONE_BRICKS.get()), has(ModBlocks.NECRO_STONE_BRICKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.NECRO_STONE_STAIRS.get(), 4)
+                .pattern("N  ")
+                .pattern("NN ")
+                .pattern("NNN")
+                .define('N', ModBlocks.NECRO_STONE.get())
+                .unlockedBy(getHasName(ModBlocks.NECRO_STONE_BRICKS.get()), has(ModBlocks.NECRO_STONE_BRICKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_NECRO_STONE_STAIRS.get(), 4)
+                .pattern("C  ")
+                .pattern("CC ")
+                .pattern("CCC")
+                .define('C', ModBlocks.CHISELED_NECRO_STONE_BRICKS.get())
+                .unlockedBy(getHasName(ModBlocks.NECRO_STONE_BRICKS.get()), has(ModBlocks.NECRO_STONE_BRICKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.NECRO_STONE_SLAB.get(), 6)
+                .pattern("NNN")
+                .define('N', ModBlocks.NECRO_STONE.get())
+                .unlockedBy(getHasName(ModBlocks.NECRO_STONE_BRICKS.get()), has(ModBlocks.NECRO_STONE_BRICKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_NECRO_STONE_SLAB.get(), 6)
+                .pattern("CCC")
+                .define('C', ModBlocks.CHISELED_NECRO_STONE_BRICKS.get())
+                .unlockedBy(getHasName(ModBlocks.NECRO_STONE_BRICKS.get()), has(ModBlocks.NECRO_STONE_BRICKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.NECRO_STONE_WALL.get(), 6)
+                .pattern("NNN")
+                .pattern("NNN")
+                .define('N', ModBlocks.NECRO_STONE.get())
+                .unlockedBy(getHasName(ModBlocks.NECRO_STONE_BRICKS.get()), has(ModBlocks.NECRO_STONE_BRICKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.COMPACT_NECRO_STONE.get())
+                .pattern("NNN")
+                .pattern("NNN")
+                .pattern("NNN")
+                .define('N', ModBlocks.NECRO_STONE.get())
+                .unlockedBy(getHasName(ModBlocks.NECRO_STONE_BRICKS.get()), has(ModBlocks.NECRO_STONE_BRICKS.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.INFUSED_NECRO_STONE.get())
+                .requires(ModBlocks.NECRO_STONE.get())
+                .requires(ModItems.ESSENCE_WITHER.get())
+                .requires(ModItems.ESSENCE_WITHER.get())
+                .unlockedBy(getHasName(ModBlocks.NECRO_STONE_BRICKS.get()), has(ModBlocks.NECRO_STONE_BRICKS.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIVING_ROCK.get())
+                .requires(ModBlocks.NECRO_STONE.get())
+                .requires(ModBlocks.CORRUPTED_SOIL.get())
+                .unlockedBy(getHasName(ModBlocks.NECRO_STONE_BRICKS.get()), has(ModBlocks.NECRO_STONE_BRICKS.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.VEINED_ROCK.get())
+                .requires(ModBlocks.NECRO_STONE.get())
+                .requires(ModItems.ESSENCE_WITHER.get())
+                .unlockedBy(getHasName(ModBlocks.NECRO_STONE_BRICKS.get()), has(ModBlocks.NECRO_STONE_BRICKS.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BROKEN_ROCK.get())
+                .requires(ModBlocks.NECRO_STONE.get())
+                .requires(Items.GRAVEL)
+                .unlockedBy(getHasName(ModBlocks.NECRO_STONE_BRICKS.get()), has(ModBlocks.NECRO_STONE_BRICKS.get()))
+                .save(pWriter);
+
+
+        SimpleCookingRecipeBuilder.smelting(
+                        Ingredient.of(ModBlocks.NECRO_STONE_BRICKS.get()),
+                        RecipeCategory.BUILDING_BLOCKS,
+                        ModBlocks.CRACKED_NECRO_STONE_BRICKS.get(),
+                        0.1f,
+                        200
+                ).unlockedBy(getHasName(ModBlocks.NECRO_STONE_BRICKS.get()), has(ModBlocks.NECRO_STONE_BRICKS.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_NECRO_STONE_BRICKS.get())
+                .requires(ModBlocks.CUT_NECRO_STONE.get())
+                .requires(ModItems.STORM_FRAGMENT.get())
+                .unlockedBy(getHasName(ModBlocks.CUT_NECRO_STONE.get()), has(ModBlocks.CUT_NECRO_STONE.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.UNSTABLE_NECRO_STONE.get())
+                .requires(ModBlocks.INFUSED_NECRO_STONE.get())
+                .requires(ModItems.STORM_FRAGMENT.get())
+                .unlockedBy(getHasName(ModItems.STORM_FRAGMENT.get()), has(ModItems.STORM_FRAGMENT.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ENGRAVED_ROCK.get())
+                .requires(ModBlocks.NECRO_STONE.get())
+                .requires(ModItems.STORM_FRAGMENT.get())
+                .unlockedBy(getHasName(ModItems.STORM_FRAGMENT.get()), has(ModItems.STORM_FRAGMENT.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.CORRUPTED_PICKAXE.get())
+                .pattern("NFN")
+                .pattern(" S ")
+                .pattern(" S ")
+                .define('N', ModBlocks.NECRO_STONE.get())
+                .define('F', ModItems.ESSENCE_WITHER.get())
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(ModItems.ESSENCE_WITHER.get()), has(ModItems.STORM_FRAGMENT.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.WITHERED_PLANKS.get(), 4)
+                .requires(ModBlocks.WITHERED_LOG.get())
+                .unlockedBy(getHasName(ModBlocks.WITHERED_LOG.get()), has(ModBlocks.WITHERED_LOG.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.WITHERED_PLANKS.get(), 4)
+                .requires(ModBlocks.STRIPPED_WITHERED_LOG.get())
+                .unlockedBy(getHasName(ModBlocks.STRIPPED_WITHERED_LOG.get()), has(ModBlocks.STRIPPED_WITHERED_LOG.get()))
+                .save(pWriter, "withered_planks_from_stripped_withered_log");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.VEINED_WITHERED_PLANKS.get())
+                .requires(ModBlocks.WITHERED_PLANKS.get())
+                .requires(ModItems.ESSENCE_WITHER.get())
+                .unlockedBy(getHasName(ModBlocks.WITHERED_PLANKS.get()), has(ModBlocks.WITHERED_PLANKS.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.REINFORCED_WITHERED_PLANKS.get())
+                .requires(ModBlocks.WITHERED_PLANKS.get())
+                .requires(Items.IRON_INGOT)
+                .unlockedBy(getHasName(ModBlocks.WITHERED_PLANKS.get()), has(ModBlocks.WITHERED_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.WITHERED_STAIRS.get(), 4)
+                .pattern("P  ")
+                .pattern("PP ")
+                .pattern("PPP")
+                .define('P', ModBlocks.WITHERED_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.WITHERED_PLANKS.get()), has(ModBlocks.WITHERED_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.WITHERED_SLAB.get(), 6)
+                .pattern("PPP")
+                .define('P', ModBlocks.WITHERED_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.WITHERED_PLANKS.get()), has(ModBlocks.WITHERED_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.WITHERED_FENCE.get(), 3)
+                .pattern("PSP")
+                .pattern("PSP")
+                .define('P', ModBlocks.WITHERED_PLANKS.get())
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(ModBlocks.WITHERED_PLANKS.get()), has(ModBlocks.WITHERED_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.WITHERED_FENCE_GATE.get())
+                .pattern("SPS")
+                .pattern("SPS")
+                .define('P', ModBlocks.WITHERED_PLANKS.get())
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(ModBlocks.WITHERED_PLANKS.get()), has(ModBlocks.WITHERED_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.WITHERED_DOOR.get(), 3)
+                .pattern("PP")
+                .pattern("PP")
+                .pattern("PP")
+                .define('P', ModBlocks.WITHERED_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.WITHERED_PLANKS.get()), has(ModBlocks.WITHERED_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.WITHERED_TRAPDOOR.get(), 2)
+                .pattern("PPP")
+                .pattern("PPP")
+                .define('P', ModBlocks.WITHERED_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.WITHERED_PLANKS.get()), has(ModBlocks.WITHERED_PLANKS.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.REDSTONE, ModBlocks.WITHERED_BUTTON.get())
+                .requires(ModBlocks.WITHERED_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.WITHERED_PLANKS.get()), has(ModBlocks.WITHERED_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.WITHERED_PRESSURE_PLATE.get())
+                .pattern("PP")
+                .define('P', ModBlocks.WITHERED_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.WITHERED_PLANKS.get()), has(ModBlocks.WITHERED_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.WITHERED_BEAM.get(), 2)
+                .pattern("P")
+                .pattern("P")
+                .define('P', ModBlocks.WITHERED_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.WITHERED_PLANKS.get()), has(ModBlocks.WITHERED_PLANKS.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_WITHERED_BEAM.get())
+                .requires(ModBlocks.WITHERED_BEAM.get())
+                .requires(ModItems.ESSENCE_WITHER.get())
+                .unlockedBy(getHasName(ModBlocks.WITHERED_BEAM.get()), has(ModBlocks.WITHERED_BEAM.get()))
+                .save(pWriter);
+
+
+        // ------------
+
         oreBlasting(pWriter, WITHER_SMELTABLES, RecipeCategory.MISC, ModItems.WITHER.get(), 0.25f, 100, "wither");
         oreSmelting(pWriter, WITHER_SMELTABLES, RecipeCategory.MISC, ModItems.WITHER.get(), 0.25f, 200, "wither");
         oreBlasting(pWriter, RUBIS_SMELTABLES, RecipeCategory.MISC, ModItems.RUBIS.get(), 0.25f, 100, "rubis");

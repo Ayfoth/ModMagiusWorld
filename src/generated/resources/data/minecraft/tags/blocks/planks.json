@@ -1,5 +1,8 @@
 {
   "values": [
-    "magiusworldmod:pine_planks"
+    "magiusworldmod:pine_planks",
+    "magiusworldmod:withered_planks",
+    "magiusworldmod:veined_withered_planks",
+    "magiusworldmod:reinforced_withered_planks"
   ]
 }

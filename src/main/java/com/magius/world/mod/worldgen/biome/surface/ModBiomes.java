@@ -4,6 +4,7 @@ import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.entity.ModEntities;
 import com.magius.world.mod.sound.ModSounds;
 import com.magius.world.mod.worldgen.ModPlacedFeatures;
+import com.magius.world.mod.worldgen.biome.EchoBiome;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
@@ -25,10 +26,15 @@ public class ModBiomes {
     public static final ResourceKey<Biome> RUBY_BIOME = ResourceKey.create(
             Registries.BIOME,
             ResourceLocation.fromNamespaceAndPath(MagiusWorldMod.MOD_ID, "ruby_biome"));
+    public static final ResourceKey<Biome> ECHO_BIOME = ResourceKey.create(
+            net.minecraft.core.registries.Registries.BIOME,
+            ResourceLocation.fromNamespaceAndPath(MagiusWorldMod.MOD_ID, "echo_biome")
+    );
 
     public static void bootstrap(BootstapContext<Biome> context){
         context.register(TEST_BIOME, testBiome(context));
         context.register(RUBY_BIOME, rubyBiome(context));
+        context.register(ModBiomes.ECHO_BIOME, EchoBiome.create(context));
     }
 
     public static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder) {
@@ -39,6 +45,8 @@ public class ModBiomes {
         BiomeDefaultFeatures.addDefaultSprings(builder);
         BiomeDefaultFeatures.addSurfaceFreezing(builder);
     }
+
+
 
     public static Biome testBiome(BootstapContext<Biome> context) {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();

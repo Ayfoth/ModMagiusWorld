@@ -1,10 +1,11 @@
-// 1.20.1	2026-04-21T16:45:02.2312776	Item Models: magiusworldmod
+// 1.20.1	2026-04-29T08:55:45.9933817	Item Models: magiusworldmod
 8cb32d54c73609d84d3aad18f922d659d2a6cf78 assets/magiusworldmod/models/item/bar_brawl_music_disc.json
 c8feae8a7801151fe81624ad00fcb00df333b906 assets/magiusworldmod/models/item/blackwood_block.json
 c62aa7299cbf5a63dd6f2231204434c46c1df183 assets/magiusworldmod/models/item/boss_ruby_key.json
 3bf0cf0707cea8a5208cad012c0bedf5a712a11e assets/magiusworldmod/models/item/catmint.json
 893749dafff66b1303d3d1a6c71ec5cc8bfa07f8 assets/magiusworldmod/models/item/corn.json
 116335ad7b0512d87db5f1198190340b6bf54d5f assets/magiusworldmod/models/item/corn_seeds.json
+6c8db31fd3c1ceb7918228badfe06f89b0be7d01 assets/magiusworldmod/models/item/corrupted_pickaxe.json
 4fa863ab731a272484a0eef4c2e7b24faf14f60e assets/magiusworldmod/models/item/corrupted_ruby.json
 367352710e8faec301e14376594dc92e0b6a7457 assets/magiusworldmod/models/item/corruption_tester.json
 9fd8317220db11d8ec54f52a1e7dc2f9707ce03b assets/magiusworldmod/models/item/crystal_shard.json
@@ -22,6 +23,7 @@ bcdb423907a5fc384e0099a0ad88476ece33dc68 assets/magiusworldmod/models/item/pine_
 5bf4a4fbe4224b0fec0fc85ee6428161b3877728 assets/magiusworldmod/models/item/pine_sapling.json
 8e985277deb85316ae86d807c77a7ab485cbc645 assets/magiusworldmod/models/item/pine_sign.json
 82ed6600ea9e3693edf25891dc760a6becbb17e2 assets/magiusworldmod/models/item/precious_detector.json
+ab61f72d002e052a209b639cbffc56636d36e3b6 assets/magiusworldmod/models/item/purifying_heart.json
 1afcb2d953aeff75934d4f54211dd2654fd6090c assets/magiusworldmod/models/item/raw_sapphire.json
 72bc36ad100bf33be3b559c78b3c5c097c6c7d9b assets/magiusworldmod/models/item/red_grass.json
 e6b0a42fb6b7e577008cbd912237c68fa9f2d032 assets/magiusworldmod/models/item/red_key.json
@@ -151,6 +153,7 @@ b1904c92dc2af46a43274797db5624870b3d26cc assets/magiusworldmod/models/item/sapph
 ea60d71fe4e22c458b970279339e3864103c6538 assets/magiusworldmod/models/item/sapphire_shovel.json
 9da88e5e80fc08a639bdf3c26d149ab5aabf9d0a assets/magiusworldmod/models/item/sapphire_sword.json
 c7f10884870ac0257d68b48e2ffd529ed6726868 assets/magiusworldmod/models/item/scarlet_network_contract.json
+d81c65dda38a2f24dc9a8cbd0cb5b21ee43bfb0e assets/magiusworldmod/models/item/storm_fragment.json
 ed3fa085908a1581449becb0918745c099d6d0b0 assets/magiusworldmod/models/item/strawberry.json
 de24a143fcda6195910de1609b5c290d0f02a2a7 assets/magiusworldmod/models/item/strawberry_seeds.json
 fce8a2d8c7ce8ccf8ae23a04b96a8dff6dafa308 assets/magiusworldmod/models/item/wither.json

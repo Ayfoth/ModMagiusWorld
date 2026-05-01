@@ -28,6 +28,132 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        // Mod Echo
+        blockWithItem(ModBlocks.NECRO_STONE);
+        blockWithItem(ModBlocks.CORRUPTED_SOIL);
+        blockWithItem(ModBlocks.PURIFYING_CORE);
+        blockWithItem(ModBlocks.POLISHED_NECRO_STONE);
+        blockWithItem(ModBlocks.CUT_NECRO_STONE);
+        blockWithItem(ModBlocks.NECRO_STONE_BRICKS);
+        blockWithItem(ModBlocks.CRACKED_NECRO_STONE_BRICKS);
+        blockWithItem(ModBlocks.BLACK_MOSSY_NECRO_STONE_BRICKS);
+        blockWithItem(ModBlocks.CHISELED_NECRO_STONE_BRICKS);
+        axisBlock((RotatedPillarBlock) ModBlocks.NECRO_STONE_PILLAR.get(),
+                modLoc("block/necro_stone_pillar"),
+                modLoc("block/necro_stone_pillar_top"));
+        simpleBlockItem(ModBlocks.NECRO_STONE_PILLAR.get(),
+                models().cubeColumn("necro_stone_pillar",
+                        modLoc("block/necro_stone_pillar"),
+                        modLoc("block/necro_stone_pillar_top")));
+        stairsBlock((StairBlock) ModBlocks.NECRO_STONE_STAIRS.get(),
+                modLoc("block/necro_stone"));
+        simpleBlockItem(ModBlocks.NECRO_STONE_STAIRS.get(),
+                models().stairs("necro_stone_stairs",
+                        modLoc("block/necro_stone"),
+                        modLoc("block/necro_stone"),
+                        modLoc("block/necro_stone")));
+        slabBlock((SlabBlock) ModBlocks.NECRO_STONE_SLAB.get(),
+                modLoc("block/necro_stone"),
+                modLoc("block/necro_stone"));
+        simpleBlockItem(ModBlocks.NECRO_STONE_SLAB.get(),
+                models().slab("necro_stone_slab",
+                        modLoc("block/necro_stone"),
+                        modLoc("block/necro_stone"),
+                        modLoc("block/necro_stone")));
+        wallBlock((WallBlock) ModBlocks.NECRO_STONE_WALL.get(), blockTexture(ModBlocks.NECRO_STONE.get()));
+        simpleBlockItem(ModBlocks.NECRO_STONE_WALL.get(), models().wallInventory("necro_stone_wall", blockTexture(ModBlocks.NECRO_STONE.get())));
+        stairsBlock((StairBlock) ModBlocks.CHISELED_NECRO_STONE_STAIRS.get(),
+                modLoc("block/chiseled_necro_stone_bricks"));
+        simpleBlockItem(ModBlocks.CHISELED_NECRO_STONE_STAIRS.get(),
+                models().stairs("chiseled_necro_stone_stairs",
+                        modLoc("block/chiseled_necro_stone_bricks"),
+                        modLoc("block/chiseled_necro_stone_bricks"),
+                        modLoc("block/chiseled_necro_stone_bricks")));
+        slabBlock((SlabBlock) ModBlocks.CHISELED_NECRO_STONE_SLAB.get(),
+                modLoc("block/chiseled_necro_stone_bricks"),
+                modLoc("block/chiseled_necro_stone_bricks"));
+        simpleBlockItem(ModBlocks.CHISELED_NECRO_STONE_SLAB.get(),
+                models().slab("chiseled_necro_stone_slab",
+                        modLoc("block/chiseled_necro_stone_bricks"),
+                        modLoc("block/chiseled_necro_stone_bricks"),
+                        modLoc("block/chiseled_necro_stone_bricks")));
+        blockWithItem(ModBlocks.COMPACT_NECRO_STONE);
+        blockWithItem(ModBlocks.INFUSED_NECRO_STONE);
+        blockWithItem(ModBlocks.UNSTABLE_NECRO_STONE);
+        blockWithItem(ModBlocks.LIVING_ROCK);
+        blockWithItem(ModBlocks.VEINED_ROCK);
+        blockWithItem(ModBlocks.BROKEN_ROCK);
+        blockWithItem(ModBlocks.ENGRAVED_ROCK);
+        axisBlock((RotatedPillarBlock) ModBlocks.WITHERED_LOG.get(),
+                modLoc("block/withered_log"),
+                modLoc("block/withered_log_top"));
+        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_WITHERED_LOG.get(),
+                modLoc("block/stripped_withered_log"),
+                modLoc("block/stripped_withered_log_top"));
+        simpleBlockItem(ModBlocks.WITHERED_LOG.get(),
+                models().cubeColumn("withered_log",
+                        modLoc("block/withered_log"),
+                        modLoc("block/withered_log_top")));
+        simpleBlockItem(ModBlocks.STRIPPED_WITHERED_LOG.get(),
+                models().cubeColumn("stripped_withered_log",
+                        modLoc("block/stripped_withered_log"),
+                        modLoc("block/stripped_withered_log_top")));
+        blockWithItem(ModBlocks.WITHERED_PLANKS);
+        blockWithItem(ModBlocks.VEINED_WITHERED_PLANKS);
+        blockWithItem(ModBlocks.REINFORCED_WITHERED_PLANKS);
+        stairsBlock((StairBlock) ModBlocks.WITHERED_STAIRS.get(), blockTexture(ModBlocks.WITHERED_PLANKS.get()));
+        simpleBlockItem(ModBlocks.WITHERED_STAIRS.get(),
+                models().stairs("withered_stairs",
+                        blockTexture(ModBlocks.WITHERED_PLANKS.get()),
+                        blockTexture(ModBlocks.WITHERED_PLANKS.get()),
+                        blockTexture(ModBlocks.WITHERED_PLANKS.get())));
+        slabBlock((SlabBlock) ModBlocks.WITHERED_SLAB.get(),
+                blockTexture(ModBlocks.WITHERED_PLANKS.get()),
+                blockTexture(ModBlocks.WITHERED_PLANKS.get()));
+        simpleBlockItem(ModBlocks.WITHERED_SLAB.get(),
+                models().slab("withered_slab",
+                        blockTexture(ModBlocks.WITHERED_PLANKS.get()),
+                        blockTexture(ModBlocks.WITHERED_PLANKS.get()),
+                        blockTexture(ModBlocks.WITHERED_PLANKS.get())));
+        fenceBlock((FenceBlock) ModBlocks.WITHERED_FENCE.get(), blockTexture(ModBlocks.WITHERED_PLANKS.get()));
+        simpleBlockItem(ModBlocks.WITHERED_FENCE.get(),
+                models().fenceInventory("withered_fence_inventory", blockTexture(ModBlocks.WITHERED_PLANKS.get())));
+        fenceGateBlock((FenceGateBlock) ModBlocks.WITHERED_FENCE_GATE.get(), blockTexture(ModBlocks.WITHERED_PLANKS.get()));
+        simpleBlockItem(ModBlocks.WITHERED_FENCE_GATE.get(),
+                models().fenceGate("withered_fence_gate", blockTexture(ModBlocks.WITHERED_PLANKS.get())));
+        doorBlockWithRenderType((DoorBlock) ModBlocks.WITHERED_DOOR.get(),
+                modLoc("block/withered_door_bottom"),
+                modLoc("block/withered_door_top"),
+                "cutout");
+        itemModels().basicItem(ModBlocks.WITHERED_DOOR.get().asItem());
+        trapdoorBlockWithRenderType((TrapDoorBlock) ModBlocks.WITHERED_TRAPDOOR.get(),
+                modLoc("block/withered_trapdoor"),
+                true,
+                "cutout");
+        simpleBlockItem(ModBlocks.WITHERED_TRAPDOOR.get(),
+                models().trapdoorBottom("withered_trapdoor_bottom", modLoc("block/withered_trapdoor")));
+        buttonBlock((ButtonBlock) ModBlocks.WITHERED_BUTTON.get(), blockTexture(ModBlocks.WITHERED_PLANKS.get()));
+        simpleBlockItem(ModBlocks.WITHERED_BUTTON.get(),
+                models().buttonInventory("withered_button_inventory", blockTexture(ModBlocks.WITHERED_PLANKS.get())));
+        pressurePlateBlock((PressurePlateBlock) ModBlocks.WITHERED_PRESSURE_PLATE.get(), blockTexture(ModBlocks.WITHERED_PLANKS.get()));
+        simpleBlockItem(ModBlocks.WITHERED_PRESSURE_PLATE.get(),
+                models().pressurePlate("withered_pressure_plate", blockTexture(ModBlocks.WITHERED_PLANKS.get())));
+        axisBlock((RotatedPillarBlock) ModBlocks.WITHERED_BEAM.get(),
+                modLoc("block/withered_beam"),
+                modLoc("block/withered_beam_top"));
+        simpleBlockItem(ModBlocks.WITHERED_BEAM.get(),
+                models().cubeColumn("withered_beam",
+                        modLoc("block/withered_beam"),
+                        modLoc("block/withered_beam_top")));
+        axisBlock((RotatedPillarBlock) ModBlocks.CRACKED_WITHERED_BEAM.get(),
+                modLoc("block/cracked_withered_beam"),
+                modLoc("block/cracked_withered_beam_top"));
+        simpleBlockItem(ModBlocks.CRACKED_WITHERED_BEAM.get(),
+                models().cubeColumn("cracked_withered_beam",
+                        modLoc("block/cracked_withered_beam"),
+                        modLoc("block/cracked_withered_beam_top")));
+
+
         blockWithItem(ModBlocks.SOUND_BLOCK);
         blockWithItem(ModBlocks.WITHER_BLOCK);
         blockWithItem(ModBlocks.WITHER_ORE);
@@ -208,8 +334,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 models().getExistingFile(modLoc("block/" + blockName(ModBlocks.RUBY_CACHE.get()))));
         simpleBlockWithItem(ModBlocks.BOSS_RUBY_DOOR.get(), cubeAll(ModBlocks.BOSS_RUBY_DOOR.get()));
 
-        // Mod Echo
-        blockWithItem(ModBlocks.NECRO_STONE);
+
 
     }
 private String blockName(Block block) {
