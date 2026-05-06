@@ -5,10 +5,7 @@ import com.magius.world.mod.block.ModBlocks;
 import com.magius.world.mod.entity.ModEntities;
 import com.magius.world.mod.entity.custom.ModBoatEntity;
 import com.magius.world.mod.item.custom.*;
-import com.magius.world.mod.item.echo.CorruptedPickaxeItem;
-import com.magius.world.mod.item.echo.CorruptionTesterItem;
-import com.magius.world.mod.item.echo.PurifyingHeartItem;
-import com.magius.world.mod.item.echo.WitherEssenceItem;
+import com.magius.world.mod.item.echo.*;
 import com.magius.world.mod.sound.ModSounds;
 import net.minecraft.ChatFormatting;
 import net.minecraft.world.item.*;
@@ -41,6 +38,23 @@ public class ModItems {
                     -2.8f,
                     new Item.Properties().durability(420)
             ));
+    public static final RegistryObject<Item> DEAD_LEAVES = ITEMS.register("dead_leaves",
+            () -> new FuelItem(new Item.Properties(), 100));
+    public static final RegistryObject<Item> WITHER_STICK = ITEMS.register("wither_stick",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> WITHER_MUSHROOM = ITEMS.register("wither_mushroom",
+            () -> new WitherMushroomFoodItem(new Item.Properties().food(ModFoods.WITHER_MUSHROOM)));
+    public static final RegistryObject<Item> WITHER_SOUP = ITEMS.register("wither_soup",
+            () -> new Item(new Item.Properties()
+                    .food(ModFoods.WITHER_SOUP)
+                    .stacksTo(1)));
+    public static final RegistryObject<Item> CORRUPTED_STEW = ITEMS.register("corrupted_stew",
+            () -> new Item(new Item.Properties()
+                    .food(ModFoods.CORRUPTED_STEW)
+                    .stacksTo(1)));
+    public static final RegistryObject<Item> NECROSED_BLADE = ITEMS.register("necrosed_blade",
+            () -> new NecrosedBladeItem(Tiers.IRON, 5, -2.4F, new Item.Properties()));
+
 
 
 

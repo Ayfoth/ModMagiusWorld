@@ -60,6 +60,15 @@ public class ModEnglishLangProvider extends LanguageProvider {
         add(ModBlocks.WITHERED_PRESSURE_PLATE.get(), "Withered Pressure Plate");
         add(ModBlocks.WITHERED_BEAM.get(), "Withered Beam");
         add(ModBlocks.CRACKED_WITHERED_BEAM.get(), "Cracked Withered Beam");
+        add(ModBlocks.BLACKENED_LEAVES.get(), "Blackened Leaves");
+        add(ModItems.DEAD_LEAVES.get(), "Dead Leaves");
+        add(ModItems.WITHER_STICK.get(), "Wither Stick");
+        add(ModBlocks.WITHERED_ROOTS.get(), "Withered Roots");
+        add(ModItems.WITHER_MUSHROOM.get(), "Wither Mushroom");
+        add(ModItems.WITHER_SOUP.get(), "Wither Soup");
+        add(ModItems.CORRUPTED_STEW.get(), "Corrupted Stew");
+        add(ModItems.NECROSED_BLADE.get(), "Necrosed Blade");
+
 
 
 

@@ -13,4 +13,22 @@ public class ModFoods {
             .saturationMod(0.3f)
             .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 60, 0), 0.25f)
             .build();
+    public static final FoodProperties WITHER_MUSHROOM = new FoodProperties.Builder()
+            .nutrition(2)
+            .alwaysEat()
+            .saturationMod(0.2F)
+            .effect(() -> new MobEffectInstance(MobEffects.WITHER, 100, 0), 0.5F)
+            .build();
+    public static final FoodProperties WITHER_SOUP = new FoodProperties.Builder()
+            .nutrition(6)
+            .saturationMod(0.6F)
+            .effect(() -> new MobEffectInstance(MobEffects.WITHER, 80, 0), 0.35F)
+            .alwaysEat()
+            .build();
+    public static final FoodProperties CORRUPTED_STEW = new FoodProperties.Builder()
+            .nutrition(8)
+            .saturationMod(0.8F)
+            .effect(() -> new MobEffectInstance(MobEffects.WITHER, 120, 1), 0.5F)
+            .alwaysEat()
+            .build();
 }

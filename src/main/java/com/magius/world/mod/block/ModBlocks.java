@@ -5,9 +5,12 @@ import com.magius.world.mod.block.custom.*;
 import com.magius.world.mod.block.echo.CorruptedSoilBlock;
 import com.magius.world.mod.block.echo.PurifyingCoreBlock;
 import com.magius.world.mod.block.echo.UnstableNecroStoneBlock;
+import com.magius.world.mod.block.echo.WitherMushroomPlantBlock;
 import com.magius.world.mod.item.CorruptionTooltipBlockItem;
+import com.magius.world.mod.item.ModFoods;
 import com.magius.world.mod.item.ModItems;
 import com.magius.world.mod.item.custom.FuelItem;
+import com.magius.world.mod.item.echo.WitherMushroomItem;
 import com.magius.world.mod.sound.ModSounds;
 import com.magius.world.mod.util.ModWoodTypes;
 import com.magius.world.mod.worldgen.tree.PineTreeGrower;
@@ -156,6 +159,28 @@ public class ModBlocks {
     public static final RegistryObject<Block> CRACKED_WITHERED_BEAM = registerBlock("cracked_withered_beam",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
                     .strength(2.0f)));
+    public static final RegistryObject<Block> BLACKENED_LEAVES = registerBlock("blackened_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)
+                    .strength(0.2F)
+                    .randomTicks()
+                    .sound(SoundType.GRASS)
+                    .noOcclusion()));
+    public static final RegistryObject<Block> WITHERED_ROOTS = registerBlock("withered_roots",
+            () -> new LadderBlock(BlockBehaviour.Properties.copy(Blocks.LADDER)
+                    .strength(0.2F)
+                    .sound(SoundType.VINE)
+                    .noCollission()
+                    .noOcclusion()));
+    public static final RegistryObject<Block> WITHER_MUSHROOM_PLANT = BLOCKS.register("wither_mushroom_plant",
+            () -> new WitherMushroomPlantBlock(() -> MobEffects.WITHER, 100,
+                    BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM)
+                            .noCollission()
+                            .instabreak()
+                            .sound(SoundType.GRASS)
+                            .randomTicks()
+                            .offsetType(BlockBehaviour.OffsetType.XZ)));
+
+
 
 
     public static final RegistryObject<Block> WITHER_BLOCK = registerBlock("wither_block",

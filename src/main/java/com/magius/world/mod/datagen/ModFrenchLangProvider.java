@@ -64,6 +64,15 @@ public class ModFrenchLangProvider extends LanguageProvider {
         add(ModBlocks.WITHERED_PRESSURE_PLATE.get(), "Plaque de pression en bois flétri");
         add(ModBlocks.WITHERED_BEAM.get(), "Poutre flétrie");
         add(ModBlocks.CRACKED_WITHERED_BEAM.get(), "Poutre flétrie fissurée");
+        add(ModBlocks.BLACKENED_LEAVES.get(), "Feuilles noircies");
+        add(ModItems.DEAD_LEAVES.get(), "Feuilles mortes");
+        add(ModItems.WITHER_STICK.get(), "Bâton Wither");
+        add(ModBlocks.WITHERED_ROOTS.get(), "Racines flétries");
+        add(ModItems.WITHER_MUSHROOM.get(), "Champignon Wither");
+        add(ModItems.WITHER_SOUP.get(), "Soupe Wither");
+        add(ModItems.CORRUPTED_STEW.get(), "Ragoût Corrompu");
+        add(ModItems.NECROSED_BLADE.get(), "Lame nécrosée");
+
 
 
 

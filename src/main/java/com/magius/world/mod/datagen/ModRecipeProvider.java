@@ -248,6 +248,39 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModItems.ESSENCE_WITHER.get())
                 .unlockedBy(getHasName(ModBlocks.WITHERED_BEAM.get()), has(ModBlocks.WITHERED_BEAM.get()))
                 .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.WITHER_SOUP.get())
+                .requires(ModItems.WITHER_MUSHROOM.get())
+                .requires(Items.BOWL)
+                .unlockedBy("has_wither_mushroom", has(ModItems.WITHER_MUSHROOM.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CORRUPTED_STEW.get())
+                .requires(ModItems.WITHER_MUSHROOM.get())
+                .requires(ModItems.WITHER_MUSHROOM.get())
+                .requires(Items.BOWL)
+                .unlockedBy("has_wither_mushroom", has(ModItems.WITHER_MUSHROOM.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ESSENCE_WITHER.get())
+                .pattern(" M ")
+                .pattern("MBM")
+                .pattern(" M ")
+                .define('M', ModItems.WITHER_MUSHROOM.get())
+                .define('B', Items.GLASS_BOTTLE)
+                .unlockedBy("has_mushroom", has(ModItems.WITHER_MUSHROOM.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CORRUPTED_SOIL.get())
+                .requires(Blocks.DIRT)
+                .requires(ModItems.DEAD_LEAVES.get())
+                .requires(ModItems.ESSENCE_WITHER.get())
+                .unlockedBy("has_dead_leaves", has(ModItems.DEAD_LEAVES.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.NECROSED_BLADE.get())
+                .pattern(" E ")
+                .pattern(" E ")
+                .pattern(" S ")
+                .define('E', ModItems.ESSENCE_WITHER.get())
+                .define('S', ModItems.WITHER_STICK.get())
+                .unlockedBy("has_wither_stick", has(ModItems.WITHER_STICK.get()))
+                .save(pWriter);
 
 
         // ------------

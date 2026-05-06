@@ -199,11 +199,19 @@ public class ModCreativeModTabs {
                     .displayItems((itemDisplayParameters, pOutput) -> {
 
                         //Outils
+                        pOutput.accept(ModItems.NECROSED_BLADE.get());
+                        pOutput.accept(ModItems.WITHER_STICK.get());
                         pOutput.accept(ModItems.CORRUPTED_PICKAXE.get());
+                        pOutput.accept(ModItems.DEAD_LEAVES.get());
 
                         // Corruption
                         pOutput.accept(ModItems.ESSENCE_WITHER.get());
                         pOutput.accept(ModBlocks.CORRUPTED_SOIL.get());
+                        pOutput.accept(ModItems.WITHER_MUSHROOM.get());
+                        pOutput.accept(ModItems.WITHER_SOUP.get());
+                        pOutput.accept(ModItems.CORRUPTED_STEW.get());
+
+
 
                         // Purification
                         pOutput.accept(ModItems.PURIFYING_HEART.get());
@@ -246,6 +254,9 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModBlocks.WITHERED_PRESSURE_PLATE.get());
                         pOutput.accept(ModBlocks.WITHERED_BEAM.get());
                         pOutput.accept(ModBlocks.CRACKED_WITHERED_BEAM.get());
+                        pOutput.accept(ModBlocks.BLACKENED_LEAVES.get());
+                        pOutput.accept(ModBlocks.WITHERED_ROOTS.get());
+
 
 
                     })

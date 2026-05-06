@@ -25,6 +25,12 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.RUBY_CACHE.get())
                 .add(ModBlocks.RUBY_FIRE_CORE.get());
 
+        this.tag(BlockTags.LEAVES)
+                .add(ModBlocks.BLACKENED_LEAVES.get());
+
+        this.tag(BlockTags.CLIMBABLE)
+                .add(ModBlocks.WITHERED_ROOTS.get());
+
         this.tag(ModTags.Blocks.METAL_DETECTOR_VALUABLES)
                 .add(ModBlocks.WITHER_ORE.get()).add(ModBlocks.DEEPSLATE_WITHER_ORE.get()).addTag(Tags.Blocks.ORES);
 
