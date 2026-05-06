@@ -1,4 +1,5 @@
-// 1.20.1	2026-05-01T11:13:17.0587227	Loot Tables
+// 1.20.1	2026-05-04T13:16:03.8391152	Loot Tables
+d04350ba12217f2d095117fe32f8f80eacf8e38f data/magiusworldmod/loot_tables/blocks/blackened_leaves.json
 b5c9a6ce89dabe40c60afe7d24b34aa32f176ff6 data/magiusworldmod/loot_tables/blocks/blackwood_log.json
 28c9b26d0fb577dcbf74b074cc626a4a0af58591 data/magiusworldmod/loot_tables/blocks/black_mossy_necro_stone_bricks.json
 1eb9690f0e8f99e24263b582444d6dff6920465a data/magiusworldmod/loot_tables/blocks/broken_rock.json
@@ -93,6 +94,7 @@ d91eac12b4294bb24a1e6dfed6ee25cda0b16fff data/magiusworldmod/loot_tables/blocks/
 fbc1011ad881449c03d99eb15c7a9fac00acd193 data/magiusworldmod/loot_tables/blocks/withered_log.json
 27568bddb92984842b20ecccb90ab7c48dd9c1fe data/magiusworldmod/loot_tables/blocks/withered_planks.json
 d76a30052edaafd3d5d986ddd91118ed1ac1b119 data/magiusworldmod/loot_tables/blocks/withered_pressure_plate.json
+67778a2a3b19cf15840c5f6068de7a19bb454430 data/magiusworldmod/loot_tables/blocks/withered_roots.json
 7b0865334e5138ba5ec6a907db674dfb90712853 data/magiusworldmod/loot_tables/blocks/withered_slab.json
 610d045e7e89f6b4fcadbcbe90fb6dbc226af8d0 data/magiusworldmod/loot_tables/blocks/withered_stairs.json
 066041ffb596722689a9f4895f75fbb924f067e3 data/magiusworldmod/loot_tables/blocks/withered_trapdoor.json
@@ -100,6 +102,7 @@ d76a30052edaafd3d5d986ddd91118ed1ac1b119 data/magiusworldmod/loot_tables/blocks/
 8d8dc7269de4ea46e5c82a751e55c792e2e79045 data/magiusworldmod/loot_tables/blocks/wither_button.json
 4c2ade553e0d59d702382b11a0c384ba3ee170ac data/magiusworldmod/loot_tables/blocks/wither_fence.json
 914b09d91695ae76c6dad5171ff20c54c3b7d618 data/magiusworldmod/loot_tables/blocks/wither_fence_gate.json
+fc2693a29cae02b46f605ba3444d05b7fc9301ae data/magiusworldmod/loot_tables/blocks/wither_mushroom_plant.json
 4044c11f31aa1671b3547bf1d228a84391f4f240 data/magiusworldmod/loot_tables/blocks/wither_ore.json
 d497c5e2677f5950f2e81fd897080f63ea0b8199 data/magiusworldmod/loot_tables/blocks/wither_pressure_plate.json
 32e717e311f6552c9361eb3e3a8a311a5908fd15 data/magiusworldmod/loot_tables/blocks/wither_slab.json

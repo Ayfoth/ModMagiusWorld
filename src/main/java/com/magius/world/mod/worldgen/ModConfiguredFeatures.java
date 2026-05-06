@@ -9,6 +9,8 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 
 
+import net.minecraft.data.worldgen.features.FeatureUtils;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -46,6 +48,8 @@ public class ModConfiguredFeatures {
             registerKey("necro_cave_feature");
     public static final ResourceKey<ConfiguredFeature<?, ?>> WITHERED_TREE_KEY =
             registerKey("withered_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> WITHER_MUSHROOM_KEY =
+            registerKey("wither_mushroom");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_WITHER_ORE_KEY = registerKey("wither_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_RUBIS_ORE_KEY = registerKey("rubis_ore");
@@ -144,11 +148,21 @@ public class ModConfiguredFeatures {
                         BlockStateProvider.simple(ModBlocks.WITHERED_LOG.get()),
                         new StraightTrunkPlacer(4, 2, 0),
 
-                        BlockStateProvider.simple(Blocks.DARK_OAK_LEAVES),
-                        new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2),
+                        BlockStateProvider.simple(ModBlocks.BLACKENED_LEAVES.get()),
+                        new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
 
                         new TwoLayersFeatureSize(1, 0, 1)
                 ).build());
+        register(context, WITHER_MUSHROOM_KEY,
+                Feature.RANDOM_PATCH,
+                FeatureUtils.simpleRandomPatchConfiguration(
+                        6, // densité
+                        PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                                new SimpleBlockConfiguration(
+                                        BlockStateProvider.simple(ModBlocks.WITHER_MUSHROOM_PLANT.get())
+                                ))
+                )
+        );
 
 
         register(context, OVERWORLD_WITHER_ORE_KEY, Feature.ORE, new OreConfiguration(overworldWitherOres, 8));

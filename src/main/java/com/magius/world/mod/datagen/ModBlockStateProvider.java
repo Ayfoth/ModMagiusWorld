@@ -152,6 +152,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 models().cubeColumn("cracked_withered_beam",
                         modLoc("block/cracked_withered_beam"),
                         modLoc("block/cracked_withered_beam_top")));
+        leavesBlock(ModBlocks.BLACKENED_LEAVES);
+        ladderLikeBlock(ModBlocks.WITHERED_ROOTS);
+        crossBlock(ModBlocks.WITHER_MUSHROOM_PLANT);
+
 
 
         blockWithItem(ModBlocks.SOUND_BLOCK);
@@ -337,6 +341,28 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
 
     }
+    private void vineBlock(RegistryObject<Block> block) {
+        simpleBlock(block.get(),
+                models().withExistingParent(name(block.get()), "minecraft:block/vine")
+                        .texture("vine", blockTexture(block.get()))
+                        .renderType("cutout"));
+
+        itemModels().withExistingParent(name(block.get()), "item/generated")
+                .texture("layer0", blockTexture(block.get()));
+    }
+
+
+
+
+    private void crossBlock(RegistryObject<Block> block) {
+        simpleBlock(block.get(),
+                models().cross(name(block.get()), blockTexture(block.get()))
+                        .renderType("cutout"));
+
+        simpleBlockItem(block.get(),
+                models().withExistingParent(name(block.get()), "item/generated")
+                        .texture("layer0", blockTexture(block.get())));
+    }
 private String blockName(Block block) {
     return BuiltInRegistries.BLOCK.getKey(block).getPath();
 }
@@ -433,5 +459,15 @@ private String blockName(Block block) {
     }
     private void blockWithItem(RegistryObject<Block> blockRegistryObject){
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
+    }
+    private void ladderLikeBlock(RegistryObject<Block> block) {
+        ModelFile model = models().withExistingParent(name(block.get()), "minecraft:block/ladder")
+                .texture("texture", blockTexture(block.get()))
+                .renderType("cutout");
+
+        horizontalBlock(block.get(), model);
+
+        itemModels().withExistingParent(name(block.get()), "item/generated")
+                .texture("layer0", blockTexture(block.get()));
     }
 }

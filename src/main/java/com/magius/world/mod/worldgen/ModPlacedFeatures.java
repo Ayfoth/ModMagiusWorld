@@ -2,6 +2,7 @@ package com.magius.world.mod.worldgen;
 
 import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.block.ModBlocks;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
@@ -12,6 +13,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
 
@@ -26,6 +28,8 @@ public class ModPlacedFeatures {
             registerKey("necro_cave_feature_placed");
     public static final ResourceKey<PlacedFeature> WITHERED_TREE_PLACED_KEY =
             registerKey("withered_tree_placed");
+    public static final ResourceKey<PlacedFeature> WITHER_MUSHROOM_PLACED_KEY =
+            registerKey("wither_mushroom_placed");
 
     public static final ResourceKey<PlacedFeature> WITHER_ORE_PLACED_KEY = registerKey("wither_ore_placed");
     public static final ResourceKey<PlacedFeature> RARE_WITHER_ORE_PLACED_KEY = registerKey("rare_wither_ore_placed");
@@ -113,6 +117,23 @@ public class ModPlacedFeatures {
                         CountPlacement.of(3),
                         InSquarePlacement.spread(),
                         PlacementUtils.HEIGHTMAP,
+                        BiomeFilter.biome()
+                ));
+        register(context, WITHER_MUSHROOM_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.WITHER_MUSHROOM_KEY),
+                List.of(
+                        CountPlacement.of(2), // rare
+                        InSquarePlacement.spread(),
+                        HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+
+                        // 🔥 uniquement sur sol corrompu
+                        BlockPredicateFilter.forPredicate(
+                                BlockPredicate.matchesBlocks(
+                                        new BlockPos(0, -1, 0),
+                                        ModBlocks.CORRUPTED_SOIL.get()
+                                )
+                        ),
+
                         BiomeFilter.biome()
                 ));
 

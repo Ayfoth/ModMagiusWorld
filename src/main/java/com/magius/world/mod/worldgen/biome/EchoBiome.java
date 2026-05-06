@@ -57,6 +57,10 @@ public class EchoBiome {
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 placedFeatures.getOrThrow(ModPlacedFeatures.WITHERED_TREE_PLACED_KEY)
         );
+        generation.addFeature(
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                placedFeatures.getOrThrow(ModPlacedFeatures.WITHER_MUSHROOM_PLACED_KEY)
+        );
         BiomeDefaultFeatures.addDefaultSoftDisks(generation);
         generation.addFeature(
                 net.minecraft.world.level.levelgen.GenerationStep.Decoration.VEGETAL_DECORATION,

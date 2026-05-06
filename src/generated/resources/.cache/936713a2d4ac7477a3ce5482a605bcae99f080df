@@ -1,4 +1,4 @@
-// 1.20.1	2026-05-01T11:13:17.0722023	Tags for minecraft:block mod id magiusworldmod
+// 1.20.1	2026-05-01T20:53:53.8433062	Tags for minecraft:block mod id magiusworldmod
 434c8dc8a4ddab637b7d8bf726ba7b73f4768a6c data/forge/tags/blocks/needs_netherite_tool.json
 73bb43f82a2c6e78c1df863dba9c501d8f44dced data/magiusworldmod/tags/blocks/eye_of_corruption_detectable.json
 c649fe1da5aa7fc95be63729e2ef80d010211b39 data/magiusworldmod/tags/blocks/fast_corrupted_pickaxe_blocks.json
@@ -7,9 +7,11 @@ c649fe1da5aa7fc95be63729e2ef80d010211b39 data/magiusworldmod/tags/blocks/fast_co
 10b2d7d8928741909fd6c9861a689ba28ca68aaa data/magiusworldmod/tags/blocks/needs_rubis_tool.json
 8db57bff0206e4f196eb2f8790da3dc2ad0ad702 data/magiusworldmod/tags/blocks/needs_sapphire_tool.json
 8db57bff0206e4f196eb2f8790da3dc2ad0ad702 data/magiusworldmod/tags/blocks/needs_wither_tool.json
+7f82ea35e12271f7b20424615bbde16762e6339c data/minecraft/tags/blocks/climbable.json
 6f36c582c3bc68024d149a0b14514ffc20dc7997 data/minecraft/tags/blocks/doors.json
 6d2648eb5e5a7c795ca1d409c014a4fe6c7062d1 data/minecraft/tags/blocks/fences.json
 7674563f445ce6f48cfb12ce103107ddf2bfa147 data/minecraft/tags/blocks/fence_gates.json
+e3e606e00e8b3a764562ebb5e256dca590f9795a data/minecraft/tags/blocks/leaves.json
 3d163bc0ed0739316de27c48db492da167c7b4f3 data/minecraft/tags/blocks/logs.json
 614580f6796b325e52fd2edf90fab6d6e8adbf90 data/minecraft/tags/blocks/logs_that_burn.json
 0aac4e4e5dcb1b096a270dc57122d22c96e2ba65 data/minecraft/tags/blocks/mineable/axe.json

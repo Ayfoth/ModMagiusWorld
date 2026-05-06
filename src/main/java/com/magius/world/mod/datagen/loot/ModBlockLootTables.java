@@ -5,6 +5,9 @@ import com.magius.world.mod.block.custom.CornCropBlock;
 import com.magius.world.mod.block.custom.RedWheatCropBlock;
 import com.magius.world.mod.block.custom.StrawberryCropBlock;
 import com.magius.world.mod.item.ModItems;
+import net.minecraft.advancements.critereon.EnchantmentPredicate;
+import net.minecraft.advancements.critereon.ItemPredicate;
+import net.minecraft.advancements.critereon.MinMaxBounds;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
@@ -19,10 +22,7 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
+import net.minecraft.world.level.storage.loot.predicates.*;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.fml.common.Mod;
@@ -77,8 +77,13 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.WITHERED_TRAPDOOR.get());
         this.dropSelf(ModBlocks.WITHERED_BUTTON.get());
         this.dropSelf(ModBlocks.WITHERED_PRESSURE_PLATE.get());
-        dropSelf(ModBlocks.WITHERED_BEAM.get());
-        dropSelf(ModBlocks.CRACKED_WITHERED_BEAM.get());
+        this.dropSelf(ModBlocks.WITHERED_BEAM.get());
+        this.dropSelf(ModBlocks.CRACKED_WITHERED_BEAM.get());
+        this.add(ModBlocks.BLACKENED_LEAVES.get(), this::createBlackenedLeavesDrops);
+        this.dropSelf(ModBlocks.WITHERED_ROOTS.get());
+        this.add(ModBlocks.WITHER_MUSHROOM_PLANT.get(),
+                block -> createSingleItemTable(ModItems.WITHER_MUSHROOM.get()));
+
 
 
        this.dropSelf(ModBlocks.SOUND_BLOCK.get());
@@ -236,6 +241,48 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
 
 
+    }
+
+    protected LootTable.Builder createBlackenedLeavesDrops(Block block) {
+        LootItemCondition.Builder hasShearsOrSilkTouch =
+                MatchTool.toolMatches(ItemPredicate.Builder.item().of(Items.SHEARS))
+                        .or(MatchTool.toolMatches(ItemPredicate.Builder.item()
+                                .hasEnchantment(new EnchantmentPredicate(
+                                        Enchantments.SILK_TOUCH,
+                                        MinMaxBounds.Ints.atLeast(1)
+                                ))));
+
+        LootItemCondition.Builder hasNoShearsOrSilkTouch =
+                InvertedLootItemCondition.invert(hasShearsOrSilkTouch);
+
+        return LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .when(hasShearsOrSilkTouch)
+                        .add(LootItem.lootTableItem(block))
+                )
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .when(hasNoShearsOrSilkTouch)
+                        .add(applyExplosionCondition(block,
+                                LootItem.lootTableItem(ModItems.DEAD_LEAVES.get())
+                                        .when(BonusLevelTableCondition.bonusLevelFlatChance(
+                                                Enchantments.BLOCK_FORTUNE,
+                                                0.20F, 0.25F, 0.30F, 0.40F
+                                        ))
+                        ))
+                )
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .when(hasNoShearsOrSilkTouch)
+                        .add(applyExplosionCondition(block,
+                                LootItem.lootTableItem(ModItems.WITHER_STICK.get())
+                                        .when(BonusLevelTableCondition.bonusLevelFlatChance(
+                                                Enchantments.BLOCK_FORTUNE,
+                                                0.08F, 0.11F, 0.14F, 0.18F
+                                        ))
+                        ))
+                );
     }
 
 

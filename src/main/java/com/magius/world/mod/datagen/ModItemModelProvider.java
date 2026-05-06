@@ -49,6 +49,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.PURIFYING_HEART);
         simpleItem(ModItems.STORM_FRAGMENT);
         handheldItem(ModItems.CORRUPTED_PICKAXE);
+        basicItem(ModItems.DEAD_LEAVES.get());
+        basicItem(ModItems.WITHER_STICK.get());
+        basicItem(ModItems.WITHER_MUSHROOM.get());
+        basicItem(ModItems.WITHER_SOUP.get());
+        basicItem(ModItems.CORRUPTED_STEW.get());
+        basicItem(ModItems.NECROSED_BLADE.get());
+
 
 
 
