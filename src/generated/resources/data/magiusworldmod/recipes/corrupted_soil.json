@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:dirt"
+    },
+    {
+      "item": "magiusworldmod:dead_leaves"
+    },
+    {
+      "item": "magiusworldmod:essence_wither"
+    }
+  ],
+  "result": {
+    "item": "magiusworldmod:corrupted_soil"
+  }
+}

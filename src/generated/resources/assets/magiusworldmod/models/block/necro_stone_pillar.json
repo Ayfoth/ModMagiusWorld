@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "magiusworldmod:block/necro_stone_pillar_top",
+    "side": "magiusworldmod:block/necro_stone_pillar"
+  }
+}

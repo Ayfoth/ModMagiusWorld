@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": {
+      "item": "magiusworldmod:essence_wither"
+    },
+    "S": {
+      "item": "magiusworldmod:wither_stick"
+    }
+  },
+  "pattern": [
+    " E ",
+    " E ",
+    " S "
+  ],
+  "result": {
+    "item": "magiusworldmod:necrosed_blade"
+  },
+  "show_notification": true
+}

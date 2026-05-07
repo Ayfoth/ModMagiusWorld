@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_necro_stone_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "magiusworldmod:necro_stone_bricks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "magiusworldmod:chiseled_necro_stone_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_necro_stone_bricks",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "magiusworldmod:chiseled_necro_stone_stairs"
+    ]
+  },
+  "sends_telemetry_event": false
+}

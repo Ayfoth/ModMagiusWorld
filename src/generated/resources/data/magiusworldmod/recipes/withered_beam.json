@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "P": {
+      "item": "magiusworldmod:withered_planks"
+    }
+  },
+  "pattern": [
+    "P",
+    "P"
+  ],
+  "result": {
+    "count": 2,
+    "item": "magiusworldmod:withered_beam"
+  },
+  "show_notification": true
+}

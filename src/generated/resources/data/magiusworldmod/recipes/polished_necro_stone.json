@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "N": {
+      "item": "magiusworldmod:necro_stone"
+    }
+  },
+  "pattern": [
+    "NN",
+    "NN"
+  ],
+  "result": {
+    "count": 4,
+    "item": "magiusworldmod:polished_necro_stone"
+  },
+  "show_notification": true
+}

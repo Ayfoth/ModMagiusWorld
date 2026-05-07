@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "magiusworldmod:cut_necro_stone"
+    },
+    {
+      "item": "magiusworldmod:storm_fragment"
+    }
+  ],
+  "result": {
+    "item": "magiusworldmod:chiseled_necro_stone_bricks"
+  }
+}

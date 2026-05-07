@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,waterlogged=false": {
+      "model": "magiusworldmod:block/withered_roots",
+      "y": 90
+    },
+    "facing=east,waterlogged=true": {
+      "model": "magiusworldmod:block/withered_roots",
+      "y": 90
+    },
+    "facing=north,waterlogged=false": {
+      "model": "magiusworldmod:block/withered_roots"
+    },
+    "facing=north,waterlogged=true": {
+      "model": "magiusworldmod:block/withered_roots"
+    },
+    "facing=south,waterlogged=false": {
+      "model": "magiusworldmod:block/withered_roots",
+      "y": 180
+    },
+    "facing=south,waterlogged=true": {
+      "model": "magiusworldmod:block/withered_roots",
+      "y": 180
+    },
+    "facing=west,waterlogged=false": {
+      "model": "magiusworldmod:block/withered_roots",
+      "y": 270
+    },
+    "facing=west,waterlogged=true": {
+      "model": "magiusworldmod:block/withered_roots",
+      "y": 270
+    }
+  }
+}

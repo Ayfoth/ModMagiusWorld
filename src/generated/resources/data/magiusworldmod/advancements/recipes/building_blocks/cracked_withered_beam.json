@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "magiusworldmod:cracked_withered_beam"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_withered_beam": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "magiusworldmod:withered_beam"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_withered_beam",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "magiusworldmod:cracked_withered_beam"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "magiusworldmod:corrupted_stew"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wither_mushroom": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "magiusworldmod:wither_mushroom"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_wither_mushroom",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "magiusworldmod:corrupted_stew"
+    ]
+  },
+  "sends_telemetry_event": false
+}

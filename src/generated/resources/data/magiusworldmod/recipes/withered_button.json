@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "magiusworldmod:withered_planks"
+    }
+  ],
+  "result": {
+    "item": "magiusworldmod:withered_button"
+  }
+}
