@@ -55,6 +55,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.WITHER_SOUP.get());
         basicItem(ModItems.CORRUPTED_STEW.get());
         basicItem(ModItems.NECROSED_BLADE.get());
+        withExistingParent(ModItems.LIVING_AXE.getId().getPath(), "item/handheld")
+                .texture("layer0", modLoc("item/living_axe"));
 
 
 
