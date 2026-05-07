@@ -72,6 +72,7 @@ public class ModFrenchLangProvider extends LanguageProvider {
         add(ModItems.WITHER_SOUP.get(), "Soupe Wither");
         add(ModItems.CORRUPTED_STEW.get(), "Ragoût Corrompu");
         add(ModItems.NECROSED_BLADE.get(), "Lame nécrosée");
+        add(ModItems.LIVING_AXE.get(), "Hache Vivante");
 
 
 

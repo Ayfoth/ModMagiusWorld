@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "magiusworldmod:necro_stone"
+    },
+    {
+      "item": "magiusworldmod:essence_wither"
+    },
+    {
+      "item": "magiusworldmod:essence_wither"
+    }
+  ],
+  "result": {
+    "item": "magiusworldmod:infused_necro_stone"
+  }
+}

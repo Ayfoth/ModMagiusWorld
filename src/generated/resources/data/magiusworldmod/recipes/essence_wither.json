@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:glass_bottle"
+    },
+    "M": {
+      "item": "magiusworldmod:wither_mushroom"
+    }
+  },
+  "pattern": [
+    " M ",
+    "MBM",
+    " M "
+  ],
+  "result": {
+    "item": "magiusworldmod:essence_wither"
+  },
+  "show_notification": true
+}

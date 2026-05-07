@@ -281,6 +281,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ModItems.WITHER_STICK.get())
                 .unlockedBy("has_wither_stick", has(ModItems.WITHER_STICK.get()))
                 .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.LIVING_AXE.get())
+                .pattern("WW")
+                .pattern("WS")
+                .pattern(" S")
+                .define('W', ModItems.ESSENCE_WITHER.get())
+                .define('S', Items.STICK)
+                .unlockedBy("has_wither_essence", has(ModItems.ESSENCE_WITHER.get()))
+                .save(pWriter);
 
 
         // ------------

@@ -54,6 +54,13 @@ public class ModItems {
                     .stacksTo(1)));
     public static final RegistryObject<Item> NECROSED_BLADE = ITEMS.register("necrosed_blade",
             () -> new NecrosedBladeItem(Tiers.IRON, 5, -2.4F, new Item.Properties()));
+    public static final RegistryObject<Item> LIVING_AXE = ITEMS.register("living_axe",
+            () -> new LivingAxeItem(
+                    Tiers.IRON,
+                    6.0f,
+                    -3.1f,
+                    new Item.Properties().durability(420)
+            ));
 
 
 

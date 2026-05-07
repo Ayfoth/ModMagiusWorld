@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "magiusworldmod:block/necro_stone",
+    "side": "magiusworldmod:block/necro_stone",
+    "top": "magiusworldmod:block/necro_stone"
+  }
+}

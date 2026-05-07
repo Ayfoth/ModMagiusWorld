@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "magiusworldmod:block/chiseled_necro_stone_bricks",
+    "side": "magiusworldmod:block/chiseled_necro_stone_bricks",
+    "top": "magiusworldmod:block/chiseled_necro_stone_bricks"
+  }
+}

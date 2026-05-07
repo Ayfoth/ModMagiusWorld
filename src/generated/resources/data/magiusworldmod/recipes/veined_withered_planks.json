@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "magiusworldmod:withered_planks"
+    },
+    {
+      "item": "magiusworldmod:essence_wither"
+    }
+  ],
+  "result": {
+    "item": "magiusworldmod:veined_withered_planks"
+  }
+}

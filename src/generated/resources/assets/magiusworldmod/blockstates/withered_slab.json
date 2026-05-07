@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "magiusworldmod:block/withered_slab"
+    },
+    "type=double": {
+      "model": "magiusworldmod:block/withered_planks"
+    },
+    "type=top": {
+      "model": "magiusworldmod:block/withered_slab_top"
+    }
+  }
+}

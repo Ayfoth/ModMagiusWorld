@@ -200,6 +200,7 @@ public class ModCreativeModTabs {
 
                         //Outils
                         pOutput.accept(ModItems.NECROSED_BLADE.get());
+                        pOutput.accept(ModItems.LIVING_AXE.get());
                         pOutput.accept(ModItems.WITHER_STICK.get());
                         pOutput.accept(ModItems.CORRUPTED_PICKAXE.get());
                         pOutput.accept(ModItems.DEAD_LEAVES.get());

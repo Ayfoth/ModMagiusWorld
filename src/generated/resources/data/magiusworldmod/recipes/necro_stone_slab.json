@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "N": {
+      "item": "magiusworldmod:necro_stone"
+    }
+  },
+  "pattern": [
+    "NNN"
+  ],
+  "result": {
+    "count": 6,
+    "item": "magiusworldmod:necro_stone_slab"
+  },
+  "show_notification": true
+}

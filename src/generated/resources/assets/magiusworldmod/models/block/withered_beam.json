@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "magiusworldmod:block/withered_beam_top",
+    "side": "magiusworldmod:block/withered_beam"
+  }
+}

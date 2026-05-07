@@ -68,6 +68,7 @@ public class ModEnglishLangProvider extends LanguageProvider {
         add(ModItems.WITHER_SOUP.get(), "Wither Soup");
         add(ModItems.CORRUPTED_STEW.get(), "Corrupted Stew");
         add(ModItems.NECROSED_BLADE.get(), "Necrosed Blade");
+        add(ModItems.LIVING_AXE.get(), "Living Axe");
 
 
 

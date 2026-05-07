@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "magiusworldmod:essence_wither"
+    }
+  },
+  "pattern": [
+    "WW",
+    "WS",
+    " S"
+  ],
+  "result": {
+    "item": "magiusworldmod:living_axe"
+  },
+  "show_notification": true
+}

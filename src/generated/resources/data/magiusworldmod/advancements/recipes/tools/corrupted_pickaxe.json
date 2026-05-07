@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_essence_wither": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "magiusworldmod:storm_fragment"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "magiusworldmod:corrupted_pickaxe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_essence_wither",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "magiusworldmod:corrupted_pickaxe"
+    ]
+  },
+  "sends_telemetry_event": false
+}

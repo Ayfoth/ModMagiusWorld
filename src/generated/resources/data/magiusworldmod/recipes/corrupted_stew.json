@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "magiusworldmod:wither_mushroom"
+    },
+    {
+      "item": "magiusworldmod:wither_mushroom"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "item": "magiusworldmod:corrupted_stew"
+  }
+}

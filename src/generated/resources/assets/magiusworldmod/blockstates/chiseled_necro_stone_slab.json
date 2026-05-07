@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "magiusworldmod:block/chiseled_necro_stone_slab"
+    },
+    "type=double": {
+      "model": "magiusworldmod:block/chiseled_necro_stone_bricks"
+    },
+    "type=top": {
+      "model": "magiusworldmod:block/chiseled_necro_stone_slab_top"
+    }
+  }
+}

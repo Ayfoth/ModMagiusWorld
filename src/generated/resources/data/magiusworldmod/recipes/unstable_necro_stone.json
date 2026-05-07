@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "magiusworldmod:infused_necro_stone"
+    },
+    {
+      "item": "magiusworldmod:storm_fragment"
+    }
+  ],
+  "result": {
+    "item": "magiusworldmod:unstable_necro_stone"
+  }
+}
