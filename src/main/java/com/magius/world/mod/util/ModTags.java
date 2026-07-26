@@ -24,11 +24,17 @@ public class ModTags {
 
 
 
+
         private static TagKey<Block> tag(String name){
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(MagiusWorldMod.MOD_ID, name));
         }
     }
     public static class Items {
+
+        public static final TagKey<Item> ORGANIC_BLOCK_HARVESTERS =
+                tag("organic_block_harvesters");
+        public static final TagKey<Item> ORGANIC_BLOCK_CARVERS =
+                tag("organic_block_carvers");
 
         private static TagKey<Item> tag(String name){
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(MagiusWorldMod.MOD_ID, name));

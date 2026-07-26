@@ -57,6 +57,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.NECROSED_BLADE.get());
         withExistingParent(ModItems.LIVING_AXE.getId().getPath(), "item/handheld")
                 .texture("layer0", modLoc("item/living_axe"));
+        simpleItem(ModItems.NECROTIC_FLESH);
 
 
 

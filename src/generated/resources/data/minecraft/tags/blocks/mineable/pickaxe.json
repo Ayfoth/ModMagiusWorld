@@ -1,5 +1,7 @@
 {
   "values": [
+    "magiusworldmod:protected_heart",
+    "magiusworldmod:organic_node",
     "magiusworldmod:wither_ore",
     "magiusworldmod:deepslate_wither_ore",
     "magiusworldmod:rubis_ore",
@@ -21,6 +23,11 @@
     "magiusworldmod:chiseled_necro_stone_stairs",
     "magiusworldmod:chiseled_necro_stone_slab",
     "magiusworldmod:white_legendary_block",
+    "magiusworldmod:necrotic_flesh_wall",
+    "magiusworldmod:compact_flesh",
+    "magiusworldmod:pulsating_flesh",
+    "magiusworldmod:veined_flesh",
+    "magiusworldmod:hardened_flesh",
     "magiusworldmod:ruby_brazier",
     "magiusworldmod:ruby_fire_core"
   ]

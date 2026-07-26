@@ -5,6 +5,7 @@ import com.magius.world.mod.block.custom.CornCropBlock;
 import com.magius.world.mod.block.custom.RedWheatCropBlock;
 import com.magius.world.mod.block.custom.StrawberryCropBlock;
 import com.magius.world.mod.item.ModItems;
+import com.magius.world.mod.util.ModTags;
 import net.minecraft.advancements.critereon.EnchantmentPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.MinMaxBounds;
@@ -83,6 +84,14 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.WITHERED_ROOTS.get());
         this.add(ModBlocks.WITHER_MUSHROOM_PLANT.get(),
                 block -> createSingleItemTable(ModItems.WITHER_MUSHROOM.get()));
+        this.dropSelfWithOrganicHarvester(ModBlocks.NECROTIC_FLESH_WALL.get());
+        this.dropSelfWithOrganicHarvester(ModBlocks.COMPACT_FLESH.get());
+        this.dropSelfWithOrganicHarvester(ModBlocks.PULSATING_FLESH.get());
+        this.dropSelfWithOrganicHarvester(ModBlocks.VEINED_FLESH.get());
+        this.dropSelfWithOrganicHarvester(ModBlocks.HARDENED_FLESH.get());
+        this.dropSelfWithOrganicHarvester(ModBlocks.EXPOSED_HEART.get());
+        dropSelfWithOrganicHarvester(ModBlocks.PROTECTED_HEART.get());
+        dropSelfWithOrganicHarvester(ModBlocks.ORGANIC_NODE.get());
 
 
 
@@ -300,6 +309,16 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                               .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
                               .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
    }
+    private void dropSelfWithOrganicHarvester(Block block) {
+        this.add(block, LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .when(MatchTool.toolMatches(
+                                ItemPredicate.Builder.item()
+                                        .of(ModTags.Items.ORGANIC_BLOCK_HARVESTERS)
+                        ))
+                        .add(LootItem.lootTableItem(block))));
+    }
 
 
     @Override

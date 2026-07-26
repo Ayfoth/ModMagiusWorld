@@ -69,6 +69,15 @@ public class ModEnglishLangProvider extends LanguageProvider {
         add(ModItems.CORRUPTED_STEW.get(), "Corrupted Stew");
         add(ModItems.NECROSED_BLADE.get(), "Necrosed Blade");
         add(ModItems.LIVING_AXE.get(), "Living Axe");
+        add(ModBlocks.NECROTIC_FLESH_WALL.get(), "Necrotic Flesh Wall");
+        add(ModBlocks.COMPACT_FLESH.get(), "Compact Flesh");
+        add(ModBlocks.PULSATING_FLESH.get(), "Pulsating Flesh");
+        add(ModBlocks.VEINED_FLESH.get(), "Veined Flesh");
+        add(ModBlocks.HARDENED_FLESH.get(), "Hardened Flesh");
+        add(ModItems.NECROTIC_FLESH.get(), "Necrotic Flesh");
+        add(ModBlocks.EXPOSED_HEART.get(), "Exposed Heart");
+        add(ModBlocks.PROTECTED_HEART.get(), "Protected Heart");
+        add(ModBlocks.ORGANIC_NODE.get(), "Organic Node");
 
 
 

@@ -289,6 +289,65 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Items.STICK)
                 .unlockedBy("has_wither_essence", has(ModItems.ESSENCE_WITHER.get()))
                 .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.COMPACT_FLESH.get())
+                .requires(Items.ROTTEN_FLESH)
+                .requires(ModItems.ESSENCE_WITHER.get())
+                .unlockedBy(getHasName(Items.ROTTEN_FLESH), has(Items.ROTTEN_FLESH))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.VEINED_FLESH.get())
+                .requires(ModBlocks.COMPACT_FLESH.get())
+                .requires(ModItems.ESSENCE_WITHER.get())
+                .unlockedBy(getHasName(ModBlocks.COMPACT_FLESH.get()), has(ModBlocks.COMPACT_FLESH.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PULSATING_FLESH.get())
+                .pattern(" E ")
+                .pattern("FCF")
+                .pattern(" S ")
+                .define('E', ModItems.ESSENCE_WITHER.get())
+                .define('F', ModBlocks.COMPACT_FLESH.get())
+                .define('C', Items.ROTTEN_FLESH)
+                .define('S', ModItems.STORM_FRAGMENT.get())
+                .unlockedBy(getHasName(ModItems.STORM_FRAGMENT.get()), has(ModItems.STORM_FRAGMENT.get()))
+                .save(pWriter);
+        SimpleCookingRecipeBuilder.smelting(
+                        Ingredient.of(ModBlocks.COMPACT_FLESH.get()),
+                        RecipeCategory.BUILDING_BLOCKS,
+                        ModBlocks.HARDENED_FLESH.get(),
+                        0.35f,
+                        200
+                ).unlockedBy(getHasName(ModBlocks.COMPACT_FLESH.get()), has(ModBlocks.COMPACT_FLESH.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.NECROTIC_FLESH_WALL.get(), 6)
+                .pattern("FFF")
+                .pattern("FFF")
+                .define('F', ModBlocks.COMPACT_FLESH.get())
+                .unlockedBy(getHasName(ModBlocks.COMPACT_FLESH.get()), has(ModBlocks.COMPACT_FLESH.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.EXPOSED_HEART.get())
+                .pattern("FFF")
+                .pattern("FSF")
+                .pattern("FFF")
+                .define('F', ModItems.NECROTIC_FLESH.get())
+                .define('S', ModItems.STORM_FRAGMENT.get())
+                .unlockedBy(getHasName(ModItems.STORM_FRAGMENT.get()), has(ModItems.STORM_FRAGMENT.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PROTECTED_HEART.get())
+                .pattern("HHH")
+                .pattern("HEH")
+                .pattern("HHH")
+                .define('H', ModBlocks.HARDENED_FLESH.get())
+                .define('E', ModBlocks.EXPOSED_HEART.get())
+                .unlockedBy(getHasName(ModBlocks.EXPOSED_HEART.get()), has(ModBlocks.EXPOSED_HEART.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ORGANIC_NODE.get())
+                .pattern(" V ")
+                .pattern("FHF")
+                .pattern(" V ")
+                .define('V', ModBlocks.VEINED_FLESH.get())
+                .define('F', ModItems.NECROTIC_FLESH.get())
+                .define('H', ModBlocks.EXPOSED_HEART.get())
+                .unlockedBy(getHasName(ModBlocks.EXPOSED_HEART.get()), has(ModBlocks.EXPOSED_HEART.get()))
+                .save(pWriter);
 
 
         // ------------

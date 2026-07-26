@@ -2,10 +2,7 @@ package com.magius.world.mod.block;
 
 import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.block.custom.*;
-import com.magius.world.mod.block.echo.CorruptedSoilBlock;
-import com.magius.world.mod.block.echo.PurifyingCoreBlock;
-import com.magius.world.mod.block.echo.UnstableNecroStoneBlock;
-import com.magius.world.mod.block.echo.WitherMushroomPlantBlock;
+import com.magius.world.mod.block.echo.*;
 import com.magius.world.mod.item.CorruptionTooltipBlockItem;
 import com.magius.world.mod.item.ModFoods;
 import com.magius.world.mod.item.ModItems;
@@ -179,6 +176,50 @@ public class ModBlocks {
                             .sound(SoundType.GRASS)
                             .randomTicks()
                             .offsetType(BlockBehaviour.OffsetType.XZ)));
+    public static final RegistryObject<Block> NECROTIC_FLESH_WALL = registerBlock("necrotic_flesh_wall",
+            () -> new OrganicFleshBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_WART_BLOCK)
+                    .strength(1.5f)
+                    .sound(SoundType.SLIME_BLOCK)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> COMPACT_FLESH = registerBlock("compact_flesh",
+            () -> new OrganicFleshBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_WART_BLOCK)
+                    .strength(1.8f)
+                    .sound(SoundType.SLIME_BLOCK)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> PULSATING_FLESH = registerBlock("pulsating_flesh",
+            () -> new OrganicFleshBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_WART_BLOCK)
+                    .strength(1.4f)
+                    .sound(SoundType.SLIME_BLOCK)
+                    .requiresCorrectToolForDrops()
+                    .lightLevel(state -> 3)));
+    public static final RegistryObject<Block> VEINED_FLESH = registerBlock("veined_flesh",
+            () -> new OrganicFleshBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_WART_BLOCK)
+                    .strength(1.6f)
+                    .sound(SoundType.SLIME_BLOCK)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> HARDENED_FLESH = registerBlock("hardened_flesh",
+            () -> new OrganicFleshBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_WART_BLOCK)
+                    .strength(2.5f, 4.0f)
+                    .sound(SoundType.NETHERRACK)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> EXPOSED_HEART = registerBlock("exposed_heart",
+            () -> new OrganicFleshBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_WART_BLOCK)
+                    .strength(2.0f)
+                    .lightLevel(state -> 8)
+                    .sound(SoundType.SLIME_BLOCK)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> PROTECTED_HEART = registerBlock("protected_heart",
+            () -> new OrganicFleshBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_BRICKS)
+                    .strength(4.0f, 6.0f)
+                    .lightLevel(state -> 4)
+                    .sound(SoundType.SCULK)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> ORGANIC_NODE = registerBlock("organic_node",
+            () -> new OrganicFleshBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_WART_BLOCK)
+                    .strength(2.2f, 3.0f)
+                    .lightLevel(state -> 2)
+                    .sound(SoundType.SCULK)
+                    .requiresCorrectToolForDrops()));
 
 
 
