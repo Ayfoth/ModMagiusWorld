@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "F": {
+      "item": "magiusworldmod:necrotic_flesh"
+    },
+    "S": {
+      "item": "magiusworldmod:storm_fragment"
+    }
+  },
+  "pattern": [
+    "FFF",
+    "FSF",
+    "FFF"
+  ],
+  "result": {
+    "item": "magiusworldmod:exposed_heart"
+  },
+  "show_notification": true
+}

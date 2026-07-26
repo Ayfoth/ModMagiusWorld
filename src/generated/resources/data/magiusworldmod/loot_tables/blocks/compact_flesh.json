@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "tag": "magiusworldmod:organic_block_harvesters"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "magiusworldmod:compact_flesh"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "magiusworldmod:blocks/compact_flesh"
+}
