@@ -204,6 +204,7 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.WITHER_STICK.get());
                         pOutput.accept(ModItems.CORRUPTED_PICKAXE.get());
                         pOutput.accept(ModItems.DEAD_LEAVES.get());
+                        pOutput.accept(ModItems.NECROTIC_FLESH.get());
 
                         // Corruption
                         pOutput.accept(ModItems.ESSENCE_WITHER.get());
@@ -257,6 +258,14 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModBlocks.CRACKED_WITHERED_BEAM.get());
                         pOutput.accept(ModBlocks.BLACKENED_LEAVES.get());
                         pOutput.accept(ModBlocks.WITHERED_ROOTS.get());
+                        pOutput.accept(ModBlocks.NECROTIC_FLESH_WALL.get());
+                        pOutput.accept(ModBlocks.COMPACT_FLESH.get());
+                        pOutput.accept(ModBlocks.PULSATING_FLESH.get());
+                        pOutput.accept(ModBlocks.VEINED_FLESH.get());
+                        pOutput.accept(ModBlocks.HARDENED_FLESH.get());
+                        pOutput.accept(ModBlocks.EXPOSED_HEART.get());
+                        pOutput.accept(ModBlocks.PROTECTED_HEART.get());
+                        pOutput.accept(ModBlocks.ORGANIC_NODE.get());
 
 
 

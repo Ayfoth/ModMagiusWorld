@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "F": {
+      "item": "magiusworldmod:compact_flesh"
+    }
+  },
+  "pattern": [
+    "FFF",
+    "FFF"
+  ],
+  "result": {
+    "count": 6,
+    "item": "magiusworldmod:necrotic_flesh_wall"
+  },
+  "show_notification": true
+}

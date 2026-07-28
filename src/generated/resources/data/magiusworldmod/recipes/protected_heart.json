@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "E": {
+      "item": "magiusworldmod:exposed_heart"
+    },
+    "H": {
+      "item": "magiusworldmod:hardened_flesh"
+    }
+  },
+  "pattern": [
+    "HHH",
+    "HEH",
+    "HHH"
+  ],
+  "result": {
+    "item": "magiusworldmod:protected_heart"
+  },
+  "show_notification": true
+}

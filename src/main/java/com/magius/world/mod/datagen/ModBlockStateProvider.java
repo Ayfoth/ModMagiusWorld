@@ -155,6 +155,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
         leavesBlock(ModBlocks.BLACKENED_LEAVES);
         ladderLikeBlock(ModBlocks.WITHERED_ROOTS);
         crossBlock(ModBlocks.WITHER_MUSHROOM_PLANT);
+        blockWithItem(ModBlocks.NECROTIC_FLESH_WALL);
+        blockWithItem(ModBlocks.COMPACT_FLESH);
+        blockWithItem(ModBlocks.PULSATING_FLESH);
+        blockWithItem(ModBlocks.VEINED_FLESH);
+        blockWithItem(ModBlocks.HARDENED_FLESH);
+        blockWithItem(ModBlocks.EXPOSED_HEART);
+        blockWithItem(ModBlocks.PROTECTED_HEART);
+        blockWithItem(ModBlocks.ORGANIC_NODE);
 
 
 

@@ -73,6 +73,15 @@ public class ModFrenchLangProvider extends LanguageProvider {
         add(ModItems.CORRUPTED_STEW.get(), "Ragoût Corrompu");
         add(ModItems.NECROSED_BLADE.get(), "Lame nécrosée");
         add(ModItems.LIVING_AXE.get(), "Hache Vivante");
+        add(ModBlocks.NECROTIC_FLESH_WALL.get(), "Mur de Chair Nécrosée");
+        add(ModBlocks.COMPACT_FLESH.get(), "Chair Compacte");
+        add(ModBlocks.PULSATING_FLESH.get(), "Chair Pulsante");
+        add(ModBlocks.VEINED_FLESH.get(), "Chair Veineuse");
+        add(ModBlocks.HARDENED_FLESH.get(), "Chair Durcie");
+        add(ModItems.NECROTIC_FLESH.get(), "Chair Nécrosée");
+        add(ModBlocks.EXPOSED_HEART.get(), "Cœur Exposé");
+        add(ModBlocks.PROTECTED_HEART.get(), "Cœur Protégé");
+        add(ModBlocks.ORGANIC_NODE.get(), "Nœud Organique");
 
 
 

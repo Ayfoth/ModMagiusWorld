@@ -61,6 +61,8 @@ public class ModItems {
                     -3.1f,
                     new Item.Properties().durability(420)
             ));
+    public static final RegistryObject<Item> NECROTIC_FLESH = ITEMS.register("necrotic_flesh",
+            () -> new Item(new Item.Properties()));
 
 
 

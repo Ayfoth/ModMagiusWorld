@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "F": {
+      "item": "magiusworldmod:necrotic_flesh"
+    },
+    "H": {
+      "item": "magiusworldmod:exposed_heart"
+    },
+    "V": {
+      "item": "magiusworldmod:veined_flesh"
+    }
+  },
+  "pattern": [
+    " V ",
+    "FHF",
+    " V "
+  ],
+  "result": {
+    "item": "magiusworldmod:organic_node"
+  },
+  "show_notification": true
+}

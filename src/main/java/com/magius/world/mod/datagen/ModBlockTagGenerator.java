@@ -24,6 +24,11 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.RUBIS_ORE.get())
                 .add(ModBlocks.RUBY_CACHE.get())
                 .add(ModBlocks.RUBY_FIRE_CORE.get());
+        this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(ModBlocks.PROTECTED_HEART.get());
+        this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(ModBlocks.ORGANIC_NODE.get());
+
 
         this.tag(BlockTags.LEAVES)
                 .add(ModBlocks.BLACKENED_LEAVES.get());
@@ -57,6 +62,12 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.CHISELED_NECRO_STONE_SLAB.get(),
                         ModBlocks.WHITE_LEGENDARY_BLOCK.get())
                 ;
+        this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(ModBlocks.NECROTIC_FLESH_WALL.get())
+                .add(ModBlocks.COMPACT_FLESH.get())
+                .add(ModBlocks.PULSATING_FLESH.get())
+                .add(ModBlocks.VEINED_FLESH.get())
+                .add(ModBlocks.HARDENED_FLESH.get());
         this.tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks.BLACKWOOD_LOG.get(),
                         ModBlocks.RUBY_DOOR.get(),

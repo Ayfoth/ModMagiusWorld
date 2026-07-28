@@ -1,4 +1,4 @@
-// 1.20.1	2026-05-01T20:53:53.8433062	Tags for minecraft:block mod id magiusworldmod
+// 1.20.1	2026-05-22T11:42:44.2769924	Tags for minecraft:block mod id magiusworldmod
 434c8dc8a4ddab637b7d8bf726ba7b73f4768a6c data/forge/tags/blocks/needs_netherite_tool.json
 73bb43f82a2c6e78c1df863dba9c501d8f44dced data/magiusworldmod/tags/blocks/eye_of_corruption_detectable.json
 c649fe1da5aa7fc95be63729e2ef80d010211b39 data/magiusworldmod/tags/blocks/fast_corrupted_pickaxe_blocks.json
@@ -15,7 +15,7 @@ e3e606e00e8b3a764562ebb5e256dca590f9795a data/minecraft/tags/blocks/leaves.json
 3d163bc0ed0739316de27c48db492da167c7b4f3 data/minecraft/tags/blocks/logs.json
 614580f6796b325e52fd2edf90fab6d6e8adbf90 data/minecraft/tags/blocks/logs_that_burn.json
 0aac4e4e5dcb1b096a270dc57122d22c96e2ba65 data/minecraft/tags/blocks/mineable/axe.json
-fca33c98f33873f511005826f497f11852c87176 data/minecraft/tags/blocks/mineable/pickaxe.json
+80c216fd95d15c154b8653a520602e687f6eb93a data/minecraft/tags/blocks/mineable/pickaxe.json
 631e8b81b2bf6065cde9db8d82fca26b95d478b9 data/minecraft/tags/blocks/needs_diamond_tool.json
 dee835bc6dd3f096f714b5bf33e9e3124f32725f data/minecraft/tags/blocks/needs_iron_tool.json
 214bc385cd6678c86c7fbf4aa94e39c12a39e031 data/minecraft/tags/blocks/needs_stone_tool.json

@@ -3,6 +3,7 @@ package com.magius.world.mod.datagen;
 import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.block.ModBlocks;
 import com.magius.world.mod.item.ModItems;
+import com.magius.world.mod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -35,6 +36,12 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                         ModItems.RUBIS_LEGGINGS.get(),
                         ModItems.RUBIS_BOOTS.get()
                         );
+
+        this.tag(ModTags.Items.ORGANIC_BLOCK_HARVESTERS)
+                .add(ModItems.CORRUPTED_PICKAXE.get());
+
+        this.tag(ModTags.Items.ORGANIC_BLOCK_CARVERS)
+                .add(ModItems.LIVING_AXE.get());
 
         this.tag(ItemTags.MUSIC_DISCS)
                 .add(ModItems.BAR_BRAWL_MUSIC_DISC.get());

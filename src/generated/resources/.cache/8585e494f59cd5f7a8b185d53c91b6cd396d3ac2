@@ -1,4 +1,4 @@
-// 1.20.1	2026-05-06T10:53:59.6840924	Item Models: magiusworldmod
+// 1.20.1	2026-05-08T08:22:56.5293598	Item Models: magiusworldmod
 8cb32d54c73609d84d3aad18f922d659d2a6cf78 assets/magiusworldmod/models/item/bar_brawl_music_disc.json
 c8feae8a7801151fe81624ad00fcb00df333b906 assets/magiusworldmod/models/item/blackwood_block.json
 c62aa7299cbf5a63dd6f2231204434c46c1df183 assets/magiusworldmod/models/item/boss_ruby_key.json
@@ -19,6 +19,7 @@ c5bf3b19d4c31d266708f33210ce500d263efad9 assets/magiusworldmod/models/item/lapis
 bd9ea07df5351c810fe024edad9b39610f69aa50 assets/magiusworldmod/models/item/living_axe.json
 5627b2582e231d381bba403d554fd3f09f66eff8 assets/magiusworldmod/models/item/metal_detector.json
 925d95aefcd387c9ac40b79cc6073a8e0ab99c7b assets/magiusworldmod/models/item/necrosed_blade.json
+96b36a05cff71a9362187d8609ae51485d2fc1a1 assets/magiusworldmod/models/item/necrotic_flesh.json
 b37fc6118ef749afa91f760696ecf149c1916f30 assets/magiusworldmod/models/item/piece_mg.json
 6d9904d7a43b17708311af81d4d6197390a3bf45 assets/magiusworldmod/models/item/pine_boat.json
 15908e3abdcf9e24bd435a93ff33e99d71750a06 assets/magiusworldmod/models/item/pine_chest_boat.json
