@@ -46,7 +46,9 @@ public class RubyScholarMenuScreen extends Screen {
 
     private void openQuests() {
         if (minecraft != null) {
-            minecraft.setScreen(new RubyScholarDialogueScreen(questState));
+            minecraft.setScreen(
+                    new RubyScholarDialogueScreen(villagerId, questState)
+            );
         }
     }
 

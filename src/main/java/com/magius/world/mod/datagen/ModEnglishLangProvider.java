@@ -204,6 +204,19 @@ public class ModEnglishLangProvider extends LanguageProvider {
         add("entity.bar.ruby_boss", "Ruby Guardian");
         add(ModBlocks.RUBY_ALTAR.get(), "Ruby Altar");
         add("entity.minecraft.villager.magiusworldmod.ruby_scholar", "Ruby Scholar");
+        add("quest.magiusworldmod.forgotten_shard.title", "The Forgotten Shard");
+        add("quest.magiusworldmod.forgotten_shard.objective",
+                "Objective: find a trace of the Forgotten Shard.");
+        add("dialogue.magiusworldmod.ruby_scholar.name", "Ruby Scholar");
+        add("dialogue.magiusworldmod.ruby_scholar.intro",
+                "Long ago, a ruby shard protected our lands. It vanished, and its memory is slowly fading. Will you agree to search for its trail?");
+        add("dialogue.magiusworldmod.ruby_scholar.active",
+                "The Forgotten Shard remains lost. Continue your search: the ancient ruby lands still hold traces of it.");
+        add("dialogue.magiusworldmod.ruby_scholar.completed",
+                "You have restored the story of the Forgotten Shard. The ruby lands will remember what you have accomplished.");
+        add("dialogue.magiusworldmod.button.accept", "Accept");
+        add("dialogue.magiusworldmod.button.later", "Later");
+        add("dialogue.magiusworldmod.button.close", "Close");
         add(ModItems.RUBY_FIRE_CORE_PLAN.get(), "Ruby Fire Core Plan");
         add(ModItems.RUBY_WAND_PLAN.get(), "Ruby Wand Plan");
         add(ModBlocks.CORRUPTED_LECTERN.get(), "Corrupted Lectern");
