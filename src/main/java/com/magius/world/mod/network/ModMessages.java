@@ -3,6 +3,7 @@ package com.magius.world.mod.network;
 import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.network.echo.SyncCorruptionS2CPacket;
 import com.magius.world.mod.network.packet.C2SRequestFactionProgressPacket;
+import com.magius.world.mod.network.packet.S2COpenRubyScholarDialoguePacket;
 import com.magius.world.mod.network.packet.S2CFactionProgressDataPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.network.NetworkRegistry;
@@ -38,12 +39,16 @@ public class ModMessages {
                 .consumerMainThread(S2CFactionProgressDataPacket::handle)
                 .add();
 
-        int id = 0;
-
-        INSTANCE.messageBuilder(SyncCorruptionS2CPacket.class, id++)
+        INSTANCE.messageBuilder(SyncCorruptionS2CPacket.class, id())
                 .encoder(SyncCorruptionS2CPacket::toBytes)
                 .decoder(SyncCorruptionS2CPacket::new)
                 .consumerMainThread(SyncCorruptionS2CPacket::handle)
+                .add();
+
+        INSTANCE.messageBuilder(S2COpenRubyScholarDialoguePacket.class, id())
+                .encoder(S2COpenRubyScholarDialoguePacket::encode)
+                .decoder(S2COpenRubyScholarDialoguePacket::new)
+                .consumerMainThread(S2COpenRubyScholarDialoguePacket::handle)
                 .add();
     }
 
