@@ -88,6 +88,8 @@ public class C2SCompleteForgottenShardQuestPacket {
         }
 
         removeRubies(player);
+        player.giveExperiencePoints(100);
+        player.sendSystemMessage(Component.literal("+100 XP"));
         player.sendSystemMessage(Component.translatable(
                 "quest.magiusworldmod.forgotten_shard.completed"
         ));
