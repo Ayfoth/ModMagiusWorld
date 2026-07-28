@@ -73,15 +73,6 @@ public class ModFrenchLangProvider extends LanguageProvider {
         add(ModItems.CORRUPTED_STEW.get(), "Ragoût Corrompu");
         add(ModItems.NECROSED_BLADE.get(), "Lame nécrosée");
         add(ModItems.LIVING_AXE.get(), "Hache Vivante");
-        add(ModBlocks.NECROTIC_FLESH_WALL.get(), "Mur de Chair Nécrosée");
-        add(ModBlocks.COMPACT_FLESH.get(), "Chair Compacte");
-        add(ModBlocks.PULSATING_FLESH.get(), "Chair Pulsante");
-        add(ModBlocks.VEINED_FLESH.get(), "Chair Veineuse");
-        add(ModBlocks.HARDENED_FLESH.get(), "Chair Durcie");
-        add(ModItems.NECROTIC_FLESH.get(), "Chair Nécrosée");
-        add(ModBlocks.EXPOSED_HEART.get(), "Cœur Exposé");
-        add(ModBlocks.PROTECTED_HEART.get(), "Cœur Protégé");
-        add(ModBlocks.ORGANIC_NODE.get(), "Nœud Organique");
 
 
 
@@ -206,6 +197,10 @@ public class ModFrenchLangProvider extends LanguageProvider {
         add("quest.magiusworldmod.forgotten_shard.title", "L'Éclat oublié");
         add("quest.magiusworldmod.forgotten_shard.objective",
                 "Objectif : rapporter 8 rubis à l'Érudit rubis.");
+        add("quest.magiusworldmod.forgotten_shard.missing_rubies",
+                "Il te manque encore %s rubis.");
+        add("quest.magiusworldmod.forgotten_shard.completed",
+                "Les 8 rubis ont été remis. Quête terminée : L'Éclat oublié !");
         add("dialogue.magiusworldmod.ruby_scholar.name", "Érudit rubis");
         add("dialogue.magiusworldmod.ruby_scholar.intro",
                 "Étranger… les veines de notre terre s'épuisent. Si tu souhaites gagner la confiance du village, rapporte-moi huit fragments de rubis. Je dois déterminer si leur énergie est toujours intacte.");
