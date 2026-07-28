@@ -203,6 +203,20 @@ public class ModFrenchLangProvider extends LanguageProvider {
         add(ModItems.RUBY_FIRE_CORE_PLAN.get(), "Plan du Cœur de Feu Rubis");
         add(ModItems.RUBY_WAND_PLAN.get(), "Plan de Baguette Rubis");
         add("entity.minecraft.villager.magiusworldmod.ruby_scholar", "Érudit rubis");
+        add("quest.magiusworldmod.forgotten_shard.title", "L'Éclat oublié");
+        add("quest.magiusworldmod.forgotten_shard.objective",
+                "Objectif : rapporter 8 rubis à l'Érudit rubis.");
+        add("dialogue.magiusworldmod.ruby_scholar.name", "Érudit rubis");
+        add("dialogue.magiusworldmod.ruby_scholar.intro",
+                "Étranger… les veines de notre terre s'épuisent. Si tu souhaites gagner la confiance du village, rapporte-moi huit fragments de rubis. Je dois déterminer si leur énergie est toujours intacte.");
+        add("dialogue.magiusworldmod.ruby_scholar.active",
+                "As-tu rapporté les huit fragments de rubis ? Leur énergie nous permettra de comprendre ce qui affaiblit notre terre.");
+        add("dialogue.magiusworldmod.ruby_scholar.completed",
+                "Ces rubis sont encore chargés d'énergie… Tu as gagné la confiance du village. Laisse-moi maintenant t'expliquer ce qui menace nos terres.");
+        add("dialogue.magiusworldmod.button.accept", "Accepter");
+        add("dialogue.magiusworldmod.button.later", "Plus tard");
+        add("dialogue.magiusworldmod.button.submit_rubies", "Remettre 8 rubis");
+        add("dialogue.magiusworldmod.button.close", "Fermer");
         add(ModBlocks.CORRUPTED_LECTERN.get(), "Lutrin corrompu");
         add("entity.minecraft.villager.magiusworldmod.corrupted_priest", "Prêtre corrompu");
         add(ModItems.EYE_OF_CORRUPTION.get(), "Œil de corruption");

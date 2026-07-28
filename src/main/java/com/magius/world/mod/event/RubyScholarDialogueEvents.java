@@ -2,7 +2,7 @@ package com.magius.world.mod.event;
 
 import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.network.ModMessages;
-import com.magius.world.mod.network.packet.S2COpenRubyScholarDialoguePacket;
+import com.magius.world.mod.network.packet.S2COpenRubyScholarMenuPacket;
 import com.magius.world.mod.quest.QuestIds;
 import com.magius.world.mod.quest.QuestManager;
 import com.magius.world.mod.quest.QuestState;
@@ -33,11 +33,6 @@ public final class RubyScholarDialogueEvents {
             return;
         }
 
-        // Accroupi + clic droit conserve l'accès au commerce vanilla.
-        if (event.getEntity().isShiftKeyDown()) {
-            return;
-        }
-
         if (!event.getLevel().isClientSide
                 && event.getEntity() instanceof ServerPlayer player) {
             QuestState questState = QuestManager.getQuestState(
@@ -46,7 +41,10 @@ public final class RubyScholarDialogueEvents {
             );
 
             ModMessages.sendToPlayer(
-                    new S2COpenRubyScholarDialoguePacket(questState),
+                    new S2COpenRubyScholarMenuPacket(
+                            villager.getId(),
+                            questState
+                    ),
                     player
             );
         }

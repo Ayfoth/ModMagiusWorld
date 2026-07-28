@@ -2,8 +2,12 @@ package com.magius.world.mod.network;
 
 import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.network.echo.SyncCorruptionS2CPacket;
+import com.magius.world.mod.network.packet.C2SAcceptForgottenShardQuestPacket;
+import com.magius.world.mod.network.packet.C2SCompleteForgottenShardQuestPacket;
+import com.magius.world.mod.network.packet.C2SOpenRubyScholarTradePacket;
 import com.magius.world.mod.network.packet.C2SRequestFactionProgressPacket;
 import com.magius.world.mod.network.packet.S2COpenRubyScholarDialoguePacket;
+import com.magius.world.mod.network.packet.S2COpenRubyScholarMenuPacket;
 import com.magius.world.mod.network.packet.S2CFactionProgressDataPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.network.NetworkRegistry;
@@ -49,6 +53,30 @@ public class ModMessages {
                 .encoder(S2COpenRubyScholarDialoguePacket::encode)
                 .decoder(S2COpenRubyScholarDialoguePacket::new)
                 .consumerMainThread(S2COpenRubyScholarDialoguePacket::handle)
+                .add();
+
+        INSTANCE.messageBuilder(S2COpenRubyScholarMenuPacket.class, id())
+                .encoder(S2COpenRubyScholarMenuPacket::encode)
+                .decoder(S2COpenRubyScholarMenuPacket::new)
+                .consumerMainThread(S2COpenRubyScholarMenuPacket::handle)
+                .add();
+
+        INSTANCE.messageBuilder(C2SOpenRubyScholarTradePacket.class, id())
+                .encoder(C2SOpenRubyScholarTradePacket::encode)
+                .decoder(C2SOpenRubyScholarTradePacket::new)
+                .consumerMainThread(C2SOpenRubyScholarTradePacket::handle)
+                .add();
+
+        INSTANCE.messageBuilder(C2SAcceptForgottenShardQuestPacket.class, id())
+                .encoder(C2SAcceptForgottenShardQuestPacket::encode)
+                .decoder(C2SAcceptForgottenShardQuestPacket::new)
+                .consumerMainThread(C2SAcceptForgottenShardQuestPacket::handle)
+                .add();
+
+        INSTANCE.messageBuilder(C2SCompleteForgottenShardQuestPacket.class, id())
+                .encoder(C2SCompleteForgottenShardQuestPacket::encode)
+                .decoder(C2SCompleteForgottenShardQuestPacket::new)
+                .consumerMainThread(C2SCompleteForgottenShardQuestPacket::handle)
                 .add();
     }
 

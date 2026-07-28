@@ -1,5 +1,8 @@
 package com.magius.world.mod.client.gui;
 
+import com.magius.world.mod.network.ModMessages;
+import com.magius.world.mod.network.packet.C2SAcceptForgottenShardQuestPacket;
+import com.magius.world.mod.network.packet.C2SCompleteForgottenShardQuestPacket;
 import com.magius.world.mod.quest.QuestState;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
@@ -15,12 +18,21 @@ public class RubyScholarDialogueScreen extends Screen {
     private static final int TEXT_COLOR = 0xE8D8C0;
     private static final int TITLE_COLOR = 0xE04444;
 
+    private final int villagerId;
     private final QuestState questState;
 
     public RubyScholarDialogueScreen(QuestState questState) {
+        this(-1, questState);
+    }
+
+    public RubyScholarDialogueScreen(
+            int villagerId,
+            QuestState questState
+    ) {
         super(Component.translatable(
                 "quest.magiusworldmod.forgotten_shard.title"
         ));
+        this.villagerId = villagerId;
         this.questState = questState;
     }
 
@@ -45,21 +57,68 @@ public class RubyScholarDialogueScreen extends Screen {
             return;
         }
 
+        if (questState == QuestState.STARTED) {
+            addRenderableWidget(Button.builder(
+                    Component.translatable(
+                            "dialogue.magiusworldmod.button.submit_rubies"
+                    ),
+                    button -> submitRubies()
+            ).bounds(this.width / 2 - 145, buttonY, 140, 20).build());
+
+            addRenderableWidget(Button.builder(
+                    Component.translatable("gui.back"),
+                    button -> returnToMenu()
+            ).bounds(this.width / 2 + 5, buttonY, 65, 20).build());
+
+            addRenderableWidget(Button.builder(
+                    Component.translatable(
+                            "dialogue.magiusworldmod.button.close"
+                    ),
+                    button -> onClose()
+            ).bounds(this.width / 2 + 80, buttonY, 65, 20).build());
+            return;
+        }
+
+        addRenderableWidget(Button.builder(
+                Component.translatable("gui.back"),
+                button -> returnToMenu()
+        ).bounds(this.width / 2 - 105, buttonY, 100, 20).build());
+
         addRenderableWidget(Button.builder(
                 Component.translatable(
                         "dialogue.magiusworldmod.button.close"
                 ),
                 button -> onClose()
-        ).bounds(this.width / 2 - 50, buttonY, 100, 20).build());
+        ).bounds(this.width / 2 + 5, buttonY, 100, 20).build());
+    }
+
+    private void returnToMenu() {
+        if (minecraft == null || villagerId < 0) {
+            onClose();
+            return;
+        }
+
+        minecraft.setScreen(
+                new RubyScholarMenuScreen(villagerId, questState)
+        );
     }
 
     private void acceptQuest() {
-        if (minecraft != null
-                && minecraft.player != null
-                && minecraft.player.connection != null) {
-            minecraft.player.connection.sendCommand("magiusquest start");
+        ModMessages.sendToServer(
+                new C2SAcceptForgottenShardQuestPacket()
+        );
+        onClose();
+    }
+
+    private void submitRubies() {
+        if (villagerId < 0) {
+            onClose();
+            return;
         }
 
+        ModMessages.sendToServer(
+                new C2SCompleteForgottenShardQuestPacket(villagerId)
+        );
         onClose();
     }
 
