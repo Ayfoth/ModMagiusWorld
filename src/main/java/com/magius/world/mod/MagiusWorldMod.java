@@ -1,17 +1,25 @@
 package com.magius.world.mod;
 
 import com.magius.world.mod.block.ModBlocks;
+import com.magius.world.mod.clan.data.PlayerClanData;
+import com.magius.world.mod.clan.quest.data.PlayerQuestData;
+import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
+import com.magius.world.mod.clan.event.ClanCapabilityEvents;
+import com.magius.world.mod.clan.command.ClanCommand;
+import com.magius.world.mod.clan.quest.command.QuestCommand;
+import com.magius.world.mod.clan.quest.event.QuestCapabilityEvents;
+import com.magius.world.mod.clan.quest.loader.QuestLoader;
+import net.minecraftforge.event.RegisterCommandsEvent;
+import com.magius.world.mod.clan.manager.ClanLoader;
 import com.magius.world.mod.network.ModMessages;
 import com.magius.world.mod.particle.ModParticles;
 import com.magius.world.mod.block.entity.ModBlockEntities;
 import com.magius.world.mod.entity.ModEntities;
 import com.magius.world.mod.entity.client.ModBoatRenderer;
 import com.magius.world.mod.entity.client.RhinoRenderer;
-import com.magius.world.mod.entity.custom.ModChestBoatEntity;
 import com.magius.world.mod.item.ModCreativeModTabs;
 import com.magius.world.mod.item.ModItems;
 import com.magius.world.mod.loot.ModLootModifiers;
-import com.magius.world.mod.particle.ModParticles;
 import com.magius.world.mod.recipe.ModRecipes;
 import com.magius.world.mod.screen.FireFounderieScreen;
 import com.magius.world.mod.screen.GemPolishingStationScreen;
@@ -20,7 +28,9 @@ import com.magius.world.mod.sound.ModSounds;
 import com.magius.world.mod.util.ModWoodTypes;
 import com.magius.world.mod.villager.ModPoiTypes;
 import com.magius.world.mod.villager.ModVillagers;
-import com.magius.world.mod.worldgen.biome.surface.ModSurfaceRules;
+import net.minecraftforge.client.event.RegisterClientCommandsEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import com.magius.world.mod.clan.client.command.ClanClientCommand;
 import com.magius.world.mod.worldgen.biome.surface.ModTerrablender;
 import com.magius.world.mod.worldgen.feature.ModFeatures;
 import com.magius.world.mod.worldgen.tree.ModFoliagePlacer;
@@ -49,7 +59,6 @@ import org.slf4j.Logger;
 import net.minecraft.client.renderer.entity.SheepRenderer;
 import com.magius.world.mod.entity.client.RubyBoarRenderer;
 import com.magius.world.mod.entity.client.RubyWispRenderer;
-import terrablender.api.SurfaceRuleManager;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(MagiusWorldMod.MOD_ID)
@@ -66,6 +75,8 @@ public class MagiusWorldMod
         IEventBus modEventBus = context.getModEventBus();
 
         ModCreativeModTabs.register(modEventBus);
+        ClanLoader.registerClans();
+        QuestLoader.registerQuests();
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
@@ -91,10 +102,14 @@ public class MagiusWorldMod
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::registerCapabilities);
+
 
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(ClanCapabilityEvents.class);
+        MinecraftForge.EVENT_BUS.register(QuestCapabilityEvents.class);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -111,6 +126,11 @@ public class MagiusWorldMod
           //  SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeRules());
         });
 
+
+    }
+    private void registerCapabilities(RegisterCapabilitiesEvent event) {
+        event.register(PlayerClanData.class);
+        event.register(PlayerQuestData.class);
     }
 
     // Add the example block item to the building blocks tab
@@ -122,6 +142,12 @@ public class MagiusWorldMod
 
     }
 
+    @SubscribeEvent
+    public void onRegisterCommands(RegisterCommandsEvent event) {
+        ClanCommand.register(event.getDispatcher());
+        QuestCommand.register(event.getDispatcher());
+    }
+
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)
@@ -129,10 +155,12 @@ public class MagiusWorldMod
 
     }
 
+
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents
     {
+
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             Sheets.addWoodType(ModWoodTypes.PINE);
