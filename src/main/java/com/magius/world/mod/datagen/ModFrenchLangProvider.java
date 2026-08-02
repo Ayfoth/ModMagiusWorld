@@ -202,12 +202,21 @@ public class ModFrenchLangProvider extends LanguageProvider {
         add("quest.magiusworldmod.forgotten_shard.completed",
                 "Les 8 rubis ont été remis. Quête terminée : L'Éclat oublié !");
         add("dialogue.magiusworldmod.ruby_scholar.name", "Érudit rubis");
+        add("dialogue.magiusworldmod.ruby_scholar.role",
+                "Gardien des savoirs rubis");
         add("dialogue.magiusworldmod.ruby_scholar.intro",
                 "Étranger… les veines de notre terre s'épuisent. Si tu souhaites gagner la confiance du village, rapporte-moi huit fragments de rubis. Je dois déterminer si leur énergie est toujours intacte.");
         add("dialogue.magiusworldmod.ruby_scholar.active",
                 "As-tu rapporté les huit fragments de rubis ? Leur énergie nous permettra de comprendre ce qui affaiblit notre terre.");
         add("dialogue.magiusworldmod.ruby_scholar.completed",
                 "Ces rubis sont encore chargés d'énergie… Tu as gagné la confiance du village. Laisse-moi maintenant t'expliquer ce qui menace nos terres.");
+        add("dialogue.magiusworldmod.section.dialogue", "Dialogue");
+        add("dialogue.magiusworldmod.section.objective", "Objectif");
+        add("dialogue.magiusworldmod.section.reward", "Récompense");
+        add("dialogue.magiusworldmod.status.available", "Disponible");
+        add("dialogue.magiusworldmod.status.active", "En cours");
+        add("dialogue.magiusworldmod.status.completed", "Terminée");
+        add("dialogue.magiusworldmod.reward.forgotten_shard", "100 XP");
         add("dialogue.magiusworldmod.button.accept", "Accepter");
         add("dialogue.magiusworldmod.button.later", "Plus tard");
         add("dialogue.magiusworldmod.button.submit_rubies", "Remettre 8 rubis");
