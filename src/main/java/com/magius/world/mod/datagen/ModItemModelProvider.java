@@ -42,6 +42,20 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+
+        basicItem(ModItems.DRAGONMAID_INSIGNIA.get());
+        basicItem(
+                ModItems.BROKEN_SPIRIT_BLADE.get()
+        );
+        basicItem(
+                ModItems.SWORDSOUL_SPIRIT_TOKEN.get()
+        );
+        handheldItem(
+                ModItems.SYNCHRONIZED_SPIRIT_BLADE
+        );
+        basicItem(
+                ModItems.SWORDSOUL_EMERGENCE_SEAL.get()
+        );
         // Mod Echo
 
         simpleItem(ModItems.CORRUPTION_TESTER);
@@ -142,6 +156,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.SCARLET_NETWORK_CONTRACT.get());
         basicItem(ModItems.RUBY_LOCATOR.get());
         basicItem(ModItems.RED_KEY.get());
+
+        basicItem(ModItems.DRAGONMAID_GRIMOIRE.get());
+        basicItem(ModItems.HEARTH_SHARD.get());
 
 
 

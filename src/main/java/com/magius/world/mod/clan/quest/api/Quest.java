@@ -11,4 +11,14 @@ public interface Quest {
     String getDescription();
 
     int getPrestigeReward();
+
+    /*
+     * Quête devant être récompensée avant que
+     * celle-ci puisse commencer.
+     *
+     * null = aucun prérequis.
+     */
+    default ResourceLocation getRequiredQuest() {
+        return null;
+    }
 }

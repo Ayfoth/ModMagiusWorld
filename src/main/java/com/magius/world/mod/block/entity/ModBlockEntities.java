@@ -41,6 +41,51 @@ public class ModBlockEntities {
                             ModBlocks.RUBY_HANGING_SIGN.get(),
                             ModBlocks.RUBY_WALL_HANGING_SIGN.get()
                     ).build(null));
+    public static final RegistryObject<BlockEntityType<DragonmaidNurseMarkerBlockEntity>>
+            DRAGONMAID_NURSE_MARKER_BE =
+            BLOCK_ENTITIES.register(
+                    "dragonmaid_nurse_marker",
+                    () -> BlockEntityType.Builder.of(
+                            DragonmaidNurseMarkerBlockEntity::new,
+                            ModBlocks.DRAGONMAID_NURSE_MARKER.get()
+                    ).build(null)
+            );
+    public static final RegistryObject<BlockEntityType<SwordsoulMoYeMarkerBlockEntity>>
+            SWORDSOUL_MO_YE_MARKER_BE =
+            BLOCK_ENTITIES.register(
+                    "swordsoul_mo_ye_marker",
+                    () -> BlockEntityType.Builder.of(
+                            SwordsoulMoYeMarkerBlockEntity::new,
+                            ModBlocks.SWORDSOUL_MO_YE_MARKER.get()
+                    ).build(null)
+            );
+    public static final RegistryObject<BlockEntityType<SwordsoulBrokenBladeMarkerBlockEntity>>
+            SWORDSOUL_BROKEN_BLADE_MARKER_BE =
+            BLOCK_ENTITIES.register(
+                    "swordsoul_broken_blade_marker",
+                    () -> BlockEntityType.Builder.of(
+                            SwordsoulBrokenBladeMarkerBlockEntity::new,
+                            ModBlocks.SWORDSOUL_BROKEN_BLADE_MARKER.get()
+                    ).build(null)
+            );
+    public static final RegistryObject<BlockEntityType<SwordsoulSanctuaryCoreBlockEntity>>
+            SWORDSOUL_SANCTUARY_CORE_BE =
+            BLOCK_ENTITIES.register(
+                    "swordsoul_sanctuary_core",
+                    () -> BlockEntityType.Builder.of(
+                            SwordsoulSanctuaryCoreBlockEntity::new,
+                            ModBlocks.SWORDSOUL_SANCTUARY_CORE.get()
+                    ).build(null)
+            );
+    public static final RegistryObject<BlockEntityType<SwordsoulSpiritForgeBlockEntity>>
+            SWORDSOUL_SPIRIT_FORGE_BE =
+            BLOCK_ENTITIES.register(
+                    "swordsoul_spirit_forge",
+                    () -> BlockEntityType.Builder.of(
+                            SwordsoulSpiritForgeBlockEntity::new,
+                            ModBlocks.SWORDSOUL_SPIRIT_FORGE.get()
+                    ).build(null)
+            );
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

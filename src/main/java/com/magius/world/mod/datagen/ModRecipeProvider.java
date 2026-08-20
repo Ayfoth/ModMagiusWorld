@@ -670,6 +670,23 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Items.CHEST)
                 .unlockedBy(getHasName(ModItems.RUBY_BOAT.get()), has(ModItems.RUBY_BOAT.get()))
                 .save(pWriter);
+
+        // Dragonmaid - Éclat du Foyer
+        ShapedRecipeBuilder.shaped(
+                        RecipeCategory.MISC,
+                        ModItems.HEARTH_SHARD.get()
+                )
+                .pattern(" G ")
+                .pattern("ARA")
+                .pattern(" G ")
+                .define('G', Items.GOLD_INGOT)
+                .define('A', Items.AMETHYST_SHARD)
+                .define('R', Items.REDSTONE)
+                .unlockedBy(
+                        "has_amethyst_shard",
+                        has(Items.AMETHYST_SHARD)
+                )
+                .save(pWriter);
     }
         protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List< ItemLike > pIngredients, RecipeCategory
         pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {

@@ -42,6 +42,92 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, MagiusWorldMod.MOD_ID);
 
+    public static final RegistryObject<Block> DRAGONMAID_NURSE_MARKER =
+            BLOCKS.register(
+                    "dragonmaid_nurse_marker",
+                    () -> new DragonmaidNurseMarkerBlock(
+                            BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)
+                                    .strength(-1.0F, 3600000.0F)
+                                    .noLootTable()
+                                    .randomTicks()
+                    )
+            );
+    public static final RegistryObject<Block> DRAGONMAID_ALLEGIANCE_ALTAR =
+            registerBlock(
+                    "dragonmaid_allegiance_altar",
+                    () -> new DragonmaidAllegianceAltarBlock(
+                            BlockBehaviour.Properties
+                                    .copy(Blocks.STONE)
+                                    .strength(3.5f)
+                                    .requiresCorrectToolForDrops()
+                    )
+            );
+    public static final RegistryObject<Block> SWORDSOUL_MO_YE_MARKER =
+            BLOCKS.register(
+                    "swordsoul_mo_ye_marker",
+                    () -> new SwordsoulMoYeMarkerBlock(
+                            BlockBehaviour.Properties.copy(Blocks.PACKED_ICE)
+                                    .strength(-1.0F, 3600000.0F)
+                                    .noLootTable()
+                                    .randomTicks()
+                    )
+            );
+    public static final RegistryObject<Block> SWORDSOUL_BROKEN_BLADE_MARKER =
+            BLOCKS.register(
+                    "swordsoul_broken_blade_marker",
+                    () -> new SwordsoulBrokenBladeMarkerBlock(
+                            BlockBehaviour.Properties.copy(Blocks.PACKED_ICE)
+                                    .strength(-1.0F, 3600000.0F)
+                                    .noLootTable()
+                    )
+            );
+
+    // =====================================================
+// SWORDSOUL
+// =====================================================
+
+    public static final RegistryObject<Block> SWORDSOUL_SPIRIT_FORGE_TERMINAL =
+            registerBlock(
+                    "swordsoul_spirit_forge_terminal",
+                    () -> new SwordsoulSpiritForgeTerminalBlock(
+                            BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_TILES)
+                                    .strength(4.0F, 8.0F)
+                                    .requiresCorrectToolForDrops()
+                                    .lightLevel(state -> 5)
+                                    .sound(SoundType.DEEPSLATE_TILES)
+                    )
+            );
+    public static final RegistryObject<Block> SWORDSOUL_SANCTUARY_CORE =
+            BLOCKS.register(
+                    "swordsoul_sanctuary_core",
+                    () -> new SwordsoulSanctuaryCoreBlock(
+                            BlockBehaviour.Properties.copy(Blocks.REINFORCED_DEEPSLATE)
+                                    .strength(-1.0F, 3600000.0F)
+                                    .noLootTable()
+                                    .lightLevel(state -> 6)
+                    )
+            );
+    public static final RegistryObject<Block> SWORDSOUL_SPIRIT_FORGE =
+            registerBlock(
+                    "swordsoul_spirit_forge",
+                    () -> new SwordsoulSpiritForgeBlock(
+                            BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_TILES)
+                                    .strength(5.0F, 10.0F)
+                                    .requiresCorrectToolForDrops()
+                                    .lightLevel(state -> 10)
+                                    .sound(SoundType.DEEPSLATE_TILES)
+                    )
+            );
+    public static final RegistryObject<Block> SWORDSOUL_SPIRIT_FORGE_MARKER =
+            BLOCKS.register(
+                    "swordsoul_spirit_forge_marker",
+                    () -> new SwordsoulSpiritForgeMarkerBlock(
+                            BlockBehaviour.Properties.copy(Blocks.PACKED_ICE)
+                                    .strength(-1.0F, 3600000.0F)
+                                    .noLootTable()
+                    )
+            );
+
     // Mod Echo du Premier
 
     public static final RegistryObject<Block> NECRO_STONE = registerBlock("necro_stone",
@@ -551,6 +637,23 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.QUARTZ_BLOCK)
                     .strength(3.0F)
                     .sound(SoundType.STONE)));
+
+    // =====================================================
+// DRAGONMAID
+// =====================================================
+
+    public static final RegistryObject<Block> HEARTH_CORE =
+            registerBlock(
+                    "hearth_core",
+                    () -> new HearthCoreBlock(
+                            BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK)
+                                    .strength(3.0f, 6.0f)
+                                    .sound(SoundType.AMETHYST)
+                                    .lightLevel(
+                                            HearthCoreBlock::getLightLevel
+                                    )
+                    )
+            );
 
 
 

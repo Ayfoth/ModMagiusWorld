@@ -19,6 +19,60 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, MagiusWorldMod.MOD_ID);
 
+    public static final RegistryObject<Item> DRAGONMAID_INSIGNIA = ITEMS.register(
+            "dragonmaid_insignia",
+            () -> new DragonmaidInsigniaItem(
+                    new Item.Properties()
+                            .stacksTo(1)
+                            .rarity(Rarity.UNCOMMON)
+            )
+    );
+    //========= Swordsoul ===============//
+
+    public static final RegistryObject<Item> SWORDSOUL_SPIRIT_TOKEN =
+            ITEMS.register(
+                    "swordsoul_spirit_token",
+                    () -> new ColoredNameItem(
+                            new Item.Properties()
+                                    .stacksTo(16)
+                                    .rarity(Rarity.UNCOMMON),
+                            0x55D9FF
+                    )
+            );
+    public static final RegistryObject<Item> SYNCHRONIZED_SPIRIT_BLADE =
+            ITEMS.register(
+                    "synchronized_spirit_blade",
+                    () -> new SynchronizedSpiritBladeItem(
+                            Tiers.DIAMOND,
+                            4,
+                            -2.2F,
+                            new Item.Properties()
+                                    .durability(800)
+                                    .rarity(Rarity.RARE),
+                            0x8FFFEA
+                    )
+            );
+    public static final RegistryObject<Item> SWORDSOUL_EMERGENCE_SEAL =
+            ITEMS.register(
+                    "swordsoul_emergence_seal",
+                    () -> new ColoredNameItem(
+                            new Item.Properties()
+                                    .stacksTo(16)
+                                    .rarity(Rarity.UNCOMMON),
+                            0xB38CFF
+                    )
+            );
+    public static final RegistryObject<Item> BROKEN_SPIRIT_BLADE =
+            ITEMS.register(
+                    "broken_spirit_blade",
+                    () -> new ColoredNameItem(
+                            new Item.Properties()
+                                    .stacksTo(1)
+                                    .rarity(Rarity.UNCOMMON),
+                            0x4D9FC5
+                    )
+            );
+
     // Mod Echo du Premier
     public static final RegistryObject<Item> CORRUPTION_TESTER = ITEMS.register("corruption_tester",
             () -> new CorruptionTesterItem(new Item.Properties()));
@@ -296,6 +350,22 @@ public class ModItems {
                     .stacksTo(1)
                     .rarity(Rarity.RARE)
                     .fireResistant())
+    );
+
+    //========= DragonMaid ===============//
+    public static final RegistryObject<Item> DRAGONMAID_GRIMOIRE = ITEMS.register(
+            "dragonmaid_grimoire",
+            () -> new Item(new Item.Properties()
+                    .stacksTo(1)
+                    .rarity(Rarity.UNCOMMON))
+    );
+    public static final RegistryObject<Item> HEARTH_SHARD = ITEMS.register(
+            "hearth_shard",
+            () -> new Item(
+                    new Item.Properties()
+                            .stacksTo(16)
+                            .rarity(Rarity.UNCOMMON)
+            )
     );
 
 

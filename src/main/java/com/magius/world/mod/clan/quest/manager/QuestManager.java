@@ -42,19 +42,62 @@ public final class QuestManager {
             PlayerQuestData data,
             ResourceLocation questId
     ) {
+
         if (data == null || questId == null) {
             return false;
         }
 
-        if (!QuestRegistry.contains(questId)) {
+        Optional<Quest> questOptional =
+                QuestRegistry.get(questId);
+
+        if (questOptional.isEmpty()) {
             return false;
         }
 
-        if (data.getStatus(questId) != QuestStatus.NOT_STARTED) {
+        if (
+                data.getStatus(questId)
+                        != QuestStatus.NOT_STARTED
+        ) {
             return false;
         }
 
-        data.setStatus(questId, QuestStatus.IN_PROGRESS);
+        Quest quest =
+                questOptional.get();
+
+        /*
+         * =====================================================
+         * PRÉREQUIS
+         * =====================================================
+         */
+
+        ResourceLocation requiredQuest =
+                quest.getRequiredQuest();
+
+        if (requiredQuest != null) {
+
+            /*
+             * La quête précédente doit avoir été
+             * entièrement récompensée.
+             */
+            if (
+                    data.getStatus(requiredQuest)
+                            != QuestStatus.REWARDED
+            ) {
+                return false;
+            }
+        }
+
+        /*
+         * =====================================================
+         * DÉMARRAGE
+         * =====================================================
+         */
+
+        data.setStatus(
+                questId,
+                QuestStatus.IN_PROGRESS
+        );
+
         return true;
     }
 

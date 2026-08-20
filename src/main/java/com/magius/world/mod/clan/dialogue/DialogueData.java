@@ -10,6 +10,7 @@ public class DialogueData {
     private final Component speaker;
     private final Component text;
     private final List<DialogueOption> options;
+    private final DialogueEmotion emotion;
 
     public List<DialogueOption> getOptions() {
         return options;
@@ -18,12 +19,15 @@ public class DialogueData {
     public DialogueData(
             Component title,
             Component speaker,
-            Component text, List<DialogueOption> options
+            Component text,
+            DialogueEmotion emotion,
+            List<DialogueOption> options
     ) {
         this.title = title;
         this.speaker = speaker;
         this.text = text;
         this.options = options;
+        this.emotion = emotion;
     }
 
     public Component getTitle() {
@@ -36,5 +40,8 @@ public class DialogueData {
 
     public Component getText() {
         return text;
+    }
+    public DialogueEmotion getEmotion() {
+        return emotion;
     }
 }

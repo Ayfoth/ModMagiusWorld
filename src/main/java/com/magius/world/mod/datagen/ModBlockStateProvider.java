@@ -5,6 +5,7 @@ import com.magius.world.mod.block.ModBlocks;
 import com.magius.world.mod.block.custom.CornCropBlock;
 import com.magius.world.mod.block.custom.RedWheatCropBlock;
 import com.magius.world.mod.block.custom.StrawberryCropBlock;
+import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -18,6 +19,7 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import com.magius.world.mod.block.custom.HearthCoreBlock;
 
 import java.util.function.Function;
 
@@ -28,6 +30,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        // =====================================================
+// SWORDSOUL
+// =====================================================
+
+        swordsoulSpiritForgeBlock();
         // Mod Echo
         blockWithItem(ModBlocks.NECRO_STONE);
         blockWithItem(ModBlocks.CORRUPTED_SOIL);
@@ -346,6 +353,44 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 models().getExistingFile(modLoc("block/" + blockName(ModBlocks.RUBY_CACHE.get()))));
         simpleBlockWithItem(ModBlocks.BOSS_RUBY_DOOR.get(), cubeAll(ModBlocks.BOSS_RUBY_DOOR.get()));
 
+        // =====================================================
+// DRAGONMAID - CŒUR DU FOYER
+// =====================================================
+
+        ModelFile hearthCoreOff = models().cubeAll(
+                "hearth_core_off",
+                modLoc("block/hearth_core_off")
+        );
+
+        ModelFile hearthCoreOn = models().cubeAll(
+                "hearth_core_on",
+                modLoc("block/hearth_core_on")
+        );
+
+        getVariantBuilder(ModBlocks.HEARTH_CORE.get())
+                .partialState()
+                .with(HearthCoreBlock.ACTIVE, false)
+                .modelForState()
+                .modelFile(hearthCoreOff)
+                .addModel()
+                .partialState()
+                .with(HearthCoreBlock.ACTIVE, true)
+                .modelForState()
+                .modelFile(hearthCoreOn)
+                .addModel();
+
+        simpleBlockItem(
+                ModBlocks.HEARTH_CORE.get(),
+                hearthCoreOff
+        );
+        // =====================================================
+// DRAGONMAID - AUTEL D'ALLÉGEANCE
+// =====================================================
+
+        blockWithItem(
+                ModBlocks.DRAGONMAID_ALLEGIANCE_ALTAR
+        );
+
 
 
     }
@@ -477,5 +522,84 @@ private String blockName(Block block) {
 
         itemModels().withExistingParent(name(block.get()), "item/generated")
                 .texture("layer0", blockTexture(block.get()));
+    }
+    private void swordsoulSpiritForgeBlock() {
+
+        ModelFile model =
+                models()
+                        .withExistingParent(
+                                "swordsoul_spirit_forge",
+                                mcLoc("block/block")
+                        )
+
+                        .texture(
+                                "front",
+                                modLoc("block/swordsoul_spirit_forge_front")
+                        )
+
+                        .texture(
+                                "back",
+                                modLoc("block/swordsoul_spirit_forge_back")
+                        )
+
+                        .texture(
+                                "side",
+                                modLoc("block/swordsoul_spirit_forge_side")
+                        )
+
+                        .texture(
+                                "top",
+                                modLoc("block/swordsoul_spirit_forge_top")
+                        )
+
+                        .texture(
+                                "bottom",
+                                modLoc("block/swordsoul_spirit_forge_bottom")
+                        )
+
+                        .texture(
+                                "particle",
+                                modLoc("block/swordsoul_spirit_forge_side")
+                        )
+
+                        .element()
+                        .from(0, 0, 0)
+                        .to(16, 16, 16)
+
+                        .face(Direction.NORTH)
+                        .texture("#front")
+                        .end()
+
+                        .face(Direction.SOUTH)
+                        .texture("#back")
+                        .end()
+
+                        .face(Direction.WEST)
+                        .texture("#side")
+                        .end()
+
+                        .face(Direction.EAST)
+                        .texture("#side")
+                        .end()
+
+                        .face(Direction.UP)
+                        .texture("#top")
+                        .end()
+
+                        .face(Direction.DOWN)
+                        .texture("#bottom")
+                        .end()
+
+                        .end();
+
+        horizontalBlock(
+                ModBlocks.SWORDSOUL_SPIRIT_FORGE.get(),
+                model
+        );
+
+        simpleBlockItem(
+                ModBlocks.SWORDSOUL_SPIRIT_FORGE.get(),
+                model
+        );
     }
 }

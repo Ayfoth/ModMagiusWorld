@@ -1,0 +1,41 @@
+{
+  "id": "magiusworldmod:dragonmaid_origins",
+  "clan": "magiusworldmod:dragonmaid",
+  "order": 1,
+  "title": "Les Origines Dragonmaid",
+  "short_title": "Les Origines",
+  "description": "Les premières traces de l'héritage Dragonmaid.",
+  "icon": "minecraft:enchanted_book",
+
+  "unlock": {
+    "type": "quest",
+    "target": "magiusworldmod:dragonmaid_first_contact"
+  },
+
+  "pages": [
+    {
+      "title": "Les Origines",
+      "text": [
+        "Bien avant que leur nom ne soit connu des hommes, les Dragonmaid veillaient déjà sur un héritage oublié.",
+        "",
+        "Leur histoire est liée aux anciens dragons et aux pactes qui unirent autrefois leurs deux mondes."
+      ]
+    },
+    {
+      "title": "Un héritage ancien",
+      "text": [
+        "Les premières Dragonmaid ne furent pas seulement des servantes.",
+        "",
+        "Elles furent les gardiennes d'un savoir que les dragons refusèrent de laisser disparaître."
+      ]
+    },
+    {
+      "title": "Le pacte",
+      "text": [
+        "De génération en génération, leur rôle fut transmis.",
+        "",
+        "Protéger le foyer, préserver les chroniques et veiller sur ceux qui avaient gagné leur confiance."
+      ]
+    }
+  ]
+}

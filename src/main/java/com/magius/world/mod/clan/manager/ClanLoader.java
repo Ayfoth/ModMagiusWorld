@@ -1,6 +1,8 @@
 package com.magius.world.mod.clan.manager;
 
 import com.magius.world.mod.clan.clans.dragonmaid.DragonmaidClan;
+import com.magius.world.mod.clan.clans.swordsoul.SwordsoulClan;
+import com.magius.world.mod.clan.reward.DragonmaidClanRewards;
 
 public final class ClanLoader {
 
@@ -8,6 +10,14 @@ public final class ClanLoader {
     }
 
     public static void registerClans() {
-        ClanRegistry.register(new DragonmaidClan());
+
+        // Enregistrement des clans
+        ClanRegistry.register(
+                new DragonmaidClan()
+        );
+
+        ClanRegistry.register(
+                new SwordsoulClan()
+        );
     }
 }

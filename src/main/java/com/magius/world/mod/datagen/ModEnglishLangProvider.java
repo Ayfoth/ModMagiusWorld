@@ -14,6 +14,43 @@ public class ModEnglishLangProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+        add(
+                ModItems.DRAGONMAID_INSIGNIA.get(),
+                "Dragonmaid Insignia"
+        );
+        add(
+                ModItems.SWORDSOUL_SPIRIT_TOKEN.get(),
+                "Swordsoul Spirit Token"
+        );
+        add(
+                ModItems.SYNCHRONIZED_SPIRIT_BLADE.get(),
+                "Synchronized Spirit Blade VIII"
+        );
+        add(
+                "container.magiusworldmod.swordsoul_spirit_forge",
+                "Spirit Synchronization Forge"
+        );
+        add(
+                ModItems.SWORDSOUL_EMERGENCE_SEAL.get(),
+                "Swordsoul Emergence Seal"
+        );
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.ability",
+                "Right-click: Synchronized Spirit Slash"
+        );
+
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.details",
+                "Range: 5 blocks • Damage: 6 • Cooldown: 4 s"
+        );
+        add(
+                ModBlocks.DRAGONMAID_ALLEGIANCE_ALTAR.get(),
+                "Dragonmaid Allegiance Altar"
+        );
+        add(
+                ModItems.BROKEN_SPIRIT_BLADE.get(),
+                "Broken Spirit Blade"
+        );
         // Echo du Premier
         add(ModItems.CORRUPTION_TESTER.get(), "Corruption Tester");
         add(ModItems.ESSENCE_WITHER.get(), "Wither Essence");
@@ -261,6 +298,18 @@ public class ModEnglishLangProvider extends LanguageProvider {
         add(ModItems.SCARLET_NETWORK_CONTRACT.get(), "Scarlet Network Contract");
         add(ModItems.RUBY_LOCATOR.get(), "Ruby Locator");
         add(ModItems.RED_KEY.get(), "Red Key");
+
+        add(ModItems.DRAGONMAID_GRIMOIRE.get(), "Dragonmaid Grimoire");
+        add(ModItems.HEARTH_SHARD.get(), "Hearth Shard");
+        add(
+                "key.categories.magiusworldmod.dragonmaid",
+                "Dragonmaid"
+        );
+
+        add(
+                "key.magiusworldmod.dragon_awakening",
+                "Draconic Awakening"
+        );
 
         add("entity.minecraft.villager.magiusworldmod.soundmaster", "Sound Master");
         add("entity.magiusworldmod.mod_chest_boat", "Boat With Chest");
