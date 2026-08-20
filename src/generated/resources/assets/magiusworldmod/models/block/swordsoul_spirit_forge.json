@@ -1,0 +1,45 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#side"
+        },
+        "north": {
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#back"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#side"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "back": "magiusworldmod:block/swordsoul_spirit_forge_back",
+    "bottom": "magiusworldmod:block/swordsoul_spirit_forge_bottom",
+    "front": "magiusworldmod:block/swordsoul_spirit_forge_front",
+    "particle": "magiusworldmod:block/swordsoul_spirit_forge_side",
+    "side": "magiusworldmod:block/swordsoul_spirit_forge_side",
+    "top": "magiusworldmod:block/swordsoul_spirit_forge_top"
+  }
+}
