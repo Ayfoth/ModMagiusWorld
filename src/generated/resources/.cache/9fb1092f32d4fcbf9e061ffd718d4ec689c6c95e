@@ -1,4 +1,4 @@
-// 1.20.1	2026-05-22T11:42:44.2590438	Recipes
+// 1.20.1	2026-08-12T11:01:52.0863882	Recipes
 94897d3b30799053c48eea747538d9631a213da1 data/magiusworldmod/advancements/recipes/building_blocks/black_mossy_necro_stone_bricks.json
 578762400e782104fcf49678864a521fc958b02b data/magiusworldmod/advancements/recipes/building_blocks/broken_rock.json
 89f46a292a7dec69d65aa9243f1ed8d7190ecc38 data/magiusworldmod/advancements/recipes/building_blocks/chiseled_necro_stone_bricks.json
@@ -49,6 +49,7 @@ deca0489d452949c7c729d4861ee45cb72e2aed4 data/magiusworldmod/advancements/recipe
 235a3798663df3afadbc425c3c5d935d95a11cc1 data/magiusworldmod/advancements/recipes/misc/essence_wither.json
 12cff4e57c440548372e3a0d999ef1d07934603b data/magiusworldmod/advancements/recipes/misc/fire_founderie.json
 f503fb3b0188ad250dee917f05e87cc3f80fa705 data/magiusworldmod/advancements/recipes/misc/gem_polishing_station.json
+cd58773d01cd8c2eabd250ada050f4b4d4a456b4 data/magiusworldmod/advancements/recipes/misc/hearth_shard.json
 195ac42101ed18127b037482968bd4e187b79938 data/magiusworldmod/advancements/recipes/misc/rubis.json
 43f5f8f0076b390f2d3d6e1a0857df91411eaa86 data/magiusworldmod/advancements/recipes/misc/rubis_axe.json
 f8c3829c4fc77b805b54a8d945345466dd514555 data/magiusworldmod/advancements/recipes/misc/rubis_block.json
@@ -124,6 +125,7 @@ abe9cc4ca41f09581a9a0a588d47881611cb8ff3 data/magiusworldmod/recipes/cut_necro_s
 3dfc9a8175a3df58ceb9d4b15b337179458b0067 data/magiusworldmod/recipes/fire_founderie.json
 4b9f5a36dad8d120d266c046d5b55ca321813e16 data/magiusworldmod/recipes/gem_polishing_station.json
 6026d2157b840d7cc5fbb7d15de30c5c732a8f5d data/magiusworldmod/recipes/hardened_flesh.json
+68181b75b62e18eafc319adb41cbc4876e4c533e data/magiusworldmod/recipes/hearth_shard.json
 44df7649f62b157bc4b5b63e07e2072a686aad47 data/magiusworldmod/recipes/infused_necro_stone.json
 d27bbc58cfdefd4f510ffd58b2a8d845d0211851 data/magiusworldmod/recipes/living_axe.json
 f575cc6dc727d48fdfd4e8c0ba403c839aa7e7b6 data/magiusworldmod/recipes/living_rock.json

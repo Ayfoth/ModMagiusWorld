@@ -46,18 +46,33 @@ public final class ClanManager {
         return data != null && data.hasClan();
     }
 
-    public static void joinClan(PlayerClanData data, ResourceLocation clanId) {
+    public static void joinClan(
+            PlayerClanData data,
+            ResourceLocation clanId
+    ) {
+
         if (data == null || clanId == null) {
             return;
         }
 
-        if (data.hasClan()) {
-            return;
-        }
+        /*
+         * Si le joueur n'a jamais rejoint ce clan,
+         * getProgress() crée sa progression à zéro.
+         *
+         * S'il l'avait déjà rejoint auparavant,
+         * les anciennes données sont simplement réutilisées.
+         */
+        data.getProgress(clanId);
 
-        data.setClanId(clanId);
-        data.setPrestige(0);
-        data.setRank(0);
+        /*
+         * Le clan devient maintenant le clan actif.
+         */
+        data.setActiveClan(clanId);
+
+        /*
+         * Important :
+         * on ne remet PLUS le prestige ni le rang à zéro.
+         */
     }
 
     public static void addPrestige(PlayerClanData data, int amount) {
@@ -69,12 +84,18 @@ public final class ClanManager {
         updateRank(data);
     }
 
-    public static void leaveClan(PlayerClanData data) {
+    public static void leaveClan(
+            PlayerClanData data
+    ) {
+
         if (data == null) {
             return;
         }
 
-        data.reset();
+        /*
+         * Quitter un clan ne détruit plus sa progression.
+         */
+        data.leaveActiveClan();
     }
     private static void updateRank(PlayerClanData data) {
 

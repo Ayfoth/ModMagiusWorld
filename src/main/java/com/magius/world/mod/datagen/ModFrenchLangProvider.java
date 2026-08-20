@@ -14,6 +14,45 @@ public class ModFrenchLangProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+
+        add(
+                ModItems.DRAGONMAID_INSIGNIA.get(),
+                "Insigne Dragonmaid"
+        );
+        add(
+                ModItems.SWORDSOUL_SPIRIT_TOKEN.get(),
+                "Jeton spirituel Swordsoul"
+        );
+        add(
+                ModItems.SYNCHRONIZED_SPIRIT_BLADE.get(),
+                "Lame spirituelle synchronisée VIII"
+        );
+        add(
+                "container.magiusworldmod.swordsoul_spirit_forge",
+                "Forge de synchronisation spirituelle"
+        );
+        add(
+                ModItems.SWORDSOUL_EMERGENCE_SEAL.get(),
+                "Sceau de l'Émergence Swordsoul"
+        );
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.ability",
+                "Clic droit : Coupe spirituelle synchronisée"
+        );
+
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.details",
+                "Portée : 5 blocs • Dégâts : 6 • Recharge : 4 s"
+        );
+
+        add(
+                ModBlocks.DRAGONMAID_ALLEGIANCE_ALTAR.get(),
+                "Autel d'Allégeance Dragonmaid"
+        );
+        add(
+                ModItems.BROKEN_SPIRIT_BLADE.get(),
+                "Lame spirituelle brisée"
+        );
         // Echo du Premier
         add(ModItems.CORRUPTION_TESTER.get(), "Testeur de corruption");
         add(ModItems.ESSENCE_WITHER.get(), "Essence de Wither");
@@ -255,6 +294,18 @@ public class ModFrenchLangProvider extends LanguageProvider {
         add(ModItems.SCARLET_NETWORK_CONTRACT.get(), "Contrat du Réseau Écarlate");
         add(ModItems.RUBY_LOCATOR.get(), "Boussole des Terres Rubis");
         add(ModItems.RED_KEY.get(), "Clé Rouge");
+
+        add(ModItems.DRAGONMAID_GRIMOIRE.get(), "Grimoire Dragonmaid");
+        add(ModItems.HEARTH_SHARD.get(), "Éclat du Foyer");
+        add(
+                "key.categories.magiusworldmod.dragonmaid",
+                "Dragonmaid"
+        );
+
+        add(
+                "key.magiusworldmod.dragon_awakening",
+                "Réveil Draconique"
+        );
 
         add("tooltip.magiusworldmod.ruby_heart.effect", "Accorde une régénération tant qu'il est équipé.");
         add("tooltip.magiusworldmod.ruby_heart.lore", "Un cœur ancien, chaud comme une braise éternelle.");

@@ -18,6 +18,12 @@ public class ModMenuTypes {
             registerMenuType("gem_polishing_menu", GemPolishingStationMenu::new);
     public static final RegistryObject<MenuType<FireFounderieMenu>> FIRE_FOUNDERIE_MENU =
             registerMenuType("fire_founderie_menu", FireFounderieMenu::new);
+    public static final RegistryObject<MenuType<SwordsoulSpiritForgeMenu>>
+            SWORDSOUL_SPIRIT_FORGE_MENU =
+            registerMenuType(
+                    "swordsoul_spirit_forge_menu",
+                    SwordsoulSpiritForgeMenu::new
+            );
 
 
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory) {

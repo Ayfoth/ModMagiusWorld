@@ -24,9 +24,8 @@ public class DragonmaidFirstQuest implements Quest {
 
     @Override
     public String getDescription() {
-        return "Rencontrez une représentante du clan Dragonmaid.";
+        return "Retrouvez le Grimoire Dragonmaid.";
     }
-
     @Override
     public int getPrestigeReward() {
         return 50;

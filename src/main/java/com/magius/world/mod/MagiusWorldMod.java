@@ -1,8 +1,17 @@
 package com.magius.world.mod;
 
 import com.magius.world.mod.block.ModBlocks;
+import com.magius.world.mod.clan.chronicle.event.ChronicleReloadEvents;
 import com.magius.world.mod.clan.data.PlayerClanData;
 import com.magius.world.mod.clan.quest.data.PlayerQuestData;
+import com.magius.world.mod.clan.quest.dragonmaid.DragonmaidFirstQuestEvents;
+import com.magius.world.mod.clan.quest.dragonmaid.NurseDragonmaidNpcEvents;
+import com.magius.world.mod.clan.quest.event.QuestSyncEvents;
+import com.magius.world.mod.clan.quest.swordsoul.SwordsoulFirstQuestEvents;
+import com.magius.world.mod.clan.reward.DragonmaidClanRewards;
+import com.magius.world.mod.clan.swordsoul.SwordsoulSoulEvents;
+import com.magius.world.mod.clan.theme.ModClanThemes;
+import com.magius.world.mod.client.gui.SwordsoulSynchronizationForgeScreen;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import com.magius.world.mod.clan.event.ClanCapabilityEvents;
 import com.magius.world.mod.clan.command.ClanCommand;
@@ -59,6 +68,7 @@ import org.slf4j.Logger;
 import net.minecraft.client.renderer.entity.SheepRenderer;
 import com.magius.world.mod.entity.client.RubyBoarRenderer;
 import com.magius.world.mod.entity.client.RubyWispRenderer;
+import com.magius.world.mod.worldgen.structure.ModStructureTypes;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(MagiusWorldMod.MOD_ID)
@@ -67,16 +77,21 @@ public class MagiusWorldMod
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "magiusworldmod";
     // Directly reference a slf4j logger
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
 
     public MagiusWorldMod(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
 
+        ModStructureTypes.STRUCTURE_TYPES.register(
+                modEventBus
+        );
+
         ModCreativeModTabs.register(modEventBus);
         ClanLoader.registerClans();
         QuestLoader.registerQuests();
+        ModClanThemes.register();
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
@@ -110,6 +125,24 @@ public class MagiusWorldMod
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(ClanCapabilityEvents.class);
         MinecraftForge.EVENT_BUS.register(QuestCapabilityEvents.class);
+        MinecraftForge.EVENT_BUS.register(
+                ChronicleReloadEvents.class
+        );
+        MinecraftForge.EVENT_BUS.register(
+                QuestSyncEvents.class
+        );
+        MinecraftForge.EVENT_BUS.register(
+                DragonmaidFirstQuestEvents.class
+        );
+        MinecraftForge.EVENT_BUS.register(
+                SwordsoulFirstQuestEvents.class
+        );
+        MinecraftForge.EVENT_BUS.register(
+                SwordsoulSoulEvents.class
+        );
+//        MinecraftForge.EVENT_BUS.register(
+//                NurseDragonmaidNpcEvents.class
+//        );
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -122,6 +155,13 @@ public class MagiusWorldMod
         event.enqueueWork(() -> {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.CATMINT.getId(), ModBlocks.POTTED_CATMINT);
             ComposterBlock.COMPOSTABLES.put(ModItems.DEAD_LEAVES.get(), 0.30f);
+
+            /*
+             * Les items Forge sont maintenant enregistrés :
+             * on peut construire les récompenses contenant
+             * des ItemStack.
+             */
+            DragonmaidClanRewards.register();
 
           //  SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeRules());
         });
@@ -178,6 +218,10 @@ public class MagiusWorldMod
 
             MenuScreens.register(ModMenuTypes.GEM_POLISHING_MENU.get(), GemPolishingStationScreen::new);
             MenuScreens.register(ModMenuTypes.FIRE_FOUNDERIE_MENU.get(), FireFounderieScreen::new);
+            MenuScreens.register(
+                    ModMenuTypes.SWORDSOUL_SPIRIT_FORGE_MENU.get(),
+                    SwordsoulSynchronizationForgeScreen::new
+            );
         }
     }
 }

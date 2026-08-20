@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Optional;
+import com.magius.world.mod.clan.quest.dragonmaid.DragonmaidFirstQuest;
 
 public final class QuestRegistry {
 
@@ -15,6 +16,11 @@ public final class QuestRegistry {
             new LinkedHashMap<>();
 
     private QuestRegistry() {
+    }
+    public static void bootstrap() {
+
+        register(new DragonmaidFirstQuest());
+
     }
 
     public static void register(Quest quest) {

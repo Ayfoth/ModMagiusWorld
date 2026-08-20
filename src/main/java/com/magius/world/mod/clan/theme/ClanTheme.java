@@ -1,5 +1,6 @@
 package com.magius.world.mod.clan.theme;
 
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
 public class ClanTheme {
@@ -7,6 +8,9 @@ public class ClanTheme {
     private final ResourceLocation backgroundTexture;
     private final ResourceLocation frameTexture;
     private final ResourceLocation icon;
+
+    private final Component displayName;
+    private final Component reputationName;
 
     private final int accentColor;
     private final int titleColor;
@@ -20,6 +24,8 @@ public class ClanTheme {
             ResourceLocation backgroundTexture,
             ResourceLocation frameTexture,
             ResourceLocation icon,
+            Component displayName,
+            Component reputationName,
             int accentColor,
             int titleColor,
             int textColor,
@@ -30,6 +36,8 @@ public class ClanTheme {
         this.backgroundTexture = backgroundTexture;
         this.frameTexture = frameTexture;
         this.icon = icon;
+        this.displayName = displayName;
+        this.reputationName = reputationName;
 
         this.accentColor = accentColor;
         this.titleColor = titleColor;
@@ -50,6 +58,14 @@ public class ClanTheme {
 
     public ResourceLocation getIcon() {
         return icon;
+    }
+
+    public Component getDisplayName() {
+        return displayName;
+    }
+
+    public Component getReputationName() {
+        return reputationName;
     }
 
     public int getAccentColor() {

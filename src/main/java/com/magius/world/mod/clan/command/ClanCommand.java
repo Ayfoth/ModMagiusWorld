@@ -1,13 +1,16 @@
 package com.magius.world.mod.clan.command;
 
+import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.clan.api.Clan;
 import com.magius.world.mod.clan.manager.ClanManager;
 import com.magius.world.mod.clan.manager.ClanRegistry;
+import com.magius.world.mod.clan.manager.ClanSyncManager;
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.commands.CommandSourceStack;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import com.mojang.brigadier.arguments.StringArgumentType;
 
@@ -17,6 +20,268 @@ public class ClanCommand {
 
         dispatcher.register(
                 Commands.literal("clan")
+                        .then(
+                                Commands.literal("souls")
+                                        .requires(source -> source.hasPermission(2))
+
+                                        // /clan souls get
+                                        .then(
+                                                Commands.literal("get")
+                                                        .executes(context -> {
+
+                                                            ServerPlayer player =
+                                                                    context.getSource()
+                                                                            .getPlayerOrException();
+
+                                                            var optionalData =
+                                                                    ClanManager.get(player)
+                                                                            .resolve();
+
+                                                            if (optionalData.isEmpty()) {
+
+                                                                player.sendSystemMessage(
+                                                                        Component.literal(
+                                                                                "§cImpossible de charger les données de clan."
+                                                                        )
+                                                                );
+
+                                                                return 0;
+                                                            }
+
+                                                            var data = optionalData.get();
+
+                                                            ResourceLocation swordsoulId =
+                                                                    ResourceLocation.fromNamespaceAndPath(
+                                                                            MagiusWorldMod.MOD_ID,
+                                                                            "swordsoul"
+                                                                    );
+
+                                                            int amount =
+                                                                    data.getClanCurrency(
+                                                                            swordsoulId
+                                                                    );
+
+                                                            player.sendSystemMessage(
+                                                                    Component.literal(
+                                                                            "§bÂmes Swordsoul : §f"
+                                                                                    + amount
+                                                                    )
+                                                            );
+
+                                                            return 1;
+                                                        })
+                                        )
+
+                                        // /clan souls add <amount>
+                                        .then(
+                                                Commands.literal("add")
+                                                        .then(
+                                                                Commands.argument(
+                                                                                "amount",
+                                                                                IntegerArgumentType.integer(1)
+                                                                        )
+                                                                        .executes(context -> {
+
+                                                                            ServerPlayer player =
+                                                                                    context.getSource()
+                                                                                            .getPlayerOrException();
+
+                                                                            var optionalData =
+                                                                                    ClanManager.get(player)
+                                                                                            .resolve();
+
+                                                                            if (optionalData.isEmpty()) {
+
+                                                                                player.sendSystemMessage(
+                                                                                        Component.literal(
+                                                                                                "§cImpossible de charger les données de clan."
+                                                                                        )
+                                                                                );
+
+                                                                                return 0;
+                                                                            }
+
+                                                                            var data =
+                                                                                    optionalData.get();
+
+                                                                            int amount =
+                                                                                    IntegerArgumentType.getInteger(
+                                                                                            context,
+                                                                                            "amount"
+                                                                                    );
+
+                                                                            ResourceLocation swordsoulId =
+                                                                                    ResourceLocation.fromNamespaceAndPath(
+                                                                                            MagiusWorldMod.MOD_ID,
+                                                                                            "swordsoul"
+                                                                                    );
+
+                                                                            data.addClanCurrency(
+                                                                                    swordsoulId,
+                                                                                    amount
+                                                                            );
+
+                                                                            ClanSyncManager.sync(
+                                                                                    player
+                                                                            );
+
+                                                                            player.sendSystemMessage(
+                                                                                    Component.literal(
+                                                                                            "§b+"
+                                                                                                    + amount
+                                                                                                    + " Âmes Swordsoul"
+                                                                                    )
+                                                                            );
+
+                                                                            player.sendSystemMessage(
+                                                                                    Component.literal(
+                                                                                            "§eNouveau solde : §f"
+                                                                                                    + data.getClanCurrency(
+                                                                                                    swordsoulId
+                                                                                            )
+                                                                                    )
+                                                                            );
+
+                                                                            return 1;
+                                                                        })
+                                                        )
+                                        )
+                        )
+
+                        .then(
+                                Commands.literal("currency")
+                                        .requires(source -> source.hasPermission(2))
+
+                                        // =========================================
+                                        // /clan currency get
+                                        // =========================================
+
+                                        .then(
+                                                Commands.literal("get")
+                                                        .executes(context -> {
+
+                                                            ServerPlayer player =
+                                                                    context.getSource()
+                                                                            .getPlayerOrException();
+
+                                                            var optionalData =
+                                                                    ClanManager.get(player)
+                                                                            .resolve();
+
+                                                            if (optionalData.isEmpty()) {
+
+                                                                player.sendSystemMessage(
+                                                                        Component.literal(
+                                                                                "§cImpossible de charger les données de clan."
+                                                                        )
+                                                                );
+
+                                                                return 0;
+                                                            }
+
+                                                            var data =
+                                                                    optionalData.get();
+
+                                                            ResourceLocation dragonmaidId =
+                                                                    ResourceLocation.fromNamespaceAndPath(
+                                                                            MagiusWorldMod.MOD_ID,
+                                                                            "dragonmaid"
+                                                                    );
+
+                                                            int amount =
+                                                                    data.getClanCurrency(
+                                                                            dragonmaidId
+                                                                    );
+
+                                                            player.sendSystemMessage(
+                                                                    Component.literal(
+                                                                            "§6Sceaux du Foyer : §f"
+                                                                                    + amount
+                                                                    )
+                                                            );
+
+                                                            return 1;
+                                                        })
+                                        )
+
+                                        // =========================================
+                                        // /clan currency add <amount>
+                                        // =========================================
+
+                                        .then(
+                                                Commands.literal("add")
+                                                        .then(
+                                                                Commands.argument(
+                                                                                "amount",
+                                                                                IntegerArgumentType.integer(1)
+                                                                        )
+                                                                        .executes(context -> {
+
+                                                                            ServerPlayer player =
+                                                                                    context.getSource()
+                                                                                            .getPlayerOrException();
+
+                                                                            var optionalData =
+                                                                                    ClanManager.get(player)
+                                                                                            .resolve();
+
+                                                                            if (optionalData.isEmpty()) {
+
+                                                                                player.sendSystemMessage(
+                                                                                        Component.literal(
+                                                                                                "§cImpossible de charger les données de clan."
+                                                                                        )
+                                                                                );
+
+                                                                                return 0;
+                                                                            }
+
+                                                                            var data =
+                                                                                    optionalData.get();
+
+                                                                            int amount =
+                                                                                    IntegerArgumentType.getInteger(
+                                                                                            context,
+                                                                                            "amount"
+                                                                                    );
+
+                                                                            ResourceLocation dragonmaidId =
+                                                                                    ResourceLocation.fromNamespaceAndPath(
+                                                                                            MagiusWorldMod.MOD_ID,
+                                                                                            "dragonmaid"
+                                                                                    );
+
+                                                                            data.addClanCurrency(
+                                                                                    dragonmaidId,
+                                                                                    amount
+                                                                            );
+
+                                                                            ClanSyncManager.sync(
+                                                                                    player
+                                                                            );
+
+                                                                            player.sendSystemMessage(
+                                                                                    Component.literal(
+                                                                                            "§a+"
+                                                                                                    + amount
+                                                                                                    + " Sceaux du Foyer"
+                                                                                    )
+                                                                            );
+
+                                                                            player.sendSystemMessage(
+                                                                                    Component.literal(
+                                                                                            "§eNouveau solde : §f"
+                                                                                                    + data.getClanCurrency(
+                                                                                                    dragonmaidId
+                                                                                            )
+                                                                                    )
+                                                                            );
+
+                                                                            return 1;
+                                                                        })
+                                                        )
+                                        )
+                        )
 
                         .then(
                                 Commands.literal("prestige")
@@ -163,14 +428,7 @@ public class ClanCommand {
 
                                                             var data = optionalData.get();
 
-                                                            if (data.hasClan()) {
-                                                                player.sendSystemMessage(
-                                                                        Component.literal(
-                                                                                "§cTu appartiens déjà à un clan."
-                                                                        )
-                                                                );
-                                                                return 0;
-                                                            }
+
 
                                                             var clanOptional = ClanRegistry.get(clanName);
 

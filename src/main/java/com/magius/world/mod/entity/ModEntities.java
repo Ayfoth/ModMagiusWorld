@@ -3,13 +3,18 @@ package com.magius.world.mod.entity;
 import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.entity.custom.*;
 
+import com.magius.world.mod.entity.dragonmaid.DragonmaidEmissaryEntity;
+import com.magius.world.mod.entity.dragonmaid.DragonmaidNurseEntity;
 import com.magius.world.mod.entity.echo.TempestBlaze;
+import com.magius.world.mod.entity.swordsoul.SwordsoulEmissaryEntity;
+import com.magius.world.mod.entity.swordsoul.SwordsoulMoYeEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import com.magius.world.mod.entity.dragonmaid.DragonmaidTinkhecEntity;
 
 public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
@@ -70,6 +75,62 @@ public class ModEntities {
                     () -> EntityType.Builder.<RubyBossEntity>of(RubyBossEntity::new, MobCategory.MONSTER)
                             .sized(0.9F, 2.8F)
                             .build("ruby_boss"));
+
+    public static final RegistryObject<EntityType<DragonmaidTinkhecEntity>> DRAGONMAID_TINKHEC =
+            ENTITY_TYPES.register(
+                    "dragonmaid_tinkhec",
+                    () -> EntityType.Builder.of(
+                                    DragonmaidTinkhecEntity::new,
+                                    MobCategory.CREATURE
+                            )
+                            .sized(0.6F, 1.8F)
+                            .clientTrackingRange(8)
+                            .build("dragonmaid_tinkhec")
+            );
+    public static final RegistryObject<EntityType<DragonmaidNurseEntity>> DRAGONMAID_NURSE =
+            ENTITY_TYPES.register(
+                    "dragonmaid_nurse",
+                    () -> EntityType.Builder.of(
+                                    DragonmaidNurseEntity::new,
+                                    MobCategory.CREATURE
+                            )
+                            .sized(0.6F, 1.8F)
+                            .clientTrackingRange(8)
+                            .build("dragonmaid_nurse")
+            );
+    public static final RegistryObject<EntityType<DragonmaidEmissaryEntity>> DRAGONMAID_EMISSARY =
+            ENTITY_TYPES.register(
+                    "dragonmaid_emissary",
+                    () -> EntityType.Builder.of(
+                                    DragonmaidEmissaryEntity::new,
+                                    MobCategory.CREATURE
+                            )
+                            .sized(0.6F, 1.8F)
+                            .clientTrackingRange(8)
+                            .build("dragonmaid_emissary")
+            );
+    public static final RegistryObject<EntityType<SwordsoulEmissaryEntity>> SWORDSOUL_EMISSARY =
+            ENTITY_TYPES.register(
+                    "swordsoul_emissary",
+                    () -> EntityType.Builder.of(
+                                    SwordsoulEmissaryEntity::new,
+                                    MobCategory.CREATURE
+                            )
+                            .sized(0.6F, 1.8F)
+                            .clientTrackingRange(8)
+                            .build("swordsoul_emissary")
+            );
+    public static final RegistryObject<EntityType<SwordsoulMoYeEntity>> SWORDSOUL_MO_YE =
+            ENTITY_TYPES.register(
+                    "swordsoul_mo_ye",
+                    () -> EntityType.Builder.of(
+                                    SwordsoulMoYeEntity::new,
+                                    MobCategory.CREATURE
+                            )
+                            .sized(0.6F, 1.8F)
+                            .clientTrackingRange(8)
+                            .build("swordsoul_mo_ye")
+            );
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

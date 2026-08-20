@@ -1,0 +1,49 @@
+{
+  "id": "magiusworldmod:dragonmaid_servants",
+  "clan": "magiusworldmod:dragonmaid",
+  "order": 2,
+  "title": "Les Servantes du Dragon",
+  "short_title": "Les Servantes",
+  "description": "Le secret qui unit les servantes à leur véritable nature draconique.",
+  "icon": "minecraft:dragon_breath",
+
+  "unlock": {
+    "type": "quest",
+    "target": "magiusworldmod:dragonmaid_unexpected_guest"
+  },
+
+  "pages": [
+    {
+      "title": "Les Servantes du Dragon",
+      "text": [
+        "Les premières servantes ne furent pas choisies pour leur force, mais pour leur capacité à vivre entre deux mondes.",
+        "",
+        "Sous une apparence humaine, elles pouvaient approcher ceux qui auraient fui devant leur véritable nature."
+      ]
+    },
+    {
+      "title": "Le sang des dragons",
+      "text": [
+        "Derrière leurs gestes raffinés et leur dévouement demeure pourtant le sang des dragons.",
+        "",
+        "Chacune possède une forme véritable, ancienne et puissante, qu'elle ne révèle que lorsque les circonstances l'exigent."
+      ]
+    },
+    {
+      "title": "Le retour de Nurse",
+      "text": [
+        "Le réveil de Nurse est un signe que l'appel du Grimoire n'est pas resté sans réponse.",
+        "",
+        "Après un long silence, une première servante a retrouvé le chemin du clan."
+      ]
+    },
+    {
+      "title": "Un nouveau réveil",
+      "text": [
+        "Si le Grimoire continue de résonner à travers le monde, Nurse ne sera probablement pas la dernière.",
+        "",
+        "D'autres Dragonmaids pourraient bientôt s'éveiller et rejoindre à leur tour le foyer oublié."
+      ]
+    }
+  ]
+}
