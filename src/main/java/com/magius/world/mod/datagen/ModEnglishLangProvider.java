@@ -19,13 +19,54 @@ public class ModEnglishLangProvider extends LanguageProvider {
                 "Dragonmaid Insignia"
         );
         add(
-                ModItems.SWORDSOUL_SPIRIT_TOKEN.get(),
-                "Swordsoul Spirit Token"
+                ModItems.SWORDSOUL_SPIRIT_TOKEN_II.get(),
+                "Swordsoul Spirit Token II"
         );
+
+        add(
+                ModItems.SWORDSOUL_SPIRIT_TOKEN.get(),
+                "Swordsoul Spirit Token IV"
+        );
+
+        add(
+                ModItems.SWORDSOUL_SPIRIT_TOKEN_VI.get(),
+                "Swordsoul Spirit Token VI"
+        );
+
+        add(
+                ModItems.SWORDSOUL_SPIRIT_TOKEN_VIII.get(),
+                "Swordsoul Spirit Token VIII"
+        );
+        add(
+                ModItems.SYNCHRONIZED_SPIRIT_BLADE_VI.get(),
+                "Synchronized Spirit Blade VI"
+        );
+
         add(
                 ModItems.SYNCHRONIZED_SPIRIT_BLADE.get(),
                 "Synchronized Spirit Blade VIII"
         );
+
+        add(
+                ModItems.SYNCHRONIZED_SPIRIT_BLADE_X.get(),
+                "Synchronized Spirit Blade X"
+        );
+
+        add(
+                ModItems.SYNCHRONIZED_SPIRIT_BLADE_XII.get(),
+                "Synchronized Spirit Blade XII"
+        );
+
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.level",
+                "Synchronization Level: %s"
+        );
+
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.dynamic_details",
+                "Range: %s blocks • Damage: %s • Cooldown: %s s"
+        );
+
         add(
                 "container.magiusworldmod.swordsoul_spirit_forge",
                 "Spirit Synchronization Forge"
@@ -33,6 +74,113 @@ public class ModEnglishLangProvider extends LanguageProvider {
         add(
                 ModItems.SWORDSOUL_EMERGENCE_SEAL.get(),
                 "Swordsoul Emergence Seal"
+        );
+        add(
+                ModItems.SWORDSOUL_WATER_SEAL.get(),
+                "Swordsoul Water Seal"
+        );
+
+        add(
+                ModItems.SWORDSOUL_FIRE_SEAL.get(),
+                "Swordsoul Fire Seal"
+        );
+
+        add(
+                ModItems.SWORDSOUL_WIND_SEAL.get(),
+                "Swordsoul Wind Seal"
+        );
+
+        add(
+                ModItems.SWORDSOUL_EARTH_SEAL.get(),
+                "Swordsoul Earth Seal"
+        );
+
+        add(
+                ModItems.SWORDSOUL_LIGHT_SEAL.get(),
+                "Swordsoul Light Seal"
+        );
+
+        add(
+                ModItems.SWORDSOUL_DARK_SEAL.get(),
+                "Swordsoul Dark Seal"
+        );
+
+        add(
+                ModItems.SWORDSOUL_DIVINE_SEAL.get(),
+                "Swordsoul Divine Seal"
+        );
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.attribute",
+                "Attribute: %s"
+        );
+
+        add(
+                "attribute.magiusworldmod.swordsoul.water",
+                "WATER"
+        );
+
+        add(
+                "attribute.magiusworldmod.swordsoul.fire",
+                "FIRE"
+        );
+
+        add(
+                "attribute.magiusworldmod.swordsoul.wind",
+                "WIND"
+        );
+
+        add(
+                "attribute.magiusworldmod.swordsoul.earth",
+                "EARTH"
+        );
+
+        add(
+                "attribute.magiusworldmod.swordsoul.light",
+                "LIGHT"
+        );
+
+        add(
+                "attribute.magiusworldmod.swordsoul.dark",
+                "DARK"
+        );
+
+        add(
+                "attribute.magiusworldmod.swordsoul.divine",
+                "DIVINE"
+        );
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.attribute_effect.water",
+                "Spirit Current: slows targets and extinguishes flames"
+        );
+
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.attribute_effect.fire",
+                "Spirit Ember: sets enemies ablaze"
+        );
+
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.attribute_effect.wind",
+                "Spirit Gust: knocks back and lifts enemies"
+        );
+
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.attribute_effect.earth",
+                "Spirit Bulwark: immobilizes and grants Resistance"
+        );
+
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.attribute_effect.light",
+                "Spirit Revelation: reveals and weakens undead targets"
+        );
+
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.attribute_effect.dark",
+                "Spirit Eclipse: withers enemies and drains their life"
+        );
+
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.attribute_effect.divine",
+                "Spirit Judgment: immobilizes and summons celestial lightning"
         );
         add(
                 "tooltip.magiusworldmod.synchronized_spirit_blade.ability",

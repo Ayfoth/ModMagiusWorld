@@ -213,6 +213,20 @@ public class ModMessages {
                 .decoder(C2SUnlockSwordsoulSpiritForgePacket::new)
                 .consumerMainThread(C2SUnlockSwordsoulSpiritForgePacket::handle)
                 .add();
+        INSTANCE.messageBuilder(
+                        C2SClaimSwordsoulFirstQuestRewardPacket.class,
+                        id()
+                )
+                .encoder(
+                        C2SClaimSwordsoulFirstQuestRewardPacket::encode
+                )
+                .decoder(
+                        C2SClaimSwordsoulFirstQuestRewardPacket::new
+                )
+                .consumerMainThread(
+                        C2SClaimSwordsoulFirstQuestRewardPacket::handle
+                )
+                .add();
     }
 
     public static <MSG> void sendToServer(MSG message) {

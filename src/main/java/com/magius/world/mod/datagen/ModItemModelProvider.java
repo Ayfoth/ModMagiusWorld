@@ -48,13 +48,64 @@ public class ModItemModelProvider extends ItemModelProvider {
                 ModItems.BROKEN_SPIRIT_BLADE.get()
         );
         basicItem(
+                ModItems.SWORDSOUL_SPIRIT_TOKEN_II.get()
+        );
+
+        basicItem(
                 ModItems.SWORDSOUL_SPIRIT_TOKEN.get()
         );
+
+        basicItem(
+                ModItems.SWORDSOUL_SPIRIT_TOKEN_VI.get()
+        );
+
+        basicItem(
+                ModItems.SWORDSOUL_SPIRIT_TOKEN_VIII.get()
+        );
+        handheldItem(
+                ModItems.SYNCHRONIZED_SPIRIT_BLADE_VI
+        );
+
         handheldItem(
                 ModItems.SYNCHRONIZED_SPIRIT_BLADE
         );
+
+        handheldItem(
+                ModItems.SYNCHRONIZED_SPIRIT_BLADE_X
+        );
+
+        handheldItem(
+                ModItems.SYNCHRONIZED_SPIRIT_BLADE_XII
+        );
         basicItem(
                 ModItems.SWORDSOUL_EMERGENCE_SEAL.get()
+        );
+        basicItem(
+                ModItems.SWORDSOUL_WATER_SEAL.get()
+        );
+
+        basicItem(
+                ModItems.SWORDSOUL_FIRE_SEAL.get()
+        );
+
+        basicItem(
+                ModItems.SWORDSOUL_WIND_SEAL.get()
+        );
+
+        basicItem(
+                ModItems.SWORDSOUL_EARTH_SEAL.get()
+        );
+
+        basicItem(
+                ModItems.SWORDSOUL_LIGHT_SEAL.get()
+        );
+
+        basicItem(
+                ModItems.SWORDSOUL_DARK_SEAL.get()
+        );
+
+        basicItem(
+                ModItems.SWORDSOUL_DIVINE_SEAL.get()
         );
         // Mod Echo
 

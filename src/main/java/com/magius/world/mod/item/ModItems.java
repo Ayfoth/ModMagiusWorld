@@ -29,6 +29,17 @@ public class ModItems {
     );
     //========= Swordsoul ===============//
 
+    public static final RegistryObject<Item> SWORDSOUL_SPIRIT_TOKEN_II =
+            ITEMS.register(
+                    "swordsoul_spirit_token_ii",
+                    () -> new ColoredNameItem(
+                            new Item.Properties()
+                                    .stacksTo(16)
+                                    .rarity(Rarity.UNCOMMON),
+                            0x85E8FF
+                    )
+            );
+
     public static final RegistryObject<Item> SWORDSOUL_SPIRIT_TOKEN =
             ITEMS.register(
                     "swordsoul_spirit_token",
@@ -39,6 +50,48 @@ public class ModItems {
                             0x55D9FF
                     )
             );
+
+    public static final RegistryObject<Item> SWORDSOUL_SPIRIT_TOKEN_VI =
+            ITEMS.register(
+                    "swordsoul_spirit_token_vi",
+                    () -> new ColoredNameItem(
+                            new Item.Properties()
+                                    .stacksTo(16)
+                                    .rarity(Rarity.RARE),
+                            0x2CA7FF
+                    )
+            );
+
+    public static final RegistryObject<Item> SWORDSOUL_SPIRIT_TOKEN_VIII =
+            ITEMS.register(
+                    "swordsoul_spirit_token_viii",
+                    () -> new ColoredNameItem(
+                            new Item.Properties()
+                                    .stacksTo(16)
+                                    .rarity(Rarity.EPIC),
+                            0x8F8CFF
+                    )
+            );
+
+    public static final RegistryObject<Item> SYNCHRONIZED_SPIRIT_BLADE_VI =
+            ITEMS.register(
+                    "synchronized_spirit_blade_vi",
+                    () -> new SynchronizedSpiritBladeItem(
+                            Tiers.DIAMOND,
+                            2,
+                            -2.2F,
+                            new Item.Properties()
+                                    .durability(500)
+                                    .rarity(Rarity.UNCOMMON),
+                            0x85E8FF,
+                            6,
+                            4.0D,
+                            4.0F,
+                            100,
+                            3
+                    )
+            );
+
     public static final RegistryObject<Item> SYNCHRONIZED_SPIRIT_BLADE =
             ITEMS.register(
                     "synchronized_spirit_blade",
@@ -49,7 +102,52 @@ public class ModItems {
                             new Item.Properties()
                                     .durability(800)
                                     .rarity(Rarity.RARE),
-                            0x8FFFEA
+                            0x8FFFEA,
+                            8,
+                            5.0D,
+                            6.0F,
+                            80,
+                            5
+                    )
+            );
+
+    public static final RegistryObject<Item> SYNCHRONIZED_SPIRIT_BLADE_X =
+            ITEMS.register(
+                    "synchronized_spirit_blade_x",
+                    () -> new SynchronizedSpiritBladeItem(
+                            Tiers.NETHERITE,
+                            4,
+                            -2.1F,
+                            new Item.Properties()
+                                    .durability(1200)
+                                    .rarity(Rarity.EPIC)
+                                    .fireResistant(),
+                            0x2CA7FF,
+                            10,
+                            6.0D,
+                            8.0F,
+                            70,
+                            6
+                    )
+            );
+
+    public static final RegistryObject<Item> SYNCHRONIZED_SPIRIT_BLADE_XII =
+            ITEMS.register(
+                    "synchronized_spirit_blade_xii",
+                    () -> new SynchronizedSpiritBladeItem(
+                            Tiers.NETHERITE,
+                            6,
+                            -2.0F,
+                            new Item.Properties()
+                                    .durability(1800)
+                                    .rarity(Rarity.EPIC)
+                                    .fireResistant(),
+                            0xB38CFF,
+                            12,
+                            7.0D,
+                            10.0F,
+                            60,
+                            8
                     )
             );
     public static final RegistryObject<Item> SWORDSOUL_EMERGENCE_SEAL =
@@ -59,6 +157,82 @@ public class ModItems {
                             new Item.Properties()
                                     .stacksTo(16)
                                     .rarity(Rarity.UNCOMMON),
+                            0xB38CFF
+                    )
+            );
+    public static final RegistryObject<Item> SWORDSOUL_WATER_SEAL =
+            ITEMS.register(
+                    "swordsoul_water_seal",
+                    () -> new ColoredNameItem(
+                            new Item.Properties()
+                                    .stacksTo(16)
+                                    .rarity(Rarity.RARE),
+                            0xB38CFF
+                    )
+            );
+
+    public static final RegistryObject<Item> SWORDSOUL_FIRE_SEAL =
+            ITEMS.register(
+                    "swordsoul_fire_seal",
+                    () -> new ColoredNameItem(
+                            new Item.Properties()
+                                    .stacksTo(16)
+                                    .rarity(Rarity.RARE),
+                            0xB38CFF
+                    )
+            );
+
+    public static final RegistryObject<Item> SWORDSOUL_WIND_SEAL =
+            ITEMS.register(
+                    "swordsoul_wind_seal",
+                    () -> new ColoredNameItem(
+                            new Item.Properties()
+                                    .stacksTo(16)
+                                    .rarity(Rarity.RARE),
+                            0xB38CFF
+                    )
+            );
+
+    public static final RegistryObject<Item> SWORDSOUL_EARTH_SEAL =
+            ITEMS.register(
+                    "swordsoul_earth_seal",
+                    () -> new ColoredNameItem(
+                            new Item.Properties()
+                                    .stacksTo(16)
+                                    .rarity(Rarity.RARE),
+                            0xB38CFF
+                    )
+            );
+
+    public static final RegistryObject<Item> SWORDSOUL_LIGHT_SEAL =
+            ITEMS.register(
+                    "swordsoul_light_seal",
+                    () -> new ColoredNameItem(
+                            new Item.Properties()
+                                    .stacksTo(16)
+                                    .rarity(Rarity.RARE),
+                            0xB38CFF
+                    )
+            );
+
+    public static final RegistryObject<Item> SWORDSOUL_DARK_SEAL =
+            ITEMS.register(
+                    "swordsoul_dark_seal",
+                    () -> new ColoredNameItem(
+                            new Item.Properties()
+                                    .stacksTo(16)
+                                    .rarity(Rarity.RARE),
+                            0xB38CFF
+                    )
+            );
+
+    public static final RegistryObject<Item> SWORDSOUL_DIVINE_SEAL =
+            ITEMS.register(
+                    "swordsoul_divine_seal",
+                    () -> new ColoredNameItem(
+                            new Item.Properties()
+                                    .stacksTo(16)
+                                    .rarity(Rarity.EPIC),
                             0xB38CFF
                     )
             );

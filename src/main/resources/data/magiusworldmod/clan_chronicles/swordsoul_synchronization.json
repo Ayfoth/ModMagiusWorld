@@ -1,0 +1,67 @@
+{
+  "id": "magiusworldmod:swordsoul_synchronization",
+  "clan": "magiusworldmod:swordsoul",
+  "order": 1,
+  "title": "L'Art de la Synchronisation",
+  "short_title": "Synchronisation",
+  "description": "Les secrets de la forge spirituelle Swordsoul.",
+  "icon": "magiusworldmod:swordsoul_emergence_seal",
+
+  "unlock": {
+    "type": "quest",
+    "target": "magiusworldmod:swordsoul_masterless_sword"
+  },
+
+  "pages": [
+    {
+      "title": "La forge spirituelle",
+      "text": [
+        "Une lame brisée ne peut pas recevoir directement un attribut.",
+        "",
+        "Elle doit d'abord être éveillée dans la Forge de synchronisation spirituelle à l'aide d'un Jeton spirituel Swordsoul et du Sceau de l'Émergence."
+      ]
+    },
+    {
+      "title": "Premier éveil",
+      "text": [
+        "Lame brisée + Jeton II + Sceau de l'Émergence = Lame synchronisée VI.",
+        "",
+        "Lame brisée + Jeton IV + Sceau de l'Émergence = Lame synchronisée VIII."
+      ]
+    },
+    {
+      "title": "Maîtrise supérieure",
+      "text": [
+        "Lame brisée + Jeton VI + Sceau de l'Émergence = Lame synchronisée X.",
+        "",
+        "Lame brisée + Jeton VIII + Sceau de l'Émergence = Lame synchronisée XII."
+      ]
+    },
+    {
+      "title": "Infusion d'attribut",
+      "text": [
+        "Une lame synchronisée peut ensuite recevoir un attribut.",
+        "",
+        "Replace la lame dans la forge avec un nouveau jeton correspondant à son niveau et un sceau d'attribut. Le jeton et le sceau seront consommés."
+      ]
+    },
+    {
+      "title": "Correspondances",
+      "text": [
+        "Lame VI : Jeton II. Lame VIII : Jeton IV.",
+        "",
+        "Lame X : Jeton VI. Lame XII : Jeton VIII.",
+        "",
+        "Sceaux disponibles : Eau, Feu, Vent, Terre, Lumière, Ténèbres et Divin."
+      ]
+    },
+    {
+      "title": "Exemple",
+      "text": [
+        "Étape 1 : Lame brisée + Jeton II + Sceau de l'Émergence = Lame VI.",
+        "",
+        "Étape 2 : Lame VI + nouveau Jeton II + Sceau du Feu = Lame VI d'attribut FEU."
+      ]
+    }
+  ]
+}
