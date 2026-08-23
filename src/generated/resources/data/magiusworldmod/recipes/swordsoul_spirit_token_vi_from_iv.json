@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "T": {
+      "item": "magiusworldmod:swordsoul_spirit_token"
+    }
+  },
+  "pattern": [
+    "TT",
+    "TT"
+  ],
+  "result": {
+    "item": "magiusworldmod:swordsoul_spirit_token_vi"
+  },
+  "show_notification": true
+}

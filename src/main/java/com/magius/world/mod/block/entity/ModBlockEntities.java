@@ -2,7 +2,6 @@ package com.magius.world.mod.block.entity;
 
 import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.block.ModBlocks;
-import com.magius.world.mod.block.custom.ModHangingSignBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
