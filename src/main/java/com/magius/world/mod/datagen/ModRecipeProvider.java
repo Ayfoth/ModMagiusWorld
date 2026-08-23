@@ -687,6 +687,57 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         has(Items.AMETHYST_SHARD)
                 )
                 .save(pWriter);
+
+        // Swordsoul - 4 Jetons II -> 1 Jeton IV
+        ShapedRecipeBuilder.shaped(
+                        RecipeCategory.MISC,
+                        ModItems.SWORDSOUL_SPIRIT_TOKEN.get()
+                )
+                .pattern("TT")
+                .pattern("TT")
+                .define('T', ModItems.SWORDSOUL_SPIRIT_TOKEN_II.get())
+                .unlockedBy(
+                        "has_swordsoul_spirit_token_ii",
+                        has(ModItems.SWORDSOUL_SPIRIT_TOKEN_II.get())
+                )
+                .save(
+                        pWriter,
+                        modLoc("swordsoul_spirit_token_iv_from_ii")
+                );
+
+        // Swordsoul - 4 Jetons IV -> 1 Jeton VI
+        ShapedRecipeBuilder.shaped(
+                        RecipeCategory.MISC,
+                        ModItems.SWORDSOUL_SPIRIT_TOKEN_VI.get()
+                )
+                .pattern("TT")
+                .pattern("TT")
+                .define('T', ModItems.SWORDSOUL_SPIRIT_TOKEN.get())
+                .unlockedBy(
+                        "has_swordsoul_spirit_token_iv",
+                        has(ModItems.SWORDSOUL_SPIRIT_TOKEN.get())
+                )
+                .save(
+                        pWriter,
+                        modLoc("swordsoul_spirit_token_vi_from_iv")
+                );
+
+        // Swordsoul - 4 Jetons VI -> 1 Jeton VIII
+        ShapedRecipeBuilder.shaped(
+                        RecipeCategory.MISC,
+                        ModItems.SWORDSOUL_SPIRIT_TOKEN_VIII.get()
+                )
+                .pattern("TT")
+                .pattern("TT")
+                .define('T', ModItems.SWORDSOUL_SPIRIT_TOKEN_VI.get())
+                .unlockedBy(
+                        "has_swordsoul_spirit_token_vi",
+                        has(ModItems.SWORDSOUL_SPIRIT_TOKEN_VI.get())
+                )
+                .save(
+                        pWriter,
+                        modLoc("swordsoul_spirit_token_viii_from_vi")
+                );
     }
         protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List< ItemLike > pIngredients, RecipeCategory
         pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {

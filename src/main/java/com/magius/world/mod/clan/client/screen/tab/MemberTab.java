@@ -30,10 +30,35 @@ public class MemberTab implements ClanTab {
                     MagiusWorldMod.MOD_ID,
                     "dragonmaid_forgotten_home"
             );
+
     private static final ResourceLocation DRAGONMAID_MEMBER_TEXTURE =
             ResourceLocation.fromNamespaceAndPath(
                     "magiusworldmod",
                     "textures/gui/clan/dragonmaid_member.png"
+            );
+
+    private static final ResourceLocation SWORDSOUL_QUEST_1 =
+            ResourceLocation.fromNamespaceAndPath(
+                    MagiusWorldMod.MOD_ID,
+                    "swordsoul_masterless_sword"
+            );
+
+    private static final ResourceLocation SWORDSOUL_QUEST_2 =
+            ResourceLocation.fromNamespaceAndPath(
+                    MagiusWorldMod.MOD_ID,
+                    "swordsoul_mo_ye_synchronization"
+            );
+
+    private static final ResourceLocation SWORDSOUL_QUEST_3 =
+            ResourceLocation.fromNamespaceAndPath(
+                    MagiusWorldMod.MOD_ID,
+                    "swordsoul_taia_spiritual_path"
+            );
+
+    private static final ResourceLocation SWORDSOUL_MEMBER_TEXTURE =
+            ResourceLocation.fromNamespaceAndPath(
+                    MagiusWorldMod.MOD_ID,
+                    "textures/entity/swordsoul/emissary.png"
             );
 
     private record MemberEntry(
@@ -65,6 +90,29 @@ public class MemberTab implements ClanTab {
                             "Tinkhec",
                             "Artisane du Foyer",
                             "Participe au réveil et à la reconstruction du Foyer.",
+                            3
+                    )
+            );
+    private static final List<MemberEntry> SWORDSOUL_MEMBERS =
+            List.of(
+                    new MemberEntry(
+                            "Émissaire Swordsoul",
+                            "Gardien du Sanctuaire",
+                            "Guide les nouveaux disciples vers l'Épée sans maître.",
+                            1
+                    ),
+
+                    new MemberEntry(
+                            "Mo Ye",
+                            "Maîtresse de la Synchronisation",
+                            "Enseigne l'union entre la lame, le jeton et l'esprit.",
+                            2
+                    ),
+
+                    new MemberEntry(
+                            "Taia",
+                            "Maître des Sept Voies",
+                            "Enseigne l'infusion des attributs dans les lames spirituelles.",
                             3
                     )
             );
@@ -114,25 +162,49 @@ public class MemberTab implements ClanTab {
 
 
         // =====================================================
-        // DRAGONMAID
-        // =====================================================
+// CLAN ET MEMBRES À AFFICHER
+// =====================================================
 
-        if (!"dragonmaid".equals(
-                clanId.getPath()
-        )) {
+        List<MemberEntry> members;
+        ResourceLocation quest1Id;
+        ResourceLocation quest2Id;
+        ResourceLocation quest3Id;
+        ResourceLocation memberTexture;
+        boolean playerSkinTexture;
 
-            guiGraphics.drawString(
-                    font,
-                    Component.literal(
-                            "Aucun membre connu."
-                    ),
-                    x + 12,
-                    y + 32,
-                    0xFFAAAAAA,
-                    false
-            );
+        switch (clanId.getPath()) {
+            case "dragonmaid" -> {
+                members = DRAGONMAID_MEMBERS;
+                quest1Id = QUEST_1;
+                quest2Id = QUEST_2;
+                quest3Id = QUEST_3;
+                memberTexture = DRAGONMAID_MEMBER_TEXTURE;
+                playerSkinTexture = false;
+            }
 
-            return;
+            case "swordsoul" -> {
+                members = SWORDSOUL_MEMBERS;
+                quest1Id = SWORDSOUL_QUEST_1;
+                quest2Id = SWORDSOUL_QUEST_2;
+                quest3Id = SWORDSOUL_QUEST_3;
+                memberTexture = SWORDSOUL_MEMBER_TEXTURE;
+                playerSkinTexture = true;
+            }
+
+            default -> {
+                guiGraphics.drawString(
+                        font,
+                        Component.literal(
+                                "Aucun membre connu."
+                        ),
+                        x + 12,
+                        y + 32,
+                        0xFFAAAAAA,
+                        false
+                );
+
+                return;
+            }
         }
 
 
@@ -164,19 +236,19 @@ public class MemberTab implements ClanTab {
                 quest1Status =
                         QuestManager.getStatus(
                                 questData,
-                                QUEST_1
+                                quest1Id
                         );
 
                 quest2Status =
                         QuestManager.getStatus(
                                 questData,
-                                QUEST_2
+                                quest2Id
                         );
 
                 quest3Status =
                         QuestManager.getStatus(
                                 questData,
-                                QUEST_3
+                                quest3Id
                         );
             }
         }
@@ -186,7 +258,8 @@ public class MemberTab implements ClanTab {
 
         for (
                 MemberEntry member
-                : DRAGONMAID_MEMBERS
+                : members
+
         ) {
             boolean discovered =
                     switch (member.discoveryQuest()) {
@@ -211,12 +284,14 @@ public class MemberTab implements ClanTab {
                     theme,
                     member,
                     discovered,
+                    memberTexture,
+                    playerSkinTexture,
                     x + 12,
                     memberY,
                     width - 24
             );
 
-            memberY += 55;
+            memberY += 49;
         }
     }
 
@@ -226,10 +301,12 @@ public class MemberTab implements ClanTab {
             ClanTheme theme,
             MemberEntry member,
             boolean discovered,
+            ResourceLocation memberTexture,
+            boolean playerSkinTexture,
             int x,
             int y,
             int width
-    ){
+    ) {
 
         var font =
                 Minecraft.getInstance().font;
@@ -243,7 +320,7 @@ public class MemberTab implements ClanTab {
                 x,
                 y,
                 x + width,
-                y + 52,
+                y + 47,
                 0x66000000
         );
 
@@ -302,18 +379,59 @@ public class MemberTab implements ClanTab {
         );
 
 // Portrait 32x32
-        guiGraphics.blit(
-                DRAGONMAID_MEMBER_TEXTURE,
-                x + 8,
-                y + 8,
-                0,
-                0,
-                32,
-                32,
-                32,
-                32
-        );
+        if (playerSkinTexture) {
+            /*
+             * Visage 8 × 8 extrait de la texture
+             * d'entité 64 × 64, agrandi en 32 × 32.
+             */
+            guiGraphics.blit(
+                    memberTexture,
+                    x + 8,
+                    y + 8,
+                    32,
+                    32,
+                    8.0F,
+                    8.0F,
+                    8,
+                    8,
+                    64,
+                    64
+            );
 
+            /*
+             * Seconde couche de la tête :
+             * cheveux, capuche ou accessoires.
+             */
+            guiGraphics.blit(
+                    memberTexture,
+                    x + 8,
+                    y + 8,
+                    32,
+                    32,
+                    40.0F,
+                    8.0F,
+                    8,
+                    8,
+                    64,
+                    64
+            );
+        } else {
+            /*
+             * Portrait GUI Dragonmaid déjà préparé
+             * directement au format 32 × 32.
+             */
+            guiGraphics.blit(
+                    memberTexture,
+                    x + 8,
+                    y + 8,
+                    0,
+                    0,
+                    32,
+                    32,
+                    32,
+                    32
+            );
+        }
 
         // =====================================================
         // NOM
@@ -360,7 +478,7 @@ public class MemberTab implements ClanTab {
                 );
 
         int descriptionY =
-                y + 31;
+                y + 29;
 
         for (int i = 0;
              i < Math.min(2, descriptionLines.size());
@@ -375,7 +493,7 @@ public class MemberTab implements ClanTab {
                     false
             );
 
-            descriptionY += 10;
+            descriptionY += 9;
         }
     }
 }

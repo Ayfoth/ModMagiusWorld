@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_swordsoul_spirit_token_vi": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "magiusworldmod:swordsoul_spirit_token_vi"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "magiusworldmod:swordsoul_spirit_token_viii_from_vi"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_swordsoul_spirit_token_vi",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "magiusworldmod:swordsoul_spirit_token_viii_from_vi"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -81,6 +81,21 @@ public class ModBlocks {
                                     .noLootTable()
                     )
             );
+    public static final RegistryObject<Block> SWORDSOUL_TAIA_MARKER =
+            BLOCKS.register(
+                    "swordsoul_taia_marker",
+                    () -> new SwordsoulTaiaMarkerBlock(
+                            BlockBehaviour.Properties.copy(
+                                            Blocks.PACKED_ICE
+                                    )
+                                    .strength(
+                                            -1.0F,
+                                            3600000.0F
+                                    )
+                                    .noLootTable()
+                                    .randomTicks()
+                    )
+            );
 
     // =====================================================
 // SWORDSOUL

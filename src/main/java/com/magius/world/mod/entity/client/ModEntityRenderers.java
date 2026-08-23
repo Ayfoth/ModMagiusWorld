@@ -2,6 +2,7 @@ package com.magius.world.mod.entity.client;
 
 import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.entity.ModEntities;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -43,6 +44,10 @@ public final class ModEntityRenderers {
 
         event.registerEntityRenderer(
                 ModEntities.SWORDSOUL_MO_YE.get(),
+                SwordsoulRenderer::new
+        );
+        event.registerEntityRenderer(
+                ModEntities.SWORDSOUL_TAIA.get(),
                 SwordsoulRenderer::new
         );
     }

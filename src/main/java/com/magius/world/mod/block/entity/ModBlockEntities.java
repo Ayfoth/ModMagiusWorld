@@ -2,7 +2,6 @@ package com.magius.world.mod.block.entity;
 
 import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.block.ModBlocks;
-import com.magius.world.mod.block.custom.ModHangingSignBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -84,6 +83,16 @@ public class ModBlockEntities {
                     () -> BlockEntityType.Builder.of(
                             SwordsoulSpiritForgeBlockEntity::new,
                             ModBlocks.SWORDSOUL_SPIRIT_FORGE.get()
+                    ).build(null)
+            );
+    public static final RegistryObject<
+            BlockEntityType<SwordsoulTaiaMarkerBlockEntity>>
+            SWORDSOUL_TAIA_MARKER_BE =
+            BLOCK_ENTITIES.register(
+                    "swordsoul_taia_marker",
+                    () -> BlockEntityType.Builder.of(
+                            SwordsoulTaiaMarkerBlockEntity::new,
+                            ModBlocks.SWORDSOUL_TAIA_MARKER.get()
                     ).build(null)
             );
 

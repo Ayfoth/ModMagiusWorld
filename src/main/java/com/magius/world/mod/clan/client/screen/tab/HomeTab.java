@@ -347,16 +347,16 @@ public class HomeTab implements ClanTab {
             );
             if (SWORDSOUL_ID.equals(clanId)) {
 
-                guiGraphics.drawString(
-                        font,
-                        Component.literal(
-                                "Âmes : " + souls
-                        ),
-                        iconX + 23,
-                        row1Y + 51,
-                        theme.getAccentColor(),
-                        false
-                );
+//                guiGraphics.drawString(
+//                        font,
+//                        Component.literal(
+//                                "Âmes : " + souls
+//                        ),
+//                        iconX + 23,
+//                        row1Y + 51,
+//                        theme.getAccentColor(),
+//                        false
+//                );
             }
 
         } else {
@@ -387,19 +387,19 @@ public class HomeTab implements ClanTab {
                     theme.getTextColor(),
                     false
             );
-            if (SWORDSOUL_ID.equals(clanId)) {
-
-                guiGraphics.drawString(
-                        font,
-                        Component.literal(
-                                "Âmes : " + souls
-                        ),
-                        iconX + 23,
-                        row1Y + 51,
-                        theme.getAccentColor(),
-                        false
-                );
-            }
+//            if (SWORDSOUL_ID.equals(clanId)) {
+//
+//                guiGraphics.drawString(
+//                        font,
+//                        Component.literal(
+//                                "Âmes : " + souls
+//                        ),
+//                        iconX + 23,
+//                        row1Y + 51,
+//                        theme.getAccentColor(),
+//                        false
+//                );
+//            }
 
 
             String levelText =

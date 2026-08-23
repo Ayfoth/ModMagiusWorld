@@ -20,13 +20,54 @@ public class ModFrenchLangProvider extends LanguageProvider {
                 "Insigne Dragonmaid"
         );
         add(
-                ModItems.SWORDSOUL_SPIRIT_TOKEN.get(),
-                "Jeton spirituel Swordsoul"
+                ModItems.SWORDSOUL_SPIRIT_TOKEN_II.get(),
+                "Jeton spirituel Swordsoul II"
         );
+
+        add(
+                ModItems.SWORDSOUL_SPIRIT_TOKEN.get(),
+                "Jeton spirituel Swordsoul IV"
+        );
+        add(
+                ModItems.SYNCHRONIZED_SPIRIT_BLADE_VI.get(),
+                "Lame spirituelle synchronisée VI"
+        );
+
         add(
                 ModItems.SYNCHRONIZED_SPIRIT_BLADE.get(),
                 "Lame spirituelle synchronisée VIII"
         );
+
+        add(
+                ModItems.SYNCHRONIZED_SPIRIT_BLADE_X.get(),
+                "Lame spirituelle synchronisée X"
+        );
+
+        add(
+                ModItems.SYNCHRONIZED_SPIRIT_BLADE_XII.get(),
+                "Lame spirituelle synchronisée XII"
+        );
+
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.level",
+                "Niveau de synchronisation : %s"
+        );
+
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.dynamic_details",
+                "Portée : %s blocs • Dégâts : %s • Recharge : %s s"
+        );
+
+        add(
+                ModItems.SWORDSOUL_SPIRIT_TOKEN_VI.get(),
+                "Jeton spirituel Swordsoul VI"
+        );
+
+        add(
+                ModItems.SWORDSOUL_SPIRIT_TOKEN_VIII.get(),
+                "Jeton spirituel Swordsoul VIII"
+        );
+
         add(
                 "container.magiusworldmod.swordsoul_spirit_forge",
                 "Forge de synchronisation spirituelle"
@@ -34,6 +75,113 @@ public class ModFrenchLangProvider extends LanguageProvider {
         add(
                 ModItems.SWORDSOUL_EMERGENCE_SEAL.get(),
                 "Sceau de l'Émergence Swordsoul"
+        );
+        add(
+                ModItems.SWORDSOUL_WATER_SEAL.get(),
+                "Sceau Swordsoul de l'Eau"
+        );
+
+        add(
+                ModItems.SWORDSOUL_FIRE_SEAL.get(),
+                "Sceau Swordsoul du Feu"
+        );
+
+        add(
+                ModItems.SWORDSOUL_WIND_SEAL.get(),
+                "Sceau Swordsoul du Vent"
+        );
+
+        add(
+                ModItems.SWORDSOUL_EARTH_SEAL.get(),
+                "Sceau Swordsoul de la Terre"
+        );
+
+        add(
+                ModItems.SWORDSOUL_LIGHT_SEAL.get(),
+                "Sceau Swordsoul de la Lumière"
+        );
+
+        add(
+                ModItems.SWORDSOUL_DARK_SEAL.get(),
+                "Sceau Swordsoul des Ténèbres"
+        );
+
+        add(
+                ModItems.SWORDSOUL_DIVINE_SEAL.get(),
+                "Sceau Swordsoul Divin"
+        );
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.attribute",
+                "Attribut : %s"
+        );
+
+        add(
+                "attribute.magiusworldmod.swordsoul.water",
+                "EAU"
+        );
+
+        add(
+                "attribute.magiusworldmod.swordsoul.fire",
+                "FEU"
+        );
+
+        add(
+                "attribute.magiusworldmod.swordsoul.wind",
+                "VENT"
+        );
+
+        add(
+                "attribute.magiusworldmod.swordsoul.earth",
+                "TERRE"
+        );
+
+        add(
+                "attribute.magiusworldmod.swordsoul.light",
+                "LUMIÈRE"
+        );
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.attribute_effect.water",
+                "Courant spirituel : ralentit et éteint les flammes"
+        );
+
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.attribute_effect.fire",
+                "Braise spirituelle : embrase les ennemis"
+        );
+
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.attribute_effect.wind",
+                "Rafale spirituelle : repousse et soulève les ennemis"
+        );
+
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.attribute_effect.earth",
+                "Rempart spirituel : immobilise et accorde Résistance"
+        );
+
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.attribute_effect.light",
+                "Révélation spirituelle : expose et affaiblit les morts-vivants"
+        );
+
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.attribute_effect.dark",
+                "Éclipse spirituelle : flétrit les ennemis et absorbe leur vie"
+        );
+
+        add(
+                "tooltip.magiusworldmod.synchronized_spirit_blade.attribute_effect.divine",
+                "Jugement spirituel : immobilise et invoque un éclair céleste"
+        );
+
+        add(
+                "attribute.magiusworldmod.swordsoul.dark",
+                "TÉNÈBRES"
+        );
+
+        add(
+                "attribute.magiusworldmod.swordsoul.divine",
+                "DIVIN"
         );
         add(
                 "tooltip.magiusworldmod.synchronized_spirit_blade.ability",

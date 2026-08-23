@@ -8,7 +8,11 @@ import com.magius.world.mod.clan.quest.dragonmaid.DragonmaidFirstQuestEvents;
 import com.magius.world.mod.clan.quest.dragonmaid.NurseDragonmaidNpcEvents;
 import com.magius.world.mod.clan.quest.event.QuestSyncEvents;
 import com.magius.world.mod.clan.quest.swordsoul.SwordsoulFirstQuestEvents;
+import com.magius.world.mod.clan.quest.swordsoul.SwordsoulMoYeQuestEvents;
+import com.magius.world.mod.clan.quest.swordsoul.SwordsoulSpiritTokenDropEvents;
+import com.magius.world.mod.clan.quest.swordsoul.SwordsoulTaiaQuestEvents;
 import com.magius.world.mod.clan.reward.DragonmaidClanRewards;
+import com.magius.world.mod.clan.reward.SwordsoulClanRewards;
 import com.magius.world.mod.clan.swordsoul.SwordsoulSoulEvents;
 import com.magius.world.mod.clan.theme.ModClanThemes;
 import com.magius.world.mod.client.gui.SwordsoulSynchronizationForgeScreen;
@@ -140,6 +144,15 @@ public class MagiusWorldMod
         MinecraftForge.EVENT_BUS.register(
                 SwordsoulSoulEvents.class
         );
+        MinecraftForge.EVENT_BUS.register(
+                SwordsoulMoYeQuestEvents.class
+        );
+        MinecraftForge.EVENT_BUS.register(
+                SwordsoulTaiaQuestEvents.class
+        );
+        MinecraftForge.EVENT_BUS.register(
+                SwordsoulSpiritTokenDropEvents.class
+        );
 //        MinecraftForge.EVENT_BUS.register(
 //                NurseDragonmaidNpcEvents.class
 //        );
@@ -162,6 +175,7 @@ public class MagiusWorldMod
              * des ItemStack.
              */
             DragonmaidClanRewards.register();
+            SwordsoulClanRewards.register();
 
           //  SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeRules());
         });

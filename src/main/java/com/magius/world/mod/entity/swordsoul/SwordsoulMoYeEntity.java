@@ -1,5 +1,10 @@
 package com.magius.world.mod.entity.swordsoul;
 
+import com.magius.world.mod.network.ModMessages;
+import com.magius.world.mod.network.packet.S2COpenSwordsoulMoYeDialoguePacket;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -38,6 +43,33 @@ public class SwordsoulMoYeEntity extends SwordsoulEntity {
     @Override
     protected String getSwordsoulName() {
         return "Mo Ye";
+    }
+
+    @Override
+    public InteractionResult mobInteract(
+            Player player,
+            InteractionHand hand
+    ) {
+        /*
+         * Évite une double ouverture avec
+         * la main secondaire.
+         */
+        if (hand != InteractionHand.MAIN_HAND) {
+            return InteractionResult.PASS;
+        }
+
+        if (!level().isClientSide
+                && player instanceof ServerPlayer serverPlayer) {
+
+            ModMessages.sendToPlayer(
+                    new S2COpenSwordsoulMoYeDialoguePacket(),
+                    serverPlayer
+            );
+        }
+
+        return InteractionResult.sidedSuccess(
+                level().isClientSide
+        );
     }
 
     @Override

@@ -41,19 +41,13 @@ public class SwordsoulSpiritForgeBlockEntity
                     return switch (slot) {
 
                         case BLADE_SLOT ->
-                                stack.is(
-                                        ModItems.BROKEN_SPIRIT_BLADE.get()
-                                );
+                                isValidBlade(stack);
 
                         case TOKEN_SLOT ->
-                                stack.is(
-                                        ModItems.SWORDSOUL_SPIRIT_TOKEN.get()
-                                );
+                                isValidSwordsoulToken(stack);
 
                         case CATALYST_SLOT ->
-                                stack.is(
-                                        ModItems.SWORDSOUL_EMERGENCE_SEAL.get()
-                                );
+                                isValidCatalyst(stack);
 
                         case RESULT_SLOT -> false;
 
@@ -135,38 +129,199 @@ public class SwordsoulSpiritForgeBlockEntity
         );
     }
 
+    private boolean isValidSwordsoulToken(ItemStack stack) {
+        return stack.is(ModItems.SWORDSOUL_SPIRIT_TOKEN_II.get())
+                || stack.is(ModItems.SWORDSOUL_SPIRIT_TOKEN.get())
+                || stack.is(ModItems.SWORDSOUL_SPIRIT_TOKEN_VI.get())
+                || stack.is(ModItems.SWORDSOUL_SPIRIT_TOKEN_VIII.get());
+    }
+
+    private ItemStack getSynchronizationResult(ItemStack token) {
+
+        if (token.is(ModItems.SWORDSOUL_SPIRIT_TOKEN_II.get())) {
+            return new ItemStack(
+                    ModItems.SYNCHRONIZED_SPIRIT_BLADE_VI.get()
+            );
+        }
+
+        if (token.is(ModItems.SWORDSOUL_SPIRIT_TOKEN.get())) {
+            return new ItemStack(
+                    ModItems.SYNCHRONIZED_SPIRIT_BLADE.get()
+            );
+        }
+
+        if (token.is(ModItems.SWORDSOUL_SPIRIT_TOKEN_VI.get())) {
+            return new ItemStack(
+                    ModItems.SYNCHRONIZED_SPIRIT_BLADE_X.get()
+            );
+        }
+
+        if (token.is(ModItems.SWORDSOUL_SPIRIT_TOKEN_VIII.get())) {
+            return new ItemStack(
+                    ModItems.SYNCHRONIZED_SPIRIT_BLADE_XII.get()
+            );
+        }
+
+        return ItemStack.EMPTY;
+    }
+
+    private boolean isSynchronizedBlade(ItemStack stack) {
+        return stack.is(ModItems.SYNCHRONIZED_SPIRIT_BLADE_VI.get())
+                || stack.is(ModItems.SYNCHRONIZED_SPIRIT_BLADE.get())
+                || stack.is(ModItems.SYNCHRONIZED_SPIRIT_BLADE_X.get())
+                || stack.is(ModItems.SYNCHRONIZED_SPIRIT_BLADE_XII.get());
+    }
+
+    private boolean isValidBlade(ItemStack stack) {
+        return stack.is(ModItems.BROKEN_SPIRIT_BLADE.get())
+                || isSynchronizedBlade(stack);
+    }
+
+    private boolean isAttributeSeal(ItemStack stack) {
+        return stack.is(ModItems.SWORDSOUL_WATER_SEAL.get())
+                || stack.is(ModItems.SWORDSOUL_FIRE_SEAL.get())
+                || stack.is(ModItems.SWORDSOUL_WIND_SEAL.get())
+                || stack.is(ModItems.SWORDSOUL_EARTH_SEAL.get())
+                || stack.is(ModItems.SWORDSOUL_LIGHT_SEAL.get())
+                || stack.is(ModItems.SWORDSOUL_DARK_SEAL.get())
+                || stack.is(ModItems.SWORDSOUL_DIVINE_SEAL.get());
+    }
+
+    private boolean isValidCatalyst(ItemStack stack) {
+        return stack.is(ModItems.SWORDSOUL_EMERGENCE_SEAL.get())
+                || isAttributeSeal(stack);
+    }
+
+    private boolean tokenMatchesBlade(
+            ItemStack blade,
+            ItemStack token
+    ) {
+        if (blade.is(ModItems.SYNCHRONIZED_SPIRIT_BLADE_VI.get())) {
+            return token.is(ModItems.SWORDSOUL_SPIRIT_TOKEN_II.get());
+        }
+
+        if (blade.is(ModItems.SYNCHRONIZED_SPIRIT_BLADE.get())) {
+            return token.is(ModItems.SWORDSOUL_SPIRIT_TOKEN.get());
+        }
+
+        if (blade.is(ModItems.SYNCHRONIZED_SPIRIT_BLADE_X.get())) {
+            return token.is(ModItems.SWORDSOUL_SPIRIT_TOKEN_VI.get());
+        }
+
+        if (blade.is(ModItems.SYNCHRONIZED_SPIRIT_BLADE_XII.get())) {
+            return token.is(ModItems.SWORDSOUL_SPIRIT_TOKEN_VIII.get());
+        }
+
+        return false;
+    }
+
+    private String getAttributeId(ItemStack catalyst) {
+
+        if (catalyst.is(ModItems.SWORDSOUL_WATER_SEAL.get())) {
+            return "water";
+        }
+
+        if (catalyst.is(ModItems.SWORDSOUL_FIRE_SEAL.get())) {
+            return "fire";
+        }
+
+        if (catalyst.is(ModItems.SWORDSOUL_WIND_SEAL.get())) {
+            return "wind";
+        }
+
+        if (catalyst.is(ModItems.SWORDSOUL_EARTH_SEAL.get())) {
+            return "earth";
+        }
+
+        if (catalyst.is(ModItems.SWORDSOUL_LIGHT_SEAL.get())) {
+            return "light";
+        }
+
+        if (catalyst.is(ModItems.SWORDSOUL_DARK_SEAL.get())) {
+            return "dark";
+        }
+
+        if (catalyst.is(ModItems.SWORDSOUL_DIVINE_SEAL.get())) {
+            return "divine";
+        }
+
+        return "";
+    }
+
+    private ItemStack getInfusionResult(
+            ItemStack blade,
+            ItemStack token,
+            ItemStack catalyst
+    ) {
+        if (!isSynchronizedBlade(blade)
+                || !tokenMatchesBlade(blade, token)
+                || !isAttributeSeal(catalyst)) {
+            return ItemStack.EMPTY;
+        }
+
+        String attribute = getAttributeId(catalyst);
+
+        if (attribute.isEmpty()) {
+            return ItemStack.EMPTY;
+        }
+
+        /*
+         * La copie conserve le niveau, les dégâts,
+         * les enchantements et le nom personnalisé.
+         */
+        ItemStack infusedBlade = blade.copy();
+        infusedBlade.setCount(1);
+
+        infusedBlade.getOrCreateTag().putString(
+                "SwordsoulAttribute",
+                attribute
+        );
+
+        return infusedBlade;
+    }
+
     public boolean canSynchronize() {
 
         ItemStack blade =
-                itemHandler.getStackInSlot(
-                        BLADE_SLOT
-                );
+                itemHandler.getStackInSlot(BLADE_SLOT);
 
         ItemStack token =
-                itemHandler.getStackInSlot(
-                        TOKEN_SLOT
-                );
+                itemHandler.getStackInSlot(TOKEN_SLOT);
 
         ItemStack catalyst =
-                itemHandler.getStackInSlot(
-                        CATALYST_SLOT
-                );
+                itemHandler.getStackInSlot(CATALYST_SLOT);
 
         ItemStack result =
-                itemHandler.getStackInSlot(
-                        RESULT_SLOT
-                );
+                itemHandler.getStackInSlot(RESULT_SLOT);
 
-        return blade.is(
-                ModItems.BROKEN_SPIRIT_BLADE.get()
-        )
-                && token.is(
-                ModItems.SWORDSOUL_SPIRIT_TOKEN.get()
-        )
-                && catalyst.is(
-                ModItems.SWORDSOUL_EMERGENCE_SEAL.get()
-        )
-                && result.isEmpty();
+        if (!result.isEmpty()) {
+            return false;
+        }
+
+        /*
+         * Recette initiale :
+         * lame sans maître + jeton + Émergence.
+         */
+        boolean baseSynchronization =
+                blade.is(ModItems.BROKEN_SPIRIT_BLADE.get())
+                        && catalyst.is(
+                        ModItems.SWORDSOUL_EMERGENCE_SEAL.get()
+                )
+                        && !getSynchronizationResult(token).isEmpty();
+
+        /*
+         * Recette d'infusion :
+         * lame synchronisée + jeton correspondant
+         * + sceau d'attribut.
+         */
+        boolean attributeInfusion =
+                !getInfusionResult(
+                        blade,
+                        token,
+                        catalyst
+                ).isEmpty();
+
+        return baseSynchronization || attributeInfusion;
     }
 
     public boolean synchronize() {
@@ -175,36 +330,40 @@ public class SwordsoulSpiritForgeBlockEntity
             return false;
         }
 
-        /*
-         * Consommation d'un exemplaire
-         * de chaque ingrédient.
-         */
-        itemHandler.extractItem(
-                BLADE_SLOT,
-                1,
-                false
-        );
+        ItemStack blade =
+                itemHandler.getStackInSlot(BLADE_SLOT);
 
-        itemHandler.extractItem(
-                TOKEN_SLOT,
-                1,
-                false
-        );
+        ItemStack token =
+                itemHandler.getStackInSlot(TOKEN_SLOT);
 
-        itemHandler.extractItem(
-                CATALYST_SLOT,
-                1,
-                false
-        );
+        ItemStack catalyst =
+                itemHandler.getStackInSlot(CATALYST_SLOT);
 
-        /*
-         * Création de la lame synchronisée.
-         */
+        ItemStack craftingResult;
+
+        if (blade.is(ModItems.BROKEN_SPIRIT_BLADE.get())) {
+            craftingResult =
+                    getSynchronizationResult(token);
+        } else {
+            craftingResult =
+                    getInfusionResult(
+                            blade,
+                            token,
+                            catalyst
+                    );
+        }
+
+        if (craftingResult.isEmpty()) {
+            return false;
+        }
+
+        itemHandler.extractItem(BLADE_SLOT, 1, false);
+        itemHandler.extractItem(TOKEN_SLOT, 1, false);
+        itemHandler.extractItem(CATALYST_SLOT, 1, false);
+
         itemHandler.setStackInSlot(
                 RESULT_SLOT,
-                new ItemStack(
-                        ModItems.SYNCHRONIZED_SPIRIT_BLADE.get()
-                )
+                craftingResult
         );
 
         setChanged();

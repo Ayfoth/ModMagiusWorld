@@ -8,6 +8,7 @@ import com.magius.world.mod.entity.dragonmaid.DragonmaidNurseEntity;
 import com.magius.world.mod.entity.echo.TempestBlaze;
 import com.magius.world.mod.entity.swordsoul.SwordsoulEmissaryEntity;
 import com.magius.world.mod.entity.swordsoul.SwordsoulMoYeEntity;
+import com.magius.world.mod.entity.swordsoul.SwordsoulTaiaEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -130,6 +131,17 @@ public class ModEntities {
                             .sized(0.6F, 1.8F)
                             .clientTrackingRange(8)
                             .build("swordsoul_mo_ye")
+            );
+    public static final RegistryObject<EntityType<SwordsoulTaiaEntity>> SWORDSOUL_TAIA =
+            ENTITY_TYPES.register(
+                    "swordsoul_taia",
+                    () -> EntityType.Builder.of(
+                                    SwordsoulTaiaEntity::new,
+                                    MobCategory.CREATURE
+                            )
+                            .sized(0.6F, 1.8F)
+                            .clientTrackingRange(8)
+                            .build("swordsoul_taia")
             );
 
     public static void register(IEventBus eventBus) {
