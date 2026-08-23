@@ -6,6 +6,7 @@ import com.magius.world.mod.entity.dragonmaid.DragonmaidNurseEntity;
 import com.magius.world.mod.entity.dragonmaid.DragonmaidTinkhecEntity;
 import com.magius.world.mod.entity.swordsoul.SwordsoulEmissaryEntity;
 import com.magius.world.mod.entity.swordsoul.SwordsoulMoYeEntity;
+import com.magius.world.mod.entity.swordsoul.SwordsoulTaiaEntity;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -45,6 +46,10 @@ public final class ModEntityAttributes {
         event.put(
                 ModEntities.SWORDSOUL_MO_YE.get(),
                 SwordsoulMoYeEntity.createAttributes().build()
+        );
+        event.put(
+                ModEntities.SWORDSOUL_TAIA.get(),
+                SwordsoulTaiaEntity.createAttributes().build()
         );
     }
 }

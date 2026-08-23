@@ -86,6 +86,16 @@ public class ModBlockEntities {
                             ModBlocks.SWORDSOUL_SPIRIT_FORGE.get()
                     ).build(null)
             );
+    public static final RegistryObject<
+            BlockEntityType<SwordsoulTaiaMarkerBlockEntity>>
+            SWORDSOUL_TAIA_MARKER_BE =
+            BLOCK_ENTITIES.register(
+                    "swordsoul_taia_marker",
+                    () -> BlockEntityType.Builder.of(
+                            SwordsoulTaiaMarkerBlockEntity::new,
+                            ModBlocks.SWORDSOUL_TAIA_MARKER.get()
+                    ).build(null)
+            );
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

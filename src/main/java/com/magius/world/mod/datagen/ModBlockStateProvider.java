@@ -35,6 +35,19 @@ public class ModBlockStateProvider extends BlockStateProvider {
 // =====================================================
 
         swordsoulSpiritForgeBlock();
+        blockWithItem(
+                ModBlocks.SWORDSOUL_SPIRIT_FORGE_TERMINAL
+        );
+
+        simpleBlock(
+                ModBlocks.SWORDSOUL_SANCTUARY_CORE.get()
+        );
+        simpleBlock(
+                ModBlocks.SWORDSOUL_TAIA_MARKER.get(),
+                models().getExistingFile(
+                        mcLoc("block/packed_ice")
+                )
+        );
         // Mod Echo
         blockWithItem(ModBlocks.NECRO_STONE);
         blockWithItem(ModBlocks.CORRUPTED_SOIL);

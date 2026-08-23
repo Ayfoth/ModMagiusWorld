@@ -1,0 +1,67 @@
+{
+  "id": "magiusworldmod:swordsoul_seven_spiritual_paths",
+  "clan": "magiusworldmod:swordsoul",
+  "order": 2,
+  "title": "Les Sept Voies Spirituelles",
+  "short_title": "Les Sept Voies",
+  "description": "Les sept attributs pouvant être insufflés dans une lame spirituelle.",
+  "icon": "magiusworldmod:swordsoul_emergence_seal",
+
+  "unlock": {
+    "type": "quest",
+    "target": "magiusworldmod:swordsoul_mo_ye_synchronization"
+  },
+
+  "pages": [
+    {
+      "title": "L'infusion spirituelle",
+      "text": [
+        "Une lame synchronisée peut recevoir l'essence d'un attribut grâce à la Forge spirituelle.",
+        "",
+        "Place dans la forge une lame synchronisée, un jeton du même niveau et un sceau d'attribut.",
+        "",
+        "Le sceau est consommé et son pouvoir est définitivement lié à la lame."
+      ]
+    },
+    {
+      "title": "Eau et Feu",
+      "text": [
+        "EAU — Les coups ralentissent la cible et éteignent les flammes qui la consument.",
+        "",
+        "FEU — Les coups embrasent la cible pendant plusieurs secondes.",
+        "",
+        "Ces voies représentent l'équilibre entre le calme spirituel et la puissance destructrice."
+      ]
+    },
+    {
+      "title": "Vent et Terre",
+      "text": [
+        "VENT — Les coups repoussent la cible et peuvent la soulever brièvement.",
+        "",
+        "TERRE — Les coups ralentissent l'adversaire tandis que le porteur reçoit temporairement Résistance.",
+        "",
+        "Ces voies privilégient le contrôle du champ de bataille."
+      ]
+    },
+    {
+      "title": "Lumière et Ténèbres",
+      "text": [
+        "LUMIÈRE — La cible devient lumineuse. Les créatures mortes-vivantes subissent également Faiblesse.",
+        "",
+        "TÉNÈBRES — La cible reçoit Ténèbres et Décomposition, tandis que le porteur récupère une partie de sa vitalité.",
+        "",
+        "Ces deux voies opposées puisent dans les extrêmes de l'énergie spirituelle."
+      ]
+    },
+    {
+      "title": "La Voie Divine",
+      "text": [
+        "DIVIN — La plus rare des sept voies.",
+        "",
+        "Elle immobilise et affaiblit brièvement la cible, protège son porteur par Absorption et manifeste un éclair spirituel.",
+        "",
+        "Seuls quelques sceaux divins apparaissent parmi les récompenses de Mo Ye."
+      ]
+    }
+  ]
+}

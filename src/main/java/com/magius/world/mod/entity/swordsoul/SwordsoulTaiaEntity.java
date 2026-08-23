@@ -1,7 +1,7 @@
 package com.magius.world.mod.entity.swordsoul;
 
 import com.magius.world.mod.network.ModMessages;
-import com.magius.world.mod.network.packet.S2COpenSwordsoulMoYeDialoguePacket;
+import com.magius.world.mod.network.packet.S2COpenSwordsoulTaiaDialoguePacket;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -14,17 +14,16 @@ import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
-public class SwordsoulMoYeEntity extends SwordsoulEntity {
+public class SwordsoulTaiaEntity extends SwordsoulEntity {
 
-    public SwordsoulMoYeEntity(
-            EntityType<? extends SwordsoulMoYeEntity> entityType,
+    public SwordsoulTaiaEntity(
+            EntityType<? extends SwordsoulTaiaEntity> entityType,
             Level level
     ) {
         super(entityType, level);
     }
 
     public static AttributeSupplier.Builder createAttributes() {
-
         return createMobAttributes()
                 .add(
                         Attributes.MAX_HEALTH,
@@ -42,39 +41,11 @@ public class SwordsoulMoYeEntity extends SwordsoulEntity {
 
     @Override
     protected String getSwordsoulName() {
-        return "Mo Ye";
-    }
-
-    @Override
-    public InteractionResult mobInteract(
-            Player player,
-            InteractionHand hand
-    ) {
-        /*
-         * Évite une double ouverture avec
-         * la main secondaire.
-         */
-        if (hand != InteractionHand.MAIN_HAND) {
-            return InteractionResult.PASS;
-        }
-
-        if (!level().isClientSide
-                && player instanceof ServerPlayer serverPlayer) {
-
-            ModMessages.sendToPlayer(
-                    new S2COpenSwordsoulMoYeDialoguePacket(),
-                    serverPlayer
-            );
-        }
-
-        return InteractionResult.sidedSuccess(
-                level().isClientSide
-        );
+        return "Taia";
     }
 
     @Override
     protected void registerGoals() {
-
         this.goalSelector.addGoal(
                 0,
                 new FloatGoal(this)
@@ -92,6 +63,32 @@ public class SwordsoulMoYeEntity extends SwordsoulEntity {
         this.goalSelector.addGoal(
                 2,
                 new RandomLookAroundGoal(this)
+        );
+    }
+    @Override
+    public InteractionResult mobInteract(
+            Player player,
+            InteractionHand hand
+    ) {
+        /*
+         * Évite une double ouverture causée
+         * par les deux mains du joueur.
+         */
+        if (hand != InteractionHand.MAIN_HAND) {
+            return InteractionResult.PASS;
+        }
+
+        if (!level().isClientSide
+                && player instanceof ServerPlayer serverPlayer) {
+
+            ModMessages.sendToPlayer(
+                    new S2COpenSwordsoulTaiaDialoguePacket(),
+                    serverPlayer
+            );
+        }
+
+        return InteractionResult.sidedSuccess(
+                level().isClientSide
         );
     }
 }

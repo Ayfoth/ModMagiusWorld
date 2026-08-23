@@ -43,12 +43,10 @@ public class C2SClaimClanRewardPacket {
             C2SClaimClanRewardPacket packet,
             Supplier<NetworkEvent.Context> contextSupplier
     ) {
-
         NetworkEvent.Context context =
                 contextSupplier.get();
 
         context.enqueueWork(() -> {
-
             ServerPlayer player =
                     context.getSender();
 
@@ -57,8 +55,8 @@ public class C2SClaimClanRewardPacket {
             }
 
             /*
-             * La récompense doit réellement exister
-             * dans le registre serveur.
+             * La récompense demandée doit réellement
+             * exister dans le registre du serveur.
              */
             ClanReward reward =
                     ClanRewardRegistry.get(
@@ -66,186 +64,129 @@ public class C2SClaimClanRewardPacket {
                     );
 
             if (reward == null) {
-
                 player.sendSystemMessage(
                         Component.literal(
                                 "§cRécompense de clan inconnue."
                         )
                 );
-
                 return;
             }
 
-            ClanManager.get(player)
-                    .ifPresent(clanData -> {
+            ClanManager.get(player).ifPresent(clanData -> {
+                /*
+                 * La récompense doit appartenir
+                 * au clan actuellement sélectionné.
+                 */
+                if (clanData.getClanId() == null
+                        || !clanData.getClanId().equals(
+                        reward.getClanId()
+                )) {
 
-                        /*
-                         * =========================================
-                         * VÉRIFICATION DU CLAN
-                         * =========================================
-                         */
+                    player.sendSystemMessage(
+                            Component.literal(
+                                    "§cCette récompense n'appartient pas à votre clan."
+                            )
+                    );
+                    return;
+                }
 
-//                        if (
-//                                clanData.getClanId() == null
-//                                        || !clanData
-//                                        .getClanId()
-//                                        .equals(
-//                                                reward.getClanId()
-//                                        )
-//                        ) {
-//
-//                            player.sendSystemMessage(
-//                                    Component.literal(
-//                                            "§cCette récompense n'appartient pas à votre clan."
-//                                    )
-//                            );
-//
-//                            return;
-//                        }
-//
-//                        /*
-//                         * =========================================
-//                         * PRESTIGE
-//                         * =========================================
-//                         */
-//
-//                        if (
-//                                clanData.getPrestige()
-//                                        < reward.getRequiredPrestige()
-//                        ) {
-//
-//                            player.sendSystemMessage(
-//                                    Component.literal(
-//                                            "§cPrestige insuffisant."
-//                                    )
-//                            );
-//
-//                            return;
-//                        }
-//
-//                        /*
-//                         * =========================================
-//                         * DÉJÀ RÉCUPÉRÉE
-//                         * =========================================
-//                         */
-//
-//                        if (
-//                                clanData.hasClaimedClanReward(
-//                                        reward.getId()
-//                                )
-//                        ) {
-//
-//                            player.sendSystemMessage(
-//                                    Component.literal(
-//                                            "§eCette récompense a déjà été récupérée."
-//                                    )
-//                            );
-//
-//                            return;
-//                        }
-                        System.out.println(
-                                "[CLAN REWARD] Clan joueur = "
-                                        + clanData.getClanId()
+                /*
+                 * Le prestige est toujours contrôlé
+                 * côté serveur.
+                 */
+                if (clanData.getPrestige()
+                        < reward.getRequiredPrestige()) {
+
+                    player.sendSystemMessage(
+                            Component.literal(
+                                    "§cPrestige insuffisant."
+                            )
+                    );
+                    return;
+                }
+
+                /*
+                 * Empêche de récupérer plusieurs fois
+                 * la même récompense.
+                 */
+                if (clanData.hasClaimedClanReward(
+                        reward.getId()
+                )) {
+                    player.sendSystemMessage(
+                            Component.literal(
+                                    "§eCette récompense a déjà été récupérée."
+                            )
+                    );
+                    return;
+                }
+
+                /*
+                 * Pour l'instant, seuls les objets ont
+                 * un véritable traitement côté serveur.
+                 *
+                 * Une récompense non implémentée ne doit
+                 * surtout pas être marquée comme récupérée.
+                 */
+                if (reward.getType()
+                        != ClanRewardType.ITEMS) {
+
+                    player.sendSystemMessage(
+                            Component.literal(
+                                    "§cCe type de récompense n'est pas encore disponible."
+                            )
+                    );
+                    return;
+                }
+
+                /*
+                 * Marque la récompense avant de donner
+                 * les objets afin d'éviter une duplication.
+                 */
+                boolean claimed =
+                        clanData.claimClanReward(
+                                reward.getId()
                         );
 
-                        System.out.println(
-                                "[CLAN REWARD] Clan récompense = "
-                                        + reward.getClanId()
+                if (!claimed) {
+                    return;
+                }
+
+                /*
+                 * Donne tous les objets enregistrés.
+                 */
+                for (ItemStack rewardStack
+                        : reward.getItems()) {
+
+                    ItemStack stack =
+                            rewardStack.copy();
+
+                    player.getInventory().add(
+                            stack
+                    );
+
+                    /*
+                     * Si l'inventaire est plein, le reste
+                     * est déposé aux pieds du joueur.
+                     */
+                    if (!stack.isEmpty()) {
+                        player.drop(
+                                stack,
+                                false
                         );
+                    }
+                }
 
-                        if (
-                                clanData.getClanId() == null
-                                        || !clanData
-                                        .getClanId()
-                                        .equals(
-                                                reward.getClanId()
-                                        )
-                        ) {
+                ClanSyncManager.sync(
+                        player
+                );
 
-                            player.sendSystemMessage(
-                                    Component.literal(
-                                            "§cCette récompense n'appartient pas à votre clan."
-                                    )
-                            );
-
-                            return;
-                        }
-
-                        /*
-                         * =========================================
-                         * APPLICATION
-                         * =========================================
-                         *
-                         * Pour le moment, seules les récompenses
-                         * ITEMS donnent réellement quelque chose.
-                         *
-                         * Les UNLOCK / RECIPES / SPECIAL seront
-                         * branchées ensuite sur leurs systèmes.
-                         */
-
-                        if (
-                                reward.getType()
-                                        == ClanRewardType.ITEMS
-                        ) {
-
-                            for (
-                                    ItemStack rewardStack
-                                    : reward.getItems()
-                            ) {
-
-                                ItemStack stack =
-                                        rewardStack.copy();
-
-                                boolean added =
-                                        player.getInventory()
-                                                .add(stack);
-
-                                /*
-                                 * Inventaire plein :
-                                 * on pose le reste au sol.
-                                 */
-                                if (
-                                        !added
-                                                || !stack.isEmpty()
-                                ) {
-
-                                    player.drop(
-                                            stack,
-                                            false
-                                    );
-                                }
-                            }
-                        }
-
-                        /*
-                         * =========================================
-                         * MARQUAGE COMME RÉCUPÉRÉE
-                         * =========================================
-                         */
-
-                        boolean claimed =
-                                clanData.claimClanReward(
-                                        reward.getId()
-                                );
-
-                        if (!claimed) {
-                            return;
-                        }
-
-                        /*
-                         * Synchronisation immédiate du client.
-                         */
-                        ClanSyncManager.sync(
-                                player
-                        );
-
-                        player.sendSystemMessage(
-                                Component.literal(
-                                        "§6Récompense obtenue : §f"
-                                                + reward.getTitle()
-                                )
-                        );
-                    });
+                player.sendSystemMessage(
+                        Component.literal(
+                                "§6Récompense obtenue : §f"
+                                        + reward.getTitle()
+                        )
+                );
+            });
         });
 
         context.setPacketHandled(true);
