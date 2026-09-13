@@ -1,4 +1,4 @@
-// 1.20.1	2026-08-16T19:19:52.958023	Loot Tables
+// 1.20.1	2026-08-23T19:41:42.223086	Loot Tables
 d04350ba12217f2d095117fe32f8f80eacf8e38f data/magiusworldmod/loot_tables/blocks/blackened_leaves.json
 b5c9a6ce89dabe40c60afe7d24b34aa32f176ff6 data/magiusworldmod/loot_tables/blocks/blackwood_log.json
 28c9b26d0fb577dcbf74b074cc626a4a0af58591 data/magiusworldmod/loot_tables/blocks/black_mossy_necro_stone_bricks.json
@@ -93,6 +93,10 @@ c9055592e8f38d495e4e7efcf41449c2f9d8d529 data/magiusworldmod/loot_tables/blocks/
 3d20ccaf8cf4e2259e51b34dbeb0e2003c9872a5 data/magiusworldmod/loot_tables/blocks/stripped_withered_log.json
 2701e0a4f777403327da05c38720a9d2326e85bd data/magiusworldmod/loot_tables/blocks/swordsoul_spirit_forge.json
 0c6729e9fd6423176b3b6a5fd8043f0da0a5509b data/magiusworldmod/loot_tables/blocks/swordsoul_spirit_forge_terminal.json
+d72723d2eabe5e6a30782436f4721b3f56cfda7b data/magiusworldmod/loot_tables/blocks/unchained_aruha_seal.json
+aecda02bb5452904bcac21728c1a0272e57deffb data/magiusworldmod/loot_tables/blocks/unchained_disaster_seal.json
+c79fbc44ff3b2b10c2e6e81b3619b239f1df1896 data/magiusworldmod/loot_tables/blocks/unchained_rakea_seal.json
+261113fe473b1f4536a1a25eb57d75690adc3861 data/magiusworldmod/loot_tables/blocks/unchained_seal.json
 731c012f86e8a96a5a959da7e616e3afe7df0350 data/magiusworldmod/loot_tables/blocks/unstable_necro_stone.json
 0331c416742fdce1f77397f35a00b42c4cd3aeaf data/magiusworldmod/loot_tables/blocks/veined_flesh.json
 4cc1dad9e50eb721dda819886a271a3374e9108c data/magiusworldmod/loot_tables/blocks/veined_rock.json

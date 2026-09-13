@@ -13,7 +13,6 @@ import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
@@ -26,7 +25,6 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.*;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Set;
@@ -38,6 +36,10 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+        this.dropSelf(ModBlocks.UNCHAINED_SEAL.get());
+        this.dropSelf(ModBlocks.UNCHAINED_ARUHA_SEAL.get());
+        this.dropSelf(ModBlocks.UNCHAINED_RAKEA_SEAL.get());
+        this.dropSelf(ModBlocks.UNCHAINED_DISASTER_SEAL.get());
         this.dropSelf(ModBlocks.SWORDSOUL_SPIRIT_FORGE.get());
         this.dropSelf(ModBlocks.SWORDSOUL_SPIRIT_FORGE_TERMINAL.get());
         this.dropSelf(ModBlocks.HEARTH_CORE.get());

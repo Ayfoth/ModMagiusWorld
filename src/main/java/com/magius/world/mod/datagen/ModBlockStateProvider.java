@@ -11,8 +11,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -30,6 +28,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        // Unchained
+        blockWithItem(ModBlocks.UNCHAINED_SEAL);
+        blockWithItem(ModBlocks.UNCHAINED_ARUHA_SEAL);
+        blockWithItem(ModBlocks.UNCHAINED_RAKEA_SEAL);
+        blockWithItem(ModBlocks.UNCHAINED_DISASTER_SEAL);
         // =====================================================
 // SWORDSOUL
 // =====================================================

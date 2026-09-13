@@ -14,6 +14,24 @@ public class ModFrenchLangProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+        add(
+                ModBlocks.UNCHAINED_SEAL.get(),
+                "Sceau enchaîné"
+        );
+        add(
+                ModBlocks.UNCHAINED_ARUHA_SEAL.get(),
+                "Sceau d'Aruha"
+        );
+
+        add(
+                ModBlocks.UNCHAINED_RAKEA_SEAL.get(),
+                "Sceau de Rakea"
+        );
+
+        add(
+                ModBlocks.UNCHAINED_DISASTER_SEAL.get(),
+                "Sceau du Désastre"
+        );
 
         add(
                 ModItems.DRAGONMAID_INSIGNIA.get(),

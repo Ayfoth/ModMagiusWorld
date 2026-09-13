@@ -2,12 +2,10 @@ package com.magius.world.mod.entity.client;
 
 import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.entity.ModEntities;
-import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import com.magius.world.mod.entity.client.DragonmaidTinkhecRenderer;
 
 @Mod.EventBusSubscriber(
         modid = MagiusWorldMod.MOD_ID,
@@ -49,6 +47,26 @@ public final class ModEntityRenderers {
         event.registerEntityRenderer(
                 ModEntities.SWORDSOUL_TAIA.get(),
                 SwordsoulRenderer::new
+        );
+
+        event.registerEntityRenderer(
+                ModEntities.UNCHAINED_EMISSARY.get(),
+                UnchainedRenderer::new
+        );
+
+        event.registerEntityRenderer(
+                ModEntities.UNCHAINED_SEAL_KEEPER.get(),
+                UnchainedRenderer::new
+        );
+
+        event.registerEntityRenderer(
+                ModEntities.UNCHAINED_ARUHA.get(),
+                UnchainedRenderer::new
+        );
+
+        event.registerEntityRenderer(
+                ModEntities.UNCHAINED_RAKEA.get(),
+                UnchainedRenderer::new
         );
     }
 }

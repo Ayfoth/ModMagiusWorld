@@ -5,6 +5,7 @@ import com.magius.world.mod.clan.quest.api.QuestStatus;
 import com.magius.world.mod.clan.quest.manager.QuestManager;
 import com.magius.world.mod.clan.theme.ClanTheme;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -61,6 +62,30 @@ public class MemberTab implements ClanTab {
                     "textures/entity/swordsoul/emissary.png"
             );
 
+    private static final ResourceLocation UNCHAINED_QUEST_1 =
+            ResourceLocation.fromNamespaceAndPath(
+                    MagiusWorldMod.MOD_ID,
+                    "unchained_abominations_prison"
+            );
+
+    private static final ResourceLocation UNCHAINED_QUEST_2 =
+            ResourceLocation.fromNamespaceAndPath(
+                    MagiusWorldMod.MOD_ID,
+                    "unchained_twins_of_destruction"
+            );
+
+    private static final ResourceLocation UNCHAINED_QUEST_3 =
+            ResourceLocation.fromNamespaceAndPath(
+                    MagiusWorldMod.MOD_ID,
+                    "unchained_chain_reaction"
+            );
+
+    private static final ResourceLocation UNCHAINED_MEMBER_TEXTURE =
+            ResourceLocation.fromNamespaceAndPath(
+                    MagiusWorldMod.MOD_ID,
+                    "textures/entity/unchained/unchained.png"
+            );
+
     private record MemberEntry(
             String name,
             String role,
@@ -114,6 +139,37 @@ public class MemberTab implements ClanTab {
                             "Maître des Sept Voies",
                             "Enseigne l'infusion des attributs dans les lames spirituelles.",
                             3
+                    )
+            );
+
+    private static final List<MemberEntry> UNCHAINED_MEMBERS =
+            List.of(
+                    new MemberEntry(
+                            "Émissaire déchaîné",
+                            "Porte-parole de la Rupture",
+                            "Guide les nouveaux initiés jusqu'à la Prison de l'Abomination.",
+                            1
+                    ),
+
+                    new MemberEntry(
+                            "Gardien des Sceaux",
+                            "Veilleur de la prison",
+                            "Préserve la mémoire des Sceaux et transmet leurs anciennes épreuves.",
+                            2
+                    ),
+
+                    new MemberEntry(
+                            "Aruha",
+                            "Jumeau de la Décomposition",
+                            "Transforme les restes des morts en Sceaux chargés d'une force corrosive.",
+                            2
+                    ),
+
+                    new MemberEntry(
+                            "Rakea",
+                            "Jumeau de l'Embrasement",
+                            "Concentre l'essence des Blazes dans des Sceaux à la puissance ardente.",
+                            2
                     )
             );
 
@@ -191,6 +247,15 @@ public class MemberTab implements ClanTab {
                 playerSkinTexture = true;
             }
 
+            case "unchained" -> {
+                members = UNCHAINED_MEMBERS;
+                quest1Id = UNCHAINED_QUEST_1;
+                quest2Id = UNCHAINED_QUEST_2;
+                quest3Id = UNCHAINED_QUEST_3;
+                memberTexture = UNCHAINED_MEMBER_TEXTURE;
+                playerSkinTexture = true;
+            }
+
             default -> {
                 guiGraphics.drawString(
                         font,
@@ -253,14 +318,22 @@ public class MemberTab implements ClanTab {
             }
         }
 
-        int memberY =
-                y + 32;
+        int listX = x + 12;
+        int listY = y + 32;
+        int listWidth = width - 24;
+        boolean gridLayout = members.size() > 3;
+        int gap = 5;
+        int columns = gridLayout ? 2 : 1;
+        int rows = (members.size() + columns - 1) / columns;
+        int cardWidth = gridLayout
+                ? (listWidth - gap) / 2
+                : listWidth;
+        int cardHeight = gridLayout
+                ? Math.max(47, (height - 32 - gap) / rows)
+                : 47;
 
-        for (
-                MemberEntry member
-                : members
-
-        ) {
+        for (int index = 0; index < members.size(); index++) {
+            MemberEntry member = members.get(index);
             boolean discovered =
                     switch (member.discoveryQuest()) {
 
@@ -279,6 +352,11 @@ public class MemberTab implements ClanTab {
                         default -> false;
                     };
 
+            int column = index % columns;
+            int row = index / columns;
+            int memberX = listX + column * (cardWidth + gap);
+            int memberY = listY + row * (cardHeight + gap);
+
             renderMember(
                     guiGraphics,
                     theme,
@@ -286,12 +364,11 @@ public class MemberTab implements ClanTab {
                     discovered,
                     memberTexture,
                     playerSkinTexture,
-                    x + 12,
+                    memberX,
                     memberY,
-                    width - 24
+                    cardWidth,
+                    cardHeight
             );
-
-            memberY += 49;
         }
     }
 
@@ -305,7 +382,8 @@ public class MemberTab implements ClanTab {
             boolean playerSkinTexture,
             int x,
             int y,
-            int width
+            int width,
+            int height
     ) {
 
         var font =
@@ -320,7 +398,7 @@ public class MemberTab implements ClanTab {
                 x,
                 y,
                 x + width,
-                y + 47,
+                y + height,
                 0x66000000
         );
 
@@ -354,7 +432,11 @@ public class MemberTab implements ClanTab {
 
             guiGraphics.drawString(
                     font,
-                    Component.literal("Membre inconnu"),
+                    Component.literal(fitText(
+                            font,
+                            "Membre inconnu",
+                            width - 58
+                    )),
                     x + 50,
                     y + 22,
                     0xFF666666,
@@ -380,9 +462,14 @@ public class MemberTab implements ClanTab {
 
 // Portrait 32x32
         if (playerSkinTexture) {
+            int textureHeight =
+                    UNCHAINED_MEMBER_TEXTURE.equals(memberTexture)
+                            ? 32
+                            : 64;
+
             /*
              * Visage 8 × 8 extrait de la texture
-             * d'entité 64 × 64, agrandi en 32 × 32.
+             * d'entité, agrandi en 32 × 32.
              */
             guiGraphics.blit(
                     memberTexture,
@@ -395,7 +482,7 @@ public class MemberTab implements ClanTab {
                     8,
                     8,
                     64,
-                    64
+                    textureHeight
             );
 
             /*
@@ -413,7 +500,7 @@ public class MemberTab implements ClanTab {
                     8,
                     8,
                     64,
-                    64
+                    textureHeight
             );
         } else {
             /*
@@ -439,9 +526,11 @@ public class MemberTab implements ClanTab {
 
         guiGraphics.drawString(
                 font,
-                Component.literal(
-                        member.name()
-                ),
+                Component.literal(fitText(
+                        font,
+                        member.name(),
+                        width - 58
+                )),
                 x + 50,
                 y + 6,
                 theme.getTitleColor(),
@@ -455,9 +544,11 @@ public class MemberTab implements ClanTab {
 
         guiGraphics.drawString(
                 font,
-                Component.literal(
-                        member.role()
-                ),
+                Component.literal(fitText(
+                        font,
+                        member.role(),
+                        width - 58
+                )),
                 x + 50,
                 y + 18,
                 0xFFD6B36A,
@@ -495,5 +586,23 @@ public class MemberTab implements ClanTab {
 
             descriptionY += 9;
         }
+    }
+
+    private static String fitText(
+            Font font,
+            String text,
+            int maximumWidth
+    ) {
+        if (text == null || text.isEmpty() || font.width(text) <= maximumWidth) {
+            return text == null ? "" : text;
+        }
+
+        String ellipsis = "…";
+        int availableWidth = Math.max(
+                0,
+                maximumWidth - font.width(ellipsis)
+        );
+
+        return font.plainSubstrByWidth(text, availableWidth) + ellipsis;
     }
 }

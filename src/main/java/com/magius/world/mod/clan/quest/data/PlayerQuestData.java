@@ -3,10 +3,12 @@ package com.magius.world.mod.clan.quest.data;
 import com.magius.world.mod.clan.quest.api.QuestStatus;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.common.capabilities.AutoRegisterCapability;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@AutoRegisterCapability
 public class PlayerQuestData {
 
     private final Map<ResourceLocation, QuestStatus> quests = new HashMap<>();

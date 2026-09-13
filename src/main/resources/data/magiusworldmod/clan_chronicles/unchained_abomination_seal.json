@@ -1,0 +1,49 @@
+{
+  "id": "magiusworldmod:unchained_abomination_seal",
+  "clan": "magiusworldmod:unchained",
+  "order": 1,
+  "title": "Le Sceau de l'Abomination",
+  "short_title": "L'Abomination",
+  "description": "L'origine de la prison et du premier Sceau enchaîné.",
+  "icon": "magiusworldmod:unchained_seal",
+
+  "unlock": {
+    "type": "quest",
+    "target": "magiusworldmod:unchained_abominations_prison"
+  },
+
+  "pages": [
+    {
+      "title": "La première chaîne",
+      "text": [
+        "Avant la naissance du clan, une force indomptable parcourait déjà les profondeurs du Nether.",
+        "",
+        "Elle ne cherchait ni royaume ni trésor. Elle ne connaissait que la rupture, et tout ce qu'elle touchait finissait par céder."
+      ]
+    },
+    {
+      "title": "La prison noire",
+      "text": [
+        "Craignant que cette puissance ne consume leurs terres, les anciens bâtirent une prison de pierre noire.",
+        "",
+        "Au centre, ils placèrent un Sceau capable d'absorber son énergie et de la retenir derrière des chaînes invisibles."
+      ]
+    },
+    {
+      "title": "Le Gardien",
+      "text": [
+        "Un Gardien fut lié au Sceau afin que jamais la prison ne soit ouverte par ignorance.",
+        "",
+        "Les siècles passèrent. Les noms des bâtisseurs disparurent, mais le Gardien continua d'attendre devant les chaînes."
+      ]
+    },
+    {
+      "title": "La rupture",
+      "text": [
+        "Lorsque le premier Sceau fut brisé, la prison ne libéra pas seulement son captif.",
+        "",
+        "Elle reconnut un nouveau porteur de la Rupture. Ainsi commença l'histoire des Déchaînés."
+      ]
+    }
+  ]
+}

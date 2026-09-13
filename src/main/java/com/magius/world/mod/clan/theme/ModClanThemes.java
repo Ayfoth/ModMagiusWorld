@@ -90,5 +90,46 @@ public final class ModClanThemes {
                         null
                 )
         );
+        ClanThemeRegistry.register(
+                ResourceLocation.fromNamespaceAndPath(
+                        MagiusWorldMod.MOD_ID,
+                        "unchained"
+                ),
+
+                new ClanTheme(
+                        ResourceLocation.fromNamespaceAndPath(
+                                MagiusWorldMod.MOD_ID,
+                                "textures/gui/clan/unchained/frame.png"
+                        ),
+
+                        ResourceLocation.fromNamespaceAndPath(
+                                MagiusWorldMod.MOD_ID,
+                                "textures/gui/clan/unchained/frame.png"
+                        ),
+
+                        ResourceLocation.fromNamespaceAndPath(
+                                MagiusWorldMod.MOD_ID,
+                                "textures/gui/clans/unchained.png"
+                        ),
+
+                        Component.literal("Les Déchaînés"),
+                        Component.literal("Rupture"),
+
+                        // Accent : charbon rouge très sombre
+                        0xFF1A090C,
+
+                        // Titres : rouge sang assombri, sans rose
+                        0xFF812D2D,
+
+                        // Texte : gris cendre neutre
+                        0xFFD2CED0,
+
+                        // Fond : noir charbon légèrement violacé
+                        0xFF030204,
+
+                        null,
+                        null
+                )
+        );
     }
 }

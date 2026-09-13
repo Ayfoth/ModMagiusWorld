@@ -312,6 +312,70 @@ public class ModMessages {
                         S2COpenSwordsoulTaiaDialoguePacket::handle
                 )
                 .add();
+        INSTANCE.messageBuilder(
+                        C2SJoinUnchainedClanPacket.class,
+                        id()
+                )
+                .encoder(C2SJoinUnchainedClanPacket::encode)
+                .decoder(C2SJoinUnchainedClanPacket::new)
+                .consumerMainThread(C2SJoinUnchainedClanPacket::handle)
+                .add();
+        INSTANCE.messageBuilder(
+                        C2SStartUnchainedFirstQuestPacket.class,
+                        id()
+                )
+                .encoder(C2SStartUnchainedFirstQuestPacket::encode)
+                .decoder(C2SStartUnchainedFirstQuestPacket::new)
+                .consumerMainThread(C2SStartUnchainedFirstQuestPacket::handle)
+                .add();
+        INSTANCE.messageBuilder(
+                        C2SClaimUnchainedFirstQuestRewardPacket.class,
+                        id()
+                )
+                .encoder(C2SClaimUnchainedFirstQuestRewardPacket::encode)
+                .decoder(C2SClaimUnchainedFirstQuestRewardPacket::new)
+                .consumerMainThread(C2SClaimUnchainedFirstQuestRewardPacket::handle)
+                .add();
+        INSTANCE.messageBuilder(
+                        C2SStartUnchainedTwinsQuestPacket.class,
+                        id()
+                )
+                .encoder(C2SStartUnchainedTwinsQuestPacket::encode)
+                .decoder(C2SStartUnchainedTwinsQuestPacket::new)
+                .consumerMainThread(C2SStartUnchainedTwinsQuestPacket::handle)
+                .add();
+        INSTANCE.messageBuilder(
+                        C2SClaimUnchainedTwinsQuestRewardPacket.class,
+                        id()
+                )
+                .encoder(C2SClaimUnchainedTwinsQuestRewardPacket::encode)
+                .decoder(C2SClaimUnchainedTwinsQuestRewardPacket::new)
+                .consumerMainThread(C2SClaimUnchainedTwinsQuestRewardPacket::handle)
+                .add();
+        INSTANCE.messageBuilder(
+                        C2SBuyUnchainedSealPacket.class,
+                        id()
+                )
+                .encoder(C2SBuyUnchainedSealPacket::encode)
+                .decoder(C2SBuyUnchainedSealPacket::new)
+                .consumerMainThread(C2SBuyUnchainedSealPacket::handle)
+                .add();
+        INSTANCE.messageBuilder(
+                        C2SStartUnchainedChainReactionQuestPacket.class,
+                        id()
+                )
+                .encoder(C2SStartUnchainedChainReactionQuestPacket::encode)
+                .decoder(C2SStartUnchainedChainReactionQuestPacket::new)
+                .consumerMainThread(C2SStartUnchainedChainReactionQuestPacket::handle)
+                .add();
+        INSTANCE.messageBuilder(
+                        C2SClaimUnchainedChainReactionQuestRewardPacket.class,
+                        id()
+                )
+                .encoder(C2SClaimUnchainedChainReactionQuestRewardPacket::encode)
+                .decoder(C2SClaimUnchainedChainReactionQuestRewardPacket::new)
+                .consumerMainThread(C2SClaimUnchainedChainReactionQuestRewardPacket::handle)
+                .add();
     }
 
     public static <MSG> void sendToServer(MSG message) {

@@ -6,6 +6,7 @@ import com.magius.world.mod.clan.manager.ClanManager;
 import com.magius.world.mod.clan.manager.ClanRegistry;
 import com.magius.world.mod.clan.theme.ClanTheme;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -15,6 +16,9 @@ import com.magius.world.mod.clan.api.ClanRank;
 import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.clan.quest.api.QuestStatus;
 import com.magius.world.mod.clan.quest.manager.QuestManager;
+import com.magius.world.mod.clan.quest.unchained.UnchainedChainReactionQuest;
+import com.magius.world.mod.clan.quest.unchained.UnchainedPrisonQuest;
+import com.magius.world.mod.clan.quest.unchained.UnchainedTwinsQuest;
 import com.magius.world.mod.clan.chronicle.data.ChronicleDefinition;
 import com.magius.world.mod.clan.chronicle.data.ChronicleRegistry;
 import com.magius.world.mod.clan.chronicle.unlock.ChronicleUnlockManager;
@@ -39,6 +43,11 @@ public class HomeTab implements ClanTab {
             ResourceLocation.fromNamespaceAndPath(
                     MagiusWorldMod.MOD_ID,
                     "swordsoul"
+            );
+    private static final ResourceLocation UNCHAINED_ID =
+            ResourceLocation.fromNamespaceAndPath(
+                    MagiusWorldMod.MOD_ID,
+                    "unchained"
             );
 
     private static final ItemStack RANK_ICON =
@@ -97,6 +106,12 @@ public class HomeTab implements ClanTab {
         }
         QuestStatus unexpectedGuestStatus =
                 QuestStatus.NOT_STARTED;
+        QuestStatus unchainedPrisonStatus =
+                QuestStatus.NOT_STARTED;
+        QuestStatus unchainedTwinsStatus =
+                QuestStatus.NOT_STARTED;
+        QuestStatus unchainedChainReactionStatus =
+                QuestStatus.NOT_STARTED;
 
         if (player != null) {
 
@@ -111,7 +126,40 @@ public class HomeTab implements ClanTab {
                             .orElse(
                                     QuestStatus.NOT_STARTED
                             );
+
+            unchainedPrisonStatus =
+                    QuestManager.get(player)
+                            .map(data -> QuestManager.getStatus(
+                                    data,
+                                    UnchainedPrisonQuest.ID
+                            ))
+                            .orElse(QuestStatus.NOT_STARTED);
+
+            unchainedTwinsStatus =
+                    QuestManager.get(player)
+                            .map(data -> QuestManager.getStatus(
+                                    data,
+                                    UnchainedTwinsQuest.ID
+                            ))
+                            .orElse(QuestStatus.NOT_STARTED);
+
+            unchainedChainReactionStatus =
+                    QuestManager.get(player)
+                            .map(data -> QuestManager.getStatus(
+                                    data,
+                                    UnchainedChainReactionQuest.ID
+                            ))
+                            .orElse(QuestStatus.NOT_STARTED);
         }
+
+        UnchainedHomeContent unchainedContent =
+                UNCHAINED_ID.equals(clanId)
+                        ? buildUnchainedContent(
+                                unchainedPrisonStatus,
+                                unchainedTwinsStatus,
+                                unchainedChainReactionStatus
+                        )
+                        : null;
 
         int prestige = 0;
         int rankIndex = 0;
@@ -480,7 +528,7 @@ public class HomeTab implements ClanTab {
 
             guiGraphics.drawString(
                     font,
-                    Component.literal("Confiance"),
+                    theme.getReputationName(),
                     progressX,
                     progressY,
                     theme.getTextColor(),
@@ -651,6 +699,12 @@ public class HomeTab implements ClanTab {
             }
         }
 
+        if (unchainedContent != null) {
+            questCardTitle = unchainedContent.questCardTitle();
+            questName = unchainedContent.questName();
+            questDescription = unchainedContent.questDescription();
+        }
+
         // =====================================================
         // QUÊTE EN COURS
         // =====================================================
@@ -662,7 +716,11 @@ public class HomeTab implements ClanTab {
                 row2Y,
                 leftWidth,
                 rowHeight,
-                Component.literal(questCardTitle)
+                Component.literal(fitText(
+                        font,
+                        questCardTitle,
+                        leftWidth - 20
+                ))
         );
 
         if (compact) {
@@ -678,7 +736,11 @@ public class HomeTab implements ClanTab {
 
             guiGraphics.drawString(
                     font,
-                    Component.literal(questName),
+                    Component.literal(fitText(
+                            font,
+                            questName,
+                            leftWidth - 37
+                    )),
                     iconX + 21,
                     row2Y + 29,
                     theme.getTitleColor(),
@@ -698,7 +760,11 @@ public class HomeTab implements ClanTab {
 
             guiGraphics.drawString(
                     font,
-                    Component.literal(questName),
+                    Component.literal(fitText(
+                            font,
+                            questName,
+                            leftWidth - 43
+                    )),
                     iconX + 23,
                     row2Y + 27,
                     theme.getTitleColor(),
@@ -707,9 +773,11 @@ public class HomeTab implements ClanTab {
 
             guiGraphics.drawString(
                     font,
-                    Component.literal(
-                            questDescription
-                    ),
+                    Component.literal(fitText(
+                            font,
+                            questDescription,
+                            leftWidth - 43
+                    )),
                     iconX + 23,
                     row2Y + 41,
                     theme.getTextColor(),
@@ -819,6 +887,12 @@ public class HomeTab implements ClanTab {
                             "";
                 }
             }
+        }
+
+        if (unchainedContent != null) {
+            rewardCardTitle = unchainedContent.rewardCardTitle();
+            rewardMainText = unchainedContent.rewardMainText();
+            rewardSecondaryText = unchainedContent.rewardSecondaryText();
         }
 
         // =====================================================
@@ -1054,6 +1128,11 @@ public class HomeTab implements ClanTab {
             }
         }
 
+        if (unchainedContent != null) {
+            activityTitle = unchainedContent.activityTitle();
+            activityDetail = unchainedContent.activityDetail();
+        }
+
         // =====================================================
         // ACTIVITÉ RÉCENTE
         // =====================================================
@@ -1117,5 +1196,156 @@ public class HomeTab implements ClanTab {
                     false
             );
         }
+    }
+
+    private static UnchainedHomeContent buildUnchainedContent(
+            QuestStatus prisonStatus,
+            QuestStatus twinsStatus,
+            QuestStatus chainReactionStatus
+    ) {
+        if (prisonStatus != QuestStatus.REWARDED) {
+            return switch (prisonStatus) {
+                case NOT_STARTED -> new UnchainedHomeContent(
+                        "Quête disponible",
+                        "La Prison de l'Abomination",
+                        "Parler à l'Émissaire déchaîné",
+                        "Récompense de quête",
+                        "+50 Prestige",
+                        "Entrée parmi les Déchaînés",
+                        "Aucune activité récente",
+                        ""
+                );
+                case IN_PROGRESS -> new UnchainedHomeContent(
+                        "Quête en cours",
+                        "La Prison de l'Abomination",
+                        "Briser le premier Sceau enchaîné",
+                        "Récompense de quête",
+                        "+50 Prestige",
+                        "Libérez l'énergie emprisonnée",
+                        "Quête acceptée",
+                        "La Prison de l'Abomination"
+                );
+                case COMPLETED -> new UnchainedHomeContent(
+                        "Quête terminée",
+                        "La Prison de l'Abomination",
+                        "Retourner auprès de l'Émissaire",
+                        "Récompense disponible",
+                        "+50 Prestige",
+                        "Retournez voir l'Émissaire",
+                        "Quête terminée",
+                        "La Prison de l'Abomination"
+                );
+                case REWARDED -> throw new IllegalStateException();
+            };
+        }
+
+        if (twinsStatus != QuestStatus.REWARDED) {
+            return switch (twinsStatus) {
+                case NOT_STARTED -> new UnchainedHomeContent(
+                        "Quête disponible",
+                        "Les Jumeaux de la Destruction",
+                        "Parler au Gardien des Sceaux",
+                        "Récompense de quête",
+                        "+50 Prestige",
+                        "Libération d'Aruha et de Rakea",
+                        "Quête accomplie",
+                        "La Prison de l'Abomination"
+                );
+                case IN_PROGRESS -> new UnchainedHomeContent(
+                        "Quête en cours",
+                        "Les Jumeaux de la Destruction",
+                        "Activer les Sceaux d'Aruha et de Rakea",
+                        "Récompense de quête",
+                        "+50 Prestige",
+                        "Libération d'Aruha et de Rakea",
+                        "Quête acceptée",
+                        "Les Jumeaux de la Destruction"
+                );
+                case COMPLETED -> new UnchainedHomeContent(
+                        "Quête terminée",
+                        "Les Jumeaux de la Destruction",
+                        "Retourner auprès du Gardien",
+                        "Récompense disponible",
+                        "+50 Prestige",
+                        "Retournez voir le Gardien",
+                        "Quête terminée",
+                        "Les Jumeaux de la Destruction"
+                );
+                case REWARDED -> throw new IllegalStateException();
+            };
+        }
+
+        return switch (chainReactionStatus) {
+            case NOT_STARTED -> new UnchainedHomeContent(
+                    "Quête disponible",
+                    "La Réaction en chaîne",
+                    "Parler au Gardien des Sceaux",
+                    "Récompense de quête",
+                    "+75 Prestige",
+                    "Maîtrise de la destruction en chaîne",
+                    "Quête accomplie",
+                    "Les Jumeaux de la Destruction"
+            );
+            case IN_PROGRESS -> new UnchainedHomeContent(
+                    "Quête en cours",
+                    "La Réaction en chaîne",
+                    "Relier puis briser le Sceau du Désastre",
+                    "Récompense de quête",
+                    "+75 Prestige",
+                    "Maîtrise de la destruction en chaîne",
+                    "Quête acceptée",
+                    "La Réaction en chaîne"
+            );
+            case COMPLETED -> new UnchainedHomeContent(
+                    "Quête terminée",
+                    "La Réaction en chaîne",
+                    "Retourner auprès du Gardien",
+                    "Récompense disponible",
+                    "+75 Prestige",
+                    "Retournez voir le Gardien",
+                    "Quête terminée",
+                    "La Réaction en chaîne"
+            );
+            case REWARDED -> new UnchainedHomeContent(
+                    "Quêtes principales terminées",
+                    "La destruction est maîtrisée",
+                    "Les activités régulières seront bientôt disponibles",
+                    "Récompense obtenue",
+                    "+75 Prestige obtenu",
+                    "La Réaction en chaîne accomplie",
+                    "Saga accomplie",
+                    "Les trois chaînes ont été rompues"
+            );
+        };
+    }
+
+    private static String fitText(
+            Font font,
+            String text,
+            int maximumWidth
+    ) {
+        if (text == null || text.isEmpty() || font.width(text) <= maximumWidth) {
+            return text == null ? "" : text;
+        }
+
+        String ellipsis = "…";
+        int availableWidth = Math.max(
+                0,
+                maximumWidth - font.width(ellipsis)
+        );
+
+        return font.plainSubstrByWidth(text, availableWidth) + ellipsis;
+    }
+
+    private record UnchainedHomeContent(
+            String questCardTitle,
+            String questName,
+            String questDescription,
+            String rewardCardTitle,
+            String rewardMainText,
+            String rewardSecondaryText,
+            String activityTitle,
+            String activityDetail
+    ) {
     }
 }

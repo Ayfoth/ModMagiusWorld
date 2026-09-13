@@ -457,6 +457,10 @@ public class ClanCommand {
                                                                 return 0;
                                                             }
 
+                                                            // Le clan actif est aussi utilisé par l'interface côté client.
+                                                            // On synchronise immédiatement pour que /clan ouvre le bon écran.
+                                                            ClanSyncManager.sync(player);
+
                                                             player.sendSystemMessage(
                                                                     Component.literal(
                                                                             "§6=========================="
@@ -517,6 +521,9 @@ public class ClanCommand {
                                                     .orElse("Inconnu");
 
                                             ClanManager.leaveClan(data);
+
+                                            // Efface également le clan actif dans les données du client.
+                                            ClanSyncManager.sync(player);
 
                                             player.sendSystemMessage(
                                                     Component.literal("§6========================")

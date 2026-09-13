@@ -1,0 +1,49 @@
+{
+  "id": "magiusworldmod:unchained_twin_seals",
+  "clan": "magiusworldmod:unchained",
+  "order": 2,
+  "title": "Les Sceaux Jumeaux",
+  "short_title": "Les Jumeaux",
+  "description": "L'histoire d'Aruha, de Rakea et de leurs deux Sceaux opposés.",
+  "icon": "magiusworldmod:unchained_aruha_seal",
+
+  "unlock": {
+    "type": "quest",
+    "target": "magiusworldmod:unchained_twins_of_destruction"
+  },
+
+  "pages": [
+    {
+      "title": "Deux fragments",
+      "text": [
+        "L'énergie arrachée à l'Abomination était trop instable pour demeurer enfermée dans un seul réceptacle.",
+        "",
+        "Les anciens la divisèrent alors en deux fragments et forgèrent les Sceaux jumeaux."
+      ]
+    },
+    {
+      "title": "Aruha",
+      "text": [
+        "Aruha reçut le fragment qui ronge la matière et affaiblit tout ce qui tente de lui résister.",
+        "",
+        "Son Sceau se nourrit des restes abandonnés par les morts et transforme la décomposition en puissance."
+      ]
+    },
+    {
+      "title": "Rakea",
+      "text": [
+        "Rakea reçut le fragment ardent, celui qui accélère la destruction jusqu'à la rendre impossible à contenir.",
+        "",
+        "Son Sceau répond aux flammes du Nether et à l'essence concentrée des Blazes."
+      ]
+    },
+    {
+      "title": "La séparation",
+      "text": [
+        "Pour empêcher leurs pouvoirs de se rejoindre, Aruha et Rakea furent éloignés l'un de l'autre et enfermés dans deux sanctuaires.",
+        "",
+        "Réactiver leurs Sceaux prouva que leur séparation touchait enfin à sa fin."
+      ]
+    }
+  ]
+}

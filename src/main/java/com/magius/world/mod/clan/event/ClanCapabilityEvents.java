@@ -2,6 +2,7 @@ package com.magius.world.mod.clan.event;
 
 import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.clan.data.PlayerClanProvider;
+import com.magius.world.mod.clan.quest.data.PlayerQuestProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
@@ -16,20 +17,27 @@ public final class ClanCapabilityEvents {
                     "player_clan"
             );
 
-    private ClanCapabilityEvents() {
+    private static final ResourceLocation PLAYER_QUEST_ID =
+            ResourceLocation.fromNamespaceAndPath(
+                    MagiusWorldMod.MOD_ID,
+                    "player_clan_quests"
+            );
+
+    public ClanCapabilityEvents() {
     }
 
     @SubscribeEvent
-    public static void attachPlayerClanCapability(
+    public void attachPlayerCapabilities(
             AttachCapabilitiesEvent<Entity> event
     ) {
         if (!(event.getObject() instanceof Player)) {
             return;
         }
 
-        PlayerClanProvider provider = new PlayerClanProvider();
+        PlayerClanProvider clanProvider = new PlayerClanProvider();
+        PlayerQuestProvider questProvider = new PlayerQuestProvider();
 
-        event.addCapability(PLAYER_CLAN_ID, provider);
-        event.addListener(provider::invalidate);
+        event.addCapability(PLAYER_CLAN_ID, clanProvider);
+        event.addCapability(PLAYER_QUEST_ID, questProvider);
     }
 }

@@ -15,6 +15,23 @@ public class ModEnglishLangProvider extends LanguageProvider {
     @Override
     protected void addTranslations() {
         add(
+                ModBlocks.UNCHAINED_SEAL.get(),
+                "Chained Seal"
+        );
+        add(
+                ModBlocks.UNCHAINED_ARUHA_SEAL.get(),
+                "Aruha's Seal"
+        );
+
+        add(
+                ModBlocks.UNCHAINED_RAKEA_SEAL.get(),
+                "Rakea's Seal"
+        );
+        add(
+                ModBlocks.UNCHAINED_DISASTER_SEAL.get(),
+                "Disaster Seal"
+        );
+        add(
                 ModItems.DRAGONMAID_INSIGNIA.get(),
                 "Dragonmaid Insignia"
         );

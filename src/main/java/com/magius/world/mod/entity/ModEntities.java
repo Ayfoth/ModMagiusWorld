@@ -9,6 +9,10 @@ import com.magius.world.mod.entity.echo.TempestBlaze;
 import com.magius.world.mod.entity.swordsoul.SwordsoulEmissaryEntity;
 import com.magius.world.mod.entity.swordsoul.SwordsoulMoYeEntity;
 import com.magius.world.mod.entity.swordsoul.SwordsoulTaiaEntity;
+import com.magius.world.mod.entity.unchained.UnchainedAruhaEntity;
+import com.magius.world.mod.entity.unchained.UnchainedEmissaryEntity;
+import com.magius.world.mod.entity.unchained.UnchainedRakeaEntity;
+import com.magius.world.mod.entity.unchained.UnchainedSealKeeperEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -142,6 +146,50 @@ public class ModEntities {
                             .sized(0.6F, 1.8F)
                             .clientTrackingRange(8)
                             .build("swordsoul_taia")
+            );
+    public static final RegistryObject<EntityType<UnchainedEmissaryEntity>> UNCHAINED_EMISSARY =
+            ENTITY_TYPES.register(
+                    "unchained_emissary",
+                    () -> EntityType.Builder.of(
+                                    UnchainedEmissaryEntity::new,
+                                    MobCategory.CREATURE
+                            )
+                            .sized(0.6F, 1.8F)
+                            .clientTrackingRange(8)
+                            .build("unchained_emissary")
+            );
+    public static final RegistryObject<EntityType<UnchainedSealKeeperEntity>> UNCHAINED_SEAL_KEEPER =
+            ENTITY_TYPES.register(
+                    "unchained_seal_keeper",
+                    () -> EntityType.Builder.of(
+                                    UnchainedSealKeeperEntity::new,
+                                    MobCategory.CREATURE
+                            )
+                            .sized(0.6F, 1.8F)
+                            .clientTrackingRange(8)
+                            .build("unchained_seal_keeper")
+            );
+    public static final RegistryObject<EntityType<UnchainedAruhaEntity>> UNCHAINED_ARUHA =
+            ENTITY_TYPES.register(
+                    "unchained_aruha",
+                    () -> EntityType.Builder.of(
+                                    UnchainedAruhaEntity::new,
+                                    MobCategory.CREATURE
+                            )
+                            .sized(0.6F, 1.8F)
+                            .clientTrackingRange(8)
+                            .build("unchained_aruha")
+            );
+    public static final RegistryObject<EntityType<UnchainedRakeaEntity>> UNCHAINED_RAKEA =
+            ENTITY_TYPES.register(
+                    "unchained_rakea",
+                    () -> EntityType.Builder.of(
+                                    UnchainedRakeaEntity::new,
+                                    MobCategory.CREATURE
+                            )
+                            .sized(0.6F, 1.8F)
+                            .clientTrackingRange(8)
+                            .build("unchained_rakea")
             );
 
     public static void register(IEventBus eventBus) {

@@ -7,6 +7,9 @@ import com.magius.world.mod.clan.quest.dragonmaid.DragonmaidForgottenHomeQuest;
 import com.magius.world.mod.clan.quest.swordsoul.SwordsoulFirstQuest;
 import com.magius.world.mod.clan.quest.swordsoul.SwordsoulMoYeQuest;
 import com.magius.world.mod.clan.quest.swordsoul.SwordsoulTaiaQuest;
+import com.magius.world.mod.clan.quest.unchained.UnchainedChainReactionQuest;
+import com.magius.world.mod.clan.quest.unchained.UnchainedPrisonQuest;
+import com.magius.world.mod.clan.quest.unchained.UnchainedTwinsQuest;
 
 public final class QuestLoader {
 
@@ -37,6 +40,17 @@ public final class QuestLoader {
 
         QuestRegistry.register(
                 new DragonmaidForgottenHomeQuest()
+        );
+        QuestRegistry.register(
+                new UnchainedPrisonQuest()
+        );
+
+        QuestRegistry.register(
+                new UnchainedTwinsQuest()
+        );
+
+        QuestRegistry.register(
+                new UnchainedChainReactionQuest()
         );
     }
 }

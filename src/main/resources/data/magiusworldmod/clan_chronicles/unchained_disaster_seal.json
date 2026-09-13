@@ -1,0 +1,49 @@
+{
+  "id": "magiusworldmod:unchained_disaster_seal",
+  "clan": "magiusworldmod:unchained",
+  "order": 3,
+  "title": "Le Sceau du Désastre",
+  "short_title": "Le Désastre",
+  "description": "La véritable fonction du dernier Sceau des Déchaînés.",
+  "icon": "magiusworldmod:unchained_disaster_seal",
+
+  "unlock": {
+    "type": "quest",
+    "target": "magiusworldmod:unchained_chain_reaction"
+  },
+
+  "pages": [
+    {
+      "title": "Le dernier Sceau",
+      "text": [
+        "Le Sceau du Désastre ne fut jamais conçu pour emprisonner une créature.",
+        "",
+        "Il devait recueillir les résonances produites par tous les autres Sceaux et les maintenir séparées."
+      ]
+    },
+    {
+      "title": "La résonance",
+      "text": [
+        "Lorsqu'un Sceau est placé près de lui, le Désastre reconnaît sa signature et tisse une chaîne d'énergie.",
+        "",
+        "Avec trois liens actifs, la puissance accumulée dépasse ce que sa structure peut contenir."
+      ]
+    },
+    {
+      "title": "La réaction",
+      "text": [
+        "Briser le Sceau central déclenche alors une réaction en chaîne. Chaque lien libère le suivant et amplifie la rupture.",
+        "",
+        "Ce rituel transforma autrefois une prison en arme et donna aux Déchaînés leur maîtrise de la destruction."
+      ]
+    },
+    {
+      "title": "L'héritier",
+      "text": [
+        "Celui qui survit à la Réaction en chaîne ne se contente plus de briser les entraves.",
+        "",
+        "Il apprend à guider leur effondrement. Les Sceaux ne sont plus sa prison : ils deviennent ses instruments."
+      ]
+    }
+  ]
+}

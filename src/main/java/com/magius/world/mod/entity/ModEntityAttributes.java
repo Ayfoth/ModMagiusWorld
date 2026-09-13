@@ -7,6 +7,10 @@ import com.magius.world.mod.entity.dragonmaid.DragonmaidTinkhecEntity;
 import com.magius.world.mod.entity.swordsoul.SwordsoulEmissaryEntity;
 import com.magius.world.mod.entity.swordsoul.SwordsoulMoYeEntity;
 import com.magius.world.mod.entity.swordsoul.SwordsoulTaiaEntity;
+import com.magius.world.mod.entity.unchained.UnchainedAruhaEntity;
+import com.magius.world.mod.entity.unchained.UnchainedEmissaryEntity;
+import com.magius.world.mod.entity.unchained.UnchainedRakeaEntity;
+import com.magius.world.mod.entity.unchained.UnchainedSealKeeperEntity;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -50,6 +54,22 @@ public final class ModEntityAttributes {
         event.put(
                 ModEntities.SWORDSOUL_TAIA.get(),
                 SwordsoulTaiaEntity.createAttributes().build()
+        );
+        event.put(
+                ModEntities.UNCHAINED_EMISSARY.get(),
+                UnchainedEmissaryEntity.createAttributes().build()
+        );
+        event.put(
+                ModEntities.UNCHAINED_SEAL_KEEPER.get(),
+                UnchainedSealKeeperEntity.createAttributes().build()
+        );
+        event.put(
+                ModEntities.UNCHAINED_ARUHA.get(),
+                UnchainedAruhaEntity.createAttributes().build()
+        );
+        event.put(
+                ModEntities.UNCHAINED_RAKEA.get(),
+                UnchainedRakeaEntity.createAttributes().build()
         );
     }
 }

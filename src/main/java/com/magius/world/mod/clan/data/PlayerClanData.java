@@ -2,11 +2,13 @@ package com.magius.world.mod.clan.data;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.common.capabilities.AutoRegisterCapability;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+@AutoRegisterCapability
 public class PlayerClanData {
 
     /**

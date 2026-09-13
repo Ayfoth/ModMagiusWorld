@@ -4,26 +4,17 @@ import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.block.custom.*;
 import com.magius.world.mod.block.echo.*;
 import com.magius.world.mod.item.CorruptionTooltipBlockItem;
-import com.magius.world.mod.item.ModFoods;
 import com.magius.world.mod.item.ModItems;
-import com.magius.world.mod.item.custom.FuelItem;
-import com.magius.world.mod.item.echo.WitherMushroomItem;
 import com.magius.world.mod.sound.ModSounds;
 import com.magius.world.mod.util.ModWoodTypes;
 import com.magius.world.mod.worldgen.tree.PineTreeGrower;
-import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -35,12 +26,66 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.List;
 import java.util.function.Supplier;
 
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, MagiusWorldMod.MOD_ID);
+
+    // =====================================================
+// UNCHAINED
+// =====================================================
+
+    public static final RegistryObject<Block> UNCHAINED_SEAL =
+            registerBlock(
+                    "unchained_seal",
+                    () -> new UnchainedSealBlock(
+                            UnchainedSealType.CHAINED,
+                            BlockBehaviour.Properties
+                                    .copy(Blocks.CRYING_OBSIDIAN)
+                                    .strength(1.5F, 6.0F)
+                                    .lightLevel(state -> 4)
+                                    .sound(SoundType.CHAIN)
+                    )
+            );
+    public static final RegistryObject<Block> UNCHAINED_ARUHA_SEAL =
+            registerBlock(
+                    "unchained_aruha_seal",
+                    () -> new UnchainedSealBlock(
+                            UnchainedSealType.ARUHA,
+                            BlockBehaviour.Properties
+                                    .copy(Blocks.CRYING_OBSIDIAN)
+                                    .strength(1.5F, 6.0F)
+                                    .lightLevel(state -> 6)
+                                    .sound(SoundType.CHAIN)
+                    )
+            );
+
+    public static final RegistryObject<Block> UNCHAINED_RAKEA_SEAL =
+            registerBlock(
+                    "unchained_rakea_seal",
+                    () -> new UnchainedSealBlock(
+                            UnchainedSealType.RAKEA,
+                            BlockBehaviour.Properties
+                                    .copy(Blocks.CRYING_OBSIDIAN)
+                                    .strength(1.5F, 6.0F)
+                                    .lightLevel(state -> 6)
+                                    .sound(SoundType.CHAIN)
+                    )
+            );
+
+    public static final RegistryObject<Block> UNCHAINED_DISASTER_SEAL =
+            registerBlock(
+                    "unchained_disaster_seal",
+                    () -> new UnchainedSealBlock(
+                            UnchainedSealType.DISASTER,
+                            BlockBehaviour.Properties
+                                    .copy(Blocks.RESPAWN_ANCHOR)
+                                    .strength(2.5F, 9.0F)
+                                    .lightLevel(state -> 9)
+                                    .sound(SoundType.CHAIN)
+                    )
+            );
 
     public static final RegistryObject<Block> DRAGONMAID_NURSE_MARKER =
             BLOCKS.register(
