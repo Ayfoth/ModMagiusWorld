@@ -1,9 +1,9 @@
 package com.magius.world.mod.clan.manager;
 
+import com.magius.world.mod.clan.clans.ancientgear.AncientGearClan;
 import com.magius.world.mod.clan.clans.dragonmaid.DragonmaidClan;
 import com.magius.world.mod.clan.clans.swordsoul.SwordsoulClan;
 import com.magius.world.mod.clan.clans.unchained.UnchainedClan;
-import com.magius.world.mod.clan.reward.DragonmaidClanRewards;
 
 public final class ClanLoader {
 
@@ -23,6 +23,10 @@ public final class ClanLoader {
 
         ClanRegistry.register(
                 new UnchainedClan()
+        );
+
+        ClanRegistry.register(
+                new AncientGearClan()
         );
     }
 }

@@ -49,6 +49,11 @@ public class HomeTab implements ClanTab {
                     MagiusWorldMod.MOD_ID,
                     "unchained"
             );
+    private static final ResourceLocation ANCIENT_GEAR_ID =
+            ResourceLocation.fromNamespaceAndPath(
+                    MagiusWorldMod.MOD_ID,
+                    "ancient_gear"
+            );
 
     private static final ItemStack RANK_ICON =
             new ItemStack(Items.NETHER_STAR);
@@ -152,14 +157,17 @@ public class HomeTab implements ClanTab {
                             .orElse(QuestStatus.NOT_STARTED);
         }
 
-        UnchainedHomeContent unchainedContent =
-                UNCHAINED_ID.equals(clanId)
-                        ? buildUnchainedContent(
-                                unchainedPrisonStatus,
-                                unchainedTwinsStatus,
-                                unchainedChainReactionStatus
-                        )
-                        : null;
+        ClanHomeContent clanContent = null;
+
+        if (UNCHAINED_ID.equals(clanId)) {
+            clanContent = buildUnchainedContent(
+                    unchainedPrisonStatus,
+                    unchainedTwinsStatus,
+                    unchainedChainReactionStatus
+            );
+        } else if (ANCIENT_GEAR_ID.equals(clanId)) {
+            clanContent = buildAncientGearContent();
+        }
 
         int prestige = 0;
         int rankIndex = 0;
@@ -699,10 +707,10 @@ public class HomeTab implements ClanTab {
             }
         }
 
-        if (unchainedContent != null) {
-            questCardTitle = unchainedContent.questCardTitle();
-            questName = unchainedContent.questName();
-            questDescription = unchainedContent.questDescription();
+        if (clanContent != null) {
+            questCardTitle = clanContent.questCardTitle();
+            questName = clanContent.questName();
+            questDescription = clanContent.questDescription();
         }
 
         // =====================================================
@@ -889,10 +897,10 @@ public class HomeTab implements ClanTab {
             }
         }
 
-        if (unchainedContent != null) {
-            rewardCardTitle = unchainedContent.rewardCardTitle();
-            rewardMainText = unchainedContent.rewardMainText();
-            rewardSecondaryText = unchainedContent.rewardSecondaryText();
+        if (clanContent != null) {
+            rewardCardTitle = clanContent.rewardCardTitle();
+            rewardMainText = clanContent.rewardMainText();
+            rewardSecondaryText = clanContent.rewardSecondaryText();
         }
 
         // =====================================================
@@ -1128,9 +1136,9 @@ public class HomeTab implements ClanTab {
             }
         }
 
-        if (unchainedContent != null) {
-            activityTitle = unchainedContent.activityTitle();
-            activityDetail = unchainedContent.activityDetail();
+        if (clanContent != null) {
+            activityTitle = clanContent.activityTitle();
+            activityDetail = clanContent.activityDetail();
         }
 
         // =====================================================
@@ -1198,14 +1206,14 @@ public class HomeTab implements ClanTab {
         }
     }
 
-    private static UnchainedHomeContent buildUnchainedContent(
+    private static ClanHomeContent buildUnchainedContent(
             QuestStatus prisonStatus,
             QuestStatus twinsStatus,
             QuestStatus chainReactionStatus
     ) {
         if (prisonStatus != QuestStatus.REWARDED) {
             return switch (prisonStatus) {
-                case NOT_STARTED -> new UnchainedHomeContent(
+                case NOT_STARTED -> new ClanHomeContent(
                         "Quête disponible",
                         "La Prison de l'Abomination",
                         "Parler à l'Émissaire déchaîné",
@@ -1215,7 +1223,7 @@ public class HomeTab implements ClanTab {
                         "Aucune activité récente",
                         ""
                 );
-                case IN_PROGRESS -> new UnchainedHomeContent(
+                case IN_PROGRESS -> new ClanHomeContent(
                         "Quête en cours",
                         "La Prison de l'Abomination",
                         "Briser le premier Sceau enchaîné",
@@ -1225,7 +1233,7 @@ public class HomeTab implements ClanTab {
                         "Quête acceptée",
                         "La Prison de l'Abomination"
                 );
-                case COMPLETED -> new UnchainedHomeContent(
+                case COMPLETED -> new ClanHomeContent(
                         "Quête terminée",
                         "La Prison de l'Abomination",
                         "Retourner auprès de l'Émissaire",
@@ -1241,7 +1249,7 @@ public class HomeTab implements ClanTab {
 
         if (twinsStatus != QuestStatus.REWARDED) {
             return switch (twinsStatus) {
-                case NOT_STARTED -> new UnchainedHomeContent(
+                case NOT_STARTED -> new ClanHomeContent(
                         "Quête disponible",
                         "Les Jumeaux de la Destruction",
                         "Parler au Gardien des Sceaux",
@@ -1251,7 +1259,7 @@ public class HomeTab implements ClanTab {
                         "Quête accomplie",
                         "La Prison de l'Abomination"
                 );
-                case IN_PROGRESS -> new UnchainedHomeContent(
+                case IN_PROGRESS -> new ClanHomeContent(
                         "Quête en cours",
                         "Les Jumeaux de la Destruction",
                         "Activer les Sceaux d'Aruha et de Rakea",
@@ -1261,7 +1269,7 @@ public class HomeTab implements ClanTab {
                         "Quête acceptée",
                         "Les Jumeaux de la Destruction"
                 );
-                case COMPLETED -> new UnchainedHomeContent(
+                case COMPLETED -> new ClanHomeContent(
                         "Quête terminée",
                         "Les Jumeaux de la Destruction",
                         "Retourner auprès du Gardien",
@@ -1276,7 +1284,7 @@ public class HomeTab implements ClanTab {
         }
 
         return switch (chainReactionStatus) {
-            case NOT_STARTED -> new UnchainedHomeContent(
+            case NOT_STARTED -> new ClanHomeContent(
                     "Quête disponible",
                     "La Réaction en chaîne",
                     "Parler au Gardien des Sceaux",
@@ -1286,7 +1294,7 @@ public class HomeTab implements ClanTab {
                     "Quête accomplie",
                     "Les Jumeaux de la Destruction"
             );
-            case IN_PROGRESS -> new UnchainedHomeContent(
+            case IN_PROGRESS -> new ClanHomeContent(
                     "Quête en cours",
                     "La Réaction en chaîne",
                     "Relier puis briser le Sceau du Désastre",
@@ -1296,7 +1304,7 @@ public class HomeTab implements ClanTab {
                     "Quête acceptée",
                     "La Réaction en chaîne"
             );
-            case COMPLETED -> new UnchainedHomeContent(
+            case COMPLETED -> new ClanHomeContent(
                     "Quête terminée",
                     "La Réaction en chaîne",
                     "Retourner auprès du Gardien",
@@ -1306,7 +1314,7 @@ public class HomeTab implements ClanTab {
                     "Quête terminée",
                     "La Réaction en chaîne"
             );
-            case REWARDED -> new UnchainedHomeContent(
+            case REWARDED -> new ClanHomeContent(
                     "Quêtes principales terminées",
                     "La destruction est maîtrisée",
                     "Les activités régulières seront bientôt disponibles",
@@ -1317,6 +1325,19 @@ public class HomeTab implements ClanTab {
                     "Les trois chaînes ont été rompues"
             );
         };
+    }
+
+    private static ClanHomeContent buildAncientGearContent() {
+        return new ClanHomeContent(
+                "Mécanismes silencieux",
+                "La cité attend son mécaniste",
+                "Les premières quêtes arriveront bientôt",
+                "Récompenses verrouillées",
+                "Aucune récompense disponible",
+                "Réactivez les Rouages Ancients",
+                "Aucune activité récente",
+                ""
+        );
     }
 
     private static String fitText(
@@ -1337,7 +1358,7 @@ public class HomeTab implements ClanTab {
         return font.plainSubstrByWidth(text, availableWidth) + ellipsis;
     }
 
-    private record UnchainedHomeContent(
+    private record ClanHomeContent(
             String questCardTitle,
             String questName,
             String questDescription,

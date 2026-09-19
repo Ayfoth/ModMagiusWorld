@@ -87,6 +87,23 @@ public class ModBlocks {
                     )
             );
 
+    // =====================================================
+    // ANCIENT GEAR
+    // =====================================================
+
+    public static final RegistryObject<Block> ANCIENT_GEAR_GENERATOR =
+            registerBlock(
+                    "ancient_gear_generator",
+                    () -> new AncientGearGeneratorBlock(
+                            BlockBehaviour.Properties
+                                    .copy(Blocks.BLAST_FURNACE)
+                                    .strength(5.0F, 10.0F)
+                                    .requiresCorrectToolForDrops()
+                                    .sound(SoundType.METAL)
+                                    .lightLevel(state -> 3)
+                    )
+            );
+
     public static final RegistryObject<Block> DRAGONMAID_NURSE_MARKER =
             BLOCKS.register(
                     "dragonmaid_nurse_marker",

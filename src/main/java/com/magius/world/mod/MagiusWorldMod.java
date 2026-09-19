@@ -27,6 +27,7 @@ import com.magius.world.mod.network.ModMessages;
 import com.magius.world.mod.particle.ModParticles;
 import com.magius.world.mod.block.entity.ModBlockEntities;
 import com.magius.world.mod.entity.ModEntities;
+import com.magius.world.mod.entity.client.AncientGearEmissaryRenderer;
 import com.magius.world.mod.entity.client.ModBoatRenderer;
 import com.magius.world.mod.entity.client.RhinoRenderer;
 import com.magius.world.mod.item.ModCreativeModTabs;
@@ -227,6 +228,10 @@ public class MagiusWorldMod
                     true));
             EntityRenderers.register(ModEntities.RUBY_BOAR.get(), RubyBoarRenderer::new);
             EntityRenderers.register(ModEntities.RUBY_WISP.get(), RubyWispRenderer::new);
+            EntityRenderers.register(
+                    ModEntities.ANCIENT_GEAR_EMISSARY.get(),
+                    AncientGearEmissaryRenderer::new
+            );
 
             EntityRenderers.register(ModEntities.DICE_PROJECTILE.get(), ThrownItemRenderer::new);
 

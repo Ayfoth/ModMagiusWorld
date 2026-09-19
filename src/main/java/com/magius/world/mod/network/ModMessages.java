@@ -376,6 +376,14 @@ public class ModMessages {
                 .decoder(C2SClaimUnchainedChainReactionQuestRewardPacket::new)
                 .consumerMainThread(C2SClaimUnchainedChainReactionQuestRewardPacket::handle)
                 .add();
+        INSTANCE.messageBuilder(
+                        C2SStartAncientGearFirstQuestPacket.class,
+                        id()
+                )
+                .encoder(C2SStartAncientGearFirstQuestPacket::encode)
+                .decoder(C2SStartAncientGearFirstQuestPacket::new)
+                .consumerMainThread(C2SStartAncientGearFirstQuestPacket::handle)
+                .add();
     }
 
     public static <MSG> void sendToServer(MSG message) {

@@ -131,5 +131,46 @@ public final class ModClanThemes {
                         null
                 )
         );
+        ClanThemeRegistry.register(
+                ResourceLocation.fromNamespaceAndPath(
+                        MagiusWorldMod.MOD_ID,
+                        "ancient_gear"
+                ),
+
+                new ClanTheme(
+                        ResourceLocation.fromNamespaceAndPath(
+                                MagiusWorldMod.MOD_ID,
+                                "textures/gui/clan/ancient_gear/frame.png"
+                        ),
+
+                        ResourceLocation.fromNamespaceAndPath(
+                                MagiusWorldMod.MOD_ID,
+                                "textures/gui/clan/ancient_gear/frame.png"
+                        ),
+
+                        ResourceLocation.fromNamespaceAndPath(
+                                MagiusWorldMod.MOD_ID,
+                                "textures/gui/clans/ancient_gear.png"
+                        ),
+
+                        Component.literal("Rouages Ancients"),
+                        Component.literal("Mécanisation"),
+
+                        // Accent : bronze industriel sombre
+                        0xFF5A3A20,
+
+                        // Titres : cuivre patiné
+                        0xFFC88A42,
+
+                        // Texte : ivoire métallique
+                        0xFFE4D8C4,
+
+                        // Fond : charbon brun
+                        0xFF120D09,
+
+                        null,
+                        null
+                )
+        );
     }
 }

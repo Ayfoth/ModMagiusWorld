@@ -1,5 +1,6 @@
 package com.magius.world.mod.clan.quest.loader;
 
+import com.magius.world.mod.clan.quest.ancientgear.AncientGearFirstQuest;
 import com.magius.world.mod.clan.quest.dragonmaid.DragonmaidFirstQuest;
 import com.magius.world.mod.clan.quest.manager.QuestRegistry;
 import com.magius.world.mod.clan.quest.dragonmaid.DragonmaidUnexpectedGuestQuest;
@@ -51,6 +52,10 @@ public final class QuestLoader {
 
         QuestRegistry.register(
                 new UnchainedChainReactionQuest()
+        );
+
+        QuestRegistry.register(
+                new AncientGearFirstQuest()
         );
     }
 }

@@ -1,6 +1,7 @@
 package com.magius.world.mod.entity.client;
 
 import com.magius.world.mod.MagiusWorldMod;
+import com.magius.world.mod.clan.client.screen.AncientGearDialogueScreen;
 import com.magius.world.mod.clan.client.screen.DragonmaidDialogueScreen;
 import com.magius.world.mod.clan.client.screen.NurseDragonmaidDialogueScreen;
 import com.magius.world.mod.clan.client.screen.SwordsoulDialogueScreen;
@@ -17,6 +18,7 @@ import com.magius.world.mod.entity.unchained.UnchainedAruhaEntity;
 import com.magius.world.mod.entity.unchained.UnchainedRakeaEntity;
 import com.magius.world.mod.entity.unchained.UnchainedSealKeeperEntity;
 import com.magius.world.mod.network.packet.C2SBuyUnchainedSealPacket;
+import com.magius.world.mod.entity.ancientgear.AncientGearEmissaryEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.InteractionResult;
 import net.minecraftforge.api.distmarker.Dist;
@@ -52,6 +54,19 @@ public final class DragonmaidClientInteractionEvents {
             minecraft.execute(() ->
                     minecraft.setScreen(
                             new DragonmaidDialogueScreen()
+                    )
+            );
+
+            return;
+        }
+        if (event.getTarget() instanceof AncientGearEmissaryEntity) {
+
+            event.setCanceled(true);
+            event.setCancellationResult(InteractionResult.SUCCESS);
+
+            minecraft.execute(() ->
+                    minecraft.setScreen(
+                            new AncientGearDialogueScreen()
                     )
             );
 

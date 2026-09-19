@@ -59,7 +59,7 @@ public class MemberTab implements ClanTab {
     private static final ResourceLocation SWORDSOUL_MEMBER_TEXTURE =
             ResourceLocation.fromNamespaceAndPath(
                     MagiusWorldMod.MOD_ID,
-                    "textures/entity/swordsoul/emissary.png"
+                    "textures/entity/swordsoul/ancientgear.png"
             );
 
     private static final ResourceLocation UNCHAINED_QUEST_1 =

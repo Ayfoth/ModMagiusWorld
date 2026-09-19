@@ -3,6 +3,7 @@ package com.magius.world.mod.entity;
 import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.entity.custom.*;
 
+import com.magius.world.mod.entity.ancientgear.AncientGearEmissaryEntity;
 import com.magius.world.mod.entity.dragonmaid.DragonmaidEmissaryEntity;
 import com.magius.world.mod.entity.dragonmaid.DragonmaidNurseEntity;
 import com.magius.world.mod.entity.echo.TempestBlaze;
@@ -190,6 +191,17 @@ public class ModEntities {
                             .sized(0.6F, 1.8F)
                             .clientTrackingRange(8)
                             .build("unchained_rakea")
+            );
+    public static final RegistryObject<EntityType<AncientGearEmissaryEntity>> ANCIENT_GEAR_EMISSARY =
+            ENTITY_TYPES.register(
+                    "ancient_gear_emissary",
+                    () -> EntityType.Builder.of(
+                                    AncientGearEmissaryEntity::new,
+                                    MobCategory.CREATURE
+                            )
+                            .sized(0.6F, 1.8F)
+                            .clientTrackingRange(8)
+                            .build("ancient_gear_emissary")
             );
 
     public static void register(IEventBus eventBus) {
