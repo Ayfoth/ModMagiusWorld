@@ -28,6 +28,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        // Ancient Gear //
+        blockWithItem(ModBlocks.ANCIENT_GEAR_GENERATOR);
         // Unchained
         blockWithItem(ModBlocks.UNCHAINED_SEAL);
         blockWithItem(ModBlocks.UNCHAINED_ARUHA_SEAL);

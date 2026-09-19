@@ -44,6 +44,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.SWORDSOUL_SPIRIT_FORGE_TERMINAL.get());
         this.dropSelf(ModBlocks.HEARTH_CORE.get());
         this.dropSelf(ModBlocks.DRAGONMAID_ALLEGIANCE_ALTAR.get());
+        this.dropSelf(ModBlocks.ANCIENT_GEAR_GENERATOR.get());
         // Mod Echo
         this.dropSelf(ModBlocks.NECRO_STONE.get());
         this.dropSelf(ModBlocks.POLISHED_NECRO_STONE.get());
