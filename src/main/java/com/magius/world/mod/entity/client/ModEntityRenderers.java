@@ -68,5 +68,13 @@ public final class ModEntityRenderers {
                 ModEntities.UNCHAINED_RAKEA.get(),
                 UnchainedRenderer::new
         );
+        event.registerEntityRenderer(
+                ModEntities.ANCIENT_GEAR_EMISSARY.get(),
+                AncientGearEmissaryRenderer::new
+        );
+        event.registerEntityRenderer(
+                ModEntities.ANCIENT_GEAR_AUTOMATON.get(),
+                AncientGearAutomatonRenderer::new
+        );
     }
 }

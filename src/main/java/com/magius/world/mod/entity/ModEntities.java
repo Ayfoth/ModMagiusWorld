@@ -4,6 +4,7 @@ import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.entity.custom.*;
 
 import com.magius.world.mod.entity.ancientgear.AncientGearEmissaryEntity;
+import com.magius.world.mod.entity.ancientgear.AncientGearAutomatonEntity;
 import com.magius.world.mod.entity.dragonmaid.DragonmaidEmissaryEntity;
 import com.magius.world.mod.entity.dragonmaid.DragonmaidNurseEntity;
 import com.magius.world.mod.entity.echo.TempestBlaze;
@@ -203,6 +204,12 @@ public class ModEntities {
                             .clientTrackingRange(8)
                             .build("ancient_gear_emissary")
             );
+    public static final RegistryObject<EntityType<AncientGearAutomatonEntity>> ANCIENT_GEAR_AUTOMATON =
+            ENTITY_TYPES.register("ancient_gear_automaton",
+                    () -> EntityType.Builder.of(AncientGearAutomatonEntity::new, MobCategory.CREATURE)
+                            .sized(0.6F, 1.8F)
+                            .clientTrackingRange(8)
+                            .build("ancient_gear_automaton"));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

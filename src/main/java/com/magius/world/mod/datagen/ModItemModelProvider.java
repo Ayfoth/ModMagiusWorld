@@ -43,6 +43,15 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
 
+        // Composants du générateur des Rouages Anciens.
+        basicItem(ModItems.ANCIENT_GEAR_COG.get());
+        basicItem(ModItems.ANCIENT_GEAR_AXLE.get());
+        basicItem(ModItems.ANCIENT_GEAR_CORE.get());
+        basicItem(ModItems.ANCIENT_GEAR_AUTOMATON_KIT.get());
+        basicItem(ModItems.ANCIENT_GEAR_AUTOMATON_FRAME.get());
+        basicItem(ModItems.ANCIENT_GEAR_COMMAND_CORE.get());
+        basicItem(ModItems.ANCIENT_GEAR_POWER_CELL.get());
+
         basicItem(ModItems.DRAGONMAID_INSIGNIA.get());
         basicItem(
                 ModItems.BROKEN_SPIRIT_BLADE.get()

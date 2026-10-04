@@ -34,6 +34,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ANCIENT_GEAR_AUTOMATON_KIT.get())
+                .pattern("IFI")
+                .pattern("UN ")
+                .pattern("III")
+                .define('I', Items.IRON_INGOT)
+                .define('U', ModItems.ANCIENT_GEAR_POWER_CELL.get())
+                .define('F', ModItems.ANCIENT_GEAR_AUTOMATON_FRAME.get())
+                .define('N', ModItems.ANCIENT_GEAR_COMMAND_CORE.get())
+                .unlockedBy("has_ancient_gear_command_core", has(ModItems.ANCIENT_GEAR_COMMAND_CORE.get()))
+                .save(pWriter);
         // Echo du Premier
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Blocks.STONE)
                 .requires(ModBlocks.NECRO_STONE.get())

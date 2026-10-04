@@ -384,6 +384,24 @@ public class ModMessages {
                 .decoder(C2SStartAncientGearFirstQuestPacket::new)
                 .consumerMainThread(C2SStartAncientGearFirstQuestPacket::handle)
                 .add();
+        INSTANCE.messageBuilder(
+                        C2SClaimAncientGearFirstQuestRewardPacket.class,
+                        id()
+                )
+                .encoder(C2SClaimAncientGearFirstQuestRewardPacket::encode)
+                .decoder(C2SClaimAncientGearFirstQuestRewardPacket::new)
+                .consumerMainThread(C2SClaimAncientGearFirstQuestRewardPacket::handle)
+                .add();
+        INSTANCE.messageBuilder(C2SStartAncientGearSecondQuestPacket.class, id())
+                .encoder(C2SStartAncientGearSecondQuestPacket::encode)
+                .decoder(C2SStartAncientGearSecondQuestPacket::new)
+                .consumerMainThread(C2SStartAncientGearSecondQuestPacket::handle)
+                .add();
+        INSTANCE.messageBuilder(C2SClaimAncientGearSecondQuestRewardPacket.class, id())
+                .encoder(C2SClaimAncientGearSecondQuestRewardPacket::encode)
+                .decoder(C2SClaimAncientGearSecondQuestRewardPacket::new)
+                .consumerMainThread(C2SClaimAncientGearSecondQuestRewardPacket::handle)
+                .add();
     }
 
     public static <MSG> void sendToServer(MSG message) {

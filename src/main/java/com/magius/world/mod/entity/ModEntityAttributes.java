@@ -2,6 +2,7 @@ package com.magius.world.mod.entity;
 
 import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.entity.ancientgear.AncientGearEmissaryEntity;
+import com.magius.world.mod.entity.ancientgear.AncientGearAutomatonEntity;
 import com.magius.world.mod.entity.dragonmaid.DragonmaidEmissaryEntity;
 import com.magius.world.mod.entity.dragonmaid.DragonmaidNurseEntity;
 import com.magius.world.mod.entity.dragonmaid.DragonmaidTinkhecEntity;
@@ -75,6 +76,10 @@ public final class ModEntityAttributes {
         event.put(
                 ModEntities.ANCIENT_GEAR_EMISSARY.get(),
                 AncientGearEmissaryEntity.createAttributes().build()
+        );
+        event.put(
+                ModEntities.ANCIENT_GEAR_AUTOMATON.get(),
+                AncientGearAutomatonEntity.createAttributes().build()
         );
     }
 }

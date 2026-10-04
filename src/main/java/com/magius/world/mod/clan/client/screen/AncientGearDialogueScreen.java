@@ -1,10 +1,14 @@
 package com.magius.world.mod.clan.client.screen;
 
 import com.magius.world.mod.clan.quest.ancientgear.AncientGearFirstQuest;
+import com.magius.world.mod.clan.quest.ancientgear.AncientGearSecondQuest;
 import com.magius.world.mod.clan.quest.api.QuestStatus;
 import com.magius.world.mod.clan.quest.manager.QuestManager;
 import com.magius.world.mod.network.ModMessages;
+import com.magius.world.mod.network.packet.C2SClaimAncientGearFirstQuestRewardPacket;
 import com.magius.world.mod.network.packet.C2SStartAncientGearFirstQuestPacket;
+import com.magius.world.mod.network.packet.C2SStartAncientGearSecondQuestPacket;
+import com.magius.world.mod.network.packet.C2SClaimAncientGearSecondQuestRewardPacket;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
@@ -16,6 +20,7 @@ public class AncientGearDialogueScreen extends Screen {
     private static final int PANEL_WIDTH = 320;
     private static final int PANEL_HEIGHT = 130;
     private QuestStatus questStatus = QuestStatus.NOT_STARTED;
+    private QuestStatus secondQuestStatus = QuestStatus.NOT_STARTED;
 
     public AncientGearDialogueScreen() {
         super(Component.literal("Émissaire mécaniste"));
@@ -29,19 +34,25 @@ public class AncientGearDialogueScreen extends Screen {
         Minecraft minecraft = Minecraft.getInstance();
 
         if (minecraft.player != null) {
-            QuestManager.get(minecraft.player).ifPresent(data ->
+            QuestManager.get(minecraft.player).ifPresent(data -> {
                     questStatus = QuestManager.getStatus(
                             data,
                             AncientGearFirstQuest.ID
-                    )
-            );
+                    );
+                    secondQuestStatus = QuestManager.getStatus(data, AncientGearSecondQuest.ID);
+            });
         }
 
         String buttonLabel = switch (questStatus) {
             case NOT_STARTED -> "Réveiller la cité";
             case IN_PROGRESS -> "Je retrouverai Geartown";
-            case COMPLETED -> "Le générateur est réparé";
-            case REWARDED -> "Les rouages sont réveillés";
+            case COMPLETED -> "Recevoir 50 prestige";
+            case REWARDED -> switch (secondQuestStatus) {
+                case NOT_STARTED -> "Réveiller le premier automate";
+                case IN_PROGRESS -> "Je construirai l'automate";
+                case COMPLETED -> "Recevoir 100 prestige";
+                case REWARDED -> "L'automate est réveillé";
+            };
         };
 
         addRenderableWidget(
@@ -52,6 +63,16 @@ public class AncientGearDialogueScreen extends Screen {
                                         ModMessages.sendToServer(
                                                 new C2SStartAncientGearFirstQuestPacket()
                                         );
+                                    } else if (questStatus == QuestStatus.COMPLETED) {
+                                        ModMessages.sendToServer(
+                                                new C2SClaimAncientGearFirstQuestRewardPacket()
+                                        );
+                                    } else if (questStatus == QuestStatus.REWARDED) {
+                                        if (secondQuestStatus == QuestStatus.NOT_STARTED) {
+                                            ModMessages.sendToServer(new C2SStartAncientGearSecondQuestPacket());
+                                        } else if (secondQuestStatus == QuestStatus.COMPLETED) {
+                                            ModMessages.sendToServer(new C2SClaimAncientGearSecondQuestRewardPacket());
+                                        }
                                     }
                                     onClose();
                                 }
@@ -98,15 +119,32 @@ public class AncientGearDialogueScreen extends Screen {
                 0xFFC88A42
         );
 
-        Component firstLine = Component.literal(
-                "Ces mécanismes sont restés silencieux pendant des siècles."
-        );
-        Component secondLine = Component.literal(
-                "Le cœur de Geartown bat encore sous la rouille."
-        );
-        Component thirdLine = Component.literal(
-                "Aide-moi bientôt à réveiller son générateur."
-        );
+        Component firstLine;
+        Component secondLine;
+        Component thirdLine;
+        if (questStatus == QuestStatus.COMPLETED) {
+            firstLine = Component.literal("Le générateur de Geartown tourne à nouveau.");
+            secondLine = Component.literal("Tu as réveillé les rouages oubliés.");
+            thirdLine = Component.literal("Accepte tes 50 points de prestige.");
+        } else if (questStatus == QuestStatus.REWARDED) {
+            if (secondQuestStatus == QuestStatus.COMPLETED) {
+                firstLine = Component.literal("Le premier automate de Geartown est réparé.");
+                secondLine = Component.literal("La cité accueille son premier habitant mécanique.");
+                thirdLine = Component.literal("Accepte tes 100 points de prestige.");
+            } else if (secondQuestStatus == QuestStatus.REWARDED) {
+                firstLine = Component.literal("Geartown s'éveille à nouveau.");
+                secondLine = Component.literal("L'automate garde les machines en mouvement.");
+                thirdLine = Component.empty();
+            } else {
+                firstLine = Component.literal("Assemble un automate avec les pièces antiques.");
+                secondLine = Component.literal("Active-le sur le générateur réparé.");
+                thirdLine = Component.literal("Un lingot de fer stabilisera ses mécanismes.");
+            }
+        } else {
+            firstLine = Component.literal("Ces mécanismes sont restés silencieux pendant des siècles.");
+            secondLine = Component.literal("Le cœur de Geartown bat encore sous la rouille.");
+            thirdLine = Component.literal("Aide-moi à réveiller son générateur.");
+        }
 
         guiGraphics.drawCenteredString(
                 this.font,

@@ -19,6 +19,36 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, MagiusWorldMod.MOD_ID);
 
+    // Pièces à installer dans le générateur des Rouages Anciens.
+    public static final RegistryObject<Item> ANCIENT_GEAR_COG = ITEMS.register(
+            "ancient_gear_cog",
+            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON))
+    );
+    public static final RegistryObject<Item> ANCIENT_GEAR_AXLE = ITEMS.register(
+            "ancient_gear_axle",
+            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON))
+    );
+    public static final RegistryObject<Item> ANCIENT_GEAR_CORE = ITEMS.register(
+            "ancient_gear_core",
+            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON))
+    );
+    public static final RegistryObject<Item> ANCIENT_GEAR_AUTOMATON_KIT = ITEMS.register(
+            "ancient_gear_automaton_kit",
+            () -> new AncientGearAutomatonKitItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE))
+    );
+    public static final RegistryObject<Item> ANCIENT_GEAR_AUTOMATON_FRAME = ITEMS.register(
+            "ancient_gear_automaton_frame",
+            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON))
+    );
+    public static final RegistryObject<Item> ANCIENT_GEAR_COMMAND_CORE = ITEMS.register(
+            "ancient_gear_command_core",
+            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON))
+    );
+    public static final RegistryObject<Item> ANCIENT_GEAR_POWER_CELL = ITEMS.register(
+            "ancient_gear_power_cell",
+            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON))
+    );
+
     public static final RegistryObject<Item> DRAGONMAID_INSIGNIA = ITEMS.register(
             "dragonmaid_insignia",
             () -> new DragonmaidInsigniaItem(
