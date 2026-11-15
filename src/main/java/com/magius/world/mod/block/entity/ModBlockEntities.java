@@ -23,6 +23,14 @@ public class ModBlockEntities {
                             ModBlocks.FIRE_FOUNDERIE.get()
                     ).build(null));
 
+    public static final RegistryObject<BlockEntityType<AncientGearTurretBlockEntity>>
+            ANCIENT_GEAR_TURRET_BE =
+            BLOCK_ENTITIES.register("ancient_gear_turret", () ->
+                    BlockEntityType.Builder.of(
+                            AncientGearTurretBlockEntity::new,
+                            ModBlocks.ANCIENT_GEAR_TURRET.get()
+                    ).build(null));
+
     public static final RegistryObject<BlockEntityType<ModSignBlockEntity>> MOD_SIGN =
             BLOCK_ENTITIES.register("mod_sign", () ->
                     BlockEntityType.Builder.of(ModSignBlockEntity::new,

@@ -69,5 +69,9 @@ public class ModFeatures {
             FEATURES.register("ruby_village",
                     RubyVillageFeature::new);
 
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> ANCIENT_GEAR_RUINS =
+            FEATURES.register("ancient_gear_ruins",
+                    AncientGearRuinsFeature::new);
+
 
 }

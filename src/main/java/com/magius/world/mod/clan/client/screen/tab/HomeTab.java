@@ -19,6 +19,9 @@ import com.magius.world.mod.clan.quest.manager.QuestManager;
 import com.magius.world.mod.clan.quest.unchained.UnchainedChainReactionQuest;
 import com.magius.world.mod.clan.quest.unchained.UnchainedPrisonQuest;
 import com.magius.world.mod.clan.quest.unchained.UnchainedTwinsQuest;
+import com.magius.world.mod.clan.quest.ancientgear.AncientGearFirstQuest;
+import com.magius.world.mod.clan.quest.ancientgear.AncientGearSecondQuest;
+import com.magius.world.mod.clan.quest.ancientgear.AncientGearThirdQuest;
 import com.magius.world.mod.clan.chronicle.data.ChronicleDefinition;
 import com.magius.world.mod.clan.chronicle.data.ChronicleRegistry;
 import com.magius.world.mod.clan.chronicle.unlock.ChronicleUnlockManager;
@@ -117,6 +120,12 @@ public class HomeTab implements ClanTab {
                 QuestStatus.NOT_STARTED;
         QuestStatus unchainedChainReactionStatus =
                 QuestStatus.NOT_STARTED;
+        QuestStatus ancientGearFirstStatus =
+                QuestStatus.NOT_STARTED;
+        QuestStatus ancientGearSecondStatus =
+                QuestStatus.NOT_STARTED;
+        QuestStatus ancientGearThirdStatus =
+                QuestStatus.NOT_STARTED;
 
         if (player != null) {
 
@@ -155,6 +164,18 @@ public class HomeTab implements ClanTab {
                                     UnchainedChainReactionQuest.ID
                             ))
                             .orElse(QuestStatus.NOT_STARTED);
+
+            ancientGearFirstStatus = QuestManager.get(player)
+                    .map(data -> QuestManager.getStatus(data, AncientGearFirstQuest.ID))
+                    .orElse(QuestStatus.NOT_STARTED);
+
+            ancientGearSecondStatus = QuestManager.get(player)
+                    .map(data -> QuestManager.getStatus(data, AncientGearSecondQuest.ID))
+                    .orElse(QuestStatus.NOT_STARTED);
+
+            ancientGearThirdStatus = QuestManager.get(player)
+                    .map(data -> QuestManager.getStatus(data, AncientGearThirdQuest.ID))
+                    .orElse(QuestStatus.NOT_STARTED);
         }
 
         ClanHomeContent clanContent = null;
@@ -166,7 +187,11 @@ public class HomeTab implements ClanTab {
                     unchainedChainReactionStatus
             );
         } else if (ANCIENT_GEAR_ID.equals(clanId)) {
-            clanContent = buildAncientGearContent();
+            clanContent = buildAncientGearContent(
+                    ancientGearFirstStatus,
+                    ancientGearSecondStatus,
+                    ancientGearThirdStatus
+            );
         }
 
         int prestige = 0;
@@ -258,7 +283,7 @@ public class HomeTab implements ClanTab {
         }
 
         /*
-         * Progression À L'INTÉRIEUR du rang actuel.
+         * Progression totale vers le prochain rang.
          */
         int progressValue;
         int progressMaximum;
@@ -269,11 +294,11 @@ public class HomeTab implements ClanTab {
             progressValue =
                     Math.max(
                             0,
-                            prestige - prestigeStart
+                            prestige
                     );
 
             progressMaximum =
-                    prestigeTarget - prestigeStart;
+                    prestigeTarget;
 
             prestigePercent =
                     Math.min(
@@ -385,7 +410,7 @@ public class HomeTab implements ClanTab {
         if (compact) {
 
             int iconX = leftX + 8;
-            int iconY = row1Y + 25;
+            int iconY = row1Y + 21;
 
             guiGraphics.renderItem(
                     RANK_ICON,
@@ -397,7 +422,7 @@ public class HomeTab implements ClanTab {
                     font,
                     Component.literal(rankName),
                     iconX + 21,
-                    row1Y + 29,
+                    row1Y + 25,
                     theme.getTextColor(),
                     false
             );
@@ -494,7 +519,7 @@ public class HomeTab implements ClanTab {
         if (compact) {
 
             int barX = rightX + 8;
-            int barY = row1Y + 29;
+            int barY = row1Y + 25;
 
             String percentText =
                     prestigePercent + "%";
@@ -734,7 +759,7 @@ public class HomeTab implements ClanTab {
         if (compact) {
 
             int iconX = leftX + 8;
-            int iconY = row2Y + 25;
+            int iconY = row2Y + 21;
 
             guiGraphics.renderItem(
                     QUEST_ICON,
@@ -750,7 +775,7 @@ public class HomeTab implements ClanTab {
                             leftWidth - 37
                     )),
                     iconX + 21,
-                    row2Y + 29,
+                    row2Y + 25,
                     theme.getTitleColor(),
                     false
             );
@@ -920,7 +945,7 @@ public class HomeTab implements ClanTab {
         if (compact) {
 
             int iconX = rightX + 8;
-            int iconY = row2Y + 25;
+            int iconY = row2Y + 21;
 
             guiGraphics.renderItem(
                     REWARD_ICON,
@@ -932,7 +957,7 @@ public class HomeTab implements ClanTab {
                     font,
                     Component.literal(rewardMainText),
                     iconX + 21,
-                    row2Y + 29,
+                    row2Y + 25,
                     theme.getAccentColor(),
                     false
             );
@@ -986,7 +1011,7 @@ public class HomeTab implements ClanTab {
         if (compact) {
 
             int iconX = leftX + 8;
-            int iconY = row3Y + 25;
+            int iconY = row3Y + 21;
 
             guiGraphics.renderItem(
                     CHRONICLE_ICON,
@@ -1000,7 +1025,7 @@ public class HomeTab implements ClanTab {
                             chronicleCompactName
                     ),
                     iconX + 21,
-                    row3Y + 29,
+                    row3Y + 25,
                     theme.getTitleColor(),
                     false
             );
@@ -1158,7 +1183,7 @@ public class HomeTab implements ClanTab {
         if (compact) {
 
             int iconX = rightX + 8;
-            int iconY = row3Y + 25;
+            int iconY = row3Y + 21;
 
             guiGraphics.renderItem(
                     ACTIVITY_ICON,
@@ -1170,7 +1195,7 @@ public class HomeTab implements ClanTab {
                     font,
                     Component.literal(activityTitle),
                     iconX + 21,
-                    row3Y + 29,
+                    row3Y + 25,
                     theme.getTextColor(),
                     false
             );
@@ -1327,17 +1352,85 @@ public class HomeTab implements ClanTab {
         };
     }
 
-    private static ClanHomeContent buildAncientGearContent() {
-        return new ClanHomeContent(
-                "Mécanismes silencieux",
-                "La cité attend son mécaniste",
-                "Les premières quêtes arriveront bientôt",
-                "Récompenses verrouillées",
-                "Aucune récompense disponible",
-                "Réactivez les Rouages Ancients",
-                "Aucune activité récente",
-                ""
-        );
+    private static ClanHomeContent buildAncientGearContent(
+            QuestStatus firstStatus,
+            QuestStatus secondStatus,
+            QuestStatus thirdStatus
+    ) {
+        if (firstStatus != QuestStatus.REWARDED) {
+            return switch (firstStatus) {
+                case NOT_STARTED -> new ClanHomeContent(
+                        "Quête disponible", "Les Rouages endormis",
+                        "Parler à l'Émissaire mécaniste", "Récompense de quête",
+                        "+50 Prestige", "Admission parmi les Rouages Anciens",
+                        "Aucune activité récente", ""
+                );
+                case IN_PROGRESS -> new ClanHomeContent(
+                        "Quête en cours", "Les Rouages endormis",
+                        "Réparer et rallumer le générateur", "Récompense de quête",
+                        "+50 Prestige", "Admission parmi les Rouages Anciens",
+                        "Quête acceptée", "Les Rouages endormis"
+                );
+                case COMPLETED -> new ClanHomeContent(
+                        "Quête terminée", "Les Rouages endormis",
+                        "Retourner auprès de l'Émissaire", "Récompense disponible",
+                        "+50 Prestige", "Retournez voir l'Émissaire",
+                        "Quête terminée", "Les Rouages endormis"
+                );
+                case REWARDED -> throw new IllegalStateException();
+            };
+        }
+
+        if (secondStatus != QuestStatus.REWARDED) {
+            return switch (secondStatus) {
+                case NOT_STARTED -> new ClanHomeContent(
+                        "Quête disponible", "Le premier automate",
+                        "Parler à l'Émissaire mécaniste", "Récompense de quête",
+                        "+100 Prestige", "Réveil du premier automate",
+                        "Quête accomplie", "Les Rouages endormis"
+                );
+                case IN_PROGRESS -> new ClanHomeContent(
+                        "Quête en cours", "Le premier automate",
+                        "Assembler et activer l'automate", "Récompense de quête",
+                        "+100 Prestige", "Réveil du premier automate",
+                        "Quête acceptée", "Le premier automate"
+                );
+                case COMPLETED -> new ClanHomeContent(
+                        "Quête terminée", "Le premier automate",
+                        "Retourner auprès de l'Émissaire", "Récompense disponible",
+                        "+100 Prestige", "Retournez voir l'Émissaire",
+                        "Quête terminée", "Le premier automate"
+                );
+                case REWARDED -> throw new IllegalStateException();
+            };
+        }
+
+        return switch (thirdStatus) {
+            case NOT_STARTED -> new ClanHomeContent(
+                    "Quête disponible", "Le cœur de Geartown",
+                    "Parler à l'Émissaire mécaniste", "Récompense de quête",
+                    "+150 Prestige", "Restauration du cœur de la cité",
+                    "Quête accomplie", "Le premier automate"
+            );
+            case IN_PROGRESS -> new ClanHomeContent(
+                    "Quête en cours", "Le cœur de Geartown",
+                    "Réparer et rallumer le réacteur", "Récompense de quête",
+                    "+150 Prestige", "Restauration du cœur de la cité",
+                    "Quête acceptée", "Le cœur de Geartown"
+            );
+            case COMPLETED -> new ClanHomeContent(
+                    "Quête terminée", "Le cœur de Geartown",
+                    "Retourner auprès de l'Émissaire", "Récompense disponible",
+                    "+150 Prestige", "Retournez voir l'Émissaire",
+                    "Quête terminée", "Le cœur de Geartown"
+            );
+            case REWARDED -> new ClanHomeContent(
+                    "Quêtes principales terminées", "Geartown s'éveille",
+                    "Les activités régulières arriveront bientôt", "Récompense obtenue",
+                    "+150 Prestige obtenu", "Le cœur de Geartown est restauré",
+                    "Saga accomplie", "Les trois mécanismes ont été réveillés"
+            );
+        };
     }
 
     private static String fitText(

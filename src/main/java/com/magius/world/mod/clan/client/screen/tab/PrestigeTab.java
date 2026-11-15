@@ -19,6 +19,7 @@ public class PrestigeTab implements ClanTab {
 
     private static final ItemStack PRESTIGE_ICON =
             new ItemStack(Items.NETHER_STAR);
+    private int rankScrollOffset = 0;
 
     @Override
     public Component getTitle() {
@@ -128,9 +129,9 @@ public class PrestigeTab implements ClanTab {
 
         int mainHeight =
                 Math.min(
-                        90,
+                        100,
                         Math.max(
-                                70,
+                                90,
                                 height / 3
                         )
                 );
@@ -152,6 +153,8 @@ public class PrestigeTab implements ClanTab {
                 x + 12,
                 y + 29
         );
+
+
 
         guiGraphics.drawString(
                 font,
@@ -292,13 +295,49 @@ public class PrestigeTab implements ClanTab {
                 )
         );
 
+        int listContentTop =
+                listY + 24;
+
+        int listContentBottom =
+                listY + remainingHeight - 6;
+
+        int visibleHeight =
+                Math.max(
+                        0,
+                        listContentBottom - listContentTop
+                );
+
+        int lineHeight = 15;
+
+        int totalHeight =
+                ranks.size() * lineHeight;
+
+        int maxScroll =
+                Math.max(
+                        0,
+                        totalHeight - visibleHeight
+                );
+
+        rankScrollOffset =
+                Math.max(
+                        0,
+                        Math.min(
+                                rankScrollOffset,
+                                maxScroll
+                        )
+                );
+
+        guiGraphics.enableScissor(
+                x,
+                listContentTop,
+                x + width,
+                listContentBottom
+        );
+
         int lineY =
-                listY + 25;
+                listContentTop - rankScrollOffset;
 
-        for (int i = 0; i < ranks.size(); i++) {
-
-            ClanRank rank =
-                    ranks.get(i);
+        for (ClanRank rank : ranks) {
 
             boolean unlocked =
                     prestige
@@ -330,20 +369,131 @@ public class PrestigeTab implements ClanTab {
                     false
             );
 
-            lineY += 15;
-
-            /*
-             * Protection si un clan possède énormément
-             * de rangs.
-             */
-            if (
-                    lineY
-                            > listY
-                            + remainingHeight
-                            - 12
-            ) {
-                break;
-            }
+            lineY += lineHeight;
         }
+
+        guiGraphics.disableScissor();
+
+        /*
+         * Barre de défilement
+         */
+        if (maxScroll > 0) {
+
+            int scrollbarX =
+                    x + width - 7;
+
+            int scrollbarHeight =
+                    visibleHeight;
+
+            int thumbHeight =
+                    Math.max(
+                            12,
+                            visibleHeight * visibleHeight / totalHeight
+                    );
+
+            int thumbTravel =
+                    scrollbarHeight - thumbHeight;
+
+            int thumbY =
+                    listContentTop
+                            + rankScrollOffset
+                            * thumbTravel
+                            / maxScroll;
+
+            guiGraphics.fill(
+                    scrollbarX,
+                    listContentTop,
+                    scrollbarX + 3,
+                    listContentBottom,
+                    0xFF180B0C
+            );
+
+            guiGraphics.fill(
+                    scrollbarX,
+                    thumbY,
+                    scrollbarX + 3,
+                    thumbY + thumbHeight,
+                    theme.getAccentColor()
+            );
+        }
+    }
+    @Override
+    public boolean mouseScrolled(
+            double mouseX,
+            double mouseY,
+            double delta,
+            ResourceLocation clanId,
+            int x,
+            int y,
+            int width,
+            int height
+    ) {
+
+        int mainHeight =
+                Math.min(
+                        100,
+                        Math.max(
+                                90,
+                                height / 3
+                        )
+                );
+
+        int listY =
+                y + mainHeight + 7;
+
+        int remainingHeight =
+                height - mainHeight - 7;
+
+        boolean hovered =
+                mouseX >= x
+                        && mouseX < x + width
+                        && mouseY >= listY
+                        && mouseY < listY + remainingHeight;
+
+        if (!hovered) {
+            return false;
+        }
+
+        var clanOptional =
+                ClanRegistry.get(clanId);
+
+        if (clanOptional.isEmpty()) {
+            return false;
+        }
+
+        int visibleHeight =
+                Math.max(
+                        0,
+                        remainingHeight - 30
+                );
+
+        int totalHeight =
+                clanOptional.get()
+                        .getRanks()
+                        .size() * 15;
+
+        int maxScroll =
+                Math.max(
+                        0,
+                        totalHeight - visibleHeight
+                );
+
+        if (maxScroll == 0) {
+            return false;
+        }
+
+        rankScrollOffset -=
+                (int) Math.signum(delta) * 15;
+
+        rankScrollOffset =
+                Math.max(
+                        0,
+                        Math.min(
+                                rankScrollOffset,
+                                maxScroll
+                        )
+                );
+
+        return true;
     }
 }

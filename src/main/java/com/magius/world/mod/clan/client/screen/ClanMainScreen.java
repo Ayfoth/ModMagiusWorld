@@ -346,6 +346,7 @@ public class ClanMainScreen extends Screen {
         ClanHeaderRenderer.render(
                 guiGraphics,
                 theme,
+                clanId,
                 header.left(),
                 header.top(),
                 header.width(),

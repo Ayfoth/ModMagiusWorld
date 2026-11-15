@@ -48,6 +48,10 @@ public class ModItems {
             "ancient_gear_power_cell",
             () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON))
     );
+    public static final RegistryObject<Item> ANCIENT_GEAR_REACTOR_CORE = ITEMS.register(
+            "ancient_gear_reactor_core",
+            () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.RARE))
+    );
 
     public static final RegistryObject<Item> DRAGONMAID_INSIGNIA = ITEMS.register(
             "dragonmaid_insignia",

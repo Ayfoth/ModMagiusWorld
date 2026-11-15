@@ -1,8 +1,12 @@
-// 1.20.1	2026-09-20T07:36:07.6227285	Item Models: magiusworldmod
+// 1.20.1	2026-11-11T19:02:48.0195722	Item Models: magiusworldmod
+a031f27b54526e244ec21ac110744f6d890261a4 assets/magiusworldmod/models/item/ancient_gear_automaton_frame.json
 a57cfa58155195b577918ab1a491fd46799a5f6d assets/magiusworldmod/models/item/ancient_gear_automaton_kit.json
 2b4600578e3140abc7263439b3df52b5a10802b1 assets/magiusworldmod/models/item/ancient_gear_axle.json
 27ae7a0fb7b0899dd28f09ee4ffa6fae438ab379 assets/magiusworldmod/models/item/ancient_gear_cog.json
+ba5709c899dbe52ab7fc98fbb593e494ef4cfa9c assets/magiusworldmod/models/item/ancient_gear_command_core.json
 96e417a58100781a78c99985a7cb8417594e40f5 assets/magiusworldmod/models/item/ancient_gear_core.json
+40a312c62946509f1cae84c0eac034391c600c18 assets/magiusworldmod/models/item/ancient_gear_power_cell.json
+1d37aab959f989c1737091d7f51542cf920c083e assets/magiusworldmod/models/item/ancient_gear_reactor_core.json
 8cb32d54c73609d84d3aad18f922d659d2a6cf78 assets/magiusworldmod/models/item/bar_brawl_music_disc.json
 c8feae8a7801151fe81624ad00fcb00df333b906 assets/magiusworldmod/models/item/blackwood_block.json
 c62aa7299cbf5a63dd6f2231204434c46c1df183 assets/magiusworldmod/models/item/boss_ruby_key.json

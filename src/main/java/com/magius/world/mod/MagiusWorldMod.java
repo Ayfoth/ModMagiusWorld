@@ -10,6 +10,7 @@ import com.magius.world.mod.clan.quest.swordsoul.SwordsoulSpiritTokenDropEvents;
 import com.magius.world.mod.clan.quest.swordsoul.SwordsoulTaiaQuestEvents;
 import com.magius.world.mod.clan.quest.unchained.UnchainedPrisonQuestEvents;
 import com.magius.world.mod.clan.quest.unchained.UnchainedQuestCommand;
+import com.magius.world.mod.clan.reward.AncientGearClanRewards;
 import com.magius.world.mod.clan.reward.DragonmaidClanRewards;
 import com.magius.world.mod.clan.reward.SwordsoulClanRewards;
 import com.magius.world.mod.clan.reward.UnchainedClanRewards;
@@ -176,6 +177,7 @@ public class MagiusWorldMod
             DragonmaidClanRewards.register();
             SwordsoulClanRewards.register();
             UnchainedClanRewards.register();
+            AncientGearClanRewards.register();
 
           //  SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeRules());
         });

@@ -8,6 +8,7 @@ import com.magius.world.mod.clan.theme.ClanTheme;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 
 public final class ClanHeaderRenderer {
 
@@ -17,6 +18,7 @@ public final class ClanHeaderRenderer {
     public static void render(
             GuiGraphics graphics,
             ClanTheme theme,
+            ResourceLocation clanId,
             int x,
             int y,
             int width,
@@ -46,18 +48,15 @@ public final class ClanHeaderRenderer {
                 var clanData =
                         clanDataOptional.get();
 
-                prestige =
-                        clanData.getPrestige();
+                var clanProgress =
+                        clanData.getProgress(clanId);
 
-                /*
-                 * Le header ne reçoit pas directement clanId,
-                 * contrairement à HomeTab.
-                 *
-                 * On utilise donc l'identifiant du thème actuellement
-                 * affiché pour retrouver Dragonmaid.
-                 */
+                if (clanProgress != null) {
+                    prestige = clanProgress.getPrestige();
+                }
+
                 var clanOptional =
-                        ClanRegistry.get("dragonmaid");
+                        ClanRegistry.get(clanId.getPath());
 
                 if (clanOptional.isPresent()) {
 
@@ -122,11 +121,11 @@ public final class ClanHeaderRenderer {
             progressValue =
                     Math.max(
                             0,
-                            prestige - prestigeStart
+                            prestige
                     );
 
             progressMaximum =
-                    prestigeTarget - prestigeStart;
+                    prestigeTarget;
 
             prestigePercent =
                     Math.min(
@@ -207,7 +206,22 @@ public final class ClanHeaderRenderer {
         // STATS DROITE
         // =====================================================
 
-        int statsWidth = compact ? 105 : 145;
+        int minimumStatsWidth =
+                compact ? 105 : 145;
+
+        int requiredStatsWidth =
+                font.width(
+                        "★ Rang : " + rankName
+                ) + 4;
+
+        int statsWidth =
+                Math.min(
+                        width / 3,
+                        Math.max(
+                                minimumStatsWidth,
+                                requiredStatsWidth
+                        )
+                );
 
         int statsX =
                 x + width

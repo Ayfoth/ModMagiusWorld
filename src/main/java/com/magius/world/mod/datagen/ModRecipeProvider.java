@@ -3,7 +3,6 @@ package com.magius.world.mod.datagen;
 import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.block.ModBlocks;
 import com.magius.world.mod.item.ModItems;
-import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
@@ -34,15 +33,41 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
+        ShapedRecipeBuilder.shaped(
+                        RecipeCategory.REDSTONE,
+                        ModBlocks.ANCIENT_GEAR_TURRET.get()
+                )
+                .pattern("GCG")
+                .pattern("AKA")
+                .pattern("IPI")
+                .define('G', ModItems.ANCIENT_GEAR_COG.get())
+                .define('C', Items.COPPER_INGOT)
+                .define('A', ModItems.ANCIENT_GEAR_AXLE.get())
+                .define('K', ModItems.ANCIENT_GEAR_COMMAND_CORE.get())
+                .define('I', Items.IRON_INGOT)
+                .define('P', ModItems.ANCIENT_GEAR_POWER_CELL.get())
+                .unlockedBy(
+                        "has_ancient_gear_command_core",
+                        has(ModItems.ANCIENT_GEAR_COMMAND_CORE.get())
+                )
+                .save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ANCIENT_GEAR_AUTOMATON_KIT.get())
-                .pattern("IFI")
-                .pattern("UN ")
-                .pattern("III")
+                .pattern("FN")
+                .pattern("UI")
                 .define('I', Items.IRON_INGOT)
                 .define('U', ModItems.ANCIENT_GEAR_POWER_CELL.get())
                 .define('F', ModItems.ANCIENT_GEAR_AUTOMATON_FRAME.get())
                 .define('N', ModItems.ANCIENT_GEAR_COMMAND_CORE.get())
                 .unlockedBy("has_ancient_gear_command_core", has(ModItems.ANCIENT_GEAR_COMMAND_CORE.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ANCIENT_GEAR_REACTOR_CORE.get())
+                .pattern(" C ")
+                .pattern("RAR")
+                .pattern(" C ")
+                .define('C', Items.COPPER_INGOT)
+                .define('R', Items.REDSTONE)
+                .define('A', Items.AMETHYST_SHARD)
+                .unlockedBy("has_amethyst_shard", has(Items.AMETHYST_SHARD))
                 .save(pWriter);
         // Echo du Premier
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Blocks.STONE)

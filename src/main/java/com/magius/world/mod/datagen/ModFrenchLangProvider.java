@@ -14,6 +14,30 @@ public class ModFrenchLangProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+        add(ModBlocks.ANCIENT_GEAR_TURRET.get(),
+                "Tourelle à engrenages antiques");
+
+        add("message.magius_world.ancient_gear_turret.loaded",
+                "Tourelle chargée : %s/%s tirs");
+
+        add("message.magius_world.ancient_gear_turret.already_loaded",
+                "La tourelle possède déjà une cellule d’énergie");
+
+        add("message.magius_world.ancient_gear_turret.energy",
+                "Énergie restante : %s/%s tirs");
+
+        add("message.magius_world.ancient_gear_turret.redstone_disabled",
+                "Tourelle désactivée par un signal de redstone");
+        add(ModBlocks.ANCIENT_GEAR_POWER_REACTOR.get(),
+                "Réacteur Énergétique Antique");
+        addItem(ModItems.ANCIENT_GEAR_COG, "Rouage antique");
+        addItem(ModItems.ANCIENT_GEAR_AXLE, "Axe antique");
+        addItem(ModItems.ANCIENT_GEAR_CORE, "Cœur mécanique");
+        addItem(ModItems.ANCIENT_GEAR_AUTOMATON_FRAME, "Châssis d’automate");
+        addItem(ModItems.ANCIENT_GEAR_COMMAND_CORE, "Cœur de commande");
+        addItem(ModItems.ANCIENT_GEAR_POWER_CELL, "Cellule d’énergie");
+        addItem(ModItems.ANCIENT_GEAR_AUTOMATON_KIT, "Kit d’automate antique");
+        addItem(ModItems.ANCIENT_GEAR_REACTOR_CORE, "Cœur de réacteur antique");
         add(
                 ModBlocks.UNCHAINED_SEAL.get(),
                 "Sceau enchaîné"

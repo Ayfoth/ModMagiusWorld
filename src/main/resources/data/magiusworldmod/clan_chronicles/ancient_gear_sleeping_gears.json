@@ -1,0 +1,41 @@
+{
+  "id": "magiusworldmod:ancient_gear_sleeping_gears_chronicle",
+  "clan": "magiusworldmod:ancient_gear",
+  "order": 1,
+  "title": "Les Rouages endormis",
+  "short_title": "Les Rouages",
+  "description": "Les premières traces laissées par les bâtisseurs de Geartown.",
+  "icon": "magiusworldmod:ancient_gear_cog",
+
+  "unlock": {
+    "type": "quest",
+    "target": "magiusworldmod:ancient_gear_sleeping_gears"
+  },
+
+  "pages": [
+    {
+      "title": "Une cité silencieuse",
+      "text": [
+        "Geartown fut autrefois une cité mécanique dont chaque rue résonnait au rythme de milliers d'engrenages.",
+        "",
+        "Lorsque son générateur s'arrêta, les machines se figèrent et la cité sombra progressivement dans le silence."
+      ]
+    },
+    {
+      "title": "Les Rouages Anciens",
+      "text": [
+        "Les habitants de Geartown ne considéraient pas leurs créations comme de simples outils.",
+        "",
+        "Chaque mécanisme constituait une partie d'un ensemble immense, conçu pour préserver la cité et transmettre son savoir."
+      ]
+    },
+    {
+      "title": "Le premier réveil",
+      "text": [
+        "La remise en marche du générateur a réveillé les premiers rouages.",
+        "",
+        "Après des années d'immobilité, l'énergie circule de nouveau dans les vestiges de Geartown."
+      ]
+    }
+  ]
+}

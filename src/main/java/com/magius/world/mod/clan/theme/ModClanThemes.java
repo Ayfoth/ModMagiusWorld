@@ -172,5 +172,49 @@ public final class ModClanThemes {
                         null
                 )
         );
+
+        ClanThemeRegistry.register(
+                ResourceLocation.fromNamespaceAndPath(
+                        MagiusWorldMod.MOD_ID,
+                        "jurrac"
+                ),
+
+                new ClanTheme(
+                        ResourceLocation.fromNamespaceAndPath(
+                                MagiusWorldMod.MOD_ID,
+                                "textures/gui/clan/jurrac/frame.png"
+                        ),
+
+                        ResourceLocation.fromNamespaceAndPath(
+                                MagiusWorldMod.MOD_ID,
+                                "textures/gui/clan/jurrac/frame.png"
+                        ),
+
+                        ResourceLocation.fromNamespaceAndPath(
+                                MagiusWorldMod.MOD_ID,
+                                "textures/gui/clans/jurrac.png"
+                        ),
+
+                        Component.literal("Jurrac"),
+                        Component.literal("Instinct"),
+
+                        // Accent : vert jungle
+                        0xFF315C38,
+
+                        // Titres : ambre volcanique
+                        0xFFE8A33F,
+
+                        // Texte : ivoire fossile
+                        0xFFE5D8B5,
+
+                        // Fond : vert nocturne
+                        0xFF101A12,
+
+                        null,
+                        null
+                )
+        );
+
     }
+
 }

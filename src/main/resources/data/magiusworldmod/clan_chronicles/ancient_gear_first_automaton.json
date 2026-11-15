@@ -1,0 +1,41 @@
+{
+  "id": "magiusworldmod:ancient_gear_first_automaton_chronicle",
+  "clan": "magiusworldmod:ancient_gear",
+  "order": 2,
+  "title": "L'Âme dans la machine",
+  "short_title": "L'Automate",
+  "description": "L'origine des automates qui protégeaient autrefois Geartown.",
+  "icon": "magiusworldmod:ancient_gear_automaton_kit",
+
+  "unlock": {
+    "type": "quest",
+    "target": "magiusworldmod:ancient_gear_first_automaton"
+  },
+
+  "pages": [
+    {
+      "title": "Les gardiens de cuivre",
+      "text": [
+        "Les automates furent créés pour entretenir les ateliers et défendre Geartown contre ceux qui convoitaient ses secrets.",
+        "",
+        "Leur corps pouvait être reconstruit, mais leur noyau conservait les instructions et les souvenirs accumulés."
+      ]
+    },
+    {
+      "title": "Le noyau de commandement",
+      "text": [
+        "Chaque automate obéit à un noyau de commandement façonné par les anciens ingénieurs.",
+        "",
+        "Ce composant ne lui donne pas seulement des ordres : il lui permet d'analyser son environnement et de protéger ses alliés."
+      ]
+    },
+    {
+      "title": "Le premier automate",
+      "text": [
+        "L'activation d'un nouvel automate prouve que les techniques de Geartown n'ont pas entièrement disparu.",
+        "",
+        "Tant que ses mécanismes continueront de fonctionner, la mémoire des Rouages Anciens survivra."
+      ]
+    }
+  ]
+}

@@ -18,6 +18,39 @@ public class ModChestLootTables implements LootTableSubProvider {
 
     @Override
     public void generate(BiConsumer<ResourceLocation, LootTable.Builder> writer) {
+        // Quête Ancient Gear : chaque module fournit obligatoirement
+        // l'un des trois composants nécessaires au générateur.
+        writer.accept(
+                ResourceLocation.fromNamespaceAndPath(
+                        MagiusWorldMod.MOD_ID,
+                        "chests/ancient_gear_workshop"
+                ),
+                guaranteedItems(
+                        ModItems.ANCIENT_GEAR_COG.get(),
+                        ModItems.ANCIENT_GEAR_AUTOMATON_FRAME.get()
+                )
+        );
+        writer.accept(
+                ResourceLocation.fromNamespaceAndPath(
+                        MagiusWorldMod.MOD_ID,
+                        "chests/ancient_gear_command_station"
+                ),
+                guaranteedItems(
+                        ModItems.ANCIENT_GEAR_AXLE.get(),
+                        ModItems.ANCIENT_GEAR_COMMAND_CORE.get()
+                )
+        );
+        writer.accept(
+                ResourceLocation.fromNamespaceAndPath(
+                        MagiusWorldMod.MOD_ID,
+                        "chests/ancient_gear_energy_reserve"
+                ),
+                guaranteedItems(
+                        ModItems.ANCIENT_GEAR_CORE.get(),
+                        ModItems.ANCIENT_GEAR_POWER_CELL.get()
+                )
+        );
+
         writer.accept(
                 ResourceLocation.fromNamespaceAndPath(MagiusWorldMod.MOD_ID, "chests/necro_cave"),
                 LootTable.lootTable()
@@ -128,5 +161,19 @@ public class ModChestLootTables implements LootTableSubProvider {
                                         )
                         )
         );
+    }
+
+    private static LootTable.Builder guaranteedItems(net.minecraft.world.level.ItemLike... items) {
+        LootTable.Builder table = LootTable.lootTable();
+
+        for (net.minecraft.world.level.ItemLike item : items) {
+            table.withPool(
+                    LootPool.lootPool()
+                            .setRolls(ConstantValue.exactly(1))
+                            .add(LootItem.lootTableItem(item))
+            );
+        }
+
+        return table;
     }
 }

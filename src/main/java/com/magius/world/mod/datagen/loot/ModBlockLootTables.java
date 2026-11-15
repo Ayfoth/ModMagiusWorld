@@ -36,6 +36,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+        this.dropSelf(ModBlocks.ANCIENT_GEAR_TURRET.get());
         this.dropSelf(ModBlocks.UNCHAINED_SEAL.get());
         this.dropSelf(ModBlocks.UNCHAINED_ARUHA_SEAL.get());
         this.dropSelf(ModBlocks.UNCHAINED_RAKEA_SEAL.get());
@@ -45,6 +46,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.HEARTH_CORE.get());
         this.dropSelf(ModBlocks.DRAGONMAID_ALLEGIANCE_ALTAR.get());
         this.add(ModBlocks.ANCIENT_GEAR_GENERATOR.get(), LootTable.lootTable());
+        this.add(ModBlocks.ANCIENT_GEAR_POWER_REACTOR.get(), LootTable.lootTable());
         // Mod Echo
         this.dropSelf(ModBlocks.NECRO_STONE.get());
         this.dropSelf(ModBlocks.POLISHED_NECRO_STONE.get());

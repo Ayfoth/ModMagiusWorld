@@ -14,6 +14,30 @@ public class ModEnglishLangProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+        add(ModBlocks.ANCIENT_GEAR_TURRET.get(),
+                "Ancient Gear Turret");
+
+        add("message.magius_world.ancient_gear_turret.loaded",
+                "Turret loaded: %s/%s shots");
+
+        add("message.magius_world.ancient_gear_turret.already_loaded",
+                "The turret already contains a power cell");
+
+        add("message.magius_world.ancient_gear_turret.energy",
+                "Remaining energy: %s/%s shots");
+
+        add("message.magius_world.ancient_gear_turret.redstone_disabled",
+                "Turret disabled by a redstone signal");
+        add(ModBlocks.ANCIENT_GEAR_POWER_REACTOR.get(),
+                "Ancient Gear Reactor");
+        addItem(ModItems.ANCIENT_GEAR_COG, "Ancient Gear Cog");
+        addItem(ModItems.ANCIENT_GEAR_AXLE, "Ancient Gear Axle");
+        addItem(ModItems.ANCIENT_GEAR_CORE, "Mechanical Core");
+        addItem(ModItems.ANCIENT_GEAR_AUTOMATON_FRAME, "Automaton Frame");
+        addItem(ModItems.ANCIENT_GEAR_COMMAND_CORE, "Command Core");
+        addItem(ModItems.ANCIENT_GEAR_POWER_CELL, "Power Cell");
+        addItem(ModItems.ANCIENT_GEAR_AUTOMATON_KIT, "Ancient Automaton Kit");
+        addItem(ModItems.ANCIENT_GEAR_REACTOR_CORE, "Ancient Reactor Core");
         add(
                 ModBlocks.UNCHAINED_SEAL.get(),
                 "Chained Seal"

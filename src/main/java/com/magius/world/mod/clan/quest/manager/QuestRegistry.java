@@ -9,6 +9,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Optional;
 import com.magius.world.mod.clan.quest.dragonmaid.DragonmaidFirstQuest;
+import com.magius.world.mod.clan.quest.ancientgear.AncientGearFirstQuest;
+import com.magius.world.mod.clan.quest.ancientgear.AncientGearSecondQuest;
+import com.magius.world.mod.clan.quest.ancientgear.AncientGearThirdQuest;
 
 public final class QuestRegistry {
 
@@ -20,6 +23,9 @@ public final class QuestRegistry {
     public static void bootstrap() {
 
         register(new DragonmaidFirstQuest());
+        register(new AncientGearFirstQuest());
+        register(new AncientGearSecondQuest());
+        register(new AncientGearThirdQuest());
 
     }
 

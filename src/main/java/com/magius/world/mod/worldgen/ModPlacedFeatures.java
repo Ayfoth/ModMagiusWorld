@@ -55,6 +55,9 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> RUBY_VILLAGE_PLACED_KEY =
             registerKey("ruby_village");
 
+    public static final ResourceKey<PlacedFeature> ANCIENT_GEAR_RUINS_PLACED_KEY =
+            registerKey("ancient_gear_ruins");
+
     public static final ResourceKey<PlacedFeature> CORRUPTED_SOIL_PATCH_PLACED_KEY =
             registerKey("corrupted_soil_patch_placed");
 
@@ -300,6 +303,19 @@ public class ModPlacedFeatures {
                         RarityFilter.onAverageOnceEvery(48),
                         InSquarePlacement.spread(),
                         HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                        BiomeFilter.biome()
+                )
+        );
+
+        register(context, ANCIENT_GEAR_RUINS_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.ANCIENT_GEAR_RUINS_KEY),
+                List.of(
+                        RarityFilter.onAverageOnceEvery(16),
+                        InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(
+                                VerticalAnchor.absolute(-48),
+                                VerticalAnchor.absolute(32)
+                        ),
                         BiomeFilter.biome()
                 )
         );

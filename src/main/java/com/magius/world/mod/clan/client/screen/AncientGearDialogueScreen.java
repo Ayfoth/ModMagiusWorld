@@ -2,6 +2,7 @@ package com.magius.world.mod.clan.client.screen;
 
 import com.magius.world.mod.clan.quest.ancientgear.AncientGearFirstQuest;
 import com.magius.world.mod.clan.quest.ancientgear.AncientGearSecondQuest;
+import com.magius.world.mod.clan.quest.ancientgear.AncientGearThirdQuest;
 import com.magius.world.mod.clan.quest.api.QuestStatus;
 import com.magius.world.mod.clan.quest.manager.QuestManager;
 import com.magius.world.mod.network.ModMessages;
@@ -9,6 +10,8 @@ import com.magius.world.mod.network.packet.C2SClaimAncientGearFirstQuestRewardPa
 import com.magius.world.mod.network.packet.C2SStartAncientGearFirstQuestPacket;
 import com.magius.world.mod.network.packet.C2SStartAncientGearSecondQuestPacket;
 import com.magius.world.mod.network.packet.C2SClaimAncientGearSecondQuestRewardPacket;
+import com.magius.world.mod.network.packet.C2SStartAncientGearThirdQuestPacket;
+import com.magius.world.mod.network.packet.C2SClaimAncientGearThirdQuestRewardPacket;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
@@ -21,6 +24,7 @@ public class AncientGearDialogueScreen extends Screen {
     private static final int PANEL_HEIGHT = 130;
     private QuestStatus questStatus = QuestStatus.NOT_STARTED;
     private QuestStatus secondQuestStatus = QuestStatus.NOT_STARTED;
+    private QuestStatus thirdQuestStatus = QuestStatus.NOT_STARTED;
 
     public AncientGearDialogueScreen() {
         super(Component.literal("Émissaire mécaniste"));
@@ -40,6 +44,7 @@ public class AncientGearDialogueScreen extends Screen {
                             AncientGearFirstQuest.ID
                     );
                     secondQuestStatus = QuestManager.getStatus(data, AncientGearSecondQuest.ID);
+                    thirdQuestStatus = QuestManager.getStatus(data, AncientGearThirdQuest.ID);
             });
         }
 
@@ -51,7 +56,12 @@ public class AncientGearDialogueScreen extends Screen {
                 case NOT_STARTED -> "Réveiller le premier automate";
                 case IN_PROGRESS -> "Je construirai l'automate";
                 case COMPLETED -> "Recevoir 100 prestige";
-                case REWARDED -> "L'automate est réveillé";
+                case REWARDED -> switch (thirdQuestStatus) {
+                    case NOT_STARTED -> "Rallumer le cœur de Geartown";
+                    case IN_PROGRESS -> "Je réactiverai le réacteur";
+                    case COMPLETED -> "Recevoir 150 prestige";
+                    case REWARDED -> "Geartown est alimentée";
+                };
             };
         };
 
@@ -72,6 +82,12 @@ public class AncientGearDialogueScreen extends Screen {
                                             ModMessages.sendToServer(new C2SStartAncientGearSecondQuestPacket());
                                         } else if (secondQuestStatus == QuestStatus.COMPLETED) {
                                             ModMessages.sendToServer(new C2SClaimAncientGearSecondQuestRewardPacket());
+                                        } else if (secondQuestStatus == QuestStatus.REWARDED) {
+                                            if (thirdQuestStatus == QuestStatus.NOT_STARTED) {
+                                                ModMessages.sendToServer(new C2SStartAncientGearThirdQuestPacket());
+                                            } else if (thirdQuestStatus == QuestStatus.COMPLETED) {
+                                                ModMessages.sendToServer(new C2SClaimAncientGearThirdQuestRewardPacket());
+                                            }
                                         }
                                     }
                                     onClose();
@@ -132,9 +148,19 @@ public class AncientGearDialogueScreen extends Screen {
                 secondLine = Component.literal("La cité accueille son premier habitant mécanique.");
                 thirdLine = Component.literal("Accepte tes 100 points de prestige.");
             } else if (secondQuestStatus == QuestStatus.REWARDED) {
-                firstLine = Component.literal("Geartown s'éveille à nouveau.");
-                secondLine = Component.literal("L'automate garde les machines en mouvement.");
-                thirdLine = Component.empty();
+                if (thirdQuestStatus == QuestStatus.COMPLETED) {
+                    firstLine = Component.literal("Le réacteur alimente de nouveau Geartown.");
+                    secondLine = Component.literal("Son cœur énergétique pulse dans les profondeurs.");
+                    thirdLine = Component.literal("Accepte tes 150 points de prestige.");
+                } else if (thirdQuestStatus == QuestStatus.REWARDED) {
+                    firstLine = Component.literal("Geartown s'éveille à nouveau.");
+                    secondLine = Component.literal("Ses rouages et son réacteur fonctionnent ensemble.");
+                    thirdLine = Component.empty();
+                } else {
+                    firstLine = Component.literal("Le grand réacteur de Geartown reste silencieux.");
+                    secondLine = Component.literal("Forge un cœur avec cuivre, redstone et améthyste.");
+                    thirdLine = Component.literal("Installe-le au centre du réacteur antique.");
+                }
             } else {
                 firstLine = Component.literal("Assemble un automate avec les pièces antiques.");
                 secondLine = Component.literal("Active-le sur le générateur réparé.");

@@ -3,6 +3,8 @@ package com.magius.world.mod.datagen;
 import com.magius.world.mod.MagiusWorldMod;
 import com.magius.world.mod.block.ModBlocks;
 import com.magius.world.mod.block.custom.CornCropBlock;
+import com.magius.world.mod.block.custom.AncientGearGeneratorBlock;
+import com.magius.world.mod.block.custom.AncientGearPowerReactorBlock;
 import com.magius.world.mod.block.custom.RedWheatCropBlock;
 import com.magius.world.mod.block.custom.StrawberryCropBlock;
 import net.minecraft.core.Direction;
@@ -29,7 +31,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         // Ancient Gear //
-        blockWithItem(ModBlocks.ANCIENT_GEAR_GENERATOR);
+        ancientGearGeneratorBlock();
+        ancientGearPowerReactorBlock();
         // Unchained
         blockWithItem(ModBlocks.UNCHAINED_SEAL);
         blockWithItem(ModBlocks.UNCHAINED_ARUHA_SEAL);
@@ -619,5 +622,51 @@ private String blockName(Block block) {
                 ModBlocks.SWORDSOUL_SPIRIT_FORGE.get(),
                 model
         );
+    }
+
+    private void ancientGearGeneratorBlock() {
+        Block block = ModBlocks.ANCIENT_GEAR_GENERATOR.get();
+
+        ModelFile inactiveModel = models().cubeAll(
+                "ancient_gear_generator",
+                modLoc("block/ancient_gear_generator")
+        );
+        ModelFile activeModel = models().cubeAll(
+                "ancient_gear_generator_active",
+                modLoc("block/ancient_gear_generator_active")
+        );
+
+        getVariantBuilder(block).forAllStates(state -> {
+            boolean active = state.getValue(AncientGearGeneratorBlock.HAS_COG)
+                    && state.getValue(AncientGearGeneratorBlock.HAS_AXLE)
+                    && state.getValue(AncientGearGeneratorBlock.HAS_CORE);
+
+            return ConfiguredModel.builder()
+                    .modelFile(active ? activeModel : inactiveModel)
+                    .build();
+        });
+
+        simpleBlockItem(block, inactiveModel);
+    }
+
+    private void ancientGearPowerReactorBlock() {
+        Block block = ModBlocks.ANCIENT_GEAR_POWER_REACTOR.get();
+
+        ModelFile inactiveModel = models().cubeAll(
+                "ancient_gear_power_reactor",
+                modLoc("block/ancient_gear_power_reactor")
+        );
+        ModelFile activeModel = models().cubeAll(
+                "ancient_gear_power_reactor_active",
+                modLoc("block/ancient_gear_power_reactor_active")
+        );
+
+        getVariantBuilder(block).forAllStates(state -> ConfiguredModel.builder()
+                .modelFile(state.getValue(AncientGearPowerReactorBlock.ACTIVE)
+                        ? activeModel
+                        : inactiveModel)
+                .build());
+
+        simpleBlockItem(block, inactiveModel);
     }
 }

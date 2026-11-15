@@ -70,6 +70,9 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> RUBY_VILLAGE_KEY =
             registerKey("ruby_village");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ANCIENT_GEAR_RUINS_KEY =
+            registerKey("ancient_gear_ruins");
+
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> PINE_KEY = registerKey("pine");
     public static final ResourceKey<ConfiguredFeature<?, ?>> RUBY_TREE_KEY = registerKey("ruby_tree");
@@ -200,6 +203,7 @@ public class ModConfiguredFeatures {
         register(context, RUBY_CLIFF_ORE_KEY, ModFeatures.RUBY_CLIFF_ORE.get(), NoneFeatureConfiguration.INSTANCE);
         register(context, RUBY_NATURAL_TREE_KEY, ModFeatures.RUBY_NATURAL_TREE.get(), NoneFeatureConfiguration.INSTANCE);
         register(context, RUBY_VILLAGE_KEY, ModFeatures.RUBY_VILLAGE.get(), NoneFeatureConfiguration.INSTANCE);
+        register(context, ANCIENT_GEAR_RUINS_KEY, ModFeatures.ANCIENT_GEAR_RUINS.get(), NoneFeatureConfiguration.INSTANCE);
 
 
     }

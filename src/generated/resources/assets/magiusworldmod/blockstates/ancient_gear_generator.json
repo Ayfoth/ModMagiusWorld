@@ -1,7 +1,28 @@
 {
   "variants": {
-    "": {
+    "has_axle=false,has_cog=false,has_core=false": {
       "model": "magiusworldmod:block/ancient_gear_generator"
+    },
+    "has_axle=false,has_cog=false,has_core=true": {
+      "model": "magiusworldmod:block/ancient_gear_generator"
+    },
+    "has_axle=false,has_cog=true,has_core=false": {
+      "model": "magiusworldmod:block/ancient_gear_generator"
+    },
+    "has_axle=false,has_cog=true,has_core=true": {
+      "model": "magiusworldmod:block/ancient_gear_generator"
+    },
+    "has_axle=true,has_cog=false,has_core=false": {
+      "model": "magiusworldmod:block/ancient_gear_generator"
+    },
+    "has_axle=true,has_cog=false,has_core=true": {
+      "model": "magiusworldmod:block/ancient_gear_generator"
+    },
+    "has_axle=true,has_cog=true,has_core=false": {
+      "model": "magiusworldmod:block/ancient_gear_generator"
+    },
+    "has_axle=true,has_cog=true,has_core=true": {
+      "model": "magiusworldmod:block/ancient_gear_generator_active"
     }
   }
 }

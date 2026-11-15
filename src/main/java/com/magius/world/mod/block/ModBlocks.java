@@ -100,7 +100,43 @@ public class ModBlocks {
                                     .strength(5.0F, 10.0F)
                                     .requiresCorrectToolForDrops()
                                     .sound(SoundType.METAL)
-                                    .lightLevel(state -> 3)
+                                    .lightLevel(state ->
+                                            state.getValue(AncientGearGeneratorBlock.HAS_COG)
+                                                    && state.getValue(AncientGearGeneratorBlock.HAS_AXLE)
+                                                    && state.getValue(AncientGearGeneratorBlock.HAS_CORE)
+                                                    ? 12
+                                                    : 3
+                                    )
+                    )
+            );
+
+    public static final RegistryObject<Block> ANCIENT_GEAR_POWER_REACTOR =
+            registerBlock(
+                    "ancient_gear_power_reactor",
+                    () -> new AncientGearPowerReactorBlock(
+                            BlockBehaviour.Properties
+                                    .copy(Blocks.BLAST_FURNACE)
+                                    .strength(5.0F, 10.0F)
+                                    .requiresCorrectToolForDrops()
+                                    .sound(SoundType.METAL)
+                                    .lightLevel(state ->
+                                            state.getValue(AncientGearPowerReactorBlock.ACTIVE) ? 15 : 1
+                                    )
+                    )
+            );
+
+    public static final RegistryObject<Block> ANCIENT_GEAR_TURRET =
+            registerBlock(
+                    "ancient_gear_turret",
+                    () -> new AncientGearTurretBlock(
+                            BlockBehaviour.Properties
+                                    .copy(Blocks.BLAST_FURNACE)
+                                    .strength(5.0F, 10.0F)
+                                    .requiresCorrectToolForDrops()
+                                    .sound(SoundType.METAL)
+                                    .lightLevel(state ->
+                                            state.getValue(AncientGearTurretBlock.ACTIVE) ? 6 : 0
+                                    )
                     )
             );
 

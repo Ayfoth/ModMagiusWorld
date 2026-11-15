@@ -86,6 +86,30 @@ public class MemberTab implements ClanTab {
                     "textures/entity/unchained/unchained.png"
             );
 
+    private static final ResourceLocation ANCIENT_GEAR_QUEST_1 =
+            ResourceLocation.fromNamespaceAndPath(
+                    MagiusWorldMod.MOD_ID,
+                    "ancient_gear_sleeping_gears"
+            );
+
+    private static final ResourceLocation ANCIENT_GEAR_QUEST_2 =
+            ResourceLocation.fromNamespaceAndPath(
+                    MagiusWorldMod.MOD_ID,
+                    "ancient_gear_first_automaton"
+            );
+
+    private static final ResourceLocation ANCIENT_GEAR_QUEST_3 =
+            ResourceLocation.fromNamespaceAndPath(
+                    MagiusWorldMod.MOD_ID,
+                    "ancient_gear_heart_of_geartown"
+            );
+
+    private static final ResourceLocation ANCIENT_GEAR_MEMBER_TEXTURE =
+            ResourceLocation.fromNamespaceAndPath(
+                    MagiusWorldMod.MOD_ID,
+                    "textures/entity/ancientgear/ancientgear.png"
+            );
+
     private record MemberEntry(
             String name,
             String role,
@@ -173,6 +197,23 @@ public class MemberTab implements ClanTab {
                     )
             );
 
+    private static final List<MemberEntry> ANCIENT_GEAR_MEMBERS =
+            List.of(
+                    new MemberEntry(
+                            "Émissaire mécaniste",
+                            "Gardien des Rouages",
+                            "Guide les nouveaux mécanistes vers les machines oubliées de Geartown.",
+                            1
+                    ),
+
+                    new MemberEntry(
+                            "Premier automate de Geartown",
+                            "Automate restauré",
+                            "Premier mécanisme réveillé depuis la chute de l'ancienne cité mécanique.",
+                            2
+                    )
+            );
+
 
     @Override
     public Component getTitle() {
@@ -253,6 +294,15 @@ public class MemberTab implements ClanTab {
                 quest2Id = UNCHAINED_QUEST_2;
                 quest3Id = UNCHAINED_QUEST_3;
                 memberTexture = UNCHAINED_MEMBER_TEXTURE;
+                playerSkinTexture = true;
+            }
+
+            case "ancient_gear" -> {
+                members = ANCIENT_GEAR_MEMBERS;
+                quest1Id = ANCIENT_GEAR_QUEST_1;
+                quest2Id = ANCIENT_GEAR_QUEST_2;
+                quest3Id = ANCIENT_GEAR_QUEST_3;
+                memberTexture = ANCIENT_GEAR_MEMBER_TEXTURE;
                 playerSkinTexture = true;
             }
 

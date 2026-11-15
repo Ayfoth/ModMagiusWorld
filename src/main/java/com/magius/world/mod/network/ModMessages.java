@@ -402,6 +402,16 @@ public class ModMessages {
                 .decoder(C2SClaimAncientGearSecondQuestRewardPacket::new)
                 .consumerMainThread(C2SClaimAncientGearSecondQuestRewardPacket::handle)
                 .add();
+        INSTANCE.messageBuilder(C2SStartAncientGearThirdQuestPacket.class, id())
+                .encoder(C2SStartAncientGearThirdQuestPacket::encode)
+                .decoder(C2SStartAncientGearThirdQuestPacket::new)
+                .consumerMainThread(C2SStartAncientGearThirdQuestPacket::handle)
+                .add();
+        INSTANCE.messageBuilder(C2SClaimAncientGearThirdQuestRewardPacket.class, id())
+                .encoder(C2SClaimAncientGearThirdQuestRewardPacket::encode)
+                .decoder(C2SClaimAncientGearThirdQuestRewardPacket::new)
+                .consumerMainThread(C2SClaimAncientGearThirdQuestRewardPacket::handle)
+                .add();
     }
 
     public static <MSG> void sendToServer(MSG message) {

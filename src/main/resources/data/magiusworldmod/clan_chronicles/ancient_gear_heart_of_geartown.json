@@ -1,0 +1,49 @@
+{
+  "id": "magiusworldmod:ancient_gear_heart_of_geartown_chronicle",
+  "clan": "magiusworldmod:ancient_gear",
+  "order": 3,
+  "title": "Le Cœur de Geartown",
+  "short_title": "Le Cœur",
+  "description": "La vérité concernant le réacteur qui alimentait toute la cité.",
+  "icon": "magiusworldmod:ancient_gear_reactor_core",
+
+  "unlock": {
+    "type": "quest",
+    "target": "magiusworldmod:ancient_gear_heart_of_geartown"
+  },
+
+  "pages": [
+    {
+      "title": "Le Cœur de la cité",
+      "text": [
+        "Sous les ateliers de Geartown repose un réacteur capable d'alimenter la cité entière.",
+        "",
+        "Les anciens ingénieurs le nommaient le Cœur, car tous les mécanismes de la ville dépendaient de ses pulsations."
+      ]
+    },
+    {
+      "title": "La grande extinction",
+      "text": [
+        "Lorsque le Cœur s'arrêta, les générateurs secondaires ne purent maintenir la cité en activité.",
+        "",
+        "Les automates s'endormirent, les ateliers se figèrent et les survivants abandonnèrent progressivement Geartown."
+      ]
+    },
+    {
+      "title": "Une nouvelle pulsation",
+      "text": [
+        "Le réacteur fonctionne de nouveau.",
+        "",
+        "Son énergie traverse les anciens réseaux et réveille les mécanismes restés silencieux pendant des générations."
+      ]
+    },
+    {
+      "title": "L'avenir de Geartown",
+      "text": [
+        "La restauration du Cœur ne marque pas la fin de l'histoire des Rouages Anciens.",
+        "",
+        "Elle annonce la reconstruction de Geartown et le retour de machines dont les secrets restent encore à découvrir."
+      ]
+    }
+  ]
+}
